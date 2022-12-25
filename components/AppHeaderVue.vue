@@ -285,7 +285,8 @@ export default {}
   }
    .home svg {
     color:blue; 
-    border-bottom: blue;
+    // border-bottom: 2px  blue solid;
+    width: 50%;
   }
   .nav-right {
     display: flex;

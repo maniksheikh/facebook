@@ -1,6 +1,7 @@
 <template>
     <div class="main-container">
          <AppHeaderVue></AppHeaderVue>
+         <nuxt></nuxt>
     </div>
 </template>
 

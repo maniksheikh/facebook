@@ -1,10 +1,9 @@
 <template>
-  <div>
-      <div class="container">
-         <SidebarVue></SidebarVue>
-        
+      <div class="main-container">
+         <div class="flex-container">
+          <SidebarVue></SidebarVue>
+         </div>  
       </div>
-  </div>
 </template>
 
 <script>
