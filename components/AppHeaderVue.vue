@@ -21,8 +21,8 @@
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
-                            width="24px"
-                            height="24px"
+                            width="22px"
+                            height="22px"
                             class="search-icon"
                         >
                             <path d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z" />
@@ -213,6 +213,9 @@ export default {}
 
 <style lang="scss">
 .container {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 //   height: 100%;
 //   width: 1200px;
   font-family: Arial, Helvetica, sans-serif;
@@ -222,6 +225,7 @@ export default {}
     justify-content: space-between;
     height: 100%;
     // padding: 5px 0;
+    margin-top: -5px;
   }
 
   .nav-left {
@@ -230,19 +234,16 @@ export default {}
     align-items: center;
   }
 
-//   .nav-left svg {
-//     height: 50px;
-//     width: 50px;
-//   }
-
   .serch-input {
+    cursor: pointer;
     margin-left: 10px !important;
     box-sizing: border-box;
     padding: 0 8px;
     display: flex;
     text-align: center;
     align-items: center;
-    background: rgb(230, 236, 236);
+    justify-content: center;
+    background:#ebeff5;
     height: 40px;
     width: 100%;
     color: gray;
@@ -253,10 +254,7 @@ export default {}
     padding-left: 15px;
     margin: auto;
   }
-  //   .search-icon {
-  //     height: 40px;
-  //     width: 40px;
-  //   }
+
   input {
     background-position-y: 50px;
     background: rgb(228, 224, 224);
@@ -272,6 +270,7 @@ export default {}
   }
 
   .nav-middle {
+    cursor: pointer;
     display: flex;
     text-align: center;
     justify-content: space-between;
@@ -279,6 +278,7 @@ export default {}
     
   }
   .nav-middle svg {
+    justify-content: space-between;
     padding:0 15px 0 3.5rem!important;
     margin-right: 2.5rem;
     font-size: 2rem !important;
@@ -289,6 +289,7 @@ export default {}
     width: 50%;
   }
   .nav-right {
+    cursor: pointer;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -326,8 +327,7 @@ export default {}
    
   }
   .nav-right-content svg {
-    padding: 25px;
-    margin: 5px;
+    margin:5px 8px 0 5px ;
     background: rgb(230, 231, 231);
     border-radius: 60%;
     height: 40px;

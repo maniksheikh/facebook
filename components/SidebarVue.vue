@@ -60,6 +60,12 @@
                <h5>Marketplace</h5>
          </div>
 
+
+         <div class="left-pages">
+            <i data-visualcompletion="css-img" class="" style="background-image:url('https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/BHDNlEdwMgn.png');background-position:0 -111px;background-size:auto;width:36px;height:36px;background-repeat:no-repeat;display:inline-block"></i>
+               <h5>Pages</h5>
+         </div>
+
          <div class="left-memories">
             <i
                data-visualcompletion="css-img"
@@ -171,9 +177,15 @@ export default {}
 
 <style lang="scss">
 .side-container {
-  background: rgb(236, 242, 245);
+   cursor: pointer;
+   padding-top: 10px;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(236, 242, 245);
 
   .container-list {
+   margin: auto;
     padding: 12px;
     border-bottom: 1px gray solid;
   }
@@ -182,13 +194,12 @@ export default {}
     width: 310px;
   }
   .left-profile:hover {
-    background: rgb(219, 227, 231) !important;
-    
+    background: rgb(219, 227, 231) !important;   
     border-radius: 15px;
   }
   .left-img {
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     border-radius: 100%;
   }
   .left-manik {
@@ -200,12 +211,10 @@ export default {}
     display: flex;
     text-align: center;
     align-items: center;
-   //  margin-top: 5px;
    width: 310px;
   }
   .left-friends:hover {
     background: rgb(219, 227, 231) !important;
-
     border-radius: 15px;
   }
   .left-watch {
@@ -256,6 +265,18 @@ export default {}
    
     border-radius: 15px;
   }
+  .left-pages {
+    display: flex;
+    text-align: center;
+    align-items: center;
+   //  margin-top: 5px;
+   width: 310px;
+  }
+  .left-pages:hover {
+    background: rgb(219, 227, 231) !important;
+   
+    border-radius: 15px;
+  }
   .left-memories {
     display: flex;
     text-align: center;
@@ -287,13 +308,13 @@ export default {}
     border-radius: 15px;
   }
   h5 {
-    margin-left: 10px;
+    margin-left: 12px;
     font-size: 14px;
     font-weight: bold;
   }
 
   .container-bottom {
-    padding: 12px;
+    padding: 5px 0 0 12px;
 
     .header-container {
       display: flex;
@@ -329,7 +350,12 @@ export default {}
       background: rgb(219, 227, 231) !important;
      
       border-radius: 15px;
-    }
+    }     
+   
   }
+  .footer-content {
+       padding-left: 12px;
+       line-height: 0;
+    }
 }
 </style>

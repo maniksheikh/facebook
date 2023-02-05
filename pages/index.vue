@@ -3,6 +3,7 @@
          <div class="flex-container">
           <SidebarVue></SidebarVue>
           <MidelVueVue></MidelVueVue>
+  
          </div>  
       </div>
 </template>
@@ -12,11 +13,11 @@ import SidebarVue from '~/components/SidebarVue.vue';
 import MidelVueVue from '~/components/MidelVue.vue';
 
 
-
 export default {
     components: { 
       SidebarVue,
-      MidelVueVue
+      MidelVueVue,
+  
     }
 }
 
@@ -26,8 +27,7 @@ export default {
 
 .main-container {
   width: 100%;
-   
-  padding: 5px;
+  // padding: 5px;
 
   .flex-container {
     display: grid;
