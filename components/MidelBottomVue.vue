@@ -5,6 +5,7 @@
         <img class="strong-img" src="../img/strong.JPG" alt="">
         <input type="text" placeholder="What`s on your mind, Md. Manik?">
       </div>
+      <div class="header-post"></div>
       <div class="bottom-grid">
         <div class="live-video">
           <i data-visualcompletion="css-img" class="video-img"
@@ -19,7 +20,6 @@
         <div class="live-video">
           <i data-visualcompletion="css-img" class=""
             style="background-image:url('https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/Ai0H6JxlZ3W.png');background-position:0 -158px;background-size:auto;width:24px;height:24px;background-repeat:no-repeat;display:inline-block"></i>
-
           <p class="live-content"> Feeling/Activity</p>
         </div>
       </div>
@@ -27,6 +27,31 @@
   </div>
 
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      post: '',
+      email: '',
+      userData: [
+        {
+          id: 1,
+          title: 'Md Manik Sheakh',
+          email: 'mdmanik0841498@gmail.com',
+          post: 'I Am A FrontEnd Developer'
+        }
+      ]
+    }
+  },
+  methods: {
+    addItems() {
+      this.userData.push({ post: this.post, email: this.email });
+      this.post = ''
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .midel-bottom-container {
@@ -76,20 +101,24 @@
       grid-template-columns: repeat(3, 1fr);
       font-weight: bold;
       color: rgb(100, 95, 95);
-      padding-top: 10px;
+      margin-bottom: -15px;
 
       .live-video {
         display: flex;
+        text-align: center;
         align-items: center;
         justify-content: center;
-
-        .live-video:hover {
-          background: grey;
-          color: white;
+        padding: 0 10px;
+        margin: 10px 0;
+        line-height: 0;
+       
+        .live-content {
+          padding: 5px 15px;
         }
 
-        .live-content {
-          padding: 0 15px;
+        &:hover {
+          background: #F2F2F2;
+          border-radius: 8px;
         }
       }
 

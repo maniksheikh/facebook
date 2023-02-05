@@ -216,15 +216,12 @@ export default {}
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-//   height: 100%;
-//   width: 1200px;
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
   .navber {
     display: flex;
     justify-content: space-between;
     height: 100%;
-    // padding: 5px 0;
     margin-top: -5px;
   }
 
@@ -284,7 +281,7 @@ export default {}
     font-size: 2rem !important;
   }
    .home svg {
-    color:blue; 
+    color:#1B74E4; 
     // border-bottom: 2px  blue solid;
     width: 50%;
   }

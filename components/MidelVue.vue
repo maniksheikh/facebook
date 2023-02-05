@@ -131,9 +131,12 @@ import MidelBottomVue from './MidelBottomVue.vue';
 import MidelPost from './MidelPost.vue';
 
 export default {
-    MidelBottomVue,
-    MidelPost
+    components: {
+        MidelBottomVue,
+        MidelPost
+    }
 }
+
 </script>
 
 <style lang="scss">
@@ -259,7 +262,7 @@ div {
                 }
 
                 .plus-img {
-                    
+
                     height: 40px;
                     width: 40px;
                     background: rgb(53, 121, 211);
@@ -276,14 +279,16 @@ div {
                     color: grey;
                     font-weight: bold;
                     position: absolute;
-                    
+
                     left: 9px;
                     top: 10rem;
                 }
+            }
 
-                .next-page {
-                    margin-top: 5rem !important;
-                }
+            .next-page {
+                margin-top: 5rem !important;
+                font-weight: bold;
+                height: 50px;
             }
         }
     }

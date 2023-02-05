@@ -178,7 +178,7 @@ export default {}
 <style lang="scss">
 .side-container {
    cursor: pointer;
-   padding-top: 10px;
+   padding: 10px 0;
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -188,15 +188,18 @@ export default {}
    margin: auto;
     padding: 12px;
     border-bottom: 1px gray solid;
+    line-height: 1;
   }
   .left-profile {
     display: flex;
     width: 310px;
-  }
-  .left-profile:hover {
-    background: rgb(219, 227, 231) !important;   
+
+    &:hover {
+    background: #E3E5E8 !important;   
     border-radius: 15px;
   }
+  }
+
   .left-img {
     height: 45px;
     width: 45px;
@@ -214,7 +217,7 @@ export default {}
    width: 310px;
   }
   .left-friends:hover {
-    background: rgb(219, 227, 231) !important;
+    background: #E3E5E8 !important;
     border-radius: 15px;
   }
   .left-watch {
@@ -225,7 +228,7 @@ export default {}
    width: 310px;
   }
   .left-watch:hover {
-    background: rgb(219, 227, 231) !important;
+    background: #E3E5E8 !important;
     
     border-radius: 15px;
   }
@@ -237,7 +240,7 @@ export default {}
    width: 310px;
   }
   .left-most-recent:hover {
-    background: rgb(219, 227, 231) !important;
+    background:#E3E5E8 !important;
    
     border-radius: 15px;
   }
@@ -249,7 +252,7 @@ export default {}
    width: 310px;
   }
   .left-groups:hover {
-    background: rgb(219, 227, 231) !important;
+    background: #E3E5E8 !important;
    
     border-radius: 15px;
   }
@@ -261,7 +264,7 @@ export default {}
    width: 310px;
   }
   .left-marketplace:hover {
-    background: rgb(219, 227, 231) !important;
+    background: #E3E5E8 !important;
    
     border-radius: 15px;
   }
@@ -273,7 +276,7 @@ export default {}
    width: 310px;
   }
   .left-pages:hover {
-    background: rgb(219, 227, 231) !important;
+    background: #E3E5E8 !important;
    
     border-radius: 15px;
   }
@@ -285,7 +288,7 @@ export default {}
    width: 310px;
   }
   .left-memories:hover {
-    background: rgb(219, 227, 231) !important;
+    background: #E3E5E8 !important;
    
     border-radius: 15px;
   }
@@ -303,7 +306,7 @@ export default {}
     width: 32px;
   }
   .left-semore:hover {
-    background: rgb(219, 227, 231) !important;
+    background: #E3E5E8 !important;
     
     border-radius: 15px;
   }
@@ -347,7 +350,7 @@ export default {}
       width: 310px;
     }
     .left-aha:hover {
-      background: rgb(219, 227, 231) !important;
+      background: #E3E5E8 !important;
      
       border-radius: 15px;
     }     
