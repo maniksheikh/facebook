@@ -115,24 +115,23 @@
         </div>
 
         <div class="midel-bottom-content">
-            <MidelBottomVue></MidelBottomVue>
+            <MidelTop></MidelTop>
+            <MidelPost></MidelPost>
+             
         </div>
 
-        <div class="midel-post-bottom">
-            <MidelPost></MidelPost>
-        </div>
     </div>
 
 </template>
 
 <script>
-import MidelBottomVue from './MidelBottomVue.vue';
 import MidelPost from './MidelPost.vue';
+import MidelTop from './MidelTop.vue';
 
 export default {
     components: {
-        MidelBottomVue,
-        MidelPost
+        MidelPost,
+        MidelTop
     }
 }
 
