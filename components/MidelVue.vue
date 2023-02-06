@@ -64,7 +64,6 @@
 
                     <div class="grid-content">
                         <div class="position-img">
-
                             <img src="../img/beautiful-you.jpg" alt="">
                             <img class="small-profile" src="../img/beautiful-you.jpg" alt="">
                             <p class="grid-title">
@@ -151,7 +150,7 @@ div {
     .midel-container {
         background: white;
         border-radius: 10px;
-        border: 1px rgb(197, 193, 193) solid;
+        border: 1px  #E4E6E9 solid;
         margin-top: 1.5rem;
 
         .midel-content {

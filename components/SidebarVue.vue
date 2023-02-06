@@ -159,11 +159,15 @@
                      </svg>
                      <h5> See More</h5>
          </div>
+
+         <br>
+         <br>
+         <br>
       </div>
 
       <footer>
           <p class="footer-content">
-             Privacy . Terms . Advertising . Ad Choices . Cookies . More . Meta&copy;2022 .' 
+             Privacy . Terms . Advertising . Ad Choices. Cookies . More . Meta&copy;2022 .' 
           </p>
       </footer>
 
@@ -224,7 +228,6 @@ export default {}
     display: flex;
     text-align: center;
     align-items: center;
-   //  margin-top: 5px;
    width: 310px;
   }
   .left-watch:hover {
@@ -236,7 +239,6 @@ export default {}
     display: flex;
     text-align: center;
     align-items: center;
-   //  margin-top: 5px;
    width: 310px;
   }
   .left-most-recent:hover {
@@ -248,7 +250,6 @@ export default {}
     display: flex;
     text-align: center;
     align-items: center;
-   //  margin-top: 5px;
    width: 310px;
   }
   .left-groups:hover {
@@ -312,7 +313,7 @@ export default {}
   }
   h5 {
     margin-left: 12px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
   }
 
@@ -330,7 +331,7 @@ export default {}
       }
       h2 {
         margin-left: 15rem;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: bold;
         opacity: 0;
       }

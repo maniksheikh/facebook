@@ -60,7 +60,7 @@ export default {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 14px;
-  border: 1px rgb(196, 190, 190) solid;
+  border: 1px #E4E6E9 solid;
   border-radius: 10px;
   background: white;
 
@@ -86,6 +86,7 @@ export default {
         font-weight: bold;
         font-size: 16px;
         border: none;
+        // filter:brightness(.9);
       }
 
       .strong-img {
@@ -119,6 +120,7 @@ export default {
         &:hover {
           background: #F2F2F2;
           border-radius: 8px;
+          filter:brightness(.9);
         }
       }
 
