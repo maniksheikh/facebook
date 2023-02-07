@@ -181,7 +181,7 @@ export default {}
 
 <style lang="scss">
 .side-container {
-   cursor: pointer;
+   // cursor: pointer;
    padding: 10px 0;
     margin: 0;
     box-sizing: border-box;

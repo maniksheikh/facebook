@@ -104,20 +104,14 @@
                                 d="M7.8 4.53 13.273 10 7.8 15.47a.75.75 0 0 0 1.061 1.06l6-6a.751.751 0 0 0 0-1.06l-6-6A.75.75 0 0 0 7.8 4.53z">
                             </path>
                         </svg>
-
                     </div>
-
                 </div>
-
             </div>
-
 
         </div>
 
         <div class="midel-bottom-content">
             <MidelTop></MidelTop>
-            <MidelPost></MidelPost>
-             
         </div>
 
     </div>
@@ -125,12 +119,10 @@
 </template>
 
 <script>
-import MidelPost from './MidelPost.vue';
 import MidelTop from './MidelTop.vue';
 
 export default {
     components: {
-        MidelPost,
         MidelTop
     }
 }
@@ -139,7 +131,7 @@ export default {
 
 <style lang="scss">
 div {
-    cursor: pointer;
+    // cursor: pointer;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -149,7 +141,7 @@ div {
     .midel-container {
         background: white;
         border-radius: 10px;
-        border: 1px  #E4E6E9 solid;
+        border: 1px #E4E6E9 solid;
         margin-top: 1.5rem;
 
         .midel-content {

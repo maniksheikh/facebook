@@ -4,7 +4,7 @@
             <div class="bottom-container">
                 <div class="header-bottm">
                     <img class="strong-img" src="../img/strong.JPG" alt="">
-                    <input type="text" autocomplete="" v-model="text" placeholder="What`s on your mind, Md. Manik?"
+                    <input type="text" v-model="text" autocomplete=""  placeholder="What`s on your mind, Md. Manik?"
                         @change="addItems()">
                 </div>
 
@@ -185,16 +185,18 @@ export default {
 // post style 
 .post {
     margin-top: 10px;
-    border-radius: 10px;
+    border-radius: 20px !important;
     border: 1px #FFFFFF solid;
 
 
     .post-body {
         padding: 8px 10px;
         background: #FFFFFF;
+        border-radius: 10px;
 
         .post-section {
             display: flex;
+            margin-bottom:6px;
 
             .align {
                 padding: 6px 0 0 10px;
@@ -217,7 +219,7 @@ export default {
         }
 
         .post-item {
-            margin-left: 3.5rem;
+            margin:35px 0 0 3.5rem;
             font-weight: bold;
             color: rgb(77, 74, 74);
         }
@@ -229,14 +231,14 @@ export default {
             justify-content: space-between;
             color: rgb(90, 88, 88);
             background: white;
+            margin-bottom: -5px;
 
             .post-space {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 0 13px;
-                border-radius: 5px;
-                margin-top: 3px;
+                padding: 0 30px;
+                margin-top: 1px;
 
                 &:hover {
 
@@ -249,7 +251,7 @@ export default {
                 .wish-match {
                     align-items: center;
                     justify-content: space-between;
-                    padding: 5px 30px;
+                    padding: 5px 15px;
 
                 }
             }
