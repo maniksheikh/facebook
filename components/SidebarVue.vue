@@ -167,7 +167,7 @@
 
       <footer>
           <p class="footer-content">
-             Privacy . Terms . Advertising . Ad Choices. Cookies . More . Meta&copy;2022 .' 
+             Privacy.Terms. Advertising. Ad Choices. Cookies. More. Meta&copy;2022.
           </p>
       </footer>
 
@@ -181,14 +181,15 @@ export default {}
 
 <style lang="scss">
 .side-container {
-   // cursor: pointer;
+   // position: fixed;
+   // justify-content: left;
    padding: 10px 0;
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     background: rgb(236, 242, 245);
 
-  .container-list {
+  .container-list { 
    margin: auto;
     padding: 12px;
     border-bottom: 1px gray solid;
@@ -199,6 +200,7 @@ export default {}
     width: 310px;
 
     &:hover {
+      cursor: pointer;
     background: #E3E5E8 !important;   
     border-radius: 15px;
   }
@@ -221,6 +223,7 @@ export default {}
    width: 310px;
   }
   .left-friends:hover {
+   cursor: pointer;
     background: #E3E5E8 !important;
     border-radius: 15px;
   }
@@ -232,7 +235,7 @@ export default {}
   }
   .left-watch:hover {
     background: #E3E5E8 !important;
-    
+    cursor: pointer;
     border-radius: 15px;
   }
   .left-most-recent {
@@ -243,7 +246,7 @@ export default {}
   }
   .left-most-recent:hover {
     background:#E3E5E8 !important;
-   
+   cursor: pointer;
     border-radius: 15px;
   }
   .left-groups {
@@ -254,7 +257,7 @@ export default {}
   }
   .left-groups:hover {
     background: #E3E5E8 !important;
-   
+   cursor: pointer;
     border-radius: 15px;
   }
   .left-marketplace {
@@ -266,7 +269,7 @@ export default {}
   }
   .left-marketplace:hover {
     background: #E3E5E8 !important;
-   
+   cursor: pointer;
     border-radius: 15px;
   }
   .left-pages {
@@ -278,7 +281,7 @@ export default {}
   }
   .left-pages:hover {
     background: #E3E5E8 !important;
-   
+   cursor: pointer;
     border-radius: 15px;
   }
   .left-memories {
@@ -290,7 +293,7 @@ export default {}
   }
   .left-memories:hover {
     background: #E3E5E8 !important;
-   
+   cursor: pointer;
     border-radius: 15px;
   }
   .left-semore {
@@ -308,7 +311,7 @@ export default {}
   }
   .left-semore:hover {
     background: #E3E5E8 !important;
-    
+    cursor: pointer;
     border-radius: 15px;
   }
   h5 {
@@ -352,7 +355,7 @@ export default {}
     }
     .left-aha:hover {
       background: #E3E5E8 !important;
-     
+     cursor: pointer;
       border-radius: 15px;
     }     
    

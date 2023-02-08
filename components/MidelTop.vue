@@ -144,6 +144,7 @@ export default {
             }
 
             .strong-img {
+                cursor: pointer;
                 width: 58px;
                 height: 51px;
                 border-radius: 50%;
@@ -159,6 +160,7 @@ export default {
             margin-bottom: -15px;
 
             .live-video {
+                cursor: pointer;
                 display: flex;
                 text-align: center;
                 align-items: center;
@@ -195,6 +197,7 @@ export default {
         border-radius: 10px;
 
         .post-section {
+            cursor: pointer;
             display: flex;
             margin-bottom:6px;
 
@@ -249,6 +252,7 @@ export default {
 
 
                 .wish-match {
+                    cursor: pointer;
                     align-items: center;
                     justify-content: space-between;
                     padding: 5px 15px;

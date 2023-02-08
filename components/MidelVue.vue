@@ -53,10 +53,10 @@
 
                     <div class="grid-content">
                         <div class="position-img">
-                            <img src="../img/mark_zuckerberg.png" alt="">
+                            <img src="https://d.newsweek.com/en/full/2018525/mark-zuckerberg-midterms-donations.jpg" alt="">
                             <img class="small-profile" src="../img/mark_zuckerberg.png" alt="">
                             <p class="grid-title">
-                                Mark Zuckerberg
+                             Zuckerberg
                             </p>
                         </div>
 
@@ -91,7 +91,7 @@
                             <img src="../img/friends.jpg" alt="">
                             <img class="small-profile" src="../img/friends.jpg" alt="">
                             <p class="grid-title">
-                                With My Friends
+                                 My Friends
                             </p>
                         </div>
 
@@ -131,7 +131,8 @@ export default {
 
 <style lang="scss">
 div {
-    // cursor: pointer;
+    // position: fixed;
+    // justify-content: center;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -145,10 +146,8 @@ div {
         margin-top: 1.5rem;
 
         .midel-content {
-            //  padding: 10px;
             font-weight: bold;
             color: rgb(117, 114, 114);
-            //  border-bottom: 1px rgb(165, 162, 162) solid;
         }
 
         .midel-header {
@@ -162,6 +161,7 @@ div {
         }
 
         .stories {
+            cursor: pointer;
             display: flex;
             text-align: center;
             justify-content: center;
@@ -177,6 +177,7 @@ div {
         }
 
         .reels {
+            cursor: pointer;
             display: flex;
             text-align: center;
             justify-content: center;
@@ -189,6 +190,7 @@ div {
         }
 
         .rooms {
+            cursor: pointer;
             display: flex;
             text-align: center;
             justify-content: center;
@@ -224,15 +226,18 @@ div {
                 }
 
                 .plus-img {
+                    cursor: pointer;
                     position: relative;
                     margin-top: -2rem !important;
                 }
 
                 .position-img {
+                 
                     position: relative;
-                    // margin-top: -3rem !important;
+                 
 
                     .small-profile {
+                        cursor: pointer;
                         position: absolute;
                         top: 5px;
                         left: 0;
@@ -270,7 +275,7 @@ div {
                     font-weight: bold;
                     position: absolute;
 
-                    left: 9px;
+                    left: 18px;
                     top: 10rem;
                 }
             }

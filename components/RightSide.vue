@@ -152,13 +152,15 @@ export default {
 
 <style lang="scss">
 .right-container {
+    // overflow: hidden;
+    // position: fixed;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 9px;
     display: flex;
     // text-align: center;
     // align-items: left;
-    justify-content: center;
+    justify-content: right;
     line-height: 0.8;
     padding-left: 11rem;
 
