@@ -173,7 +173,7 @@
       <div class="post-long-img">
         <p class="post-title-body">Feelings Better Now.,,Fulfil My Dreams.,.,.,
         </p>
-        <img src="https://glittering-fenglisu-411425.netlify.app/_nuxt/img/oxford01.5313cb3.jpg" alt="">
+        <img src="../img/fulfil dream.jpg" alt="">
       </div>
       <hr>
 
@@ -534,7 +534,7 @@
       <div class="post-long-img">
         <p class="post-title-body">Feelings Better The Beautiful Place in The World.,.,.,
         </p>
-        <img src="https://glittering-fenglisu-411425.netlify.app/_nuxt/img/thiland.145d1e4.jpg" alt="">
+        <img src="../img/iceland.jpg" alt="">
       </div>
       <hr>
 
