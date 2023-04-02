@@ -139,6 +139,11 @@
                <h5>AHA</h5>
          </div>
 
+         <div class="left-school">
+              <img src="../h,g,b,l.jpg" alt="">
+                     <h5> H.G.B.L Rouha High School, Raigonj, Sirajgonj</h5>
+         </div>
+
          <div class="left-semore">
             <svg
                fill="currentColor"
@@ -295,6 +300,22 @@ export default {}
     background: #E3E5E8 !important;
    cursor: pointer;
     border-radius: 15px;
+  }
+  .left-school {
+   display: flex;
+    text-align: center;
+    align-items: center;
+  }
+  .left-school img {
+   height:36px;
+   width:36px;
+   border-radius: 100%;
+  }
+  .left-school:hover {
+    background: #E3E5E8 !important;
+   cursor: pointer;
+    border-radius: 15px;
+    width: 80%;
   }
   .left-semore {
     display: flex;

@@ -12,7 +12,7 @@
                     <div class="live-video">
                         <i data-visualcompletion="css-img" class="video-img"
                             style="background-image:url('https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/Ai0H6JxlZ3W.png');background-position:0 -33px;background-size:auto;width:24px;height:24px;background-repeat:no-repeat;display:inline-block"></i>
-                        <p class="live-content"> Live Video</p>
+                            <p class="live-content"> Live Video</p>
                     </div>
                     <div class="live-video">
                         <i data-visualcompletion="css-img" class=""
@@ -79,6 +79,8 @@
 </template>
 
 <script>
+// import firebase from "firebase/compat/app";
+// import "firebase/compat/auth";
 import MidelPost from './MidelPost.vue';
 export default {
     components: {
@@ -86,24 +88,32 @@ export default {
     },
     data() {
         return {
+            title: '',
             text: '',
             email: '',
             userData: [
                 {
-                    id: 1,
-                    title: 'Md Manik Sheak',
+                    title: 'Md Manik Sheakh',
                     email: 'mdmanik081498@gmail.com',
-                    post: " I Am a FrontEnd Developer"
+                    post: " I Am FrontEnd Developer "
                 }
             ]
         }
     },
     methods: {
         addItems() {
-            this.userData.push({ post: this.text, email: this.email });
-            this.text = ''
+            this.userData.push({ post: this.text, email: this.email, title: this.title });
+            this.text = '';
+            this.name = '';
+            this.email= ''
         }
-    }
+    },
+
+    // mounted() {
+    //    firebase.auth().onAuthStateChanged( userData => {
+    //      this.userData = userData;
+    //    })
+    // }
 }
 
 </script>
