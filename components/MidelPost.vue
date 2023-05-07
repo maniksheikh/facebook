@@ -173,7 +173,7 @@
       <div class="post-long-img">
         <p class="post-title-body">Feelings Better Now.,,Fulfil My Dreams.,.,.,
         </p>
-        <img src="../img/fulfil dream.jpg" alt="">
+         <img src="../img/fulfil .jpg" alt="">
       </div>
       <hr>
 
@@ -244,7 +244,7 @@
       <div class="post-long-img">
         <p class="post-title-body">That`s Very Beautiful Place.,,.,.,.,
         </p>
-          <img src="../img/sad-news sirajgonj.jpg" alt="">
+           <img src="../img/beautiful place.jpg" alt="">
       </div>
       <hr>
 
@@ -318,7 +318,7 @@
       <div class="post-long-img">
         <p class="post-title-body">Feelings Better Now.,,.,.,.,
         </p>
-          <img src="../img/IMG_20221031_215233.jpg" alt="">
+         <img src="../img/fellings better.jpg" alt=""> 
       </div>
       <hr>
 
@@ -674,9 +674,9 @@
       </div>
 
       <div class="post-long-img">
-        <p class="post-title-body">Not Accepteble For this,,. Very hard Taching Moment,.,.,
+        <p class="post-title-body">Not Acceptable For this,,. Very hard Taching Moment,.,.,
         </p>
-         <img src="../img/sad img.jpg" alt="">
+         <img src="../img/sad news .jpg" alt="">
       </div>
       <hr>
 
