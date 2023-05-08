@@ -1,5 +1,10 @@
 <template>
   <div id="login-form">
+    <div class="title-box">
+      <h2>Facebook</h2>
+      <p>Facebook helps you connect and share with the pepole in your life.</p>
+       
+    </div>
     <div class="container">
       <label for="name">
         <b> UserName</b>
@@ -7,7 +12,7 @@
       <input type="text" v-model="name" placeholder="Enter Username" name="name" required>
 
       <label for="email">
-        <b>Email: </b> 
+        <b>Email: </b>
       </label>
       <input type="text" v-model="email" placeholder="Enter Email or PhoneNumber" name="email" required>
 
@@ -16,19 +21,16 @@
       </label>
       <input type="password" v-model="password" placeholder="Enter Password" required>
 
-      <button class="sign-in" type="submit" @click="login">Sign in Page</button>
+      <button class="sign-in" type="submit" @click="login">Log In Page</button>
+      <a href="#">Forgotten Password?</a>
+       <hr>
+      <div class="create-new-btn">
+      Create New Account
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <span class="password">Forgot
-        <a href="#">password?</a>
-      </span>
     </div>
-
-    <h3> Create new Account</h3>
+   
   </div>
-
 </template>
 <script>
 import firebase from "firebase/compat/app";
@@ -48,7 +50,7 @@ export default {
 
     login() {
       try {
-        firebase 
+        firebase
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password)
         alert('Successfully registered! Please login.');
@@ -71,30 +73,55 @@ export default {
 <style scoped>
 /* Bordered form */
 #login-form {
-  width: 700px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  width:900px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
+  padding: 4rem;
+  /* background: white !important; */
 }
 
 form {
   border: 3px solid #f1f1f1;
 }
 
+.title-box {
+   line-height:1;
+   align-items: center;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #005FDB;
+}
+
+p {
+  font-size: 26px;
+  font-weight: normal;
+  color: #000;
+}
+
 /* Full-width inputs */
 input[type=text],
 input[type=password] {
+  border-radius: 5px;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid #b3adad;
   box-sizing: border-box;
+  background: #faf9f9;
 }
 
 /* Set a style for all buttons */
 button {
-  background-color: #04AA6D;
+  border-radius: 40px;
+  background-color: #005FDB;
+  transition: 2s;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -130,10 +157,42 @@ button:hover {
 
 /* Add padding to containers */
 .container {
-  /* padding-right:25px; */
+  background: white !important;
+  padding: 20px;
+  border-radius: 10px;
+  margin-left:10rem;
   margin-top: 5px;
+  box-shadow: 0px 2px 10px 1px gray;
 }
 
+a {
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  padding: 10px 6.6rem;
+}
+
+.create-new-btn {
+  margin-top: 1rem !important;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: #40BC27 !important;
+  color: white !important;
+  padding: 15px 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 60%;
+  margin: auto;
+}
+.create-new-btn:hover {
+  background: #1a4b10;
+  transition: 2s;
+}
 /* The "Forgot password" text */
 span.password {
   float: right;
