@@ -3,7 +3,7 @@
     <div class="title-box">
       <h2>Facebook</h2>
       <p>Facebook helps you connect and share with the pepole in your life.</p>
-       
+
     </div>
     <div class="container">
       <label for="name">
@@ -22,14 +22,20 @@
       <input type="password" v-model="password" placeholder="Enter Password" required>
 
       <button class="sign-in" type="submit" @click="login">Log In Page</button>
-      <a href="#">Forgotten Password?</a>
-       <hr>
+      <div class="forget-pass">
+        Forgotten Password?
+      </div>
+
+      <hr>
       <div class="create-new-btn">
-      Create New Account
-    </div>
+        <button class="btn-creates">
+          Create New Account
+        </button>
+     
+      </div>
 
     </div>
-   
+
   </div>
 </template>
 <script>
@@ -75,7 +81,7 @@ export default {
 #login-form {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  width:900px;
+  width: 800px;
   align-items: center;
   justify-content: space-between;
   margin: auto;
@@ -88,8 +94,8 @@ form {
 }
 
 .title-box {
-   line-height:1;
-   align-items: center;
+  line-height: 1;
+  align-items: center;
 }
 
 h2 {
@@ -118,7 +124,8 @@ input[type=password] {
 }
 
 /* Set a style for all buttons */
-button {
+.sign-in
+ {
   border-radius: 40px;
   background-color: #005FDB;
   transition: 2s;
@@ -160,39 +167,38 @@ button:hover {
   background: white !important;
   padding: 20px;
   border-radius: 10px;
-  margin-left:10rem;
+  margin-left: 10rem;
   margin-top: 5px;
   box-shadow: 0px 2px 10px 1px gray;
 }
 
-a {
+.forget-pass {
+  color: blue;
+  padding-top: 5px;
   text-decoration: none;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  padding: 10px 6.6rem;
+  text-align: center !important;
+  font-size: 15px;
 }
 
 .create-new-btn {
-  margin-top: 1rem !important;
+  text-align: center !important;
+}
+.btn-creates 
+{
+  display: inline-block;
   border-radius: 15px;
-  cursor: pointer;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  background: #40BC27 !important;
-  color: white !important;
-  padding: 15px 10px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  width: 60%;
-  margin: auto;
-}
-.create-new-btn:hover {
-  background: #1a4b10;
+  background-color: #40BC27;
   transition: 2s;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
 }
+
+
 /* The "Forgot password" text */
 span.password {
   float: right;
