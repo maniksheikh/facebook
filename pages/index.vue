@@ -9,17 +9,17 @@
       <label for="name">
         <b> UserName</b>
       </label>
-      <input type="text" v-model="name" placeholder="Enter Username" name="name" required>
+      <input v-model="name" type="text"  placeholder="Enter Username" name="name" required>
 
       <label for="email">
         <b>Email: </b>
       </label>
-      <input type="text" v-model="email" placeholder="Enter Email or PhoneNumber" name="email" required>
+      <input v-model="email" type="text"  placeholder="Enter Email or PhoneNumber" name="email" required>
 
       <label for="password">
         <b>Password:</b>
       </label>
-      <input type="password" v-model="password" placeholder="Enter Password" required>
+      <input v-model="password" type="password"  placeholder="Enter Password" required>
 
       <button class="sign-in" type="submit" @click="login">Log In Page</button>
       <div class="forget-pass">
@@ -86,7 +86,6 @@ export default {
   justify-content: space-between;
   margin: auto;
   padding: 4rem;
-  /* background: white !important; */
 }
 
 form {
@@ -123,7 +122,6 @@ input[type=password] {
   background: #faf9f9;
 }
 
-/* Set a style for all buttons */
 .sign-in
  {
   border-radius: 40px;
@@ -137,16 +135,15 @@ input[type=password] {
   width: 100%;
 }
 
-/* Add a hover effect for buttons */
 button:hover {
-  opacity: 0.8;
+  opacity: 0.6;
+  color: #000;
 }
 
 .sign-in {
   font-size: 1rem;
 }
 
-/* Extra style for the cancel button (red) */
 .cancelbtn {
   margin-left: 15px;
   width: auto;
@@ -155,14 +152,12 @@ button:hover {
   border-radius: 10px;
 }
 
-/* Center the avatar image inside this container */
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
 }
 
 
-/* Add padding to containers */
 .container {
   background: white !important;
   padding: 20px;
