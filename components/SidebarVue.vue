@@ -186,13 +186,11 @@ export default {}
 
 <style lang="scss">
 .side-container {
-   // position: fixed;
-   // justify-content: left;
    padding: 10px 0;
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    background: rgb(236, 242, 245);
+    background: #f0f2f5;
 
   .container-list { 
    margin: auto;

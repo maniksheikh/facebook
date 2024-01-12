@@ -105,11 +105,7 @@
       </div>
 
       <div class="nav-right">
-        <div class="right-profile">
-          <img class="right-img" src="../img/manik.jpg" alt="" />
-          <p class="manik">Md. Manik</p>
-        </div>
-
+        
         <div class="nav-right-content">
           <div class="menu">
             <svg
@@ -161,19 +157,10 @@
             </svg>
           </div>
 
-          <div class="account">
-            <svg
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              width="1em"
-              height="1em"
-              class="x1lliihq x1k90msu x2h7rmj x1qfuztq x198g3q0 x1qx5ct2 xw4jnvo"
-            >
-              <path
-                d="M10 14a1 1 0 0 1-.755-.349L5.329 9.182a1.367 1.367 0 0 1-.205-1.46A1.184 1.184 0 0 1 6.2 7h7.6a1.18 1.18 0 0 1 1.074.721 1.357 1.357 0 0 1-.2 1.457l-3.918 4.473A1 1 0 0 1 10 14z"
-              ></path>
-            </svg>
-          </div>
+          <div class="right-profile">
+          <img class="right-img" src="../img/manik.jpg" alt="" />
+    
+        </div>
         </div>
       </div>
     </navber>
@@ -194,8 +181,12 @@ export default {}
   .navber {
     display: flex;
     justify-content: space-between;
-    height: 100%;
-    // margin-top: -5px;
+    height: 55px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
   }
 
   .nav-left {
@@ -203,6 +194,7 @@ export default {}
     text-align: center;
     align-items: center;
     justify-content: flex-start;
+    margin-left: 8px;
 
     .nav-logo-img {
       padding: 5px 0;
@@ -224,10 +216,12 @@ export default {}
     align-items: center;
     justify-content: center;
     background: #ebeff5;
-    height: 40px;
+    height: 39px;
     width: 100%;
     color: gray;
     border-radius: 30px;
+    margin-left: 5px;
+    margin-top: 5px;
   }
 
   .serch-input .search-icon {
@@ -248,7 +242,7 @@ export default {}
     outline: none;
     border: none;
     width: 100%;
-    background: none;
+    background: none; 
   }
 
   .nav-middle {
@@ -261,15 +255,16 @@ export default {}
 
   .nav-middle svg {
     justify-content: space-between;
-    padding: 0 15px 0 3.5rem !important;
-    margin-right: 2.5rem;
+    margin: auto;
+    padding: 12px 3rem  !important;
     font-size: 2rem !important;
+    margin-top: 6px;
   }
 
   .home svg {
     color: #1b74e4;
-    // border-bottom: 2px  blue solid;
-    width: 50%;
+    width: 30%;
+    border-bottom: 4px #1b74e4 solid;
   }
 
   .nav-right {
@@ -278,11 +273,11 @@ export default {}
     text-align: center;
     justify-content: center;
     align-items: center;
+    margin-top: 5px;
   }
 
   .nav-right svg {
-    padding: 0 10px 0 !important;
-    margin: 10px;
+    padding: 0 8px 0 !important;
     font-size: 1.3rem !important;
   }
 
@@ -290,25 +285,20 @@ export default {}
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 10px;
   }
 
   .right-img {
     background: black !important;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 100%;
-  }
-
-  .manik {
-    margin-left: 5px;
-    font-weight: bold;
   }
 
   .nav-right-content {
     display: flex;
     text-align: center;
     justify-content: center;
+    margin-right: 10px;
   }
 
   .nav-right-content svg {
@@ -316,7 +306,6 @@ export default {}
     background: rgb(230, 231, 231);
     border-radius: 60%;
     height: 40px;
-    widows: 40px;
   }
 
   .nav-right-content svg:hover {

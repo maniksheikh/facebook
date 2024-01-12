@@ -33,7 +33,7 @@ width: 100%;
 .flex-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background:#F0F2F5 ;
+  background: #f0f2f5 ;
   grid-gap: 2rem;
 }
 
