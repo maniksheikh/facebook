@@ -21,7 +21,7 @@
               style="
                 background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/Ai0H6JxlZ3W.png');
                 background-position: 0 -33px;
-                background-size: auto;
+                background-size: cover;
                 width: 24px;
                 height: 24px;
                 background-repeat: no-repeat;
@@ -67,7 +67,7 @@
     </div>
 
     <!-- Post Midddle site  -->
-    <div class="post" v-for="item in userData" :key="item.id">
+    <div v-for="item in userData" :key="item.id" class="post">
       <div class="post-body">
         <div class="post-section">
           <img src="../img/icons8-male-user-50.png" alt="" />
@@ -163,6 +163,13 @@ export default {
       ],
     }
   },
+  // mounted() {
+  //     firebase.auth().onAuthStateChanged( userData => {
+  //      this.userData = userData;
+  //      console.log(userData);
+  //     });
+      
+  //  },
   methods: {
     addItems() {
       this.userData.push({
@@ -174,13 +181,7 @@ export default {
       this.name = ''
       this.email = ''
     },
-  },
-
-  // mounted() {
-  //    firebase.auth().onAuthStateChanged( userData => {
-  //      this.userData = userData;
-  //    })
-  // }
+  }, 
 }
 </script>
 
@@ -189,7 +190,7 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
   margin-top: 14px;
   border: 1px #e4e6e9 solid;
   border-radius: 10px;
@@ -203,19 +204,20 @@ export default {
       align-items: center;
       text-align: center;
       border-bottom: 1px rgb(167, 163, 163) solid;
-      padding-bottom: 15px;
+       padding-bottom: 15px;
 
       input {
         cursor: pointer;
+        font-family: inherit;
         padding: 10px;
         margin-left: 1rem;
         width: 100%;
-        background: #e4e6e9;
+        background: #f0f2f5;
         color: black;
         border-radius: 15px;
-        padding-left: 4rem;
+        padding-left:1.4rem;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 15px;
         border: none;
       }
 
@@ -224,7 +226,8 @@ export default {
         width: 58px;
         height: 51px;
         border-radius: 50%;
-        padding-top: 5px;
+        margin-top: 5px;
+        margin-left: 5px;
       }
     }
 
@@ -246,11 +249,11 @@ export default {
         line-height: 0;
 
         .live-content {
-          padding: 5px 15px;
+          padding: 5px 12px;
         }
 
         &:hover {
-          background: #f2f2f2;
+          background:#ffffff ;
           border-radius: 8px;
           filter: brightness(0.9);
         }

@@ -35,6 +35,7 @@ width: 100%;
   grid-template-columns: repeat(3, 1fr);
   background: #f0f2f5 ;
   grid-gap: 2rem;
+  margin: auto;
 }
 
 }
