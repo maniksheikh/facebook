@@ -1,20 +1,31 @@
 <template>
-    <div class="main-container">
-         <AppHeaderVue></AppHeaderVue>
-         <nuxt></nuxt>
+  <div>
+    <AppHeaderVue />
+    <div>
+      <Nuxt class="nuxt-container" />
     </div>
+  </div>
 </template>
 
 <script>
- import AppHeaderVue from '~/components/AppHeaderVue.vue';
- 
-  export default {
+import AppHeaderVue from '~/components/AppHeaderVue.vue';
 
-    components: {
-      AppHeaderVue
-     
-    }
-   
-  }
- 
+export default {
+  components: {
+    AppHeaderVue,
+  },
+}
 </script>
+
+    AppHeaderVue
+<style   >
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.nuxt-container {
+  margin-top: 60px;
+}
+</style>

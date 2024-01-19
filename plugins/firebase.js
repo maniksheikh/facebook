@@ -14,3 +14,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+export default function ({ store }) {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      store.commit("setUser", user);
+    } else {
+      store.commit("setUser", null);
+    }
+  });
+}

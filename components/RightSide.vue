@@ -1,296 +1,343 @@
 <template>
-  <div class="right-container">
-    <div class="right-container-body">
-      <p class="sponsor-header">Sponsored</p>
-      <div class="sponsor-body">
-        <img
-          src="https://glittering-fenglisu-411425.netlify.app/_nuxt/img/architecture.b5fbfbe.jpg"
-          alt=""
-        />
-        <div class="sponsor-body-content">
-          <p class="sponsor-title">
-            twelve open architecture competition architecturecompetitions.com
-          </p>
-          <!-- <p class="name-title">birthday is today.</p> -->
+  <div class="right-sidebar">
+    <div class="sponsored">
+      <span class="title">Sponsored</span>
+      <div class="items">
+        <img src="~/assets/image/architecture.jpg" alt="" />
+        <div class="content">
+          <span>twelve open architecture competition</span>
+          <a href="#">architecturecompetitions.com</a>
+        </div>
+        <button class="dots-icon btn">
+          <svg
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+            focusable="false"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            width="25"
+            height="25"
+            data-testid="MoreHorizIcon"
+          >
+            <path
+              d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="items">
+        <img src="~/assets/image/participate.jpg" alt="" />
+        <div class="content">
+          <span>Participate!</span>
+          <a href="#">naturajazz.org</a>
+        </div>
+        <button class="dots-icon btn">
+          <svg
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+            focusable="false"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            width="25"
+            height="25"
+            data-testid="MoreHorizIcon"
+          >
+            <path
+              d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="pages">
+      <p>Your Pages and profiles</p>
+      <button class="btn">
+        <svg
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+          focusable="false"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          data-testid="MoreHorizIcon"
+        >
+          <path
+            d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div class="contact">
+      <div class="items">
+        <span>Contact</span>
+        <div class="btn-container">
+          <button class="btn">
+            <svg
+              fill="currentColor"
+              viewBox="0 0 16 16"
+              width="15"
+              height="15"
+              class="b6ax4al1 m4pnbp5e somyomsx ahndzqod gnhxmgs4 eohcrkr5 akh3l2rg"
+            >
+              <g fill-rule="evenodd" transform="translate(-448 -544)">
+                <path
+                  d="M457.25 552.5H455v2.25a.75.75 0 0 1-1.5 0v-2.25h-2.25a.75.75 0 0 1 0-1.5h2.25v-2.25a.75.75 0 0 1 1.5 0V551h2.25a.75.75 0 0 1 0 1.5m6.38-4.435a.62.62 0 0 0-.64.047l-2.49 1.634v-1.394a1.854 1.854 0 0 0-1.852-1.852l-8.796.002a1.854 1.854 0 0 0-1.851 1.852v6.793c0 1.021.83 1.852 1.852 1.852l1.147-.002h7.648a1.854 1.854 0 0 0 1.852-1.851v-1.392l2.457 1.61a.641.641 0 0 0 .673.071.663.663 0 0 0 .37-.601v-6.167c0-.26-.142-.49-.37-.602"
+                ></path>
+              </g>
+            </svg>
+          </button>
+          <button class="btn">
+            <svg
+              fill="currentColor"
+              viewBox="0 0 16 16"
+              width="15"
+              height="15"
+              class="b6ax4al1 m4pnbp5e somyomsx ahndzqod gnhxmgs4 eohcrkr5 akh3l2rg"
+            >
+              <g fill-rule="evenodd" transform="translate(-448 -544)">
+                <g fill-rule="nonzero">
+                  <path
+                    d="M10.743 2.257a6 6 0 1 1-8.485 8.486 6 6 0 0 1 8.485-8.486zm-1.06 1.06a4.5 4.5 0 1 0-6.365 6.364 4.5 4.5 0 0 0 6.364-6.363z"
+                    transform="translate(448 544)"
+                  ></path>
+                  <path
+                    d="M10.39 8.75a2.94 2.94 0 0 0-.199.432c-.155.417-.23.849-.172 1.284.055.415.232.794.54 1.103a.75.75 0 0 0 1.112-1.004l-.051-.057a.39.39 0 0 1-.114-.24c-.021-.155.014-.356.09-.563.031-.081.06-.145.08-.182l.012-.022a.75.75 0 1 0-1.299-.752z"
+                    transform="translate(448 544)"
+                  ></path>
+                  <path
+                    d="M9.557 11.659c.038-.018.09-.04.15-.064.207-.077.408-.112.562-.092.08.01.143.034.198.077l.041.036a.75.75 0 0 0 1.06-1.06 1.881 1.881 0 0 0-1.103-.54c-.435-.058-.867.018-1.284.175-.189.07-.336.143-.433.2a.75.75 0 0 0 .624 1.356l.066-.027.12-.061z"
+                    transform="translate(448 544)"
+                  ></path>
+                  <path
+                    d="m13.463 15.142-.04-.044-3.574-4.192c-.599-.703.355-1.656 1.058-1.057l4.191 3.574.044.04c.058.059.122.137.182.24.249.425.249.96-.154 1.41l-.057.057c-.45.403-.986.403-1.411.154a1.182 1.182 0 0 1-.24-.182zm.617-.616.444-.444a.31.31 0 0 0-.063-.052c-.093-.055-.263-.055-.35.024l.208.232.207-.206.006.007-.22.257-.026-.024.033-.034.025.027-.257.22-.007-.007zm-.027-.415c-.078.088-.078.257-.023.35a.31.31 0 0 0 .051.063l.205-.204-.233-.209z"
+                    transform="translate(448 544)"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </button>
+          <button class="btn">
+            <svg
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+              focusable="false"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              width="25"
+              height="25"
+              data-testid="MoreHorizIcon"
+            >
+              <path
+                d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+              ></path>
+            </svg>
+          </button>
         </div>
       </div>
+      <ul>
+        <li class="item">
+          <a v-for="item in userData" :key="item.id" href="#">
+            <div class="user">
+              <img :src="item.url" alt="" class="image" />
+              <span class="active"></span>
+            </div>
 
-      <p class="content-header">Birthdays</p>
-      <div class="birthday-body">
-        <i
-          data-visualcompletion="css-img"
-          class="x1b0d499 xl1xv1r"
-          style="
-            height: 36px;
-            width: 36px;
-            background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/xNxnzn9NQYM.png');
-            background-position: 0 0;
-            background-size: auto;
-            background-repeat: no-repeat;
-            display: inline-block;
-          "
-        ></i>
-        <div class="birthday-body-content">
-          <p class="name">Md: Mahmudul Islam`s</p>
-          <p class="name-title">birthday is today.</p>
-        </div>
-      </div>
-      <hr />
-      <div class="contact-body">
-        <div class="contact-content">
-          <p class="contact-title">Contacts</p>
-          <div class="img-title">
-            <img class="video-img" src="../img/video-solid.svg" alt="" />
-            <img class="search-img" src="../img/icons8-search.svg" alt="" />
-            <img class="more-img" src="../img/icons8-more-24.png" alt="" />
-          </div>
-        </div>
-
-        <div class="contact-men">
-          <img class="men-profile" src="../img/nasim.jpg" alt="" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Nasim Uddin</p>
-        </div>
-
-        <div class="contact-men">
-          <img class="men-profile" src="../img/jubayer.jpg" alt="" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Zubayer Sheikh</p>
-        </div>
-        <div class="contact-men">
-          <img src="../img/shohag.jpg" alt="" class="men-profile" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Safayet Shohag</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/monir.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Sm Monir Sheikh</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/shamim.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Shamim Hosain</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/siam.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Siyam Sheikh</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/nasir.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Nasir Uddin</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/Masud.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Masud Rana</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/abir.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Abir Hasan Sani</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/shiblu.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Jibon Ahmed Shiblu</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/mamu.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Mahmudul Islam</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/Rohan.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Rohan Sheikh</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/rabbi.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Rabbi Hosain</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/akram.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Akram Sheikh</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/Nur.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Mst Nur Saniya</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/Shuvo.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Mehidi Hasan Shuvo</p>
-        </div>
-        <div class="contact-men">
-          <img class="men-profile" src="../img/Foysal.jpg" />
-          <div class="dash-active"></div>
-          <p class="men-title">Md Foysal Sheikh</p>
-        </div>
-      </div>
+            <span>{{ item.name }} </span>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import mamu from '../assets/image/active-img/mamu.jpg'
+import nasim from '../assets/image/active-img/nasim.jpg'
+import monir from '../assets/image/active-img/monir.jpg'
+import zubayer from '../assets/image/active-img/jubayer.jpg'
+import akram from '../assets/image/active-img/akram.jpg'
+import rabbi from '../assets/image/active-img/rabbi.jpg'
+import abir from '../assets/image/active-img/abir.jpg'
+import siam from '../assets/image/active-img/siam.jpg'
+import siblue from '../assets/image/active-img/shiblu.jpg'
+import masud from '../assets/image/active-img/Masud.jpg'
+import rohan from '../assets/image/active-img/Rohan.jpg'
+export default {
+  data() {
+    return {
+      userData: [
+        {
+          id: 1,
+          name: 'Md Mahmudul islam',
+          url: mamu,
+        },
+        {
+          id: 2,
+          name: 'Md Nasim Uddin',
+          url: nasim,
+        },
+        {
+          id: 3,
+          name: 'Sm Monir Sheikh',
+          url: monir,
+        },
+        {
+          id: 4,
+          name: 'Md Zubayer Sheikh',
+          url: zubayer,
+        },
+        {
+          id: 5,
+          name: 'Md Akram Sheikh',
+          url: akram,
+        },
+        {
+          id: 6,
+          name: 'Rabbi Hossain',
+          url: rabbi,
+        },
+        {
+          id: 7,
+          name: 'Md. Abir Sheak',
+          url: abir,
+        },
+        {
+          id: 8,
+          name: 'Md Siam Sheikh',
+          url: siam,
+        },
+        {
+          id: 9,
+          name: 'Md Jibon Ahmed Shiblu',
+          url: siblue,
+        },
+        {
+          id: 10,
+          name: 'Md Masud Rana',
+          url: masud,
+        },
+        {
+          id: 11,
+          name: 'Md Eohan Sheikh',
+          url: rohan,
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style lang="scss">
-.right-container {
-  position: fixed;
-  top: 50px;
-  left: 0;
-  width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 9px;
-  display: flex;
-  justify-content: right;
-  line-height: 0.8;
-  padding-left: 11rem;
-
-  .right-container-body {
-    padding-right: 10px;
-
-    .sponsor-header {
-      font-size: 18px;
-      color: gray;
-      font-weight: bold;
+.right-sidebar {
+  .sponsored {
+    .title {
+      font-size: 1.1rem;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+      padding: 0.5rem 0;
+      color: #5a5a5c;
     }
-
-    .sponsor-body {
-      .sponsor-body-content {
-        .sponsor-title {
-          font-size: 17px;
-          line-height: 1;
-          color: rgb(146, 139, 139);
-        }
-      }
-    }
-
-    .content-header {
-      font-size: 18px;
-      color: gray;
-      font-weight: bold;
-    }
-
-    .birthday-body {
-      display: flex !important;
+    .items {
+      margin-top: 0.5rem;
+      display: flex;
       align-items: center;
-      justify-content: space-between !important;
-
+      gap: 0.5rem;
+      position: relative;
+      box-sizing: border-box;
+      cursor: pointer;
       &:hover {
-        background: rgb(212, 216, 214);
-        cursor: pointer;
-        border-radius: 10px;
+        background: #e4e6e9;
+        .dots-icon {
+          opacity: 1;
+        }
       }
-
-      .birthday-body-content {
-        display: flex;
-        padding: 6px 0 0 15px;
-        line-height: 0.6;
-
-        .name {
-          font-size: 16px;
-          font-weight: bold;
+      img {
+        width: 130px;
+        border-radius: 5px;
+      }
+      .content {
+        span {
+          font-weight: 400;
+          font-family: Arial, Helvetica, sans-serif;
         }
-
-        .name-title {
-          font-size: 15px;
-          padding-left: 15px;
+        a {
+          font-size: 0.9rem;
+          text-decoration: none;
+          color: #333;
+          display: block;
         }
+      }
+      .dots-icon {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 3px;
+        background: white;
+        border-radius: 50%;
+        opacity: 0;
       }
     }
-
-    .contact-body {
-      display: inline;
+  }
+  .pages {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.7rem 0;
+    padding: 0.7rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    p {
+      font-size: 1rem;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+  }
+  .contact {
+    .items {
+      display: flex;
       justify-content: space-between;
-
-      .contact-content {
+      .btn-container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-
-        .contact-title {
-          font-size: 17px;
-          font-weight: bold;
-          color: gray;
-        }
-
-        .img-title {
-          .video-img {
-            height: 20px;
-            width: 20px;
-            margin-right: 25px;
-
-            &:hover {
-              cursor: pointer;
-              background: #d1d3d6;
-              border-radius: 100%;
-            }
-          }
-
-          .search-img {
-            align-items: center;
-            margin-right: 15px;
-
-            &:hover {
-              cursor: pointer;
-              background: #d1d3d6;
-              border-radius: 100%;
-            }
-          }
-
-          .more-img {
-            // padding-left:5px;
-
-            &:hover {
-              cursor: pointer;
-              background: #d1d3d6;
-              border-radius: 100%;
-            }
-          }
-        }
+        gap: 1rem;
       }
-
-      .contact-men {
-        margin-top: 1px;
+      span {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1.1rem;
+      }
+    }
+    ul .item {
+      a {
         display: flex;
         align-items: center;
-        padding: 5px;
-
+        text-decoration: none;
+        gap: 0.7rem;
+        color: #333;
+        font-weight: 600;
+        padding: 0.4rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         &:hover {
-          background: #e3e5e8;
-          border-radius: 10px;
-          cursor: pointer;
+          background: #e4e6e9;
         }
-
-        .men-profile {
-          height: 45px;
-          width: 45px;
+        img {
+          width: 35px;
+          height: 35px;
+          background-size: cover;
+          object-fit: cover;
+          background-position: no-repeat;
           border-radius: 50%;
-          position: relative;
         }
 
-        .dash-active {
-          height: 10px;
-          width: 10px;
-          border-radius: 5px;
-          background: green;
-          top: 15px;
-          right: 9px;
+        .user {
           position: relative;
-        }
-
-        .men-title {
-          font-size: 16px;
-          color: rgb(66, 65, 65);
-          padding-left: 15px;
+          .active {
+            position: absolute;
+            bottom: 3px;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #31a24c;
+          }
         }
       }
     }
