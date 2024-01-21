@@ -7,8 +7,8 @@
             <svg
               fill="white"
               viewBox="0 0 20 20"
-              width="1em"
-              height="1em"
+              width="30px"
+              height="30px"
               class="b6ax4al1 btn-add m4pnbp5e somyomsx ahndzqod qsbzbi57 dmdr2h6l kgzac55p"
             >
               <g fill-rule="evenodd" transform="translate(-446 -350)">
@@ -38,11 +38,11 @@
           <button class="btn btnDiv-2">
             <img
               class="profile-pic"
-              src="https://pbs.twimg.com/profile_images/2236907019/images_400x400"
+              src="../assets/image/mark_zuckerberg.png"
               alt=""
             />
           </button>
-          <span class="title">Mark jukar bag</span>
+          <span class="title">Mark jukarbag</span>
         </div>
         <div class="box">
           <img
@@ -56,7 +56,7 @@
               alt=""
             />
           </button>
-          <span class="title">Sundar Pichail</span>
+          <span class="title">Sundar Pichai</span>
         </div>
         <div class="box">
           <img
@@ -74,17 +74,17 @@
         </div>
         <div class="box">
           <img
-            src="https://bareillycollege.org/wp-content/uploads/2022/07/bill-gate-768x503.jpeg"
+            src="../assets/image/elon-musk.jpg"
             alt=""
           />
           <button class="btn btnDiv-2">
             <img
               class="profile-pic"
-              src="https://media-exp1.licdn.com/dms/image/C5603AQERTD_EeJiGlA/profile-displayphoto-shrink_400_400/0/1661816468423?e=1667433600&v=beta&t=igZyDGrawNrlCITFHgNI0AFVRTJlof9f23DVPu6cS4Q"
+              src="../assets/image/elon-musk.jpg"
               alt=""
             />
           </button>
-          <span class="title">Bill gates</span>
+          <span class="title">Elon Musk</span>
         </div>
       </div>
     </div>
@@ -96,25 +96,30 @@
   
   <style lang="scss" scoped>
   .post-page {
+    margin-top: 10px;
     .story {
       display: flex;
       gap: 0.3rem;
   
       .box {
-        width: 150px;
-        height: 220px;
+        width: 140px;
+        height: 215px;
         display: flex;
         flex-direction: column;
         border: 1px solid rgba(196, 196, 196, 0.3);
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
         cursor: pointer;
         position: relative;
         &:hover {
           transform: scale(1.01);
         }
+        span {
+          position: absolute;
+          left: 20px;
+          bottom:0;
+          text-align: center;
+          padding-bottom: 3px;
+        }
+       
   
         img {
           width: 100%;
@@ -129,46 +134,12 @@
           border-bottom-left-radius: 10px;
           border-bottom-right-radius: 10px;
         }
-  
-        .title {
-          position: absolute !important;
-          bottom: 0px;
-          left: 0 !important;
-          padding: 0.5rem;
-          color: white;
-          z-index: 9999;
-          font-weight: 400;
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        }
-  
-        .text-center {
-          background: white;
-          border-bottom-left-radius: 10px;
-          border-bottom-right-radius: 10px;
-          padding-top: 1rem;
-          padding-bottom: 0.5rem;
-  
-          span {
-            font-size: 0.9rem;
-            font-weight: 600;
-            font-family: Arial, Helvetica, sans-serif;
-          }
-        }
-  
-        .btnDiv {
-          background: white;
-          padding: 3px;
-          border-radius: 35px;
-        }
-      
-  
         .btnDiv {
           position: absolute;
           left: 35%;
-          top: 70%;
-          padding: 0.3rem;
+          top: 75%;
           font-size: 1.3rem;
-          background: white !important;
+          background: white;
           border-radius: 50%;
         }
   
@@ -178,6 +149,40 @@
           outline: none;
           text-align: center;
         }
+  
+        .title {
+          text-align: center !important;
+          position: absolute !important;
+          bottom: 0px;
+          left: 5px !important;
+          padding: 0.5rem;
+          color: white;
+          z-index: 9999;
+          font-weight: 400;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+  
+        .text-center {
+          text-align: center;
+          justify-content: center;
+          background: white;
+          padding-top: 1rem;
+          padding-bottom: 0.5rem;
+  
+          span {
+            text-align: center !important;
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+        }
+        .btnDiv {
+          padding: 3px;
+          border-radius:100%;
+        }
+      
+  
+      
   
         .btn-add {
           border-radius: 50%;

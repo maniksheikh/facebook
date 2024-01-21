@@ -83,7 +83,7 @@ export default {
           password: this.user.password,
         })
 
-        await this.$router.push('/post')
+        await this.$router.push('/feed')
       } catch (error) {
         this.error = 'Failed login!'
       }

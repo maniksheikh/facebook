@@ -5,9 +5,10 @@
         <SidebarVue></SidebarVue>
       </div>
       <div class="feed-sidebar mt-2">
+        <PostSection></PostSection>
         <ItemsVue></ItemsVue>
         <CreatePostVue></CreatePostVue>
-        <PostSection></PostSection>
+        
       </div>
       <div class="right-sidebar mt-2">
         <RightSide></RightSide>

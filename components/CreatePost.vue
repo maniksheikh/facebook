@@ -3,13 +3,12 @@
     <div class="crete-post">
       <div class="flex">
         <img class="profile" src="../assets/image/male-face-avatar-logo.jpg" alt="" />
-
         <input
           id=""
           v-model="text"
           type="text"
           name=""
-          placeholder="what's on your mind,"
+          placeholder="what's on your mind,?"
           @change="addItem"
         />
       </div>
@@ -102,7 +101,7 @@
               <span class="title">{{ post.username }}</span>
             </div>
           </div>
-          <p>{{ post.post }}</p>
+          <p>{{ post.text }}</p>
 
           <div class="react-btn">
             <button class="btn btn-react">
@@ -392,7 +391,7 @@ export default {
   }
 }
 .post {
-  .items {
+  .item {
     .bio {
       .profile-img {
         border: 1px solid #ccc;
@@ -403,7 +402,7 @@ export default {
     }
   }
   p {
-    padding-left: 0.8rem;
+    padding-left: 3.3rem;
   }
 }
 @media screen and (max-width: 800px) {
