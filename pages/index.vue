@@ -3,7 +3,7 @@
     <div class="flex container">
       <div class="accounts">
         <div class="center-text">
-          <h1 class="title">facebook</h1>
+          <h1 class="title">Facebook</h1>
           <span>Recent Logins</span>
           <p>Click your picture or add an account.</p>
         </div>
@@ -151,12 +151,12 @@ export default {
       font-size: 28px;
       font-weight: 400;
       color: #1c1e21;
-      font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+      font-family:  Helvetica, Arial, sans-serif;
     }
     p {
       font-size: 1rem;
       font-weight: 600;
-      font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+      font-family: Helvetica, Arial, sans-serif;
       padding: 0.7rem 0;
       color: rgba(0, 0, 0, 0.6);
     }

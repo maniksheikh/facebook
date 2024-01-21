@@ -3,7 +3,7 @@
     <div class="modalBody">
       <div class="signin">
         <div class="signin-group">
-          <div v-if="error" class="error mt-3" >
+          <div v-if="error" class="error mt-3">
             {{ error }}
           </div>
           <div class="text-center title">
@@ -14,27 +14,24 @@
             alt=""
             class="cross-icon"
             @click="hideorderform"
-            
           />
           <div class="signinwrap">
             <form @submit.prevent="loginUser">
               <input
-              v-model="user.email"
+                v-model="user.email"
                 type="email"
                 placeholder="Email address or phone number"
-                
                 required
               />
               <input
-              v-model="user.password"
+                v-model="user.password"
                 type="password"
                 placeholder="Password"
-                
                 required
               />
               <div class="flex-check">
                 <div class="check">
-                  <input id="" type="checkbox"  name=""  />
+                  <input id="" type="checkbox" name="" />
                 </div>
                 <div>
                   <span>Remember password</span>
@@ -145,6 +142,7 @@ export default {
     cursor: pointer;
   }
   .title {
+    margin: 0 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2rem;
     padding: 1rem 0 !important;
