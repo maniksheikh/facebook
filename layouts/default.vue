@@ -17,12 +17,12 @@ export default {
 }
 </script>
 
-    AppHeaderVue
 <style   >
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
+  font-family: inherit;
 }
 
 .nuxt-container {

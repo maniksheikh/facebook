@@ -3,7 +3,7 @@
     <div class="sponsored">
       <span class="title">Sponsored</span>
       <div class="items">
-        <img src="~/assets/image/architecture.jpg" alt="" />
+        <img src="/assets/image/biggapon-img.jfif" alt="" />
         <div class="content">
           <span>twelve open architecture competition</span>
           <a href="#">architecturecompetitions.com</a>
@@ -25,7 +25,7 @@
         </button>
       </div>
       <div class="items">
-        <img src="~/assets/image/participate.jpg" alt="" />
+        <!-- <img src="~/assets/image/participate.jpg" alt="" /> -->
         <div class="content">
           <span>Participate!</span>
           <a href="#">naturajazz.org</a>

@@ -40,7 +40,7 @@
               >Date of birth
               <img
                 class="question-png"
-                src="~/assets/image/icons8-question-mark-24.png"
+                src="/assets/image/icons-question-mark-img.png"
                 alt=""
             /></a>
             <div class="flex">
@@ -65,7 +65,7 @@
               >Gender
               <img
                 class="question-png"
-                src="~/assets/image/icons8-question-mark-24.png"
+                src="/assets/image/icons-question-mark-img.pngg"
                 alt=""
             /></a>
             <div class="flex-items">
@@ -125,9 +125,9 @@ export default {
         email: '',
         password: '',
       },
-      selectedays: 18,
-      selectedmonths: 'Nov',
-      selectedYear: 2022,
+      selectedays: 20,
+      selectedmonths: 'Jan',
+      selectedYear: 2024,
       days: [
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
         21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,

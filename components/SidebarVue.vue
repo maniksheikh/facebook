@@ -3,7 +3,7 @@
     <div class="container-box">
       <ul>
         <li class="flex">
-          <img src="../assets/image/avatar.png" class="avatar" alt="" />
+          <img src="../assets/image/profile-img.jpg" class="avatar" alt="" />
 
           <span>{{ userName }}</span>
         </li>
@@ -12,7 +12,7 @@
         <li>
           <img
             class="gneimcpu p9wrh9lq"
-            src="../assets/image/friends.png"
+            src="../assets/image/friends.jpg"
             style="height: 36px; width: 36px"
             alt=""
           />
@@ -21,31 +21,31 @@
         <li>
           <img
             class="gneimcpu p9wrh9lq"
-            src="../assets/image/watch.png"
+            src="../assets/image/beautiful-you.jpg"
             style="height: 36px; width: 36px"
             alt=""
           />
-          <span>Watch</span>
+          <span>You</span>
         </li>
         <li>
           <img
             class="gneimcpu p9wrh9lq"
-            src="../assets/image/add-center.png"
+            src="../assets/image/elon-musk.jpg"
             style="height: 36px; width: 36px"
             alt=""
           />
-          <span>Ad Center</span>
+          <span>Elon Musk</span>
         </li>
         <li>
           <img
             class="gneimcpu p9wrh9lq"
-            src="../assets/image/groups.png"
+            src="../assets/image/mark_zuckerberg.png"
             style="height: 36px; width: 36px"
             alt=""
           />
-          <span>Groups</span>
+          <span>Mark Zukerberg</span>
         </li>
-        <li>
+        <!-- <li>
           <img
             class="gneimcpu p9wrh9lq"
             src="../assets/image/marketplace.png"
@@ -53,8 +53,8 @@
             alt=""
           />
           <span>Marketplace</span>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <img
             class="gneimcpu p9wrh9lq"
             src="../assets/image/memories.png"
@@ -62,8 +62,8 @@
             alt=""
           />
           <span>Memories</span>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <svg
           id="Layer_1"
             class="ml-1"
@@ -87,7 +87,7 @@
             </g>
           </svg>
           <span>Saved</span>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>

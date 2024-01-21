@@ -17,11 +17,11 @@
 </template>
 
 <script>
-import SidebarVue from "../components/SidebarVue.vue";
-import CreatePostVue from "../components/CreatePost.vue";
-import ItemsVue from "../components/ItemsVue.vue";
-import PostSection from "../components/PostSection";
-import RightSide from "../components/RightSide.vue";
+import SidebarVue from '../components/SidebarVue.vue'
+import CreatePostVue from '../components/CreatePost.vue'
+import ItemsVue from '../components/ItemsVue.vue'
+import PostSection from '../components/PostSection'
+import RightSide from '../components/RightSide.vue'
 
 export default {
   components: {
@@ -31,7 +31,7 @@ export default {
     PostSection,
     RightSide,
   },
-};
+}
 </script>
 <style lang="scss" scoped>
 .feed {

@@ -74,19 +74,19 @@
         </div>
       </div>
     </div>
-    <signin-vue v-if="show" @toggole-order-form="showModal"></signin-vue>
-    <signup-vue v-if="visible" @toggle-order-form="showSignup"></signup-vue>
+    <SigninPage v-if="show" @toggole-order-form="showModal"></SigninPage>
+    <SignUpVue v-if="visible" @toggle-order-form="showSignup"></SignUpVue>
   </div>
 </template>
 
 <script>
-import signinVue from '~/components/signin.vue'
-import signupVue from '~/components/signup.vue'
+import SigninPage from '../components/SigninPage.vue';
+import SignUpVue from '../components/SignUpVue.vue'
 
 export default {
   components: {
-    signinVue,
-    signupVue,
+    SigninPage,
+    SignUpVue,
   },
   data() {
     return {
@@ -164,7 +164,9 @@ export default {
       display: flex;
       align-items: center;
       gap: 0.8rem;
+      cursor: pointer;
       .content-box {
+      
         p {
           padding-top: 1rem;
           font-size: 1.1rem;

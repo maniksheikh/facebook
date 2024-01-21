@@ -204,7 +204,7 @@
                 <div class="profile-details">
                   <div class="items">
                     <div class="box">
-                      <img src="../assets/image/Profile-pic.jpg" alt="" />
+                      <img src="../assets/image/profile-img.jpg" alt="" />
                       <span class="title">{{ userName }}</span>
                     </div>
                     <div class="pro-title">

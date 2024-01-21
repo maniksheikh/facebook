@@ -2,7 +2,7 @@
     <div class="post-page">
       <div class="story">
         <div class="box">
-          <img src="../assets/image/profile01.jpg" alt="" />
+          <img src="../assets/image/profile-img.jpg" alt="" />
           <button class="btn btnDiv">
             <svg
               fill="white"
