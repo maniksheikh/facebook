@@ -4,37 +4,7 @@
       <div class="accounts">
         <div class="center-text">
           <h1 class="title">Facebook</h1>
-          <span>Recent Logins</span>
-          <p>Click your picture or add an account.</p>
-        </div>
-        <div class="items">
-          <button class="item" @click="showModal">
-            <div class="bg-account">
-              <svg
-                fill="white"
-                viewBox="0 0 20 20"
-                width="20px"
-                height="20px"
-                class="b6ax4al1 add-btn m4pnbp5e somyomsx ahndzqod qsbzbi57 dmdr2h6l kgzac55p"
-              >
-                <g fill-rule="evenodd" transform="translate(-446 -350)">
-                  <g fill-rule="nonzero">
-                    <path
-                      d="M95 201.5h13a1 1 0 1 0 0-2H95a1 1 0 1 0 0 2z"
-                      transform="translate(354.5 159.5)"
-                    ></path>
-                    <path
-                      d="M102.5 207v-13a1 1 0 1 0-2 0v13a1 1 0 1 0 2 0z"
-                      transform="translate(354.5 159.5)"
-                    ></path>
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div class="content-box">
-              <p class="add-account">Add Account</p>
-            </div>
-          </button>
+          <p>Facebook helps you connect and share <br> with the people in your life.</p>
         </div>
       </div>
       <div class="signin-group">
@@ -137,7 +107,13 @@ export default {
     align-items: center;
   }
   .accounts {
-    margin-right: 10rem;
+    margin-right: 10rem; 
+
+    p {
+      line-height: 1.5;
+      font-size: 20px;
+      font-weight: 800 !important;
+    }
     a {
       text-decoration: none;
     }
@@ -254,6 +230,7 @@ export default {
     }
     p {
       color: #1877f2;
+      text-align: center;
       padding: 0.8rem 0;
       font-size: 14px;
       letter-spacing: 1px;
@@ -294,6 +271,11 @@ export default {
       }
     }
     .btn-primary {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
       padding: 0.9rem;
       background: #42b72a;
       font-family: Helvetica, Arial, sans-serif;

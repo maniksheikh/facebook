@@ -440,7 +440,7 @@ li {
     align-items: center;
   }
   .search-box {
-    width: 200px;
+    width: 215px;
     height: 40px;
     background: #f0f2f5;
     position: relative;
@@ -455,7 +455,7 @@ li {
       top: 0;
       left: 0;
       font-size: 0.9rem;
-      padding: 0 2.3rem;
+      padding: 0 2.5rem;
     }
   }
 
@@ -475,7 +475,7 @@ li {
 
   .main-link {
     margin-right: 3rem;
-    margin-top: 3.7rem;
+    padding-top: 3rem !important;
 
     .items {
       display: flex;
@@ -512,7 +512,7 @@ li {
       display: flex;
       align-items: center;
       flex-direction: column;
-      gap: 3.3rem;
+      gap: 3.4rem;
       &:hover .visible {
         visibility: visible;
       }
@@ -529,11 +529,13 @@ li {
     .right-nav-links {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      margin-right: 1rem;
+      gap:0.7rem;
+      margin-right: 1.1rem;
 
       .item {
         width: 35px;
+        margin-left: -1px;
+        margin-right: 9px;
         height: 35px;
         background: #d8dadf;
         border-radius: 50%;
@@ -639,8 +641,8 @@ li {
     }
 
     .profile {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
       border-radius: 50%;
     }
   }

@@ -334,7 +334,7 @@ export default {
 }
 .error {
   margin-top: 2rem;
-  color: white;
+  color: white !important;
   background: red;
   padding: 0.8rem 0.6rem;
   font-size: 1rem;
