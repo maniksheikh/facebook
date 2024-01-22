@@ -1,156 +1,215 @@
 <template>
-  <div class="left-sidebars mt-1">
+  <div class="left-sidebars">
     <div class="container-box">
       <ul>
         <li class="flex">
-          <img src="../assets/image/profile-img.jpg" class="avatar" alt="" />
-
+          <img src="../assets/image/profile-img.jpg" class="avatar" />
           <span>{{ userName }}</span>
         </li>
       </ul>
       <ul>
         <li>
-          <img
-            class="gneimcpu p9wrh9lq"
-            src="../assets/image/friends.jpg"
-            style="height: 36px; width: 36px"
-            alt=""
-          />
+          <i
+            data-visualcompletion="css-img"
+            class=""
+            style="
+              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/4GR4KRf3hN2.png');
+              background-position: 0 -296px;
+              background-size: auto;
+              width: 36px;
+              height: 36px;
+              background-repeat: no-repeat;
+              display: inline-block;
+            "
+          ></i>
           <span>Friends</span>
         </li>
         <li>
-          <img
-            class="gneimcpu p9wrh9lq"
-            src="../assets/image/beautiful-you.jpg"
-            style="height: 36px; width: 36px"
-            alt=""
-          />
-          <span>You</span>
-        </li>
-        <li>
-          <img
-            class="gneimcpu p9wrh9lq"
-            src="../assets/image/elon-musk.jpg"
-            style="height: 36px; width: 36px"
-            alt=""
-          />
-          <span>Elon Musk</span>
-        </li>
-        <li>
-          <img
-            class="gneimcpu p9wrh9lq"
-            src="../assets/image/mark_zuckerberg.png"
-            style="height: 36px; width: 36px"
-            alt=""
-          />
-          <span>Mark Zukerberg</span>
-        </li>
-        <!-- <li>
-          <img
-            class="gneimcpu p9wrh9lq"
-            src="../assets/image/marketplace.png"
-            style="height: 36px; width: 36px"
-            alt=""
-          />
+          <i
+            data-visualcompletion="css-img"
+            class=""
+            style="
+              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/4GR4KRf3hN2.png');
+              background-position: 0 -407px;
+              background-size: auto;
+              width: 36px;
+              height: 36px;
+              background-repeat: no-repeat;
+              display: inline-block;
+            "
+          ></i>
           <span>Marketplace</span>
-        </li> -->
-        <!-- <li>
-          <img
-            class="gneimcpu p9wrh9lq"
-            src="../assets/image/memories.png"
-            style="height: 36px; width: 36px"
-            alt=""
-          />
+        </li>
+        <li>
+          <i
+            data-visualcompletion="css-img"
+            class=""
+            style="
+              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/4GR4KRf3hN2.png');
+              background-position: 0 -444px;
+              background-size: auto;
+              width: 36px;
+              height: 36px;
+              background-repeat: no-repeat;
+              display: inline-block;
+            "
+          ></i>
           <span>Memories</span>
-        </li> -->
-        <!-- <li>
+        </li>
+        <li>
+          <i
+            data-visualcompletion="css-img"
+            class=""
+            style="
+              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/4GR4KRf3hN2.png');
+              background-position: 0 -37px;
+              background-size: auto;
+              width: 36px;
+              height: 36px;
+              background-repeat: no-repeat;
+              display: inline-block;
+            "
+          ></i>
+          <span>Groups</span>
+        </li>
+        <li>
+          <i
+            data-visualcompletion="css-img"
+            class=""
+            style="
+              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/4GR4KRf3hN2.png');
+              background-position: 0 -518px;
+              background-size: auto;
+              width: 36px;
+              height: 36px;
+              background-repeat: no-repeat;
+              display: inline-block;
+            "
+          ></i>
+          <span>Video</span>
+        </li>
+        <li>
+          <i
+            data-visualcompletion="css-img"
+            class=""
+            style="
+              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yV/r/vTDQ3deAsEh.png');
+              background-position: 0 -37px;
+              background-size: auto;
+              width: 36px;
+              height: 36px;
+              background-repeat: no-repeat;
+              display: inline-block;
+            "
+          ></i>
+          <span>Events</span>
+        </li>
+        <li>
+          <i
+            data-visualcompletion="css-img"
+            class=""
+            style="
+              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/4GR4KRf3hN2.png');
+              background-position: 0 -333px;
+              background-size: auto;
+              width: 36px;
+              height: 36px;
+              background-repeat: no-repeat;
+              display: inline-block;
+            "
+          ></i>
+          <span>Fundraisers</span>
+        </li>
+        <li>
+          <i
+            data-visualcompletion="css-img"
+            class=""
+            style="
+              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/4GR4KRf3hN2.png');
+              background-position: 0 -185px;
+              background-size: auto;
+              width: 36px;
+              height: 36px;
+              background-repeat: no-repeat;
+              display: inline-block;
+            "
+          ></i>
+          <span>Saved</span>
+        </li>
+        <li>
           <svg
-          id="Layer_1"
-            class="ml-1"
-            version="1.1"
-            
-            width="36"
-            height="30"
-            fill="red"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
-            viewBox="0 0 122.59 122.88"
-            style="enable-background: new 0 0 122.59 122.88"
-            xml:space="preserve"
+            viewBox="0 0 16 16"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+            style="--color: var(--primary-icon)"
           >
-            <g>
+            <g fill-rule="evenodd" transform="translate(-448 -544)">
               <path
-                d="M4.95,0h112.68c2.74,0,4.95,2.22,4.95,4.95v112.97c0,2.74-2.22,4.95-4.95,4.95c-1.37,0-2.61-0.56-3.51-1.46L61.16,75.79 L8.18,121.66c-2.06,1.78-5.18,1.56-6.97-0.5c-0.81-0.93-1.2-2.09-1.2-3.23H0V4.95C0,2.22,2.22,0,4.95,0L4.95,0z M112.68,9.91H9.91 v97.2l47.97-41.54c1.82-1.62,4.61-1.68,6.51-0.04l48.3,41.61V9.91L112.68,9.91z"
-              />
+                fill-rule="nonzero"
+                d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"
+              ></path>
             </g>
           </svg>
-          <span>Saved</span>
-        </li> -->
+          <span>See More</span>
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 export default {
   computed: {
-    ...mapState(["user"]),
+    ...mapState(['user']),
     userName() {
-      return this.user ? this.user.displayName : "";
+      return this.user ? this.user.displayName : ''
     },
     userEmail() {
-      return this.user ? this.user.email : "";
+      return this.user ? this.user.email : ''
     },
 
     filters: {
-    liveSubstr: function (string) {
-      return string.substring(0, 1);
+      liveSubstr: function (string) {
+        return string.substring(0, 1)
+      },
     },
   },
-  },
-
-};
+}
 </script>
 
 <style lang="scss">
-.ml-1 {
-  margin-left: 1rem !important;
-}
-.left-sidebars ul li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-  line-height: 3.5;
-  margin-left: 0.4rem;
-  .avatar {
-    height: 36px;
-    width: 36px;
+  .left-sidebars ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    line-height: 3;
+    font-family: inherit;
+    .avatar {
+      height: 36px !important;
+      width: 36px !important;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    cursor: pointer;
+    &:hover {
+      background: #e4e6e9;
+    }
+    span {
+      font-size: 1.1rem;
+      font-weight: 500;
+      font-family: inherit;
+      margin-left: 5px;
+    }
+    .box {
+      background: #356d24;
+      width: 50px;
+      height: 50px;
+      color: white;
+    }
   }
-  cursor: pointer;
-  &:hover {
-    background: #e4e6e9;
-  }
-  span {
-    font-size: 0.9rem;
-    font-weight: 500;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  }
-  .box {
-    background: #356d24;
-    width: 50px;
-    height: 50px;
-    color: white;
-  }
-}
-.left-sidebars li img {
-  margin-left: 1rem !important;
-}
-.left-sidebars .profile {
-  margin-left: 1rem;
-}
+
 </style>
