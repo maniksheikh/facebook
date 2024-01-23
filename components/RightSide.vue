@@ -226,7 +226,10 @@ export default {
 
 <style lang="scss">
 .right-sidebar {
+  font-family: inherit;
+  margin-top: 5px;
   .sponsored {
+    padding: 10px;
     .title {
       font-size: 1.1rem;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
@@ -279,7 +282,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0.7rem 0;
+    margin: 0.7rem 7px;
     padding: 0.7rem 0;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -290,6 +293,7 @@ export default {
     }
   }
   .contact {
+    margin: 0 7px;
     .items {
       display: flex;
       justify-content: space-between;
@@ -313,6 +317,7 @@ export default {
         color: #333;
         font-weight: 600;
         padding: 0.4rem;
+        opacity: 0.6;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
           Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         &:hover {

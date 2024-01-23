@@ -154,7 +154,12 @@
           </svg>
           <span>See More</span>
         </li>
+
+        <div class="footer">
+        <p>Privacy  · Terms  · Advertising  · Ad Choices   · Cookies  ·   · Meta © 2024</p>
+      </div>
       </ul>
+     
     </div>
   </div>
 </template>
@@ -181,13 +186,16 @@ export default {
 </script>
 
 <style lang="scss">
+
   .left-sidebars ul li {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
     width: 100%;
     line-height: 3;
     font-family: inherit;
+    padding-bottom: 3px;
+
     .avatar {
       height: 36px !important;
       width: 36px !important;
@@ -202,7 +210,6 @@ export default {
       font-size: 1.1rem;
       font-weight: 500;
       font-family: inherit;
-      margin-left: 5px;
     }
     .box {
       background: #356d24;
@@ -211,5 +218,11 @@ export default {
       color: white;
     }
   }
-
+  .footer {
+      margin-top: 2rem; 
+        p{
+          opacity: 0.7;
+          font-weight: 400;
+        }
+    }
 </style>

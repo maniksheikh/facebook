@@ -36,22 +36,22 @@ export default {
 </script>
 <style lang="scss" scoped>
 .feed {
-  height: 100%;
+  height: 100vh;
   .container {
     display: flex;
     justify-content: space-between;
 
     .left-sidebar {
-      width: 20%;
+      width: 21%;
       position: fixed;
       left: 0;
     }
     .feed-sidebar {
       margin: 0 auto;
-      width: 50%;
+      width: 34%;
     }
     .right-sidebar {
-      width: 18%;
+      width: 22%;
       right: 0;
       position: fixed;
       margin-left: 2rem !important;
