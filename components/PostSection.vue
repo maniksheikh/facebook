@@ -180,9 +180,6 @@
           padding: 3px;
           border-radius:100%;
         }
-      
-  
-      
   
         .btn-add {
           border-radius: 50%;

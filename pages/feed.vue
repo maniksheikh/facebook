@@ -36,7 +36,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .feed {
-  height: 100vh;
+  height: 100%;
   .container {
     display: flex;
     justify-content: space-between;

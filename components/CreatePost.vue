@@ -2,7 +2,11 @@
   <div>
     <div class="crete-post">
       <div class="flex">
-        <img class="profile" src="../assets/image/male-face-avatar-logo.jpg" alt="" />
+        <img
+          class="profile"
+          src="../assets/image/male-face-avatar-logo.jpg"
+          alt=""
+        />
         <input
           id=""
           v-model="text"
@@ -95,7 +99,15 @@
       <div v-if="posts" class="items">
         <div v-for="post in posts" :key="post.id" class="item">
           <div class="bio">
-            <img src="/assets/image/male-face-avatar-logo.jpg" class="prprofile-img" alt="" />
+            <div class="bio-content">
+              <div class="profile-img">
+                <img src="../assets/image/male-face-avatar-logo.jpg" alt="" />
+              </div>
+              <div class="multi-icon">
+                <img src="../assets/image/icons8-more-24.png" />
+                <img src="../assets/image/icons-multiply-img.png" />
+              </div>
+            </div>
 
             <div class="content">
               <span class="title">{{ post.username }}</span>
@@ -294,6 +306,7 @@
   
   <script>
 import 'firebase/compat/auth'
+
 export default {
   data() {
     return {
@@ -303,7 +316,7 @@ export default {
   },
   computed: {
     username() {
-      return this.$store.state.user.displayName
+      return this.$store.state.user ? this.$store.state.user.displayName : ''
     },
   },
   mounted() {
@@ -315,18 +328,17 @@ export default {
   methods: {
     addItem() {
       const newPost = {
+        id: Date.now(),
         username: this.username,
-        post: this.text,
+        text: this.text,
       }
-      const existingPosts = localStorage.getItem('fbposts')
 
-      if (existingPosts) {
-        this.posts = JSON.parse(existingPosts)
-      } else {
-        this.posts = []
-      }
-      this.posts.unshift(newPost)
+      const existingPosts = this.posts || []
+      existingPosts.unshift(newPost)
+
+      this.posts = existingPosts
       localStorage.setItem('fbposts', JSON.stringify(this.posts))
+
       this.text = ''
     },
   },
@@ -362,11 +374,15 @@ export default {
       border-radius: 35px;
       font-size: 1rem;
       background: #f0f2f5;
+      padding-left: 25px;
 
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
         'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
       &:hover {
         background: #e4e6e9;
+        transition: 0.4s;
+        cursor: pointer;
       }
     }
   }
@@ -386,23 +402,41 @@ export default {
       text-align: center;
       &:hover {
         background: #f2f2f2;
+        transition: 0.4s;
+        border-radius: 10px;
       }
     }
   }
 }
 .post {
-  .item {
+  .items {
     .bio {
-      .profile-img {
-        border: 1px solid #ccc;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
+      .bio-content {
+        display: flex;
+        justify-content: space-between;
+
+        .profile-img {
+          border: 1px solid #ccc;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+
+        .multi-icon img {
+          height: 25px;
+          width: 25px;
+          color: #f2f2f2 !important;
+          opacity: 0.5;
+          &:hover {
+            background: #b9b2b2;
+            transition: 0.4s;
+          }
+        }
       }
     }
   }
   p {
-    padding-left: 3.3rem;
+    padding-left: 3.5rem;
   }
 }
 @media screen and (max-width: 800px) {

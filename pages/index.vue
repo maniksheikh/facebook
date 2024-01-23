@@ -82,7 +82,7 @@ export default {
           email: this.user.email,
           password: this.user.password,
         })
-
+      alert('You are successfully, Click here')
         await this.$router.push('/feed')
       } catch (error) {
         this.error = 'Failed login!'
@@ -293,7 +293,7 @@ export default {
 @media screen and (max-width: 900px) {
   .signin {
     height: 80vh !important;
-
+    
     .flex {
       flex-direction: column !important;
       align-items: center;
@@ -303,6 +303,15 @@ export default {
       margin-right: 0rem !important;
       .center-text {
         text-align: center;
+        line-height: 0;
+
+        h1{
+          font-size: 28px;
+        }
+
+        p{
+          font-size: 14px;
+        }
       }
     }
   }
