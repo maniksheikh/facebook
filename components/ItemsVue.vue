@@ -204,7 +204,6 @@ export default {
   }
   .bio {
     display: flex;
-
     padding: 12px;
     gap: 0.5rem;
     img {
@@ -264,9 +263,12 @@ export default {
     .btn-react,
     .btn-comment,
     .btn-share {
-      padding: 0.4rem 3.5rem;
+      padding: 0.4rem 3.4rem;
       &:hover {
-        background: #f2f2f2;
+        background: #f0e9e9;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.4s;
       }
     }
   }

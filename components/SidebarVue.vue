@@ -165,24 +165,24 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from 'vuex';
 export default {
+  filters: {
+    liveSubstr: function (string) {
+      return string.substring(0, 1);
+    },
+  },
   computed: {
     ...mapState(['user']),
     userName() {
-      return this.user ? this.user.displayName : ''
+      return this.user ? this.user.displayName : '';
     },
     userEmail() {
-      return this.user ? this.user.email : ''
-    },
-
-    filters: {
-      liveSubstr: function (string) {
-        return string.substring(0, 1)
-      },
+      return this.user ? this.user.email : '';
     },
   },
-}
+};
+
 </script>
 
 <style lang="scss">
@@ -219,7 +219,7 @@ export default {
     }
   }
   .footer {
-      margin-top: 2rem; 
+      margin-top: 13rem; 
         p{
           opacity: 0.7;
           font-weight: 400;
