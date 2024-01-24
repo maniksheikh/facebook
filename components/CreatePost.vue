@@ -412,6 +412,7 @@ export default {
   .items {
     .bio {
       .bio-content {
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -423,20 +424,21 @@ export default {
           border-radius: 50%;
         }
 
-        .multi-icon{
+        .multi-icon {
           display: flex;
           justify-content: space-between;
-         img {
-          height: 25px;
-          width: 25px;
-          color: #f2f2f2 !important;
-          opacity: 0.5;
-          &:hover {
-            background: #b9b2b2;
-            transition: 0.4s;
+          img {
+            height: 25px;
+            width: 25px;
+            color: #f2f2f2 !important;
+
+            opacity: 0.5;
+            &:hover {
+              background: #b9b2b2;
+              transition: 0.4s;
+            }
           }
         }
-      }
       }
     }
   }

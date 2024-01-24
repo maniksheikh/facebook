@@ -2,7 +2,7 @@
 import profile from '../assets/image/profile-img.jpg'
 import jukerberg from '../assets/image/mark_zuckerberg.png'
 import group from '../assets/image/group adda.jpg'
-import profile06 from '../assets/image/new-post.JPG'
+import freelancing from '../assets/image/freelancing.jpg'
 import zamuna from '../assets/image/iceland.jpg'
 import sad from '../assets/image/sad img.jpg'
 export default [
@@ -40,9 +40,9 @@ export default [
 
   {
     id: 4,
-    title: 'Md Mahmudul Islam',
-    profileUrl: profile06,
-    postUrl: profile06,
+    title: 'Freelancing',
+    profileUrl: freelancing,
+    postUrl: freelancing,
     postTime: 'September 17 at 2:24 PM',
     react: '153',
     comment: '50 Comments',
@@ -59,10 +59,10 @@ export default [
   },
   {
     id: 6,
-    title: 'Beautiful Places I𝐄𝐬𝐩𝐲 𝐓𝐫𝐚𝐯𝐞𝐥 & 𝐓𝐨𝐮𝐫𝐢𝐬𝐦n The World',
+    title: 'It`s Very Hard Touching Sad Story ',
     profileUrl: sad,
     postUrl: sad,
-    postTitle: '🇹🇭 𝐓𝐡𝐚𝐢𝐥𝐚𝐧𝐝 𝐕𝐢𝐬𝐚 𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠 🇹🇭',
+    postTitle: 'Dhaka on of them ',
     postTime: 'December 18 at 12:11 AM',
     react: '2.6K',
     comment: '1K Comments',

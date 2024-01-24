@@ -8,6 +8,7 @@
         <PostSection></PostSection>
         <ItemsVue></ItemsVue>
         <CreatePostVue></CreatePostVue>
+        <PermanentSection></PermanentSection>
         
       </div>
       <div class="right-sidebar mt-2">
@@ -23,6 +24,7 @@ import CreatePostVue from '../components/CreatePost.vue'
 import ItemsVue from '../components/ItemsVue.vue'
 import PostSection from '../components/PostSection'
 import RightSide from '../components/RightSide.vue'
+import PermanentSection from '~/components/PermanentSection.vue'
 
 export default {
   components: {
@@ -30,6 +32,7 @@ export default {
     ItemsVue,
     CreatePostVue,
     PostSection,
+    PermanentSection,
     RightSide,
   },
 }
