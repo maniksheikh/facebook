@@ -413,6 +413,7 @@ export default {
     .bio {
       .bio-content {
         display: flex;
+        align-items: center;
         justify-content: space-between;
 
         .profile-img {
@@ -422,7 +423,10 @@ export default {
           border-radius: 50%;
         }
 
-        .multi-icon img {
+        .multi-icon{
+          display: flex;
+          justify-content: space-between;
+         img {
           height: 25px;
           width: 25px;
           color: #f2f2f2 !important;
@@ -432,6 +436,7 @@ export default {
             transition: 0.4s;
           }
         }
+      }
       }
     }
   }
