@@ -167,7 +167,7 @@ export default {
           password: this.user.password,
           userName: this.user.username,
         })
-        this.$router.push('/post')
+        this.$router.push('/feed')
       } catch (error) {
         this.error = 'Something went wrong to create account'
       }

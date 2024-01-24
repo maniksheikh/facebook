@@ -75,7 +75,7 @@ export default {
           email: this.user.email,
           password: this.user.password,
         })
-        this.$router.push('/post')
+        this.$router.push('/feed')
       } catch (error) {
         this.error = 'Failed login!'
         this.isLoading = false

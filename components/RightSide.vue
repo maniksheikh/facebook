@@ -3,49 +3,13 @@
     <div class="sponsored">
       <span class="title">Sponsored</span>
       <div class="items">
-        <img src="/assets/image/biggapon-img.jfif" alt="" />
+        <img src="../assets/image/Free-Sponsored-Facebook-Ad-Mockup-img.jpg" />
         <div class="content">
           <span>twelve open architecture competition</span>
           <a href="#">architecturecompetitions.com</a>
         </div>
-        <button class="dots-icon btn">
-          <svg
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
-            focusable="false"
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-            width="25"
-            height="25"
-            data-testid="MoreHorizIcon"
-          >
-            <path
-              d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-            ></path>
-          </svg>
-        </button>
       </div>
-      <div class="items">
-        <!-- <img src="~/assets/image/participate.jpg" alt="" /> -->
-        <div class="content">
-          <span>Participate!</span>
-          <a href="#">naturajazz.org</a>
-        </div>
-        <button class="dots-icon btn">
-          <svg
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
-            focusable="false"
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-            width="25"
-            height="25"
-            data-testid="MoreHorizIcon"
-          >
-            <path
-              d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
+    
     </div>
     <div class="pages">
       <p>Your Pages and profiles</p>
@@ -215,7 +179,7 @@ export default {
         },
         {
           id: 11,
-          name: 'Md Eohan Sheikh',
+          name: 'Md Rohan Sheikh',
           url: rohan,
         },
       ],

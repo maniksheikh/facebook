@@ -78,14 +78,18 @@ export default {
     },
     async loginUser() {
       try {
-        await this.$store.dispatch('login', {
+        const userData = await this.$store.dispatch('login', {
           email: this.user.email,
           password: this.user.password,
-        })
-      alert('You are successfully, Click here')
-        await this.$router.push('/feed')
+        });
+        if (userData && userData.hasAccount) {
+          alert('You are successfully logged in! Click here');
+          await this.$router.push('/feed');
+        } else {
+          this.error = 'You need to create an account before logging in!';
+        }
       } catch (error) {
-        this.error = 'Failed login!'
+        this.error = 'Failed login!';
       }
     },
   },

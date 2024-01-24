@@ -263,9 +263,9 @@ export default {
     .btn-react,
     .btn-comment,
     .btn-share {
-      padding: 0.4rem 3.4rem;
+      padding: 0.4rem 3.2rem;
       &:hover {
-        background: #f0e9e9;
+        background: #f7f4f4;
         border-radius: 5px;
         cursor: pointer;
         transition: 0.4s;
