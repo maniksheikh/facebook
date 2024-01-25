@@ -5,11 +5,9 @@
       <div class="post-content">
         <div>
           <img class="post-profile-img" src="../assets/image/profile-img.jpg" />
-        </div>
-        <div>
           <p> Manik Sheikh</p>
         </div>
-
+     
         <div class="multi-icon">
           <img src="../assets/image/icons8-more-24.png" />
           <img src="../assets/image/icons-multiply-img.png" />
@@ -116,8 +114,6 @@
       <div class="post-content">
         <div>
           <img class="post-profile-img" src="../assets/image/freelancing.jpg" />
-        </div>
-        <div>
           <p> Nasim Uddin</p>
         </div>
 
@@ -228,8 +224,6 @@
       <div class="post-content">
         <div>
           <img class="post-profile-img" src="../assets/image/friends.jpg" />
-        </div>
-        <div>
           <p>Friends Group</p>
         </div>
 
@@ -340,8 +334,6 @@
       <div class="post-content">
         <div>
           <img class="post-profile-img" src="../assets/image/iceland.jpg" />
-        </div>
-        <div>
           <p>Traveling Jurny</p>
         </div>
 
@@ -452,8 +444,6 @@
       <div class="post-content">
         <div>
           <img class="post-profile-img" src="../assets/image/profile-img.jpg" />
-        </div>
-        <div>
           <p>Travelling Jurny</p>
         </div>
 
@@ -595,6 +585,7 @@ export default {
       justify-content: space-between;
 
       div {
+        display: flex;
         padding: 10px;
         .post-profile-img {
           border: 1px solid #ccc;
@@ -603,13 +594,12 @@ export default {
           border-radius: 50%;
           cursor: pointer;
         }
-      }
-      div {
         p {
           align-items: start;
           margin: auto;
           font-size: 18px;
           font-weight: 600;
+          padding-left: 12px;
           cursor: pointer;
           
         }

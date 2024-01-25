@@ -84,12 +84,6 @@
             </div>
           </div>
           <div class="terms">
-            <div class="py-1">
-              <a href="#"
-                >People who use our service may have uploaded your contact
-                information to Facebook. <span>Learn more</span> .</a
-              >
-            </div>
             <a href="#"
               >By clicking Sign Up, you agree to our Terms,
               <span>Privacy</span> <span>Policy</span> and
@@ -198,6 +192,7 @@ export default {
     padding: 1rem;
     border: 1px solid rgba(99, 96, 96, 0.3);
     h1 {
+    text-align: center;
       font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
     }
     span {
@@ -325,8 +320,8 @@ export default {
       }
     }
     .btn-primary {
+      display: inline;
       margin: 1rem 0;
-      margin: 0 auto;
       padding: 0.4rem 3.5rem;
       color: white;
       font-size: 1.3rem;
