@@ -236,12 +236,14 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
         select {
           width: 200px;
           padding: 0.6rem;
           font-weight: 400;
           font-size: 15px;
           outline: none;
+          cursor: pointer;
           border: 1px solid rgba(0, 0, 0, 0.3);
           border-radius: 5px;
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -275,6 +277,7 @@ export default {
         color: #606770;
         font-weight: 400;
         text-decoration: none;
+        
         font-family: SFProText-Medium, Helvetica, Arial, sans-serif;
         .question-png {
           width: 10px;
@@ -294,9 +297,11 @@ export default {
           border-radius: 5px;
           font-weight: 400;
           font-size: 15px;
+          cursor: pointer;
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           gap: 1.9rem;
           label {
+            cursor: pointer;
             font-size: 1rem;
             font-family: Arial, Helvetica, sans-serif;
           }

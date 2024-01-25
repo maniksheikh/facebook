@@ -263,7 +263,7 @@ export default {
     .btn-react,
     .btn-comment,
     .btn-share {
-      padding: 0.4rem 3.2rem;
+      padding: 0.5rem 1.7rem;
       &:hover {
         background: #f7f4f4;
         border-radius: 5px;
