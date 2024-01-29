@@ -3,13 +3,13 @@ import firebase from "firebase/compat/app";
 import  "firebase/compat/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB1uG6b6vh5EiEc0OgWh2ZI_NcLQkR6Olo",
-  authDomain: "facrbook-clone.firebaseapp.com",
-  projectId: "facrbook-clone",
-  storageBucket: "facrbook-clone.appspot.com",
-  messagingSenderId: "353017253218",
-  appId: "1:353017253218:web:15100dbdbddd1f4f78f03b",
-  measurementId: "G-K23R6WP9LV"
+  apiKey: "AIzaSyCCfycmMh6MgGjYtEOMVWkJj2WGegwVzEU",
+  authDomain: "facebook-clone-firebase-ead79.firebaseapp.com",
+  projectId: "facebook-clone-firebase-ead79",
+  storageBucket: "facebook-clone-firebase-ead79.appspot.com",
+  messagingSenderId: "257173661970",
+  appId: "1:257173661970:web:e019c69e3bb5f7c601ebcb",
+  measurementId: "G-KQZSHK7LFD"
 };
 
 // Initialize Firebase
