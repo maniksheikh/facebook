@@ -163,6 +163,7 @@ export default {
         })
         this.$router.push('/feed')
       } catch (error) {
+        alert(error)
         this.error = 'Something went wrong to create account'
       }
     },
