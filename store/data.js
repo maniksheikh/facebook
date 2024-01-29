@@ -3,7 +3,7 @@ import firebase from "firebase/compat/app";
 import items from "../data/store";
 export const state = () => ({
   items: null,
-  user: null,
+  user: 'hello',
   posts: [],
 });
 
@@ -47,7 +47,7 @@ export const actions = {
       commit("setUser", user);
     } catch (error) {
       commit("RESET_USER");
-      
+      alert(error)
       throw error;
     }
   },
