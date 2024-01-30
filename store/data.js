@@ -3,7 +3,7 @@ import firebase from "firebase/compat/app";
 import items from "../data/store";
 export const state = () => ({
   items: null,
-  user: 'hello',
+  user: null,
   posts: [],
 });
 

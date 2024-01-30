@@ -634,6 +634,7 @@ export default {
       background-position: initial;
       background-repeat: no-repeat;
       background-size: cover;
+      object-fit: cover;
     }
 
     .react-btn {
