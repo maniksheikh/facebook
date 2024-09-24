@@ -13,19 +13,8 @@
         </div>
 
         <form action="" @submit.prevent="loginUser">
-          <input
-            v-model="user.email"
-            type="email"
-            placeholder="Email address or phone number"
-            required
-          />
-          <input
-            v-model="user.password"
-            type="password"
-            name=""
-            placeholder="Password"
-            required
-          />
+          <input v-model="user.email" type="email" placeholder="Email address or phone number" required />
+          <input v-model="user.password" type="password" name="" placeholder="Password" required />
           <div class="text-center">
             <button type="submit" class="btn btn-secondery">Log in</button>
           </div>
@@ -110,29 +99,34 @@ export default {
     display: flex;
     align-items: center;
   }
+
   .accounts {
-    margin-right: 10rem; 
+    margin-right: 10rem;
 
     p {
       line-height: 1.5;
       font-size: 20px;
       font-weight: 800 !important;
     }
+
     a {
       text-decoration: none;
     }
+
     .title {
       color: #1877f2;
       font-size: 3rem;
       font-weight: 600;
       font-family: Helvetica, Arial, sans-serif;
     }
+
     span {
       font-size: 28px;
       font-weight: 400;
       color: #1c1e21;
-      font-family:  Helvetica, Arial, sans-serif;
+      font-family: Helvetica, Arial, sans-serif;
     }
+
     p {
       font-size: 1rem;
       font-weight: 600;
@@ -140,13 +134,15 @@ export default {
       padding: 0.7rem 0;
       color: rgba(0, 0, 0, 0.6);
     }
+
     .items {
       display: flex;
       align-items: center;
       gap: 0.8rem;
       cursor: pointer;
+
       .content-box {
-      
+
         p {
           padding-top: 1rem;
           font-size: 1.1rem;
@@ -155,6 +151,7 @@ export default {
           font-family: Arial, Helvetica, sans-serif;
         }
       }
+
       .item {
         width: 150px;
         height: 200px;
@@ -164,6 +161,7 @@ export default {
 
         border: 1px solid rgba(130, 117, 117, 0.2);
         border-radius: 5px;
+
         &:hover {
           box-shadow: 0 0 7px rgba(130, 117, 117, 0.3);
         }
@@ -178,6 +176,7 @@ export default {
           background-repeat: no-repeat;
           object-fit: cover;
         }
+
         .content-box {
           background: white;
 
@@ -193,6 +192,7 @@ export default {
             font-size: 18px;
           }
         }
+
         .bg-account {
           width: 100%;
           height: 100%;
@@ -202,6 +202,7 @@ export default {
           border-top-right-radius: 5px;
           border-top-left-radius: 5px;
           position: relative;
+
           .add-btn {
             position: absolute;
             top: 50%;
@@ -217,6 +218,7 @@ export default {
       }
     }
   }
+
   .signin-group {
     width: 400px;
     padding: 0.8rem;
@@ -229,9 +231,11 @@ export default {
       margin-bottom: 1.5rem;
       margin-top: 2rem;
     }
+
     a {
       text-decoration: none;
     }
+
     p {
       color: #1877f2;
       text-align: center;
@@ -240,10 +244,12 @@ export default {
       letter-spacing: 1px;
       font-family: Helvetica, Arial, sans-serif;
       border-bottom: 1px solid rgba(130, 117, 117, 0.3);
+
       &:hover {
         text-decoration: underline;
       }
     }
+
     input {
       display: block;
       width: 100%;
@@ -260,6 +266,7 @@ export default {
         border: 1px solid blue;
       }
     }
+
     .btn-secondery {
       width: 100%;
       padding: 0.9rem;
@@ -270,10 +277,12 @@ export default {
       border-radius: 5px;
       transition: 0.3s ease-in;
       font-family: Helvetica, Arial, sans-serif;
+
       &:hover {
         background: #005fdb;
       }
     }
+
     .btn-primary {
       display: flex;
       text-align: center;
@@ -288,38 +297,43 @@ export default {
       font-weight: 700;
       border-radius: 5px;
       transition: 0.3s ease-in-out;
+
       &:hover {
         background: #40bc27;
       }
     }
   }
 }
+
 @media screen and (max-width: 900px) {
   .signin {
     height: 80vh !important;
-    
+
     .flex {
       flex-direction: column !important;
       align-items: center;
       gap: 1rem;
     }
+
     .accounts {
       margin-right: 0rem !important;
+
       .center-text {
         text-align: center;
         line-height: 0;
 
-        h1{
+        h1 {
           font-size: 28px;
         }
 
-        p{
+        p {
           font-size: 14px;
         }
       }
     }
   }
 }
+
 @media screen and (max-width: 500px) {
   .signin {
     height: 100vh !important;
