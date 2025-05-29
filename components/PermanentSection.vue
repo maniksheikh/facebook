@@ -570,7 +570,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~/assets/scss/_mixins.scss';
+
 .permanent-section {
   background: #ffffff;
   border: 1px rgb(233, 225, 225) solid;
@@ -587,6 +587,7 @@ export default {
       div {
         display: flex;
         padding: 10px;
+
         .post-profile-img {
           border: 1px solid #ccc;
           width: 50px;
@@ -638,7 +639,7 @@ export default {
     }
 
     .react-btn {
-      @include flex;
+      display: flex;
       justify-content: space-between;
       padding: 0.3rem;
 
@@ -647,7 +648,7 @@ export default {
         opacity: 0.8;
       }
       button {
-        @include flex;
+       display: flex;
         gap: 0.5rem;
         border-radius: 5px;
         padding: 0.5rem 1.7rem;

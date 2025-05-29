@@ -346,7 +346,6 @@ export default {
 </script>
   
   <style lang="scss">
-@import '~/assets/scss/_mixins.scss';
 
 .crete-post {
   margin-top: 1.5rem;
@@ -354,7 +353,7 @@ export default {
   padding: 0 0.5rem;
 
   .flex {
-    @include flex;
+    display: flex;
     gap: 0.5rem;
     padding: 0.4rem;
     border-bottom: 1px solid rgba(81, 78, 78, 0.1);
@@ -387,7 +386,7 @@ export default {
     }
   }
   .post-btn {
-    @include flex;
+    display: flex;
     justify-content: space-between;
     padding: 0.5rem;
 
@@ -395,7 +394,7 @@ export default {
       font-size: 1rem;
     }
     button {
-      @include flex;
+      display: flex;
       gap: 0.5rem;
       border-radius: 5px;
       padding: 0.5rem 1.3rem;

@@ -162,6 +162,7 @@ export default {
 </script>
   
   <style lang="scss">
+  
 .post {
   margin: 1rem 0;
   .item {
