@@ -17,7 +17,6 @@
             ></path>
           </svg>
         </button>
-
         <div class="bio">
           <img :src="item.profileUrl" alt="" />
           <div class="content">
@@ -161,7 +160,7 @@ export default {
 }
 </script>
   
-  <style lang="scss">
+<style lang="scss">
   
 .post {
   margin: 1rem 0;
