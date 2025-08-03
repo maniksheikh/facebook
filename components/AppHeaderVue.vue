@@ -33,7 +33,6 @@
               />
             </svg>
           </button>
-
           <input id="" type="text" name="" placeholder="Search Facebook" />
         </div>
         <button class="btn btn-search-block">
@@ -226,7 +225,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="btn btn-logout">
                   <button class="btn btn-flex">
                     <div class="item-box">

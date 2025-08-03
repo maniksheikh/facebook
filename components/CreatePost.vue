@@ -303,8 +303,8 @@
     </div>
   </div>
 </template>
-  
-  <script>
+
+<script>
 import 'firebase/compat/auth'
 
 export default {
@@ -345,7 +345,7 @@ export default {
 }
 </script>
   
-  <style lang="scss">
+<style lang="scss">
 
 .crete-post {
   margin-top: 1.5rem;
