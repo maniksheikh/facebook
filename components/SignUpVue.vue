@@ -49,7 +49,6 @@
                   {{ day }}
                 </option>
               </select>
-
               <select v-model="selectedmonths">
                 <option v-for="month in months" :key="month">
                   {{ month }}
@@ -109,7 +108,7 @@
   </div>
 </template>
   
-  <script>
+<script>
 export default {
   data() {
     return {
@@ -171,7 +170,7 @@ export default {
 }
 </script>
   
-  <style lang="scss">
+<style lang="scss">
 .signup {
   position: absolute;
   top: 50%;
