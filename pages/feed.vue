@@ -9,7 +9,6 @@
         <ItemsVue></ItemsVue>
         <CreatePostVue></CreatePostVue>
         <PermanentSection></PermanentSection>
-        
       </div>
       <div class="right-sidebar mt-2">
         <RightSide></RightSide>
@@ -37,13 +36,13 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" scoped>
 .feed {
   height: 100%;
   .container {
     display: flex;
     justify-content: space-between;
-
     .left-sidebar {
       width: 21%;
       position: fixed;
