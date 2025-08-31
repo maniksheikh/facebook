@@ -12,37 +12,14 @@
       <div class="signup-group">
         <form action="#" @submit.prevent="registerUser">
           <div class="flex">
-            <input
-              v-model="user.username"
-              class="input"
-              type="text"
-              placeholder="FirstName"
-              required
-            />
+            <input v-model="user.username" class="input" type="text" placeholder="FirstName" required />
             <input class="input" type="text" placeholder="Surname" />
           </div>
-          <input
-            v-model="user.email"
-            class="input"
-            type="email"
-            required
-            placeholder="Email address"
-          />
-          <input
-            v-model="user.password"
-            class="input"
-            type="password"
-            required
-            placeholder="New password"
-          />
+          <input v-model="user.email" class="input" type="email" required placeholder="Email address" />
+          <input v-model="user.password" class="input" type="password" required placeholder="New password" />
           <div class="birth">
-            <a href="#"
-              >Date of birth
-              <img
-                class="question-png"
-                src="/assets/image/icons-question-mark-img.png"
-                alt=""
-            /></a>
+            <a href="#">Date of birth
+              <img class="question-png" src="/assets/image/icons-question-mark-img.png" alt="" /></a>
             <div class="flex">
               <select id="" v-model="selectedays" name="">
                 <option v-for="day in days" :key="day">
@@ -60,13 +37,8 @@
             </div>
           </div>
           <div class="gender">
-            <a href="#"
-              >Gender
-              <img
-                class="question-png"
-                src="/assets/image/icons-question-mark-img.pngg"
-                alt=""
-            /></a>
+            <a href="#">Gender
+              <img class="question-png" src="/assets/image/icons-question-mark-img.pngg" alt="" /></a>
             <div class="flex-items">
               <div class="form-control">
                 <label for="html">Female</label><br />
@@ -83,31 +55,22 @@
             </div>
           </div>
           <div class="terms">
-            <a href="#"
-              >By clicking Sign Up, you agree to our Terms,
+            <a href="#">By clicking Sign Up, you agree to our Terms,
               <span>Privacy</span> <span>Policy</span> and
               <span>Cookies Policy</span> . You may receive SMS notifications
-              from us and can opt out at any time.</a
-            >
+              from us and can opt out at any time.</a>
           </div>
           <div class="text-center py-1">
             <button type="submit" class="btn btn-primary">Sign up</button>
           </div>
         </form>
       </div>
-      <img
-        id="u_2_9_Am"
-        class="delete-img"
-        src="https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/zgulV2zGm8t.png"
-        alt=""
-        width="24"
-        height="24"
-        @click="hideOrderForm"
-      />
+      <img id="u_2_9_Am" class="delete-img" src="https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/zgulV2zGm8t.png" alt=""
+        width="24" height="24" @click="hideOrderForm" />
     </div>
   </div>
 </template>
-  
+
 <script>
 export default {
   data() {
@@ -169,7 +132,7 @@ export default {
   },
 }
 </script>
-  
+
 <style lang="scss">
 .signup {
   position: absolute;
@@ -182,19 +145,23 @@ export default {
   box-shadow: 0 0 5px #ccc;
 
   border-radius: 10px;
+
   .delete-img {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
     cursor: pointer;
   }
+
   .content {
     padding: 1rem;
     border: 1px solid rgba(99, 96, 96, 0.3);
+
     h1 {
-    text-align: center;
+      text-align: center;
       font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
     }
+
     span {
       font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
       color: SFProText-Regular, Helvetica, Arial, sans-serif;
@@ -221,17 +188,19 @@ export default {
       background: #f5f6f7;
       margin: 10px auto;
     }
+
     .flex {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
+
     .birth {
       .flex {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        
+
         select {
           width: 200px;
           padding: 0.6rem;
@@ -242,11 +211,13 @@ export default {
           border: 1px solid rgba(0, 0, 0, 0.3);
           border-radius: 5px;
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
           option {
             padding: 10px;
           }
         }
       }
+
       a {
         display: flex;
         align-items: center;
@@ -256,6 +227,7 @@ export default {
         font-weight: 400;
         text-decoration: none;
         font-family: SFProText-Medium, Helvetica, Arial, sans-serif;
+
         .question-png {
           width: 10px;
           height: 10px;
@@ -263,6 +235,7 @@ export default {
         }
       }
     }
+
     .gender {
       a {
         display: flex;
@@ -272,18 +245,21 @@ export default {
         color: #606770;
         font-weight: 400;
         text-decoration: none;
-        
+
         font-family: SFProText-Medium, Helvetica, Arial, sans-serif;
+
         .question-png {
           width: 10px;
           height: 10px;
           color: white;
         }
       }
+
       .flex-items {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
         .form-control {
           border: 1px solid #ccc;
           padding: 0.6rem;
@@ -295,6 +271,7 @@ export default {
           cursor: pointer;
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           gap: 1.9rem;
+
           label {
             cursor: pointer;
             font-size: 1rem;
@@ -303,6 +280,7 @@ export default {
         }
       }
     }
+
     .terms {
       a {
         text-decoration: none;
@@ -311,14 +289,17 @@ export default {
         font-size: 11px;
         font-weight: 400;
         font-family: Helvetica, Arial, sans-serif;
+
         span {
           color: #92d2ff;
+
           &:hover {
             text-decoration: underline;
           }
         }
       }
     }
+
     .btn-primary {
       display: inline;
       margin: 1rem 0;
@@ -332,6 +313,7 @@ export default {
     }
   }
 }
+
 .error {
   margin-top: 2rem;
   color: white !important;
@@ -341,6 +323,7 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 10px;
 }
+
 .backdrop {
   position: fixed;
   width: 100%;
@@ -352,13 +335,16 @@ export default {
   background-color: rgba(99, 96, 96, 0.4);
   z-index: 9999;
 }
+
 @media screen and (max-width: 500px) {
   .signup {
     width: 350px;
+
     .signup-group {
       .gender {
         .flex-items {
           gap: 0.3rem;
+
           .form-control {
             gap: 0.5rem;
           }

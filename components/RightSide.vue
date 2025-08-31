@@ -73,7 +73,6 @@
               <img :src="item.url" alt="" class="image" />
               <span class="active"></span>
             </div>
-
             <span>{{ item.name }} </span>
           </a>
         </li>
