@@ -13,7 +13,7 @@ export const getters = {
   },
 
   isUserAuth(state) {
-    return !state.user;
+    return !!state.user;
   },
 };
 
