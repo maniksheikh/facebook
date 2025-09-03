@@ -4,8 +4,13 @@
       <div class="box">
         <img src="../assets/image/profile-img.jpg" alt="" />
         <button class="btn btnDiv">
-          <svg fill="white" viewBox="0 0 20 20" width="30px" height="30px"
-            class="b6ax4al1 btn-add m4pnbp5e somyomsx ahndzqod qsbzbi57 dmdr2h6l kgzac55p">
+          <svg 
+            fill="white" 
+            viewBox="0 0 20 20" 
+            width="30px" 
+            height="30px"
+            class="b6ax4al1 btn-add m4pnbp5e somyomsx ahndzqod qsbzbi57 dmdr2h6l kgzac55p"
+          >
             <g fill-rule="evenodd" transform="translate(-446 -350)">
               <g fill-rule="nonzero">
                 <path d="M95 201.5h13a1 1 0 1 0 0-2H95a1 1 0 1 0 0 2z" transform="translate(354.5 159.5)"></path>
@@ -25,7 +30,7 @@
         <button class="btn btnDiv-2">
           <img class="profile-pic" src="../assets/image/mark_zuckerberg.png" alt="" />
         </button>
-        <span class="title">Mark jukarbag</span>
+        <span class="title">Mark Zuckerberg</span>
       </div>
       <div class="box">
         <img
@@ -39,9 +44,11 @@
       <div class="box">
         <img src="https://cdn.mos.cms.futurecdn.net/mQ2fqdNwVviPBBigDeg6Ja-320-80.jpg" alt="" />
         <button class="btn btnDiv-2">
-          <img class="profile-pic"
+          <img 
+            class="profile-pic"
             src="https://i2.wp.com/www.starmag.com/wp-content/uploads/2021/10/kylie-jenner-accusee-darnaquer-ses-fans-sa-collection-de-maillots-de-bain-fortement-critiquee.jpg?resize=600%2C460&ssl=1"
-            alt="" />
+            alt="" 
+          />
         </button>
         <span class="title">Kylie Jenner</span>
       </div>
@@ -152,7 +159,7 @@
         border-radius: 50%;
         padding: 0.3rem;
         background: #166ada !important;
-        display: inline block;
+        display: inline-block;
       }
 
       .profile-pic {
@@ -161,7 +168,7 @@
         border-radius: 50%;
         background-position: center;
         background-size: cover;
-        background-position: no-repeat;
+        background-repeat: no-repeat;
         object-fit: cover;
         background: #166ada;
         position: absolute;
