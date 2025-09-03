@@ -38,7 +38,7 @@
           </div>
           <div class="gender">
             <a href="#">Gender
-              <img class="question-png" src="/assets/image/icons-question-mark-img.pngg" alt="" /></a>
+              <img class="question-png" src="/assets/image/icons-question-mark-img.png" alt="" /></a>
             <div class="flex-items">
               <div class="form-control">
                 <label for="html">Female</label><br />
@@ -124,9 +124,10 @@ export default {
           userName: this.user.username,
         })
         this.$router.push('/feed')
+        this.hideOrderForm()
       } catch (error) {
-        alert(error)
-        this.error = 'Something went wrong to create account'
+        console.error('Signup error:', error)
+        this.error = 'Something went wrong creating your account. Please try again.'
       }
     },
   },

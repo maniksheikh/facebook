@@ -12,10 +12,12 @@
           {{ error }}
         </div>
         <form action="" @submit.prevent="loginUser">
-          <input v-model="user.email" type="email" placeholder="Email address or phone number" required />
-          <input v-model="user.password" type="password" name="" placeholder="Password" required />
+          <input v-model="user.email" type="email" placeholder="Email address or phone number" required :disabled="loading" />
+          <input v-model="user.password" type="password" name="" placeholder="Password" required :disabled="loading" />
           <div class="text-center">
-            <button type="submit" class="btn btn-secondery">Log in</button>
+            <button type="submit" class="btn btn-secondery" :disabled="loading">
+              {{ loading ? 'Logging in...' : 'Log in' }}
+            </button>
           </div>
         </form>
         <div class="text-center">
@@ -32,7 +34,7 @@
         </div>
       </div>
     </div>
-    <SigninPage v-if="show" @toggole-order-form="showModal"></SigninPage>
+    <SigninPage v-if="show" @toggle-order-form="showModal"></SigninPage>
     <SignUpVue v-if="visible" @toggle-order-form="showSignup"></SignUpVue>
   </div>
 </template>
@@ -51,6 +53,7 @@ export default {
       show: false,
       visible: false,
       error: '',
+      loading: false,
       user: {
         email: '',
         password: '',
@@ -65,19 +68,47 @@ export default {
       this.visible = !this.visible
     },
     async loginUser() {
+      if (this.loading) return;
+      
       try {
+        this.loading = true;
+        this.error = '';
         const userData = await this.$store.dispatch('login', {
           email: this.user.email,
           password: this.user.password,
         });
+        
         if (userData && userData.hasAccount) {
-          alert('You are successfully logged in! Click here');
           await this.$router.push('/feed');
         } else {
-          this.error = 'You need to create an account before logging in!';
+          this.error = 'Login failed. Please check your credentials.';
         }
       } catch (error) {
-        this.error = 'Failed login!';
+        if (error.code) {
+          switch (error.code) {
+            case 'auth/user-not-found':
+              this.error = 'No account found with this email address.';
+              break;
+            case 'auth/wrong-password':
+              this.error = 'Incorrect password. Please try again.';
+              break;
+            case 'auth/invalid-email':
+              this.error = 'Invalid email address format.';
+              break;
+            case 'auth/user-disabled':
+              this.error = 'This account has been disabled.';
+              break;
+            case 'auth/too-many-requests':
+              this.error = 'Too many failed attempts. Please try again later.';
+              break;
+            default:
+              this.error = 'Login failed. Please check your credentials.';
+          }
+        } else {
+          this.error = 'Login failed. Please check your credentials.';
+        }
+      } finally {
+        this.loading = false;
       }
     },
   },
@@ -260,6 +291,23 @@ export default {
       &:focus {
         border: 1px solid blue;
       }
+
+      &:disabled {
+        background: #f5f5f5;
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+    }
+
+    .error {
+      background: #ffebee;
+      color: #c62828;
+      padding: 0.8rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      border: 1px solid #ef5350;
+      font-size: 14px;
+      text-align: center;
     }
 
     .btn-secondery {
@@ -273,8 +321,14 @@ export default {
       transition: 0.3s ease-in;
       font-family: Helvetica, Arial, sans-serif;
 
-      &:hover {
+      &:hover:not(:disabled) {
         background: #005fdb;
+      }
+
+      &:disabled {
+        background: #cccccc;
+        cursor: not-allowed;
+        opacity: 0.6;
       }
     }
 
