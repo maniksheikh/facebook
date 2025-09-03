@@ -19,7 +19,7 @@ export default {
 
   css: [],
   plugins: [
-    `~/plugins/firebase.js`,
+    { src: '~/plugins/firebase.js', mode: 'client' },
   ],
 
   components: true,
@@ -31,6 +31,8 @@ export default {
   modules: [
     '@nuxtjs/axios',
   ],
+  
+  store: true,
 
   axios: {
     baseURL: '/',
