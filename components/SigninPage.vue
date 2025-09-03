@@ -51,19 +51,21 @@ export default {
   },
   methods: {
     hideorderform() {
-      this.$emit('toggole-order-form')
+      this.$emit('toggle-order-form')
     },
     async loginUser() {
       try {
-        this.isLoading = true
-        await this.$store.dispatch('login', {
+        const userData = await this.$store.dispatch('login', {
           email: this.user.email,
           password: this.user.password,
         })
-        this.$router.push('/feed')
+        if (userData && userData.hasAccount) {
+          this.$router.push('/feed')
+        } else {
+          this.error = 'Login failed. Please check your credentials.'
+        }
       } catch (error) {
-        this.error = 'Failed login!'
-        this.isLoading = false
+        this.error = 'Login failed. Please check your credentials.'
       }
     },
   },
