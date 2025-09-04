@@ -197,10 +197,10 @@
             </nuxt-link>
             <span class="visible">Notifications</span>
           </li>
-          <li v-if="!isUserAuth" class="item">
+          <li v-if="isUserAuth" class="item">
             <button class="btn dropdown">
               <img
-                src="../assets/image/profile-img.jpg"
+                src="~/assets/image/profile-img.jpg"
                 alt=""
                 class="profile"
                 @click="toggle"
@@ -209,7 +209,7 @@
                 <div class="profile-details">
                   <div class="items">
                     <div class="box">
-                      <img src="../assets/image/profile-img.jpg" alt="" />
+                      <img src="~/assets/image/profile-img.jpg" alt="" />
                       <span class="title">{{ userName }}</span>
                     </div>
                     <div class="pro-title">
@@ -370,6 +370,13 @@ export default {
       return this.$store.getters.isUserAuth
     },
   },
+  mounted() {
+    // Close dropdown when clicking outside
+    document.addEventListener('click', this.handleClickOutside)
+  },
+  beforeDestroy() {
+    document.removeEventListener('click', this.handleClickOutside)
+  },
   methods: {
     async logout() {
       try {
@@ -379,6 +386,12 @@ export default {
     },
     toggle() {
       this.visible = !this.visible
+    },
+    handleClickOutside(event) {
+      const dropdown = this.$el.querySelector('.dropdown')
+      if (dropdown && !dropdown.contains(event.target)) {
+        this.visible = false
+      }
     },
   },
 }
@@ -539,20 +552,26 @@ li {
       .dropdown {
         position: relative;
         display: inline-block;
+        
+        &:hover {
+          background-color: #f2f2f2;
+          border-radius: 50%;
+        }
 
         .dropdown-menu {
           display: block;
           position: absolute;
-          background-color: #fafafa;
+          background-color: #ffffff;
           padding: 0.5rem;
-
+          border: 1px solid #e4e6ea;
           min-width: 350px;
-          height: 260px;
-          top: 3rem;
+          height: auto;
+          min-height: 260px;
+          top: 45px;
           right: 0;
-          bottom: 0;
-          z-index: 1;
-          box-shadow: 0 0 10px rgba(89, 89, 90, 0.3);
+          z-index: 9999;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+          border-radius: 8px;
 
           .profile-details {
             margin: 0.5rem;
@@ -644,6 +663,15 @@ li {
       width: 35px;
       height: 35px;
       border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #e4e6ea;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        border-color: #1877f2;
+        transform: scale(1.05);
+      }
     }
   }
 }
