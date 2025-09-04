@@ -47,13 +47,13 @@
       </div>
       <div class="main-link">
         <ul class="items">
-          <li class="item">
+          <li class="item" :class="{ active: activeNavItem === 'home' }" @click="setActiveNavItem('home')">
             <nuxt-link to="#" class="set">
               <svg
                 viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                style="color: #7e7878"
+                width="28"
+                height="28"
+                :style="{ color: activeNavItem === 'home' ? '#1877f2' : '#7e7878' }"
                 fill="currentColor"
                 class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
               >
@@ -64,13 +64,13 @@
             </nuxt-link>
             <span>Home</span>
           </li>
-          <li>
+          <li class="item" :class="{ active: activeNavItem === 'watch' }" @click="setActiveNavItem('watch')">
             <nuxt-link to="#">
               <svg
                 viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                style="color: #7e7878"
+                width="28"
+                height="28"
+                :style="{ color: activeNavItem === 'watch' ? '#1877f2' : '#7e7878' }"
                 fill="currentColor"
                 class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
               >
@@ -82,13 +82,13 @@
             </nuxt-link>
             <span>Watch</span>
           </li>
-          <li>
+          <li class="item" :class="{ active: activeNavItem === 'marketplace' }" @click="setActiveNavItem('marketplace')">
             <nuxt-link to="#">
               <svg
                 viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                style="color: #7e7878"
+                width="28"
+                height="28"
+                :style="{ color: activeNavItem === 'marketplace' ? '#1877f2' : '#7e7878' }"
                 fill="currentColor"
                 class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
               >
@@ -99,13 +99,13 @@
             </nuxt-link>
             <span>Marketplace</span>
           </li>
-          <li>
+          <li class="item" :class="{ active: activeNavItem === 'groups' }" @click="setActiveNavItem('groups')">
             <nuxt-link to="#">
               <svg
                 viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                style="color: #7e7878"
+                width="28"
+                height="28"
+                :style="{ color: activeNavItem === 'groups' ? '#1877f2' : '#7e7878' }"
                 fill="currentColor"
                 class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
               >
@@ -117,13 +117,13 @@
             </nuxt-link>
             <span>Groups</span>
           </li>
-          <li>
+          <li class="item" :class="{ active: activeNavItem === 'gaming' }" @click="setActiveNavItem('gaming')">
             <nuxt-link to="#">
               <svg
                 viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                style="color: #7e7878"
+                width="28"
+                height="28"
+                :style="{ color: activeNavItem === 'gaming' ? '#1877f2' : '#7e7878' }"
                 fill="currentColor"
                 class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
               >
@@ -353,6 +353,7 @@ export default {
   data() {
     return {
       visible: false,
+      activeNavItem: 'home', // Track which navbar item is active
     }
   },
 
@@ -392,6 +393,9 @@ export default {
       if (dropdown && !dropdown.contains(event.target)) {
         this.visible = false
       }
+    },
+    setActiveNavItem(itemName) {
+      this.activeNavItem = itemName
     },
   },
 }
@@ -468,33 +472,80 @@ li {
   }
 
   .main-link {
-    margin-right: 1rem;
-    padding-top: 3rem !important;
 
     .items {
       display: flex;
       align-items: center;
       justify-items: center;
-      gap: 4.5rem;
+      gap: 5rem;
+      width: 100%;
 
       li {
         display: flex;
         align-items: center;
         flex-direction: column;
         gap: 0.8rem;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+
+        .set {
+          border-radius: 8px;
+          transition: background-color 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &:hover .set {
+          background-color: #f2f2f2;
+        }
 
         &:hover span {
+          opacity: 1;
           visibility: visible;
+          transform: translateY(0);
+        }
+
+        &.active {
+          border-bottom: 3px solid #1877f2;
+          width: 100%;
+          
+          svg {
+            color: #1877f2 !important;
+          }
         }
 
         span {
+          position: absolute;
+          top: calc(100% + 15px);
+          left: 50%;
+          transform: translateX(-50%) translateY(10px);
           visibility: hidden;
-          background: #39393a;
+          opacity: 0;
+          background: rgba(0, 0, 0, 0.8);
           color: white;
-          padding: 0.6rem;
-          border-radius: 5px;
-          font-size: 0.8rem;
+          padding: 0.5rem 0.7rem;
+          border-radius: 6px;
+          font-size: 0.75rem;
           font-family: 'Roboto', sans-serif;
+          font-weight: 500;
+          white-space: nowrap;
+          z-index: 1000;
+          transition: all 0.2s ease;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+          
+          &::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid rgba(0, 0, 0, 0.8);
+          }
         }
 
         .main-link-icon {
@@ -510,20 +561,44 @@ li {
       align-items: center;
       flex-direction: column;
       gap: 3.4rem;
+      position: relative;
 
       &:hover .visible {
+        opacity: 1;
         visibility: visible;
+        transform: translateY(0);
       }
     }
 
     .visible {
+      position: absolute;
+      top: calc(100% + 15px);
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
       visibility: hidden;
-      background: #39393a;
+      opacity: 0;
+      background: rgba(0, 0, 0, 0.8);
       color: white;
-      padding: 0.6rem;
-      border-radius: 5px;
-      font-size: 0.8rem;
+      padding: 0.5rem 0.7rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
       font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      white-space: nowrap;
+      z-index: 1000;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid rgba(0, 0, 0, 0.8);
+      }
     }
 
     .right-nav-links {
@@ -540,6 +615,11 @@ li {
         background: #d8dadf;
         border-radius: 50%;
         position: relative;
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+          background: #e4e6ea;
+        }
       }
 
       .m4pnbp5e {
