@@ -425,6 +425,7 @@ li {
   z-index: 9999;
   background: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 0;
 
   .mr-t {
     margin-top: 1.2rem !important;
@@ -433,6 +434,8 @@ li {
   .logo {
     display: flex;
     align-items: center;
+    flex: 0 0 auto;
+    padding-left: 1rem;
   }
 
   .search-box {
@@ -472,23 +475,30 @@ li {
   }
 
   .main-link {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 600px;
+    margin: auto;
 
     .items {
       display: flex;
       align-items: center;
-      justify-items: center;
-      gap: 5rem;
+      justify-content: center;
       width: 100%;
+      margin: 0;
+      padding: 0;
 
       li {
         display: flex;
         align-items: center;
         flex-direction: column;
-        gap: 0.8rem;
         cursor: pointer;
         position: relative;
         transition: all 0.3s ease;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 2rem;
+        flex: 1;
 
         .set {
           border-radius: 8px;
@@ -510,7 +520,6 @@ li {
 
         &.active {
           border-bottom: 3px solid #1877f2;
-          width: 100%;
           
           svg {
             color: #1877f2 !important;
@@ -520,7 +529,7 @@ li {
         span {
           position: absolute;
           top: calc(100% + 15px);
-          left: 50%;
+          left: 25%;
           transform: translateX(-50%) translateY(10px);
           visibility: hidden;
           opacity: 0;
@@ -556,6 +565,8 @@ li {
   }
 
   .right-link {
+    flex: 0 0 auto;
+    
     li {
       display: flex;
       align-items: center;
@@ -605,12 +616,10 @@ li {
       display: flex;
       align-items: center;
       gap: 0.7rem;
-      margin-right: 1.1rem;
+      margin-right: 1rem;
 
       .item {
         width: 35px;
-        margin-left: -1px;
-        margin-right: 9px;
         height: 35px;
         background: #d8dadf;
         border-radius: 50%;
