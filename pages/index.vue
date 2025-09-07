@@ -132,13 +132,11 @@ export default {
 
   .accounts {
     margin-right: 10rem;
-
     p {
       line-height: 1.5;
       font-size: 20px;
       font-weight: 800 !important;
     }
-
     a {
       text-decoration: none;
     }
@@ -189,7 +187,6 @@ export default {
         border-radius: 50px;
         border: 1px solid rgba(130, 117, 117, 0.2);
         border-radius: 5px;
-
         &:hover {
           box-shadow: 0 0 7px rgba(130, 117, 117, 0.3);
         }
@@ -258,11 +255,9 @@ export default {
       margin-bottom: 1.5rem;
       margin-top: 2rem;
     }
-
     a {
       text-decoration: none;
     }
-
     p {
       color: #1877f2;
       text-align: center;
@@ -271,7 +266,6 @@ export default {
       letter-spacing: 1px;
       font-family: Helvetica, Arial, sans-serif;
       border-bottom: 1px solid rgba(130, 117, 117, 0.3);
-
       &:hover {
         text-decoration: underline;
       }
@@ -287,11 +281,9 @@ export default {
       border: 1px solid rgba(130, 117, 117, 0.2);
       border-radius: 5px;
       outline: none;
-
       &:focus {
         border: 1px solid blue;
       }
-
       &:disabled {
         background: #f5f5f5;
         cursor: not-allowed;
