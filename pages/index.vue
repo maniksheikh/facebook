@@ -312,11 +312,9 @@ export default {
       border-radius: 5px;
       transition: 0.3s ease-in;
       font-family: Helvetica, Arial, sans-serif;
-
       &:hover:not(:disabled) {
         background: #005fdb;
       }
-
       &:disabled {
         background: #cccccc;
         cursor: not-allowed;
@@ -338,7 +336,6 @@ export default {
       font-weight: 700;
       border-radius: 5px;
       transition: 0.3s ease-in-out;
-
       &:hover {
         background: #40bc27;
       }
@@ -362,11 +359,9 @@ export default {
       .center-text {
         text-align: center;
         line-height: 0;
-
         h1 {
           font-size: 28px;
         }
-
         p {
           font-size: 14px;
         }
