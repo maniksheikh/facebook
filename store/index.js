@@ -40,7 +40,6 @@ export const actions = {
       const { user } = await firebase
         .auth()
         .createUserWithEmailAndPassword(email, password);
-
       await user.updateProfile({
         displayName: userName,
       });
