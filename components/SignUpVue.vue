@@ -13,7 +13,7 @@
         <form action="#" @submit.prevent="registerUser">
           <div class="flex">
             <input v-model="user.username" class="input" type="text" placeholder="FirstName" required />
-            <input class="input" type="text" placeholder="Surname" />
+            <input v-model="user.surname" class="input" type="text" placeholder="Surname" required />
           </div>
           <input v-model="user.email" class="input" type="email" required placeholder="Email address" />
           <input v-model="user.password" class="input" type="password" required placeholder="New password" />
@@ -21,18 +21,18 @@
             <a href="#">Date of birth
               <img class="question-png" src="/assets/image/icons-question-mark-img.png" alt="" /></a>
             <div class="flex">
-              <select id="" v-model="selectedays" name="">
-                <option v-for="day in days" :key="day">
+              <select v-model="user.birthDay" name="day" required>
+                <option v-for="day in days" :key="day" :value="day">
                   {{ day }}
                 </option>
               </select>
-              <select v-model="selectedmonths">
-                <option v-for="month in months" :key="month">
+              <select v-model="user.birthMonth" name="month" required>
+                <option v-for="month in months" :key="month" :value="month">
                   {{ month }}
                 </option>
               </select>
-              <select v-model="selectedYear">
-                <option v-for="year in years" :key="year">{{ year }}</option>
+              <select v-model="user.birthYear" name="year" required>
+                <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
               </select>
             </div>
           </div>
@@ -41,16 +41,16 @@
               <img class="question-png" src="/assets/image/icons-question-mark-img.png" alt="" /></a>
             <div class="flex-items">
               <div class="form-control">
-                <label for="html">Female</label><br />
-                <input type="radio" name="fav_language" value="Female" />
+                <label for="female">Female</label><br />
+                <input id="female" v-model="user.gender" type="radio" name="gender" value="Female" required />
               </div>
               <div class="form-control">
-                <label for="css">Male</label><br />
-                <input type="radio" name="fav_language" value="Male" />
+                <label for="male">Male</label><br />
+                <input id="male" v-model="user.gender" type="radio" name="gender" value="Male" required />
               </div>
               <div class="form-control">
-                <label for="javascript">Custom</label>
-                <input type="radio" name="fav_language" value="Custom" />
+                <label for="custom">Custom</label>
+                <input id="custom" v-model="user.gender" type="radio" name="gender" value="Custom" required />
               </div>
             </div>
           </div>
@@ -65,8 +65,15 @@
           </div>
         </form>
       </div>
-      <img id="u_2_9_Am" class="delete-img" src="https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/zgulV2zGm8t.png" alt=""
-        width="24" height="24" @click="hideOrderForm" />
+      <img
+        id="u_2_9_Am"
+        class="delete-img"
+        src="https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/zgulV2zGm8t.png"
+        alt=""
+        width="24"
+        height="24"
+        @click="hideOrderForm"
+      />
     </div>
   </div>
 </template>
@@ -80,6 +87,11 @@ export default {
         username: '',
         email: '',
         password: '',
+        surname: '',
+        gender: '',
+        birthDay: 20,
+        birthMonth: 'Jan',
+        birthYear: 2024,
       },
       selectedays: 20,
       selectedmonths: 'Jan',
@@ -117,17 +129,40 @@ export default {
       this.$emit('toggle-order-form')
     },
     async registerUser() {
+      if (!this.user.username || !this.user.surname || !this.user.email || !this.user.password || !this.user.gender) {
+        this.error = 'Please fill in all required fields.'
+        return
+      }
+
+      if (this.user.password.length < 6) {
+        this.error = 'Password must be at least 6 characters long.'
+        return
+      }
+
       try {
         await this.$store.dispatch('signup', {
           email: this.user.email,
           password: this.user.password,
-          userName: this.user.username,
+          userName: `${this.user.username} ${this.user.surname}`,
+          gender: this.user.gender,
+          birthDate: {
+            day: this.user.birthDay,
+            month: this.user.birthMonth,
+            year: this.user.birthYear
+          }
         })
         this.$router.push('/feed')
         this.hideOrderForm()
       } catch (error) {
-        console.error('Signup error:', error)
-        this.error = 'Something went wrong creating your account. Please try again.'
+        if (error.code === 'auth/email-already-in-use') {
+          this.error = 'An account with this email already exists.'
+        } else if (error.code === 'auth/invalid-email') {
+          this.error = 'Please enter a valid email address.'
+        } else if (error.code === 'auth/weak-password') {
+          this.error = 'Password is too weak. Please choose a stronger password.'
+        } else {
+          this.error = 'Something went wrong creating your account. Please try again.'
+        }
       }
     },
   },
@@ -340,7 +375,7 @@ export default {
 @media screen and (max-width: 500px) {
   .signup {
     width: 350px;
-   .signup-group {
+    .signup-group {
       .gender {
         .flex-items {
           gap: 0.3rem;
