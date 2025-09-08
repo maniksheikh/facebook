@@ -109,7 +109,6 @@ export default {
     display: flex;
     gap: 0.5rem;
     padding: 0.7rem 0 !important;
-
     .check {
       margin-top: 4px;
     }
@@ -118,7 +117,6 @@ export default {
       width: 15px;
       height: 15px;
     }
-
     span {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
         Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -152,16 +150,13 @@ export default {
     margin-bottom: 1.5rem;
     margin-top: 2rem;
   }
-
   a {
     text-decoration: none;
   }
-
   p {
     color: #1877f2;
     padding: 0.8rem 0;
     font-size: 1.1rem;
-
     &:hover {
       text-decoration: underline;
     }
@@ -184,7 +179,6 @@ export default {
     border: 1px solid rgba(130, 117, 117, 0.2);
     border-radius: 5px;
     outline: none;
-
     &:focus {
       border: 1px solid blue;
     }
@@ -199,7 +193,6 @@ export default {
     font-weight: 700;
     border-radius: 5px;
     transition: 0.3s ease-in;
-
     &:hover {
       background: #005fdb;
     }
@@ -215,7 +208,6 @@ export default {
     font-weight: 700;
     border-radius: 5px;
     transition: 0.3s ease-in-out;
-
     &:hover {
       background: #40bc27;
     }
