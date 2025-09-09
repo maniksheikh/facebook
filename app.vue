@@ -10,7 +10,11 @@ export default {
     return {
       titleTemplate: '%s - Facebook Clone',
       meta: [
-        { hid: 'description', name: 'description', content: 'Facebook clone built with Nuxt 2' }
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Facebook clone built with Nuxt 2'
+        }
       ]
     }
   }

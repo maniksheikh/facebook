@@ -353,7 +353,7 @@ export default {
   data() {
     return {
       visible: false,
-      activeNavItem: 'home', // Track which navbar item is active
+      activeNavItem: 'home' // Track which navbar item is active
     }
   },
 
@@ -369,7 +369,7 @@ export default {
 
     isUserAuth() {
       return this.$store.getters.isUserAuth
-    },
+    }
   },
   mounted() {
     // Close dropdown when clicking outside
@@ -383,7 +383,9 @@ export default {
       try {
         await this.$store.dispatch('loggingOut')
         this.$router.push('/')
-      } catch (error) { }
+      } catch (error) {
+        // Handle logout error
+      }
     },
     toggle() {
       this.visible = !this.visible
@@ -396,7 +398,7 @@ export default {
     },
     setActiveNavItem(itemName) {
       this.activeNavItem = itemName
-    },
+    }
   },
 }
 </script>
