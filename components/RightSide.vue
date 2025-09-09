@@ -13,8 +13,15 @@
     <div class="pages">
       <p>Your Pages and profiles</p>
       <button class="btn">
-        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true"
-          viewBox="0 0 24 24" width="20" height="20" data-testid="MoreHorizIcon">
+        <svg
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+          focusable="false"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          data-testid="MoreHorizIcon"
+        >
           <path
             d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z">
           </path>
@@ -26,8 +33,13 @@
         <span>Contact</span>
         <div class="btn-container">
           <button class="btn">
-            <svg fill="currentColor" viewBox="0 0 16 16" width="15" height="15"
-              class="b6ax4al1 m4pnbp5e somyomsx ahndzqod gnhxmgs4 eohcrkr5 akh3l2rg">
+            <svg
+              fill="currentColor"
+              viewBox="0 0 16 16"
+              width="15"
+              height="15"
+              class="b6ax4al1 m4pnbp5e somyomsx ahndzqod gnhxmgs4 eohcrkr5 akh3l2rg"
+            >
               <g fill-rule="evenodd" transform="translate(-448 -544)">
                 <path
                   d="M457.25 552.5H455v2.25a.75.75 0 0 1-1.5 0v-2.25h-2.25a.75.75 0 0 1 0-1.5h2.25v-2.25a.75.75 0 0 1 1.5 0V551h2.25a.75.75 0 0 1 0 1.5m6.38-4.435a.62.62 0 0 0-.64.047l-2.49 1.634v-1.394a1.854 1.854 0 0 0-1.852-1.852l-8.796.002a1.854 1.854 0 0 0-1.851 1.852v6.793c0 1.021.83 1.852 1.852 1.852l1.147-.002h7.648a1.854 1.854 0 0 0 1.852-1.851v-1.392l2.457 1.61a.641.641 0 0 0 .673.071.663.663 0 0 0 .37-.601v-6.167c0-.26-.142-.49-.37-.602">
@@ -36,8 +48,13 @@
             </svg>
           </button>
           <button class="btn">
-            <svg fill="currentColor" viewBox="0 0 16 16" width="15" height="15"
-              class="b6ax4al1 m4pnbp5e somyomsx ahndzqod gnhxmgs4 eohcrkr5 akh3l2rg">
+            <svg
+              fill="currentColor"
+              viewBox="0 0 16 16"
+              width="15"
+              height="15"
+              class="b6ax4al1 m4pnbp5e somyomsx ahndzqod gnhxmgs4 eohcrkr5 akh3l2rg"
+            >
               <g fill-rule="evenodd" transform="translate(-448 -544)">
                 <g fill-rule="nonzero">
                   <path
@@ -57,8 +74,15 @@
             </svg>
           </button>
           <button class="btn">
-            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true"
-              viewBox="0 0 24 24" width="25" height="25" data-testid="MoreHorizIcon">
+            <svg
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+              focusable="false"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              width="25"
+              height="25"
+              data-testid="MoreHorizIcon"
+            >
               <path
                 d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z">
               </path>

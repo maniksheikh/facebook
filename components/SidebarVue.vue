@@ -167,23 +167,23 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from 'vuex'
 export default {
   filters: {
     liveSubstr: function (string) {
-      return string.substring(0, 1);
-    },
+      return string.substring(0, 1)
+    }
   },
   computed: {
     ...mapState(['user']),
     userName() {
-      return this.user ? this.user.displayName : '';
+      return this.user ? this.user.displayName : ''
     },
     userEmail() {
-      return this.user ? this.user.email : '';
-    },
-  },
-};
+      return this.user ? this.user.email : ''
+    }
+  }
+}
 
 </script>
 
