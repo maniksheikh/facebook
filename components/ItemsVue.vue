@@ -236,7 +236,6 @@ export default {
 
       .date {
         font-size: 0.7rem;
-
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
           'Lucida Sans', Arial, sans-serif;
         display: block;
@@ -278,7 +277,6 @@ export default {
     .btn-comment,
     .btn-share {
       padding: 0.5rem 1.7rem;
-
       &:hover {
         background: #f7f4f4;
         border-radius: 5px;
@@ -295,12 +293,10 @@ export default {
       .react-btn {
         padding: 0.5rem 0;
         margin: 0.5rem 1rem;
-
         .btn-react,
         .btn-comment,
         .btn-share {
           padding: 0.4rem 0.3rem;
-
           &:hover {
             background: #e7e3e1;
           }
