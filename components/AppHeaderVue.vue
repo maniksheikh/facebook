@@ -353,7 +353,7 @@ export default {
   data() {
     return {
       visible: false,
-      activeNavItem: 'home' // Track which navbar item is active
+      activeNavItem: 'home'
     }
   },
 
@@ -372,7 +372,6 @@ export default {
     }
   },
   mounted() {
-    // Close dropdown when clicking outside
     document.addEventListener('click', this.handleClickOutside)
   },
   beforeDestroy() {
@@ -384,7 +383,6 @@ export default {
         await this.$store.dispatch('loggingOut')
         this.$router.push('/')
       } catch (error) {
-        // Handle logout error
       }
     },
     toggle() {
