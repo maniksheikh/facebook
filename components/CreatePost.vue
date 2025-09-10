@@ -311,7 +311,6 @@ export default {
           username: this.username || 'Anonymous User',
           text: this.text.trim(),
         }
-
         this.posts.unshift(newPost)
         this.$store.commit('addPost', newPost)
         localStorage.setItem('fbposts', JSON.stringify(this.posts))
@@ -352,10 +351,8 @@ export default {
       font-size: 1rem;
       background: #f0f2f5;
       padding-left: 25px;
-
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
         'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
       &:hover {
         background: #e4e6e9;
         transition: 0.4s;
@@ -425,7 +422,6 @@ export default {
       }
     }
   }
-
   p {
     padding-left: 3.5rem;
   }
