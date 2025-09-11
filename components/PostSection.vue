@@ -79,7 +79,6 @@
       border: 1px solid rgba(196, 196, 196, 0.3);
       cursor: pointer;
       position: relative;
-
       &:hover {
         transform: scale(1.01);
       }
@@ -141,7 +140,6 @@
         background: white;
         padding-top: 1rem;
         padding-bottom: 0.5rem;
-
         span {
           text-align: center !important;
           font-size: 0.9rem;
@@ -184,7 +182,6 @@
   .post-page {
     .story {
       margin-top: 1rem;
-
       .box:last-child {
         display: none;
       }
