@@ -546,7 +546,6 @@ export default {
 
   .items {
     font-family: inherit;
-
     .post-content {
       width: 100%;
       display: flex;
@@ -556,7 +555,6 @@ export default {
       div {
         display: flex;
         padding: 10px;
-
         .post-profile-img {
           border: 1px solid #ccc;
           width: 50px;
@@ -586,7 +584,6 @@ export default {
           width: 26px;
           color: #f2f2f2 !important;
           opacity: 0.5;
-
           &:hover {
             background: #e6dddd;
             transition: 0.4s;
@@ -616,7 +613,6 @@ export default {
       display: flex;
       justify-content: space-between;
       padding: 0.3rem;
-
       span {
         font-size: 1.2rem;
         opacity: 0.8;
@@ -644,7 +640,6 @@ export default {
     button:last-child {
       display: none;
     }
-
   }
 }
 </style>
