@@ -5,9 +5,9 @@
         <SidebarVue></SidebarVue>
       </div>
       <div class="feed-sidebar mt-2">
+        <CreatePost></CreatePost>
         <PostSection></PostSection>
         <ItemsVue></ItemsVue>
-        <CreatePost></CreatePost>
         <PermanentSection></PermanentSection>
       </div>
       <div class="right-sidebar mt-2">
