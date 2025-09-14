@@ -134,13 +134,14 @@
               <div class="profile-img">
                 <img src="../assets/image/male-face-avatar-logo.jpg" alt="" />
               </div>
+              <div class="content">
+                <span class="title">{{ post.username }}</span>
+                <span class="email">{{ post.email || 'user@example.com' }}</span>
+              </div>
               <div class="multi-icon">
                 <img src="../assets/image/icons8-more-24.png" />
                 <img src="../assets/image/icons-multiply-img.png" />
               </div>
-            </div>
-            <div class="content">
-              <span class="title">{{ post.username }}</span>
             </div>
           </div>
           <p v-if="post.text">{{ post.text }}</p>
@@ -240,10 +241,18 @@
         </div>
         <div class="item">
           <div class="bio">
-            <img src="../assets/image/male-face-avatar-logo.jpg" alt="" />
-
-            <div class="content">
-              <span class="title">Md Manik Sheikh</span>
+            <div class="bio-content">
+              <div class="profile-img">
+                <img src="../assets/image/male-face-avatar-logo.jpg" alt="" />
+              </div>
+              <div class="content">
+                <span class="title">Md Manik Sheikh</span>
+                <span class="email">manik.sheikh@example.com</span>
+              </div>
+              <div class="multi-icon">
+                <img src="../assets/image/icons8-more-24.png" />
+                <img src="../assets/image/icons-multiply-img.png" />
+              </div>
             </div>
           </div>
           <p>I am a frontend developer</p>
@@ -428,6 +437,7 @@ export default {
         const newPost = {
           id: Date.now(),
           username: this.username || 'Anonymous User',
+          email: this.$store.state.user ? this.$store.state.user.email : 'user@example.com',
           text: this.text.trim(),
           media: this.selectedFiles.map(file => ({
             name: file.name,
@@ -658,34 +668,73 @@ export default {
 
 .post {
   .items {
+    .item {
+      background: white;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
     .bio {
       .bio-content {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 1rem;
 
         .profile-img {
           border: 1px solid #ccc;
           width: 50px;
           height: 50px;
           border-radius: 50%;
+          margin-right: 0.75rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+
+        .content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1c1e21;
+            margin-bottom: 0.2rem;
+          }
+
+          .email {
+            font-size: 0.875rem;
+            color: #65676b;
+            font-weight: 400;
+          }
         }
 
         .multi-icon {
           display: flex;
           justify-content: space-between;
+          gap: 0.5rem;
 
           img {
             height: 25px;
             width: 25px;
             color: #f2f2f2 !important;
-
             opacity: 0.5;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 4px;
 
             &:hover {
-              background: #b9b2b2;
-              transition: 0.4s;
+              background: #f0f2f5;
+              opacity: 1;
+              transition: 0.3s;
             }
           }
         }
