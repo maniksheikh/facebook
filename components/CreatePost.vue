@@ -3,7 +3,14 @@
     <div class="create-post">
       <div class="flex">
         <img class="profile" src="../assets/image/male-face-avatar-logo.jpg" alt="" />
-        <input v-model="text" type="text" placeholder="What's on your mind?" @change="addItem" />
+        <textarea 
+          v-model="text" 
+          placeholder="What's on your mind?" 
+          rows="1"
+          style="resize: none; overflow: hidden;"
+          @keydown.enter.prevent="addItem"
+          @input="autoResize"
+        ></textarea>
       </div>
       <div class="post-btn">
         <button class="btn">
@@ -27,7 +34,7 @@
           </svg>
           <span>Live video</span>
         </button>
-        <button class="btn flex1">
+        <button class="btn flex1" @click="toggleFileInput">
           <svg
             fill="#41B35D"
             viewBox="0 0 24 24"
@@ -77,6 +84,47 @@
           <span>Feeling/activity</span>
         </button>
       </div>
+      
+      <!-- File Upload Section -->
+      <div v-if="showFileInput" class="file-upload-section">
+        <input 
+          ref="fileInput"
+          type="file" 
+          multiple 
+          accept="image/*,video/*" 
+          style="display: none;"
+          @change="handleFileSelect"
+        />
+        <div class="file-upload-area" @click="$refs.fileInput.click()">
+          <div class="upload-icon">📁</div>
+          <p>Click to select photos or videos</p>
+          <p class="file-hint">Supports: JPG, PNG, GIF, MP4, MOV</p>
+        </div>
+        
+        <!-- Selected Files Preview -->
+        <div v-if="selectedFiles.length > 0" class="selected-files">
+          <div v-for="(file, index) in selectedFiles" :key="index" class="file-preview">
+            <div v-if="file.type.startsWith('image/')" class="image-preview">
+              <img :src="file.url" :alt="file.name" />
+              <button class="remove-file" @click="removeFile(index)">×</button>
+            </div>
+            <div v-else-if="file.type.startsWith('video/')" class="video-preview">
+              <video :src="file.url" controls></video>
+              <button class="remove-file" @click="removeFile(index)">×</button>
+            </div>
+            <div class="file-info">
+              <span class="file-name">{{ file.name }}</span>
+              <span class="file-size">{{ formatFileSize(file.size) }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Post Button -->
+        <div class="post-actions">
+          <button class="post-submit-btn" :disabled="!canPost" @click="addItem">Post</button>
+          <button class="cancel-btn" @click="cancelPost">Cancel</button>
+        </div>
+      </div>
     </div>
     <div class="post">
       <div v-if="posts" class="items">
@@ -95,7 +143,15 @@
               <span class="title">{{ post.username }}</span>
             </div>
           </div>
-          <p>{{ post.text }}</p>
+          <p v-if="post.text">{{ post.text }}</p>
+          
+          <!-- Media Content -->
+          <div v-if="post.media && post.media.length > 0" class="post-media">
+            <div v-for="(media, index) in post.media" :key="index" class="media-item">
+              <img v-if="media.type.startsWith('image/')" :src="media.url" :alt="media.name" class="post-image" />
+              <video v-else-if="media.type.startsWith('video/')" :src="media.url" controls class="post-video"></video>
+            </div>
+          </div>
           <div class="react-btn">
             <button class="btn btn-react">
               <svg
@@ -290,11 +346,17 @@ export default {
     return {
       text: '',
       posts: [],
+      selectedFiles: [],
+      postType: 'text', // 'text', 'image', 'video'
+      showFileInput: false,
     }
   },
   computed: {
     username() {
       return this.$store.state.user ? this.$store.state.user.displayName : ''
+    },
+    canPost() {
+      return this.text.trim() || this.selectedFiles.length > 0
     },
   },
   mounted() {
@@ -304,18 +366,86 @@ export default {
     }
   },
   methods: {
+    toggleFileInput() {
+      this.showFileInput = !this.showFileInput
+      if (!this.showFileInput) {
+        this.selectedFiles = []
+      }
+    },
+    
+    handleFileSelect(event) {
+      const files = Array.from(event.target.files)
+      const maxSize = 50 * 1024 * 1024 // 50MB limit
+      
+      files.forEach(file => {
+        if (file.size > maxSize) {
+          alert(`File ${file.name} is too large. Maximum size is 50MB.`)
+          return
+        }
+        
+        const fileObj = {
+          file,
+          name: file.name,
+          size: file.size,
+          type: file.type,
+          url: URL.createObjectURL(file)
+        }
+        
+        this.selectedFiles.push(fileObj)
+      })
+    },
+    
+    removeFile(index) {
+      URL.revokeObjectURL(this.selectedFiles[index].url)
+      this.selectedFiles.splice(index, 1)
+    },
+    
+    formatFileSize(bytes) {
+      if (bytes === 0) return '0 Bytes'
+      const k = 1024
+      const sizes = ['Bytes', 'KB', 'MB', 'GB']
+      const i = Math.floor(Math.log(bytes) / Math.log(k))
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
+    },
+    
+    autoResize(event) {
+      const textarea = event.target
+      textarea.style.height = 'auto'
+      textarea.style.height = textarea.scrollHeight + 'px'
+    },
+    
+    cancelPost() {
+      this.showFileInput = false
+      this.selectedFiles.forEach(file => {
+        URL.revokeObjectURL(file.url)
+      })
+      this.selectedFiles = []
+      this.text = ''
+    },
+    
     addItem() {
-      if (this.text.trim()) {
+      if (this.canPost) {
         const newPost = {
           id: Date.now(),
           username: this.username || 'Anonymous User',
           text: this.text.trim(),
+          media: this.selectedFiles.map(file => ({
+            name: file.name,
+            type: file.type,
+            url: file.url,
+            size: file.size
+          })),
+          timestamp: new Date().toISOString()
         }
+        
         this.posts.unshift(newPost)
         this.$store.commit('addPost', newPost)
         localStorage.setItem('fbposts', JSON.stringify(this.posts))
 
+        // Reset form
         this.text = ''
+        this.selectedFiles = []
+        this.showFileInput = false
       }
     },
   },
@@ -342,7 +472,7 @@ export default {
       border-radius: 50%;
     }
 
-    input {
+    textarea {
       width: 100%;
       border: none;
       outline: none;
@@ -353,10 +483,16 @@ export default {
       padding-left: 25px;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
         'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      min-height: 40px;
+      max-height: 200px;
       &:hover {
         background: #e4e6e9;
         transition: 0.4s;
         cursor: pointer;
+      }
+      &:focus {
+        background: #fff;
+        cursor: text;
       }
     }
   }
@@ -381,6 +517,140 @@ export default {
         background: #f2f2f2;
         transition: 0.4s;
         border-radius: 10px;
+      }
+    }
+  }
+
+  .file-upload-section {
+    border-top: 1px solid rgba(81, 78, 78, 0.1);
+    padding: 1rem;
+    
+    .file-upload-area {
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        border-color: #1877f2;
+        background-color: #f0f8ff;
+      }
+      
+      .upload-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      
+      p {
+        margin: 0.5rem 0;
+        color: #666;
+      }
+      
+      .file-hint {
+        font-size: 0.8rem;
+        color: #999;
+      }
+    }
+    
+    .selected-files {
+      margin-top: 1rem;
+      
+      .file-preview {
+        position: relative;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 0.5rem;
+        
+        .image-preview, .video-preview {
+          position: relative;
+          
+          img, video {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 4px;
+          }
+          
+          .remove-file {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            &:hover {
+              background: rgba(0, 0, 0, 0.9);
+            }
+          }
+        }
+        
+        .file-info {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 0.5rem;
+          font-size: 0.8rem;
+          color: #666;
+          
+          .file-name {
+            font-weight: 500;
+          }
+          
+          .file-size {
+            color: #999;
+          }
+        }
+      }
+    }
+    
+    .post-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      margin-top: 1rem;
+      
+      .post-submit-btn {
+        background: #1877f2;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 0.5rem 1.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        
+        &:hover:not(:disabled) {
+          background: #166fe5;
+        }
+        
+        &:disabled {
+          background: #ccc;
+          cursor: not-allowed;
+        }
+      }
+      
+      .cancel-btn {
+        background: #f0f2f5;
+        color: #666;
+        border: none;
+        border-radius: 6px;
+        padding: 0.5rem 1.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        
+        &:hover {
+          background: #e4e6e9;
+        }
       }
     }
   }
@@ -424,6 +694,32 @@ export default {
   }
   p {
     padding-left: 3.5rem;
+  }
+
+  .post-media {
+    margin: 1rem 0;
+    
+    .media-item {
+      margin-bottom: 0.5rem;
+      
+      .post-image {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        
+        &:hover {
+          opacity: 0.95;
+        }
+      }
+      
+      .post-video {
+        width: 100%;
+        max-height: 500px;
+        border-radius: 8px;
+      }
+    }
   }
 }
 
