@@ -538,7 +538,7 @@ li {
           padding: 0.5rem 0.7rem;
           border-radius: 6px;
           font-size: 0.75rem;
-          font-family: 'Roboto', sans-serif;
+          font-family: inherit;
           font-weight: 500;
           white-space: nowrap;
           z-index: 1000;
@@ -593,7 +593,7 @@ li {
       padding: 0.5rem 0.7rem;
       border-radius: 6px;
       font-size: 0.75rem;
-      font-family: 'Roboto', sans-serif;
+      font-family: inherit;
       font-weight: 500;
       white-space: nowrap;
       z-index: 1000;
@@ -685,8 +685,7 @@ li {
                 }
 
                 span {
-                  font-family: 'Gill Sans', 'Gill Sans MT', Calibri,
-                    'Trebuchet MS', sans-serif;
+                  font-family: inherit;
                   font-size: 1.2rem;
                 }
               }
@@ -699,8 +698,7 @@ li {
               a {
                 text-decoration: none;
                 color: #3783e7;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
-                  'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-family: inherit;
                 font-size: 1rem;
               }
             }
@@ -739,7 +737,7 @@ li {
 
               span {
                 font-size: 1rem;
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: inherit;
                 font-weight: 500;
               }
             }

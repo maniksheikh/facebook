@@ -1,0 +1,23 @@
+/* Facebook-like Global Font Family */
+* {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* Override any specific font declarations */
+input, textarea, button, select {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+p, span, div, a {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
