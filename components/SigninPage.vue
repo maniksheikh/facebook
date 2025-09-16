@@ -118,8 +118,7 @@ export default {
       height: 15px;
     }
     span {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: inherit;
       font-size: 0.9rem;
     }
   }
@@ -136,7 +135,7 @@ export default {
 
   .title {
     margin: 0 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: inherit;
     font-size: 1.2rem;
     padding: 1rem 0 !important;
     border-bottom: 1px solid rgba(224, 210, 210, 0.3);
@@ -166,7 +165,7 @@ export default {
     color: #1877f2;
     font-size: 14px;
     letter-spacing: 1px;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: inherit;
   }
 
   input {
@@ -201,8 +200,7 @@ export default {
   .btn-primary {
     padding: 0.9rem;
     background: #42b72a;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-      'Lucida Sans', Arial, sans-serif;
+    font-family: inherit;
     color: white;
     font-size: 1.2rem;
     font-weight: 700;

@@ -145,20 +145,20 @@ export default {
       color: #1877f2;
       font-size: 3rem;
       font-weight: 600;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: inherit;
     }
 
     span {
       font-size: 28px;
       font-weight: 400;
       color: #1c1e21;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: inherit;
     }
 
     p {
       font-size: 1rem;
       font-weight: 600;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: inherit;
       padding: 0.7rem 0;
       color: rgba(0, 0, 0, 0.6);
     }
@@ -175,7 +175,7 @@ export default {
           font-size: 1.1rem;
           font-weight: 400;
           padding: 1rem !important;
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: inherit;
         }
       }
 
@@ -211,7 +211,7 @@ export default {
           border-bottom-left-radius: 5px;
 
           .add-account {
-            font-family: SFProText-Medium, Helvetica, Arial, sans-serif;
+            font-family: inherit;
             color: #1877f2;
             font-size: 18px;
           }
@@ -264,7 +264,7 @@ export default {
       padding: 0.8rem 0;
       font-size: 14px;
       letter-spacing: 1px;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: inherit;
       border-bottom: 1px solid rgba(130, 117, 117, 0.3);
       &:hover {
         text-decoration: underline;
@@ -311,7 +311,7 @@ export default {
       font-weight: 700;
       border-radius: 5px;
       transition: 0.3s ease-in;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: inherit;
       &:hover:not(:disabled) {
         background: #005fdb;
       }
@@ -330,7 +330,7 @@ export default {
       margin: auto;
       padding: 0.9rem;
       background: #42b72a;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: inherit;
       color: #ffffff;
       font-size: 17px;
       font-weight: 700;

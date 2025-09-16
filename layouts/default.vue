@@ -17,12 +17,18 @@ export default {
 }
 </script>
 
-<style   >
+<style>
 *,
 *:before,
 *:after {
   box-sizing: border-box;
-  font-family: inherit;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .nuxt-container {

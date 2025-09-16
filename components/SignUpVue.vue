@@ -195,11 +195,11 @@ export default {
 
     h1 {
       text-align: center;
-      font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+      font-family: inherit;
     }
 
     span {
-      font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+      font-family: inherit;
       color: SFProText-Regular, Helvetica, Arial, sans-serif;
       color: #606770;
       font-weight: 400;
@@ -218,7 +218,7 @@ export default {
       border: none;
       outline: none;
       border: 1px solid #ccc;
-      font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+      font-family: inherit;
       box-sizing: border-box;
       border-radius: 5px;
       background: #f5f6f7;
@@ -246,7 +246,7 @@ export default {
           cursor: pointer;
           border: 1px solid rgba(0, 0, 0, 0.3);
           border-radius: 5px;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-family: inherit;
 
           option {
             padding: 10px;
@@ -262,7 +262,7 @@ export default {
         color: #606770;
         font-weight: 400;
         text-decoration: none;
-        font-family: SFProText-Medium, Helvetica, Arial, sans-serif;
+        font-family: inherit;
 
         .question-png {
           width: 10px;
@@ -282,7 +282,7 @@ export default {
         font-weight: 400;
         text-decoration: none;
 
-        font-family: SFProText-Medium, Helvetica, Arial, sans-serif;
+        font-family: inherit;
 
         .question-png {
           width: 10px;
@@ -305,13 +305,13 @@ export default {
           font-weight: 400;
           font-size: 15px;
           cursor: pointer;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-family: inherit;
           gap: 1.9rem;
 
           label {
             cursor: pointer;
             font-size: 1rem;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: inherit;
           }
         }
       }
@@ -324,7 +324,7 @@ export default {
         color: #777777;
         font-size: 11px;
         font-weight: 400;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: inherit;
 
         span {
           color: #92d2ff;
@@ -343,8 +343,7 @@ export default {
       color: white;
       font-size: 1.3rem;
       background: #00a400;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-        'Lucida Sans', Arial, sans-serif;
+      font-family: inherit;
       border-radius: 10px;
     }
   }
@@ -356,7 +355,7 @@ export default {
   background: red;
   padding: 0.8rem 0.6rem;
   font-size: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
   border-radius: 10px;
 }
 
