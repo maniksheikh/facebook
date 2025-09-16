@@ -131,7 +131,7 @@
         color: white;
         z-index: 9999;
         font-weight: 400;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: inherit;
       }
 
       .text-center {
@@ -144,7 +144,7 @@
           text-align: center !important;
           font-size: 0.9rem;
           font-weight: 600;
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: inherit;
         }
       }
 

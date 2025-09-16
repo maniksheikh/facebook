@@ -192,8 +192,7 @@ export default {
 
     .title {
       font-size: 1.1rem;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-        'Lucida Sans', Arial, sans-serif;
+      font-family: inherit;
       padding: 0.5rem 0;
       color: #5a5a5c;
     }
@@ -221,7 +220,7 @@ export default {
       .content {
         span {
           font-weight: 400;
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: inherit;
         }
         a {
           font-size: 0.9rem;
@@ -254,8 +253,7 @@ export default {
 
     p {
       font-size: 1rem;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-family: inherit;
     }
   }
 
@@ -273,8 +271,7 @@ export default {
       }
 
       span {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family: inherit;
         font-size: 1.1rem;
       }
     }
@@ -289,8 +286,7 @@ export default {
         font-weight: 600;
         padding: 0.4rem;
         opacity: 0.6;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family: inherit;
 
         &:hover {
           background: #e4e6e9;

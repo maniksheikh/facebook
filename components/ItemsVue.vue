@@ -173,7 +173,7 @@ export default {
     p {
       margin: 0.5rem;
       font-weight: 500;
-      font-family: 'Roboto', sans-serif;
+      font-family: inherit;
     }
 
     .dots-icon {
@@ -195,13 +195,13 @@ export default {
 
       a {
         text-decoration: none;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: inherit;
         color: #333;
       }
 
       .comments {
         margin-left: auto;
-        font-family: 'Roboto', sans-serif;
+        font-family: inherit;
         font-size: 1rem;
       }
     }
@@ -236,8 +236,7 @@ export default {
 
       .date {
         font-size: 0.7rem;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-          'Lucida Sans', Arial, sans-serif;
+        font-family: inherit;
         display: block;
       }
     }
@@ -268,7 +267,7 @@ export default {
       gap: 0.5rem;
 
       span {
-        font-family: 'Roboto', sans-serif;
+        font-family: inherit;
         font-size: 1rem;
       }
     }

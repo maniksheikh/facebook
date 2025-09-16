@@ -491,8 +491,7 @@ export default {
       font-size: 1rem;
       background: #f0f2f5;
       padding-left: 25px;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-family: inherit;
       min-height: 40px;
       max-height: 200px;
       &:hover {
