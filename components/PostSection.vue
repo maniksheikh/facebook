@@ -462,7 +462,7 @@ export default {
         transition: background-color 0.2s;
 
         &:hover {
-          background: #f0f2f5;
+          background: #f5f5f5;
         }
 
         span {
@@ -588,9 +588,9 @@ export default {
           font-weight: 600;
           cursor: pointer;
 
-          &:hover {
-            background: #d8dadf;
-          }
+        &:hover {
+          background: #f5f5f5;
+        }
         }
       }
     }
@@ -663,7 +663,7 @@ export default {
               border-radius: 4px;
 
               &:hover {
-                background: #f0f2f5;
+                background: #f5f5f5;
                 opacity: 1;
                 transition: 0.3s;
               }
@@ -729,7 +729,7 @@ export default {
         min-width: 0;
 
         &:hover {
-          background: #f0f2f5;
+          background: #f5f5f5;
           width: 100%;
         }
 
@@ -740,22 +740,19 @@ export default {
 
       .btn-react {
         &:hover {
-          background: rgba(32, 120, 244, 0.1);
-          color: #2078f4;
+          background: #f5f5f5;
         }
       }
 
       .btn-comment {
         &:hover {
-          background: rgba(16, 142, 233, 0.1);
-          color: #108ee9;
+          background: #f5f5f5;
         }
       }
 
       .btn-share {
         &:hover {
-          background: rgba(66, 183, 42, 0.1);
-          color: #42b72a;
+          background: #f5f5f5;
         }
       }
     }

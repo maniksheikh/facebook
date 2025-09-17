@@ -495,7 +495,7 @@ export default {
       min-height: 40px;
       max-height: 200px;
       &:hover {
-        background: #e4e6e9;
+        background: #f5f5f5;
         transition: 0.4s;
         cursor: pointer;
       }
@@ -523,7 +523,7 @@ export default {
       text-align: center;
 
       &:hover {
-        background: #f2f2f2;
+        background: #f5f5f5;
         transition: 0.4s;
         border-radius: 10px;
       }
@@ -600,7 +600,8 @@ export default {
             justify-content: center;
             
             &:hover {
-              background: rgba(0, 0, 0, 0.9);
+              background: #f5f5f5;
+              color: #333;
             }
           }
         }
@@ -658,7 +659,7 @@ export default {
         cursor: pointer;
         
         &:hover {
-          background: #e4e6e9;
+          background: #f5f5f5;
         }
       }
     }
