@@ -509,7 +509,7 @@ li {
         }
 
         &:hover .set {
-          background-color: #f2f2f2;
+          background-color: #f5f5f5;
         }
 
         &:hover span {
@@ -627,7 +627,7 @@ li {
         transition: background-color 0.3s ease;
         
         &:hover {
-          background: #e4e6ea;
+          background: #f5f5f5;
         }
       }
 
@@ -643,7 +643,7 @@ li {
         display: inline-block;
         
         &:hover {
-          background-color: #f2f2f2;
+          background-color: #f5f5f5;
           border-radius: 50%;
         }
 
@@ -725,7 +725,7 @@ li {
               }
 
               &:hover {
-                background: #f2f2f2;
+                background: #f5f5f5;
               }
 
               svg {
