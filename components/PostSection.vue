@@ -706,16 +706,17 @@ export default {
 
     .react-btn {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       padding: 0.5rem 1rem;
       border-top: 1px solid #e4e6ea;
+      gap: 0.25rem;
 
       .btn {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem;
         background: none;
         border: none;
         border-radius: 6px;
@@ -724,9 +725,12 @@ export default {
         font-weight: 600;
         color: #65676b;
         transition: background-color 0.2s;
+        flex: 1;
+        min-width: 0;
 
         &:hover {
           background: #f0f2f5;
+          width: 100%;
         }
 
         span {
