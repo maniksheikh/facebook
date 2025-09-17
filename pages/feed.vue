@@ -5,7 +5,6 @@
         <SidebarVue></SidebarVue>
       </div>
       <div class="feed-sidebar mt-2">
-        <CreatePost></CreatePost>
         <PostSection></PostSection>
         <ItemsVue></ItemsVue>
         <PermanentSection></PermanentSection>
@@ -19,7 +18,6 @@
 
 <script>
 import SidebarVue from '../components/SidebarVue.vue'
-import CreatePost from '../components/CreatePost.vue'
 import ItemsVue from '../components/ItemsVue.vue'
 import PostSection from '../components/PostSection.vue'
 import RightSide from '../components/RightSide.vue'
@@ -29,7 +27,6 @@ export default {
   components: {
     SidebarVue,
     ItemsVue,
-    CreatePost,
     PostSection,
     PermanentSection,
     RightSide,
