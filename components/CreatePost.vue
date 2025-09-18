@@ -505,7 +505,6 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem;
-
     span {
       font-size: 1rem;
     }
@@ -516,7 +515,6 @@ export default {
       border-radius: 5px;
       padding: 0.5rem 1.3rem;
       text-align: center;
-
       &:hover {
         background: #f5f5f5;
         transition: 0.4s;
@@ -592,8 +590,7 @@ export default {
             font-size: 16px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            
+            justify-content: center;    
             &:hover {
               background: #f5f5f5;
               color: #333;
@@ -651,8 +648,7 @@ export default {
         border-radius: 6px;
         padding: 0.5rem 1.5rem;
         font-weight: 600;
-        cursor: pointer;
-        
+        cursor: pointer;    
         &:hover {
           background: #f5f5f5;
         }
@@ -751,8 +747,7 @@ export default {
         max-height: 500px;
         object-fit: cover;
         border-radius: 8px;
-        cursor: pointer;
-        
+        cursor: pointer;   
         &:hover {
           opacity: 0.95;
         }
