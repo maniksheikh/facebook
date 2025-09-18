@@ -84,7 +84,6 @@
           <span>Feeling/activity</span>
         </button>
       </div>
-      
       <!-- File Upload Section -->
       <div v-if="showFileInput" class="file-upload-section">
         <input 
@@ -100,7 +99,6 @@
           <p>Click to select photos or videos</p>
           <p class="file-hint">Supports: JPG, PNG, GIF, MP4, MOV</p>
         </div>
-        
         <!-- Selected Files Preview -->
         <div v-if="selectedFiles.length > 0" class="selected-files">
           <div v-for="(file, index) in selectedFiles" :key="index" class="file-preview">
@@ -118,7 +116,6 @@
             </div>
           </div>
         </div>
-        
         <!-- Post Button -->
         <div class="post-actions">
           <button class="post-submit-btn" :disabled="!canPost" @click="addItem">Post</button>
@@ -145,7 +142,6 @@
             </div>
           </div>
           <p v-if="post.text">{{ post.text }}</p>
-          
           <!-- Media Content -->
           <div v-if="post.media && post.media.length > 0" class="post-media">
             <div v-for="(media, index) in post.media" :key="index" class="media-item">
@@ -356,7 +352,7 @@ export default {
       text: '',
       posts: [],
       selectedFiles: [],
-      postType: 'text', // 'text', 'image', 'video'
+      postType: 'text',
       showFileInput: false,
     }
   },
@@ -384,7 +380,7 @@ export default {
     
     handleFileSelect(event) {
       const files = Array.from(event.target.files)
-      const maxSize = 50 * 1024 * 1024 // 50MB limit
+      const maxSize = 50 * 1024 * 1024
       
       files.forEach(file => {
         if (file.size > maxSize) {
@@ -399,7 +395,6 @@ export default {
           type: file.type,
           url: URL.createObjectURL(file)
         }
-        
         this.selectedFiles.push(fileObj)
       })
     },
