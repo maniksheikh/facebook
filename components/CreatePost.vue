@@ -516,7 +516,7 @@ export default {
       return this.createFileObject(file)
     },
     
-    async compressImage(file) {
+    compressImage(file) {
       return new Promise((resolve) => {
         const canvas = document.createElement('canvas')
         const ctx = canvas.getContext('2d')
@@ -559,7 +559,7 @@ export default {
       })
     },
     
-    async optimizeVideo(file) {
+    optimizeVideo(file) {
       // For video optimization, we'll just create a preview and keep the original
       // In a real app, you'd use FFmpeg.js or similar for actual compression
       return new Promise((resolve) => {
