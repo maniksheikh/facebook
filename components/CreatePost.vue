@@ -10,82 +10,12 @@
           style="resize: none; overflow: hidden;"
           @keydown.enter.prevent="addItem"
           @input="autoResize"
+          @focus="showPostOptions = true"
         ></textarea>
       </div>
-      <div class="post-btn">
-        <button class="btn">
-          <svg
-            fill="#E73F5A"
-            viewBox="0 0 24 24"
-            width="25px"
-            height="25px"
-            class="b6ax4al1 m4pnbp5e somyomsx ahndzqod ruv4vjns mwtcrujb mx6bq00g"
-          >
-            <g fill-rule="evenodd" transform="translate(-444 -156)">
-              <g>
-                <path
-                  d="M113.029 2.514c-.363-.088-.746.014-1.048.234l-2.57 1.88a.999.999 0 0 0-.411.807v8.13a1 1 0 0 0 .41.808l2.602 1.901c.219.16.477.242.737.242.253 0 .508-.077.732-.235.34-.239.519-.65.519-1.065V3.735a1.25 1.25 0 0 0-.971-1.22m-20.15 6.563c.1-.146 2.475-3.578 5.87-3.578 3.396 0 5.771 3.432 5.87 3.578a.749.749 0 0 1 0 .844c-.099.146-2.474 3.578-5.87 3.578-3.395 0-5.77-3.432-5.87-3.578a.749.749 0 0 1 0-.844zM103.75 19a3.754 3.754 0 0 0 3.75-3.75V3.75A3.754 3.754 0 0 0 103.75 0h-10A3.754 3.754 0 0 0 90 3.75v11.5A3.754 3.754 0 0 0 93.75 19h10z"
-                  transform="translate(354 158.5)"></path>
-                <path
-                  d="M98.75 12c1.379 0 2.5-1.121 2.5-2.5S100.129 7 98.75 7a2.503 2.503 0 0 0-2.5 2.5c0 1.379 1.121 2.5 2.5 2.5"
-                  transform="translate(354 158.5)"></path>
-              </g>
-            </g>
-          </svg>
-          <span>Live video</span>
-        </button>
-        <button class="btn flex1" @click="toggleFileInput">
-          <svg
-            fill="#41B35D"
-            viewBox="0 0 24 24"
-            width="25px"
-            height="25px"
-            class="b6ax4al1 m4pnbp5e somyomsx ahndzqod n7gtua6e mwtcrujb mx6bq00g"
-          >
-            <g fill-rule="evenodd" transform="translate(-444 -156)">
-              <g>
-                <path
-                  d="m96.968 22.425-.648.057a2.692 2.692 0 0 1-1.978-.625 2.69 2.69 0 0 1-.96-1.84L92.01 4.32a2.702 2.702 0 0 1 .79-2.156c.47-.472 1.111-.731 1.774-.79l2.58-.225a.498.498 0 0 1 .507.675 4.189 4.189 0 0 0-.251 1.11L96.017 18.85a4.206 4.206 0 0 0 .977 3.091s.459.364-.026.485m8.524-16.327a1.75 1.75 0 1 1-3.485.305 1.75 1.75 0 0 1 3.485-.305m5.85 3.011a.797.797 0 0 0-1.129-.093l-3.733 3.195a.545.545 0 0 0-.062.765l.837.993a.75.75 0 1 1-1.147.966l-2.502-2.981a.797.797 0 0 0-1.096-.12L99 14.5l-.5 4.25c-.06.674.326 2.19 1 2.25l11.916 1.166c.325.026 1-.039 1.25-.25.252-.21.89-.842.917-1.166l.833-8.084-3.073-3.557z"
-                  transform="translate(352 156.5)"></path>
-                <path
-                  fill-rule="nonzero"
-                  d="m111.61 22.963-11.604-1.015a2.77 2.77 0 0 1-2.512-2.995L98.88 3.09A2.77 2.77 0 0 1 101.876.58l11.603 1.015a2.77 2.77 0 0 1 2.513 2.994l-1.388 15.862a2.77 2.77 0 0 1-2.994 2.513zm.13-1.494.082.004a1.27 1.27 0 0 0 1.287-1.154l1.388-15.862a1.27 1.27 0 0 0-1.148-1.37l-11.604-1.014a1.27 1.27 0 0 0-1.37 1.15l-1.387 15.86a1.27 1.27 0 0 0 1.149 1.37l11.603 1.016z"
-                  transform="translate(352 156.5)"
-                ></path>
-              </g>
-            </g>
-          </svg>
-          <span>Photos/Videos</span>
-        </button>
-        <button class="btn">
-          <svg
-            fill="#EAB026"
-            viewBox="0 0 24 24"
-            width="25px"
-            height="25px"
-            class="b6ax4al1 m4pnbp5e somyomsx ahndzqod dxn77deq mwtcrujb mx6bq00g"
-          >
-            <g fill-rule="evenodd" transform="translate(-444 -156)">
-              <g>
-                <path
-                  d="M107.285 13c.49 0 .841.476.712.957-.623 2.324-2.837 4.043-5.473 4.043-2.636 0-4.85-1.719-5.473-4.043-.13-.48.222-.957.712-.957h9.522z"
-                  transform="translate(353.5 156.5)"></path>
-                <path
-                  fill-rule="nonzero"
-                  d="M114.024 11.5c0 6.351-5.149 11.5-11.5 11.5s-11.5-5.149-11.5-11.5S96.173 0 102.524 0s11.5 5.149 11.5 11.5zm-2 0a9.5 9.5 0 1 0-19 0 9.5 9.5 0 0 0 19 0z"
-                  transform="translate(353.5 156.5)"
-                ></path>
-                <path
-                  d="M99.524 8.5c0 .829-.56 1.5-1.25 1.5s-1.25-.671-1.25-1.5.56-1.5 1.25-1.5 1.25.671 1.25 1.5m8.5 0c0 .829-.56 1.5-1.25 1.5s-1.25-.671-1.25-1.5.56-1.5 1.25-1.5 1.25.671 1.25 1.5m-.739 4.5h-9.522c-.49 0-.841.476-.712.957.623 2.324 2.837 4.043 5.473 4.043 2.636 0 4.85-1.719 5.473-4.043.13-.48-.222-.957-.712-.957m-2.165 2c-.667.624-1.592 1-2.596 1a3.799 3.799 0 0 1-2.596-1h5.192"
-                  transform="translate(353.5 156.5)"></path>
-              </g>
-            </g>
-          </svg>
-          <span>Feeling/activity</span>
-        </button>
-      </div>
-      <!-- File Upload Section -->
-      <div v-if="showFileInput" class="file-upload-section">
+      
+      <!-- Enhanced File Upload Section -->
+      <div v-if="showFileInput" class="file-upload-section" @dragover.prevent @drop.prevent="handleDrop">
         <input 
           ref="fileInput"
           type="file" 
@@ -94,32 +24,159 @@
           style="display: none;"
           @change="handleFileSelect"
         />
-        <div class="file-upload-area" @click="$refs.fileInput.click()">
-          <div class="upload-icon">📁</div>
-          <p>Click to select photos or videos</p>
-          <p class="file-hint">Supports: JPG, PNG, GIF, MP4, MOV</p>
-        </div>
-        <!-- Selected Files Preview -->
-        <div v-if="selectedFiles.length > 0" class="selected-files">
-          <div v-for="(file, index) in selectedFiles" :key="index" class="file-preview">
-            <div v-if="file.type.startsWith('image/')" class="image-preview">
-              <img :src="file.url" :alt="file.name" />
-              <button class="remove-file" @click="removeFile(index)">×</button>
+        
+        <div class="upload-area" :class="{ 'drag-over': isDragOver }" @click="$refs.fileInput.click()">
+          <div class="upload-content">
+            <div class="upload-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#1877f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 8L12 3L7 8" stroke="#1877f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 3V15" stroke="#1877f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
-            <div v-else-if="file.type.startsWith('video/')" class="video-preview">
-              <video :src="file.url" controls></video>
-              <button class="remove-file" @click="removeFile(index)">×</button>
-            </div>
-            <div class="file-info">
-              <span class="file-name">{{ file.name }}</span>
-              <span class="file-size">{{ formatFileSize(file.size) }}</span>
+            <h3>Add photos and videos</h3>
+            <p>Drag and drop files here, or click to browse</p>
+            <div class="file-types">
+              <span class="file-type">JPG</span>
+              <span class="file-type">PNG</span>
+              <span class="file-type">GIF</span>
+              <span class="file-type">MP4</span>
+              <span class="file-type">MOV</span>
             </div>
           </div>
         </div>
-        <!-- Post Button -->
-        <div class="post-actions">
-          <button class="post-submit-btn" :disabled="!canPost" @click="addItem">Post</button>
-          <button class="cancel-btn" @click="cancelPost">Cancel</button>
+        
+        <!-- Enhanced File Preview Grid -->
+        <div v-if="selectedFiles.length > 0" class="media-preview-grid">
+          <div class="preview-header">
+            <h4>Selected Media ({{ selectedFiles.length }})</h4>
+            <button class="clear-all-btn" @click="clearAllFiles">Clear All</button>
+          </div>
+          
+          <div class="preview-grid" :class="gridClass">
+            <div v-for="(file, index) in selectedFiles" :key="index" class="preview-item">
+              <div class="preview-container">
+                <!-- Image Preview -->
+                <div v-if="file.type.startsWith('image/')" class="image-preview">
+                  <img :src="file.url" :alt="file.name" @load="onImageLoad" />
+                  <div class="file-overlay">
+                    <button class="remove-btn" @click="removeFile(index)">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                    <div class="file-type-badge">IMAGE</div>
+                  </div>
+                </div>
+                
+                <!-- Video Preview -->
+                <div v-else-if="file.type.startsWith('video/')" class="video-preview">
+                  <video :src="file.url" preload="metadata" @loadedmetadata="onVideoLoad"></video>
+                  <div class="play-overlay">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                      <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                    </svg>
+                  </div>
+                  <div class="file-overlay">
+                    <button class="remove-btn" @click="removeFile(index)">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                    <div class="file-type-badge">VIDEO</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="file-details">
+                <span class="file-name" :title="file.name">{{ truncateFileName(file.name) }}</span>
+                <div class="file-info-row">
+                  <span class="file-size">{{ formatFileSize(file.size) }}</span>
+                  <span v-if="file.compressed" class="compression-badge">Compressed</span>
+                  <span v-if="file.duration" class="duration-badge">{{ formatDuration(file.duration) }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Post Options -->
+      <div v-if="showPostOptions" class="post-options">
+        <div class="privacy-setting">
+          <select v-model="postPrivacy">
+            <option value="public">🌍 Public</option>
+            <option value="friends">👥 Friends</option>
+            <option value="me">🔒 Only me</option>
+          </select>
+        </div>
+        
+        <div v-if="showFeelingOptions" class="feeling-activity">
+          <button class="feeling-btn" @click="toggleFeelingSelector">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#EAB026">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <span>{{ selectedFeeling || 'Feeling/activity' }}</span>
+          </button>
+          
+          <div v-if="showFeelingSelector" class="feeling-selector">
+            <div class="feeling-grid">
+              <button v-for="feeling in feelings" :key="feeling" class="feeling-option" @click="selectFeeling(feeling)">
+                {{ feeling }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="post-btn">
+        <button class="btn live-video-btn" @click="startLiveVideo">
+          <svg fill="#E73F5A" viewBox="0 0 24 24" width="25px" height="25px">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+          </svg>
+          <span>Live video</span>
+        </button>
+        
+        <button class="btn media-btn" :class="{ active: showFileInput }" @click="toggleFileInput">
+          <svg fill="#41B35D" viewBox="0 0 24 24" width="25px" height="25px">
+            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+          </svg>
+          <span>Photos/Videos</span>
+        </button>
+        
+        <button class="btn feeling-btn" @click="toggleFeelingOptions">
+          <svg fill="#EAB026" viewBox="0 0 24 24" width="25px" height="25px">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          <span>Feeling/activity</span>
+        </button>
+      </div>
+      <!-- Post Actions -->
+      <div v-if="showPostOptions || showFileInput" class="post-actions">
+        <div class="action-buttons">
+          <button class="post-submit-btn" :disabled="!canPost" @click="addItem">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Post
+          </button>
+          <button class="cancel-btn" @click="cancelPost">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Cancel
+          </button>
+        </div>
+        
+        <div v-if="canPost" class="post-stats">
+          <span class="char-count" :class="{ 'warning': text.length > 4000 }">
+            {{ text.length }}/5000
+          </span>
+          <span v-if="selectedFiles.length > 0" class="media-count">
+            {{ selectedFiles.length }} file{{ selectedFiles.length > 1 ? 's' : '' }}
+          </span>
         </div>
       </div>
     </div>
@@ -354,6 +411,20 @@ export default {
       selectedFiles: [],
       postType: 'text',
       showFileInput: false,
+      showPostOptions: false,
+      showFeelingOptions: false,
+      showFeelingSelector: false,
+      isDragOver: false,
+      postPrivacy: 'public',
+      selectedFeeling: '',
+      feelings: [
+        '😊 Happy', '😢 Sad', '😍 Loved', '🤔 Thinking', '😴 Tired',
+        '🎉 Celebrating', '📚 Studying', '🍕 Eating', '🏃‍♂️ Working out',
+        '🎵 Listening to music', '📱 On phone', '☕ Drinking coffee',
+        '🎮 Gaming', '📖 Reading', '🎬 Watching', '✈️ Traveling'
+      ],
+      maxFileSize: 50 * 1024 * 1024, // 50MB
+      maxFiles: 10
     }
   },
   computed: {
@@ -363,6 +434,13 @@ export default {
     canPost() {
       return this.text.trim() || this.selectedFiles.length > 0
     },
+    gridClass() {
+      const count = this.selectedFiles.length
+      if (count === 1) return 'grid-1'
+      if (count === 2) return 'grid-2'
+      if (count <= 4) return 'grid-4'
+      return 'grid-many'
+    }
   },
   mounted() {
     const storedPosts = localStorage.getItem('fbposts')
@@ -371,32 +449,152 @@ export default {
     }
   },
   methods: {
+    // File handling methods
     toggleFileInput() {
       this.showFileInput = !this.showFileInput
       if (!this.showFileInput) {
-        this.selectedFiles = []
+        this.clearAllFiles()
       }
     },
     
     handleFileSelect(event) {
       const files = Array.from(event.target.files)
-      const maxSize = 50 * 1024 * 1024
-      
-      files.forEach(file => {
-        if (file.size > maxSize) {
-          alert(`File ${file.name} is too large. Maximum size is 50MB.`)
-          return
+      this.processFiles(files)
+    },
+    
+    handleDrop(event) {
+      this.isDragOver = false
+      const files = Array.from(event.dataTransfer.files)
+      this.processFiles(files)
+    },
+    
+    async processFiles(files) {
+      const validFiles = files.filter(file => {
+        // Check file type
+        if (!file.type.startsWith('image/') && !file.type.startsWith('video/')) {
+          this.showError(`${file.name} is not a supported file type.`)
+          return false
         }
         
-        const fileObj = {
-          file,
-          name: file.name,
-          size: file.size,
-          type: file.type,
-          url: URL.createObjectURL(file)
+        // Check file size
+        if (file.size > this.maxFileSize) {
+          this.showError(`${file.name} is too large. Maximum size is 50MB.`)
+          return false
         }
-        this.selectedFiles.push(fileObj)
+        
+        // Check total files limit
+        if (this.selectedFiles.length >= this.maxFiles) {
+          this.showError(`Maximum ${this.maxFiles} files allowed.`)
+          return false
+        }
+        
+        return true
       })
+      
+      // Process each file with compression/optimization
+      for (const file of validFiles) {
+        try {
+          const processedFile = await this.processFile(file)
+          this.selectedFiles.push(processedFile)
+        } catch (error) {
+          this.showError(`Failed to process ${file.name}: ${error.message}`)
+        }
+      }
+      
+      // Reset file input
+      if (this.$refs.fileInput) {
+        this.$refs.fileInput.value = ''
+      }
+    },
+    
+    async processFile(file) {
+      if (file.type.startsWith('image/')) {
+        return await this.compressImage(file)
+      } else if (file.type.startsWith('video/')) {
+        return await this.optimizeVideo(file)
+      }
+      return this.createFileObject(file)
+    },
+    
+    async compressImage(file) {
+      return new Promise((resolve) => {
+        const canvas = document.createElement('canvas')
+        const ctx = canvas.getContext('2d')
+        const img = new Image()
+        
+        img.onload = () => {
+          // Calculate new dimensions (max 1920x1080)
+          let { width, height } = img
+          const maxWidth = 1920
+          const maxHeight = 1080
+          
+          if (width > maxWidth || height > maxHeight) {
+            const ratio = Math.min(maxWidth / width, maxHeight / height)
+            width *= ratio
+            height *= ratio
+          }
+          
+          canvas.width = width
+          canvas.height = height
+          
+          // Draw and compress
+          ctx.drawImage(img, 0, 0, width, height)
+          
+          // Convert to blob with compression
+          canvas.toBlob((blob) => {
+            const compressedFile = new File([blob], file.name, {
+              type: 'image/jpeg',
+              lastModified: Date.now()
+            })
+            
+            resolve({
+              ...this.createFileObject(compressedFile),
+              originalSize: file.size,
+              compressed: true
+            })
+          }, 'image/jpeg', 0.8) // 80% quality
+        }
+        
+        img.src = URL.createObjectURL(file)
+      })
+    },
+    
+    async optimizeVideo(file) {
+      // For video optimization, we'll just create a preview and keep the original
+      // In a real app, you'd use FFmpeg.js or similar for actual compression
+      return new Promise((resolve) => {
+        const video = document.createElement('video')
+        video.preload = 'metadata'
+        
+        video.onloadedmetadata = () => {
+          resolve({
+            ...this.createFileObject(file),
+            duration: video.duration,
+            dimensions: {
+              width: video.videoWidth,
+              height: video.videoHeight
+            }
+          })
+        }
+        
+        video.onerror = () => {
+          // Fallback to original file if video processing fails
+          resolve(this.createFileObject(file))
+        }
+        
+        video.src = URL.createObjectURL(file)
+      })
+    },
+    
+    createFileObject(file) {
+      return {
+        file,
+        name: file.name,
+        size: file.size,
+        type: file.type,
+        url: URL.createObjectURL(file),
+        id: Date.now() + Math.random()
+      }
     },
     
     removeFile(index) {
@@ -404,6 +602,14 @@ export default {
       this.selectedFiles.splice(index, 1)
     },
     
+    clearAllFiles() {
+      this.selectedFiles.forEach(file => {
+        URL.revokeObjectURL(file.url)
+      })
+      this.selectedFiles = []
+    },
+    
+    // Utility methods
     formatFileSize(bytes) {
       if (bytes === 0) return '0 Bytes'
       const k = 1024
@@ -412,47 +618,105 @@ export default {
       return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
     },
     
+    truncateFileName(name) {
+      return name.length > 20 ? name.substring(0, 20) + '...' : name
+    },
+    
+    formatDuration(seconds) {
+      const mins = Math.floor(seconds / 60)
+      const secs = Math.floor(seconds % 60)
+      return `${mins}:${secs.toString().padStart(2, '0')}`
+    },
+    
     autoResize(event) {
       const textarea = event.target
       textarea.style.height = 'auto'
-      textarea.style.height = textarea.scrollHeight + 'px'
+      textarea.style.height = Math.min(textarea.scrollHeight, 200) + 'px'
     },
     
+    showError(message) {
+      // You can replace this with a proper notification system
+      alert(message)
+    },
+    
+    // Post options methods
+    toggleFeelingOptions() {
+      this.showFeelingOptions = !this.showFeelingOptions
+      this.showPostOptions = true
+    },
+    
+    toggleFeelingSelector() {
+      this.showFeelingSelector = !this.showFeelingSelector
+    },
+    
+    selectFeeling(feeling) {
+      this.selectedFeeling = feeling
+      this.showFeelingSelector = false
+      this.showPostOptions = true
+    },
+    
+    startLiveVideo() {
+      // Implement live video functionality
+      alert('Live video feature coming soon!')
+    },
+    
+    // Post management
     cancelPost() {
       this.showFileInput = false
-      this.selectedFiles.forEach(file => {
-        URL.revokeObjectURL(file.url)
-      })
-      this.selectedFiles = []
+      this.showPostOptions = false
+      this.showFeelingOptions = false
+      this.showFeelingSelector = false
+      this.clearAllFiles()
       this.text = ''
+      this.selectedFeeling = ''
     },
     
     addItem() {
-      if (this.canPost) {
-        const newPost = {
-          id: Date.now(),
-          username: this.username || 'Anonymous User',
-          email: this.$store.state.user ? this.$store.state.user.email : 'user@example.com',
-          text: this.text.trim(),
-          media: this.selectedFiles.map(file => ({
-            name: file.name,
-            type: file.type,
-            url: file.url,
-            size: file.size
-          })),
-          timestamp: new Date().toISOString()
-        }
-        
-        this.posts.unshift(newPost)
-        this.$store.commit('addPost', newPost)
-        localStorage.setItem('fbposts', JSON.stringify(this.posts))
-
-        // Reset form
-        this.text = ''
-        this.selectedFiles = []
-        this.showFileInput = false
+      if (!this.canPost) return
+      
+      const newPost = {
+        id: Date.now(),
+        username: this.username || 'Anonymous User',
+        email: this.$store.state.user ? this.$store.state.user.email : 'user@example.com',
+        text: this.text.trim(),
+        media: this.selectedFiles.map(file => ({
+          name: file.name,
+          type: file.type,
+          url: file.url,
+          size: file.size
+        })),
+        privacy: this.postPrivacy,
+        feeling: this.selectedFeeling,
+        timestamp: new Date().toISOString(),
+        likes: 0,
+        comments: [],
+        shares: 0
       }
+      
+      this.posts.unshift(newPost)
+      this.$store.commit('addPost', newPost)
+      localStorage.setItem('fbposts', JSON.stringify(this.posts))
+
+      // Reset form
+      this.cancelPost()
+      
+      // Show success message
+      this.showSuccess('Post published successfully!')
     },
+    
+    showSuccess(message) {
+      // You can replace this with a proper notification system
+      // console.log(message)
+    },
+    
+    // Event handlers for drag and drop
+    onImageLoad(event) {
+      // Image loaded successfully
+    },
+    
+    onVideoLoad(event) {
+      // Video metadata loaded successfully
+    }
   },
 }
 </script>
@@ -461,210 +725,546 @@ export default {
 .create-post {
   margin-top: 1.5rem;
   background: white;
-  padding: 0 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
 
   .flex {
     display: flex;
-    gap: 0.5rem;
-    padding: 0.4rem;
-    border-bottom: 1px solid rgba(81, 78, 78, 0.1);
+    gap: 0.75rem;
+    padding: 1rem;
+    align-items: flex-start;
 
     .profile {
-      background: #c9ccd1;
-      width: 55px;
-      height: 55px;
-      cursor: pointer;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #e4e6ea;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-color: #1877f2;
+        transform: scale(1.05);
+      }
     }
 
     textarea {
-      width: 100%;
+      flex: 1;
       border: none;
       outline: none;
-      padding: 0.7rem 0.5rem;
-      border-radius: 35px;
+      padding: 0.75rem 1rem;
+      border-radius: 25px;
       font-size: 1rem;
       background: #f0f2f5;
-      padding-left: 25px;
       font-family: inherit;
       min-height: 40px;
       max-height: 200px;
-      &:hover {
-        background: #f5f5f5;
-        transition: 0.4s;
-        cursor: pointer;
+      resize: none;
+      transition: all 0.2s ease;
+      
+      &::placeholder {
+        color: #8a8d91;
       }
+      
+      &:hover {
+        background: #e4e6ea;
+      }
+      
       &:focus {
         background: #fff;
-        cursor: text;
+        box-shadow: 0 0 0 2px #1877f2;
       }
     }
   }
 
+  // Enhanced Post Options
+  .post-options {
+    padding: 0.5rem 1rem;
+    border-top: 1px solid #e4e6ea;
+    background: #f8f9fa;
+    
+    .privacy-setting {
+      margin-bottom: 0.5rem;
+      
+      select {
+        border: none;
+        background: transparent;
+        font-size: 0.9rem;
+        color: #1877f2;
+        font-weight: 600;
+        cursor: pointer;
+        
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    
+    .feeling-activity {
+      position: relative;
+      
+      .feeling-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: transparent;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+        color: #65676b;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background: #e4e6ea;
+        }
+      }
+      
+      .feeling-selector {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border: 1px solid #e4e6ea;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        max-height: 200px;
+        overflow-y: auto;
+        
+        .feeling-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 0.25rem;
+          padding: 0.5rem;
+          
+          .feeling-option {
+            padding: 0.5rem;
+            border: none;
+            background: transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            
+            &:hover {
+              background: #f0f2f5;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Enhanced Action Buttons
   .post-btn {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0.5rem;
-    span {
-      font-size: 1rem;
-    }
-
-    button {
+    border-top: 1px solid #e4e6ea;
+    
+    .btn {
       display: flex;
+      align-items: center;
       gap: 0.5rem;
-      border-radius: 5px;
-      padding: 0.5rem 1.3rem;
-      text-align: center;
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 600;
+      color: #65676b;
+      flex: 1;
+      justify-content: center;
+      
       &:hover {
-        background: #f5f5f5;
-        transition: 0.4s;
-        border-radius: 10px;
+        background: #f0f2f5;
+        transform: translateY(-1px);
+      }
+      
+      &.active {
+        background: #e3f2fd;
+        color: #1877f2;
+      }
+      
+      svg {
+        transition: transform 0.2s ease;
+      }
+      
+      &:hover svg {
+        transform: scale(1.1);
       }
     }
   }
 
+  // Enhanced File Upload Section
   .file-upload-section {
-    border-top: 1px solid rgba(81, 78, 78, 0.1);
+    border-top: 1px solid #e4e6ea;
     padding: 1rem;
     
-    .file-upload-area {
-      border: 2px dashed #ccc;
-      border-radius: 10px;
+    .upload-area {
+      border: 2px dashed #cbd5e0;
+      border-radius: 12px;
       padding: 2rem;
       text-align: center;
       cursor: pointer;
       transition: all 0.3s ease;
+      background: #f8f9fa;
+      
+      &.drag-over {
+        border-color: #1877f2;
+        background: #e3f2fd;
+        transform: scale(1.02);
+      }
       
       &:hover {
         border-color: #1877f2;
-        background-color: #f0f8ff;
+        background: #f0f8ff;
       }
       
-      .upload-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-      
-      p {
-        margin: 0.5rem 0;
-        color: #666;
-      }
-      
-      .file-hint {
-        font-size: 0.8rem;
-        color: #999;
+      .upload-content {
+        .upload-icon {
+          margin-bottom: 1rem;
+          opacity: 0.7;
+        }
+        
+        h3 {
+          margin: 0.5rem 0;
+          color: #1c1e21;
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+        
+        p {
+          margin: 0.5rem 0;
+          color: #65676b;
+          font-size: 0.9rem;
+        }
+        
+        .file-types {
+          display: flex;
+          justify-content: center;
+          gap: 0.5rem;
+          margin-top: 1rem;
+          
+          .file-type {
+            background: #e4e6ea;
+            color: #65676b;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+          }
+        }
       }
     }
     
-    .selected-files {
+    // Enhanced Media Preview Grid
+    .media-preview-grid {
       margin-top: 1rem;
       
-      .file-preview {
-        position: relative;
+      .preview-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-bottom: 1rem;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 0.5rem;
         
-        .image-preview, .video-preview {
-          position: relative;
+        h4 {
+          margin: 0;
+          color: #1c1e21;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        
+        .clear-all-btn {
+          background: #dc3545;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          padding: 0.25rem 0.75rem;
+          font-size: 0.8rem;
+          cursor: pointer;
+          transition: all 0.2s ease;
           
-          img, video {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 4px;
+          &:hover {
+            background: #c82333;
+          }
+        }
+      }
+      
+      .preview-grid {
+        display: grid;
+        gap: 0.75rem;
+        
+        &.grid-1 {
+          grid-template-columns: 1fr;
+        }
+        
+        &.grid-2 {
+          grid-template-columns: 1fr 1fr;
+        }
+        
+        &.grid-4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        &.grid-many {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+        
+        .preview-item {
+          border: 1px solid #e4e6ea;
+          border-radius: 8px;
+          overflow: hidden;
+          transition: all 0.2s ease;
+          
+          &:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
           }
           
-          .remove-file {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;    
-            &:hover {
-              background: #f5f5f5;
-              color: #333;
+          .preview-container {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            
+            .image-preview, .video-preview {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              
+              img, video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+              
+              .play-overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(0, 0, 0, 0.7);
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: all 0.2s ease;
+              }
+              
+              &:hover .play-overlay {
+                opacity: 1;
+              }
+            }
+            
+            .file-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), transparent);
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              padding: 0.5rem;
+              opacity: 0;
+              transition: all 0.2s ease;
+              
+              &:hover {
+                opacity: 1;
+              }
+              
+              .remove-btn {
+                background: rgba(220, 53, 69, 0.9);
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s ease;
+                
+                &:hover {
+                  background: #dc3545;
+                  transform: scale(1.1);
+                }
+              }
+              
+              .file-type-badge {
+                background: rgba(24, 119, 242, 0.9);
+                color: white;
+                padding: 0.25rem 0.5rem;
+                border-radius: 4px;
+                font-size: 0.7rem;
+                font-weight: 600;
+                text-transform: uppercase;
+              }
+            }
+          }
+          
+          .file-details {
+            padding: 0.5rem;
+            background: white;
+            
+            .file-name {
+              display: block;
+              font-size: 0.8rem;
+              font-weight: 500;
+              color: #1c1e21;
+              margin-bottom: 0.25rem;
+            }
+            
+            .file-info-row {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              flex-wrap: wrap;
+              
+              .file-size {
+                font-size: 0.7rem;
+                color: #65676b;
+              }
+              
+              .compression-badge {
+                background: #28a745;
+                color: white;
+                padding: 0.125rem 0.375rem;
+                border-radius: 4px;
+                font-size: 0.6rem;
+                font-weight: 600;
+                text-transform: uppercase;
+              }
+              
+              .duration-badge {
+                background: #6c757d;
+                color: white;
+                padding: 0.125rem 0.375rem;
+                border-radius: 4px;
+                font-size: 0.6rem;
+                font-weight: 600;
+              }
             }
           }
         }
-        
-        .file-info {
-          display: flex;
-          justify-content: space-between;
-          margin-top: 0.5rem;
-          font-size: 0.8rem;
-          color: #666;
-          
-          .file-name {
-            font-weight: 500;
-          }
-          
-          .file-size {
-            color: #999;
-          }
-        }
       }
     }
+  }
+  
+  // Enhanced Post Actions
+  .post-actions {
+    border-top: 1px solid #e4e6ea;
+    padding: 1rem;
+    background: #f8f9fa;
     
-    .post-actions {
+    .action-buttons {
       display: flex;
-      gap: 1rem;
+      gap: 0.75rem;
       justify-content: flex-end;
-      margin-top: 1rem;
+      margin-bottom: 0.5rem;
       
       .post-submit-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
         background: #1877f2;
         color: white;
         border: none;
-        border-radius: 6px;
-        padding: 0.5rem 1.5rem;
+        border-radius: 8px;
+        padding: 0.75rem 1.5rem;
         font-weight: 600;
         cursor: pointer;
+        transition: all 0.2s ease;
         
         &:hover:not(:disabled) {
           background: #166fe5;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
         }
         
         &:disabled {
-          background: #ccc;
+          background: #cbd5e0;
           cursor: not-allowed;
+          transform: none;
+          box-shadow: none;
         }
       }
       
       .cancel-btn {
-        background: #f0f2f5;
-        color: #666;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #e4e6ea;
+        color: #65676b;
         border: none;
-        border-radius: 6px;
-        padding: 0.5rem 1.5rem;
+        border-radius: 8px;
+        padding: 0.75rem 1.5rem;
         font-weight: 600;
-        cursor: pointer;    
+        cursor: pointer;
+        transition: all 0.2s ease;
+        
         &:hover {
-          background: #f5f5f5;
+          background: #d1d5db;
+          transform: translateY(-1px);
         }
+      }
+    }
+    
+    .post-stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #65676b;
+      
+      .char-count {
+        &.warning {
+          color: #dc3545;
+          font-weight: 600;
+        }
+      }
+      
+      .media-count {
+        background: #e3f2fd;
+        color: #1877f2;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-weight: 600;
       }
     }
   }
 }
 
+// Enhanced Post Display Styles
 .post {
   .items {
     .item {
       background: white;
       margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
     }
+    
     .bio {
       .bio-content {
         width: 100%;
@@ -672,13 +1272,20 @@ export default {
         align-items: center;
         justify-content: space-between;
         padding: 1rem;
+        border-bottom: 1px solid #e4e6ea;
 
         .profile-img {
-          border: 1px solid #ccc;
-          width: 50px;
-          height: 50px;
+          border: 2px solid #e4e6ea;
+          width: 48px;
+          height: 48px;
           border-radius: 50%;
           margin-right: 0.75rem;
+          overflow: hidden;
+          transition: all 0.2s ease;
+
+          &:hover {
+            border-color: #1877f2;
+          }
 
           img {
             width: 100%;
@@ -714,58 +1321,247 @@ export default {
           gap: 0.5rem;
 
           img {
-            height: 25px;
-            width: 25px;
-            color: #f2f2f2 !important;
-            opacity: 0.5;
+            height: 24px;
+            width: 24px;
+            opacity: 0.6;
             cursor: pointer;
-            padding: 0.25rem;
-            border-radius: 4px;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
 
             &:hover {
               background: #f0f2f5;
               opacity: 1;
-              transition: 0.3s;
+              transform: scale(1.1);
             }
           }
         }
       }
     }
-  }
-  p {
-    padding-left: 3.5rem;
-  }
-
-  .post-media {
-    margin: 1rem 0;
     
-    .media-item {
-      margin-bottom: 0.5rem;
+    p {
+      padding: 1rem;
+      margin: 0;
+      line-height: 1.5;
+      color: #1c1e21;
+      font-size: 1rem;
+    }
+
+    // Enhanced Media Display
+    .post-media {
+      margin: 0;
       
-      .post-image {
-        width: 100%;
-        max-height: 500px;
-        object-fit: cover;
-        border-radius: 8px;
-        cursor: pointer;   
-        &:hover {
-          opacity: 0.95;
+      .media-item {
+        margin: 0;
+        
+        .post-image {
+          width: 100%;
+          max-height: 600px;
+          object-fit: cover;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            opacity: 0.95;
+            transform: scale(1.02);
+          }
+        }
+        
+        .post-video {
+          width: 100%;
+          max-height: 600px;
+          border-radius: 0;
+          
+          &:hover {
+            transform: scale(1.01);
+          }
         }
       }
-      
-      .post-video {
-        width: 100%;
-        max-height: 500px;
+    }
+
+    // Enhanced Reaction Buttons
+    .react-btn {
+      display: flex;
+      justify-content: space-around;
+      padding: 0.5rem 1rem;
+      border-top: 1px solid #e4e6ea;
+      background: #f8f9fa;
+
+      .btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: transparent;
+        border: none;
         border-radius: 8px;
+        padding: 0.75rem 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-weight: 600;
+        color: #65676b;
+        flex: 1;
+        justify-content: center;
+
+        &:hover {
+          background: #e4e6ea;
+          transform: translateY(-1px);
+        }
+
+        svg {
+          transition: transform 0.2s ease;
+        }
+
+        &:hover svg {
+          transform: scale(1.1);
+        }
+
+        &.btn-react:hover {
+          color: #1877f2;
+        }
+
+        &.btn-comment:hover {
+          color: #42b883;
+        }
+
+        &.btn-share:hover {
+          color: #ff6b6b;
+        }
       }
     }
   }
 }
 
-@media screen and (max-width: 800px) {
+// Responsive Design
+@media screen and (max-width: 768px) {
   .create-post {
-    button:last-child {
-      display: none;
+    margin-top: 1rem;
+    border-radius: 8px;
+    
+    .flex {
+      padding: 0.75rem;
+      
+      .profile {
+        width: 40px;
+        height: 40px;
+      }
+      
+      textarea {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+      }
+    }
+    
+    .post-btn {
+      .btn {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        
+        span {
+          display: none;
+        }
+      }
+    }
+    
+    .file-upload-section {
+      .upload-area {
+        padding: 1rem;
+        
+        .upload-content {
+          h3 {
+            font-size: 1rem;
+          }
+          
+          p {
+            font-size: 0.8rem;
+          }
+          
+          .file-types {
+            flex-wrap: wrap;
+            
+            .file-type {
+              font-size: 0.7rem;
+            }
+          }
+        }
+      }
+      
+      .media-preview-grid {
+        .preview-grid {
+          &.grid-2, &.grid-4 {
+            grid-template-columns: 1fr;
+          }
+        }
+      }
+    }
+    
+    .post-actions {
+      .action-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+        
+        .post-submit-btn, .cancel-btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  
+  .post {
+    .items {
+      .item {
+        margin-bottom: 0.75rem;
+        border-radius: 8px;
+      }
+      
+      .bio .bio-content {
+        padding: 0.75rem;
+        
+        .profile-img {
+          width: 40px;
+          height: 40px;
+        }
+        
+        .content {
+          .title {
+            font-size: 0.9rem;
+          }
+          
+          .email {
+            font-size: 0.8rem;
+          }
+        }
+      }
+      
+      p {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+      
+      .react-btn {
+        padding: 0.5rem;
+        
+        .btn {
+          padding: 0.5rem;
+          font-size: 0.8rem;
+          
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .create-post {
+    .post-options {
+      .feeling-selector {
+        .feeling-grid {
+          grid-template-columns: 1fr;
+        }
+      }
     }
   }
 }
