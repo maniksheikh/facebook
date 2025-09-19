@@ -337,6 +337,7 @@ export default {
       border-radius: 5px;
       transition: 0.3s ease-in-out;
       &:hover {
+        color: #1c1e21;
         background: #40bc27;
       }
     }
