@@ -423,7 +423,7 @@ export default {
         '🎵 Listening to music', '📱 On phone', '☕ Drinking coffee',
         '🎮 Gaming', '📖 Reading', '🎬 Watching', '✈️ Traveling'
       ],
-      maxFileSize: 50 * 1024 * 1024, // 50MB
+      maxFileSize: 50 * 1024 * 1024,
       maxFiles: 10
     }
   },
@@ -449,7 +449,6 @@ export default {
     }
   },
   methods: {
-    // File handling methods
     toggleFileInput() {
       this.showFileInput = !this.showFileInput
       if (!this.showFileInput) {
@@ -470,7 +469,6 @@ export default {
     
     async processFiles(files) {
       const validFiles = files.filter(file => {
-        // Check file type
         if (!file.type.startsWith('image/') && !file.type.startsWith('video/')) {
           this.showError(`${file.name} is not a supported file type.`)
           return false
@@ -486,8 +484,7 @@ export default {
         if (this.selectedFiles.length >= this.maxFiles) {
           this.showError(`Maximum ${this.maxFiles} files allowed.`)
           return false
-        }
-        
+        } 
         return true
       })
       
@@ -523,7 +520,6 @@ export default {
         const img = new Image()
         
         img.onload = () => {
-          // Calculate new dimensions (max 1920x1080)
           let { width, height } = img
           const maxWidth = 1920
           const maxHeight = 1080
@@ -537,7 +533,6 @@ export default {
           canvas.width = width
           canvas.height = height
           
-          // Draw and compress
           ctx.drawImage(img, 0, 0, width, height)
           
           // Convert to blob with compression
@@ -552,7 +547,7 @@ export default {
               originalSize: file.size,
               compressed: true
             })
-          }, 'image/jpeg', 0.8) // 80% quality
+          }, 'image/jpeg', 0.8)
         }
         
         img.src = URL.createObjectURL(file)
@@ -560,8 +555,6 @@ export default {
     },
     
     optimizeVideo(file) {
-      // For video optimization, we'll just create a preview and keep the original
-      // In a real app, you'd use FFmpeg.js or similar for actual compression
       return new Promise((resolve) => {
         const video = document.createElement('video')
         video.preload = 'metadata'
@@ -578,7 +571,6 @@ export default {
         }
         
         video.onerror = () => {
-          // Fallback to original file if video processing fails
           resolve(this.createFileObject(file))
         }
         
@@ -635,7 +627,6 @@ export default {
     },
     
     showError(message) {
-      // You can replace this with a proper notification system
       alert(message)
     },
     
@@ -705,17 +696,12 @@ export default {
     },
     
     showSuccess(message) {
-      // You can replace this with a proper notification system
-      // console.log(message)
     },
     
-    // Event handlers for drag and drop
     onImageLoad(event) {
-      // Image loaded successfully
     },
     
     onVideoLoad(event) {
-      // Video metadata loaded successfully
     }
   },
 }
