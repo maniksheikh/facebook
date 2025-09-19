@@ -337,8 +337,8 @@ export default {
     }
 
     .btn-primary {
-      display: inline;
-      margin: 1rem 0;
+      display: block;
+      margin: 1rem auto;
       padding: 0.4rem 3.5rem;
       color: white;
       font-size: 1.3rem;

@@ -37,10 +37,10 @@ button:hover:disabled, .btn:hover:disabled {
   cursor: not-allowed !important;
 }
 
-/* Primary buttons keep their specific colors but with light gray overlay */
+/* Primary buttons: keep brand color on hover for contrast */
 .btn-primary:hover:not(:disabled) {
-  background-color: #f5f5f5 !important;
-  opacity: 0.9 !important;
+  background-color: #009100 !important; /* darker green on hover */
+  color: #ffffff !important;
 }
 
 .btn-secondery:hover:not(:disabled) {
