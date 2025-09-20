@@ -1,18 +1,18 @@
 <template>
   <div>
     <!-- Main Post Creation Button -->
-    <div class="main-create-post-btn" @click="openPostModal">
+    <div class="main-create-post-btn">
       <div class="btn-content">
         <img class="profile" src="../assets/image/male-face-avatar-logo.jpg" alt="" />
-        <span class="placeholder-text">What's on your mind, {{ username || 'User' }}?</span>
+        <button class="placeholder-text" type="button" @click="openPostModal">What's on your mind, {{ username || 'User' }}?</button>
       </div>
       <div class="post-type-icons">
-        <button class="icon-btn" @click.stop="openPostModal('photo')" title="Photo/Video">
+        <button class="icon-btn" title="Photo/Video" @click.stop="openPostModal('photo')">
           <svg fill="#41B35D" viewBox="0 0 24 24" width="20px" height="20px">
             <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
           </svg>
         </button>
-        <button class="icon-btn" @click.stop="openPostModal('feeling')" title="Feeling/Activity">
+        <button class="icon-btn" title="Feeling/Activity" @click.stop="openPostModal('feeling')">
           <svg fill="#EAB026" viewBox="0 0 24 24" width="20px" height="20px">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
           </svg>
@@ -21,8 +21,8 @@
     </div>
 
     <!-- Modal Overlay -->
-    <div v-if="showModal" class="modal-overlay" @click="closeModal">
-      <div class="modal-content" @click.stop>
+    <div v-if="showModal" class="modal-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; display: flex; align-items: center; justify-content: center;" @click="closeModal">
+      <div class="modal-content" style="background: white; border-radius: 12px; padding: 20px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;" @click.stop>
         <!-- Modal Header -->
         <div class="modal-header">
           <h2>Create post</h2>
@@ -994,6 +994,7 @@ export default {
   cursor: pointer;
   transition: all 0.3s ease;
   border: 1px solid #e4e6ea;
+  position: relative;
 
   &:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
@@ -1025,9 +1026,26 @@ export default {
       outline: none;
       cursor: pointer;
       transition: all 0.2s ease;
+      user-select: none;
+      position: relative;
+      z-index: 10;
+      display: block;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
 
       &:hover {
         background: #e4e6ea;
+        transform: scale(1.02);
+      }
+      
+      &:active {
+        transform: scale(0.98);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #1877f2;
       }
     }
   }
