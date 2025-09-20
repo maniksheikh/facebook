@@ -1,6 +1,238 @@
 <template>
   <div>
-    <div class="create-post">
+    <!-- Main Post Creation Button -->
+    <div class="main-create-post-btn" @click="openPostModal">
+      <div class="btn-content">
+        <img class="profile" src="../assets/image/male-face-avatar-logo.jpg" alt="" />
+        <span class="placeholder-text">What's on your mind, {{ username || 'User' }}?</span>
+      </div>
+      <div class="post-type-icons">
+        <button class="icon-btn" @click.stop="openPostModal('photo')" title="Photo/Video">
+          <svg fill="#41B35D" viewBox="0 0 24 24" width="20px" height="20px">
+            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+          </svg>
+        </button>
+        <button class="icon-btn" @click.stop="openPostModal('feeling')" title="Feeling/Activity">
+          <svg fill="#EAB026" viewBox="0 0 24 24" width="20px" height="20px">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div v-if="showModal" class="modal-overlay" @click="closeModal">
+      <div class="modal-content" @click.stop>
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h2>Create post</h2>
+          <button class="close-btn" @click="closeModal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- User Info -->
+        <div class="user-info">
+          <img class="profile" src="../assets/image/male-face-avatar-logo.jpg" alt="" />
+          <div class="user-details">
+            <span class="username">{{ username || 'Md. Manik Sheak' }}</span>
+            <select v-model="postPrivacy" class="privacy-select">
+              <option value="public">🌍 Public</option>
+              <option value="friends">👥 Friends</option>
+              <option value="me">🔒 Only me</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Post Content Area -->
+        <div class="post-content-area">
+          <textarea 
+            v-model="text" 
+            :placeholder="`What's on your mind, ${username || 'User'}?`" 
+            rows="4"
+            class="post-textarea"
+            @input="autoResize"
+            @focus="showPostOptions = true"
+          ></textarea>
+          
+          <!-- Text Formatting Options -->
+          <div class="text-formatting">
+            <button class="format-btn" title="Text formatting">
+              <span class="format-icon">Aa</span>
+            </button>
+            <button class="emoji-btn" title="Add emoji">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/>
+                <path d="M8 10c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm8 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Post Type Selection -->
+        <div class="post-type-selection">
+          <h3>Add to your post</h3>
+          <div class="post-type-options">
+            <button 
+              class="post-type-btn" 
+              :class="{ active: selectedPostType === 'photo' }"
+              @click="selectPostType('photo')"
+            >
+              <svg fill="#41B35D" viewBox="0 0 24 24" width="24px" height="24px">
+                <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+              </svg>
+              <span>Photo/Video</span>
+            </button>
+            
+            <button 
+              class="post-type-btn" 
+              :class="{ active: selectedPostType === 'feeling' }"
+              @click="selectPostType('feeling')"
+            >
+              <svg fill="#EAB026" viewBox="0 0 24 24" width="24px" height="24px">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              <span>Feeling/Activity</span>
+            </button>
+            
+            <button class="post-type-btn">
+              <svg fill="#F02849" viewBox="0 0 24 24" width="24px" height="24px">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+              </svg>
+              <span>Tag Friends</span>
+            </button>
+            
+            <button class="post-type-btn">
+              <svg fill="#41B35D" viewBox="0 0 24 24" width="24px" height="24px">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              <span>Check in</span>
+            </button>
+            
+            <button class="post-type-btn">
+              <svg fill="#F02849" viewBox="0 0 24 24" width="24px" height="24px">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+              </svg>
+              <span>GIF</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- File Upload Section (shown when photo/video is selected) -->
+        <div v-if="selectedPostType === 'photo' && showFileInput" class="file-upload-section" @dragover.prevent @drop.prevent="handleDrop">
+          <input 
+            ref="fileInput"
+            type="file" 
+            multiple 
+            accept="image/*,video/*" 
+            style="display: none;"
+            @change="handleFileSelect"
+          />
+          
+          <div class="upload-area" :class="{ 'drag-over': isDragOver }" @click="$refs.fileInput.click()">
+            <div class="upload-content">
+              <div class="upload-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#1877f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17 8L12 3L7 8" stroke="#1877f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 3V15" stroke="#1877f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Add photos and videos</h3>
+              <p>Drag and drop files here, or click to browse</p>
+              <div class="file-types">
+                <span class="file-type">JPG</span>
+                <span class="file-type">PNG</span>
+                <span class="file-type">GIF</span>
+                <span class="file-type">MP4</span>
+                <span class="file-type">MOV</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- File Preview Grid -->
+          <div v-if="selectedFiles.length > 0" class="media-preview-grid">
+            <div class="preview-header">
+              <h4>Selected Media ({{ selectedFiles.length }})</h4>
+              <button class="clear-all-btn" @click="clearAllFiles">Clear All</button>
+            </div>
+            
+            <div class="preview-grid" :class="gridClass">
+              <div v-for="(file, index) in selectedFiles" :key="index" class="preview-item">
+                <div class="preview-container">
+                  <!-- Image Preview -->
+                  <div v-if="file.type.startsWith('image/')" class="image-preview">
+                    <img :src="file.url" :alt="file.name" @load="onImageLoad" />
+                    <div class="file-overlay">
+                      <button class="remove-btn" @click="removeFile(index)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </button>
+                      <div class="file-type-badge">IMAGE</div>
+                    </div>
+                  </div>
+                  
+                  <!-- Video Preview -->
+                  <div v-else-if="file.type.startsWith('video/')" class="video-preview">
+                    <video :src="file.url" preload="metadata" @loadedmetadata="onVideoLoad"></video>
+                    <div class="play-overlay">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                      </svg>
+                    </div>
+                    <div class="file-overlay">
+                      <button class="remove-btn" @click="removeFile(index)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </button>
+                      <div class="file-type-badge">VIDEO</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="file-details">
+                  <span class="file-name" :title="file.name">{{ truncateFileName(file.name) }}</span>
+                  <div class="file-info-row">
+                    <span class="file-size">{{ formatFileSize(file.size) }}</span>
+                    <span v-if="file.compressed" class="compression-badge">Compressed</span>
+                    <span v-if="file.duration" class="duration-badge">{{ formatDuration(file.duration) }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feeling/Activity Selection (shown when feeling is selected) -->
+        <div v-if="selectedPostType === 'feeling' && showFeelingOptions" class="feeling-activity">
+          <h3>How are you feeling?</h3>
+          <div class="feeling-grid">
+            <button v-for="feeling in feelings" :key="feeling" class="feeling-option" @click="selectFeeling(feeling)">
+              {{ feeling }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button class="post-btn" :disabled="!canPost" @click="addItem">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Post
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Original Create Post (Hidden) -->
+    <div class="create-post" style="display: none;">
       <div class="flex">
         <img class="profile" src="../assets/image/male-face-avatar-logo.jpg" alt="" />
         <textarea 
@@ -101,7 +333,31 @@
         </div>
       </div>
       
-      <!-- Post Options -->
+      <!-- Always visible post buttons -->
+      <div class="post-btn">
+        <button class="btn live-video-btn" @click="startLiveVideo">
+          <svg fill="#E73F5A" viewBox="0 0 24 24" width="25px" height="25px">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+          </svg>
+          <span>Live video</span>
+        </button>
+        
+        <button class="btn media-btn" :class="{ active: showFileInput }" @click="toggleFileInput">
+          <svg fill="#41B35D" viewBox="0 0 24 24" width="25px" height="25px">
+            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+          </svg>
+          <span>Photos/Videos</span>
+        </button>
+        
+        <button class="btn feeling-btn" @click="toggleFeelingOptions">
+          <svg fill="#EAB026" viewBox="0 0 24 24" width="25px" height="25px">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          <span>Feeling/activity</span>
+        </button>
+      </div>
+
+      <!-- Post Options (shown when textarea is focused or when posting) -->
       <div v-if="showPostOptions" class="post-options">
         <div class="privacy-setting">
           <select v-model="postPrivacy">
@@ -127,29 +383,6 @@
             </div>
           </div>
         </div>
-      </div>
-      
-      <div class="post-btn">
-        <button class="btn live-video-btn" @click="startLiveVideo">
-          <svg fill="#E73F5A" viewBox="0 0 24 24" width="25px" height="25px">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-          </svg>
-          <span>Live video</span>
-        </button>
-        
-        <button class="btn media-btn" :class="{ active: showFileInput }" @click="toggleFileInput">
-          <svg fill="#41B35D" viewBox="0 0 24 24" width="25px" height="25px">
-            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-          </svg>
-          <span>Photos/Videos</span>
-        </button>
-        
-        <button class="btn feeling-btn" @click="toggleFeelingOptions">
-          <svg fill="#EAB026" viewBox="0 0 24 24" width="25px" height="25px">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
-          <span>Feeling/activity</span>
-        </button>
       </div>
       <!-- Post Actions -->
       <div v-if="showPostOptions || showFileInput" class="post-actions">
@@ -417,6 +650,8 @@ export default {
       isDragOver: false,
       postPrivacy: 'public',
       selectedFeeling: '',
+      showModal: false,
+      selectedPostType: 'text',
       feelings: [
         '😊 Happy', '😢 Sad', '😍 Loved', '🤔 Thinking', '😴 Tired',
         '🎉 Celebrating', '📚 Studying', '🍕 Eating', '🏃‍♂️ Working out',
@@ -451,7 +686,9 @@ export default {
   methods: {
     toggleFileInput() {
       this.showFileInput = !this.showFileInput
-      if (!this.showFileInput) {
+      if (this.showFileInput) {
+        this.showPostOptions = true
+      } else {
         this.clearAllFiles()
       }
     },
@@ -634,6 +871,9 @@ export default {
     toggleFeelingOptions() {
       this.showFeelingOptions = !this.showFeelingOptions
       this.showPostOptions = true
+      if (this.showFeelingOptions) {
+        this.showFeelingSelector = false
+      }
     },
     
     toggleFeelingSelector() {
@@ -688,8 +928,8 @@ export default {
       this.$store.commit('addPost', newPost)
       localStorage.setItem('fbposts', JSON.stringify(this.posts))
 
-      // Reset form
-      this.cancelPost()
+      // Reset form and close modal
+      this.closeModal()
       
       // Show success message
       this.showSuccess('Post published successfully!')
@@ -702,12 +942,425 @@ export default {
     },
     
     onVideoLoad(event) {
+    },
+    
+    // Modal methods
+    openPostModal(type = 'text') {
+      this.showModal = true
+      this.selectedPostType = type
+      if (type === 'photo') {
+        this.showFileInput = true
+      } else if (type === 'feeling') {
+        this.showFeelingOptions = true
+      }
+    },
+    
+    closeModal() {
+      this.showModal = false
+      this.showFileInput = false
+      this.showFeelingOptions = false
+      this.showFeelingSelector = false
+      this.selectedPostType = 'text'
+      this.clearAllFiles()
+      this.text = ''
+      this.selectedFeeling = ''
+    },
+    
+    selectPostType(type) {
+      this.selectedPostType = type
+      if (type === 'photo') {
+        this.showFileInput = true
+        this.showFeelingOptions = false
+      } else if (type === 'feeling') {
+        this.showFeelingOptions = true
+        this.showFileInput = false
+      } else {
+        this.showFileInput = false
+        this.showFeelingOptions = false
+      }
     }
   },
 }
 </script>
 
 <style lang="scss">
+// Main Post Creation Button
+.main-create-post-btn {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e4e6ea;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+  }
+
+  .btn-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+
+    .profile {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #e4e6ea;
+    }
+
+    .placeholder-text {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border-radius: 25px;
+      background: #f0f2f5;
+      color: #8a8d91;
+      font-size: 1rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: #e4e6ea;
+      }
+    }
+  }
+
+  .post-type-icons {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
+
+    .icon-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 600;
+      color: #65676b;
+      flex: 1;
+      justify-content: center;
+
+      &:hover {
+        background: #f0f2f5;
+        transform: translateY(-1px);
+      }
+
+      svg {
+        transition: transform 0.2s ease;
+      }
+
+      &:hover svg {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+// Modal Styles
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+
+  .modal-content {
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #e4e6ea;
+
+      h2 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1c1e21;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 50%;
+        color: #65676b;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: #f0f2f5;
+          color: #1c1e21;
+        }
+      }
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #e4e6ea;
+
+      .profile {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #e4e6ea;
+      }
+
+      .user-details {
+        flex: 1;
+
+        .username {
+          display: block;
+          font-weight: 600;
+          font-size: 1rem;
+          color: #1c1e21;
+          margin-bottom: 0.25rem;
+        }
+
+        .privacy-select {
+          border: none;
+          background: transparent;
+          font-size: 0.9rem;
+          color: #1877f2;
+          font-weight: 600;
+          cursor: pointer;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .post-content-area {
+      padding: 1rem 1.5rem;
+      position: relative;
+
+      .post-textarea {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        font-family: inherit;
+        resize: none;
+        min-height: 100px;
+        max-height: 200px;
+        line-height: 1.5;
+
+        &::placeholder {
+          color: #8a8d91;
+        }
+      }
+
+      .text-formatting {
+        position: absolute;
+        bottom: 0.5rem;
+        right: 0.5rem;
+        display: flex;
+        gap: 0.5rem;
+
+        .format-btn, .emoji-btn {
+          background: #f0f2f5;
+          border: none;
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: #e4e6ea;
+            transform: scale(1.1);
+          }
+
+          .format-icon {
+            font-weight: bold;
+            color: #65676b;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .post-type-selection {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #e4e6ea;
+
+      h3 {
+        margin: 0 0 1rem 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1c1e21;
+      }
+
+      .post-type-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.5rem;
+
+        .post-type-btn {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          background: transparent;
+          border: 1px solid #e4e6ea;
+          border-radius: 8px;
+          padding: 1rem 0.5rem;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          color: #65676b;
+
+          &:hover {
+            background: #f0f2f5;
+            border-color: #1877f2;
+            transform: translateY(-1px);
+          }
+
+          &.active {
+            background: #e3f2fd;
+            border-color: #1877f2;
+            color: #1877f2;
+          }
+
+          span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+          }
+
+          svg {
+            transition: transform 0.2s ease;
+          }
+
+          &:hover svg {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    .feeling-activity {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #e4e6ea;
+
+      h3 {
+        margin: 0 0 1rem 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1c1e21;
+      }
+
+      .feeling-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.5rem;
+
+        .feeling-option {
+          padding: 0.75rem;
+          border: 1px solid #e4e6ea;
+          border-radius: 8px;
+          background: transparent;
+          cursor: pointer;
+          text-align: left;
+          font-size: 0.9rem;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: #f0f2f5;
+            border-color: #1877f2;
+          }
+        }
+      }
+    }
+
+    .modal-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #e4e6ea;
+      display: flex;
+      justify-content: flex-end;
+
+      .post-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #1877f2;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover:not(:disabled) {
+          background: #166fe5;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+        }
+
+        &:disabled {
+          background: #cbd5e0;
+          cursor: not-allowed;
+          transform: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .create-post {
   margin-top: 1.5rem;
   background: white;
