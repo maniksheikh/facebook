@@ -19,7 +19,6 @@
         </button>
       </div>
     </div>
-
     <!-- Modal Overlay -->
     <div v-if="showModal" class="modal-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; display: flex; align-items: center; justify-content: center;" @click="closeModal">
       <div class="modal-content" style="background: white; border-radius: 12px; padding: 20px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;" @click.stop>
@@ -32,7 +31,6 @@
             </svg>
           </button>
         </div>
-
         <!-- User Info -->
         <div class="user-info">
           <img class="profile" src="../assets/image/male-face-avatar-logo.jpg" alt="" />
@@ -45,7 +43,6 @@
             </select>
           </div>
         </div>
-
         <!-- Post Content Area -->
         <div class="post-content-area">
           <textarea 
@@ -56,7 +53,6 @@
             @input="autoResize"
             @focus="showPostOptions = true"
           ></textarea>
-          
           <!-- Text Formatting Options -->
           <div class="text-formatting">
             <button class="format-btn" title="Text formatting">
@@ -70,7 +66,6 @@
             </button>
           </div>
         </div>
-
         <!-- Post Type Selection -->
         <div class="post-type-selection">
           <h3>Add to your post</h3>
@@ -78,39 +73,33 @@
             <button 
               class="post-type-btn" 
               :class="{ active: selectedPostType === 'photo' }"
-              @click="selectPostType('photo')"
-            >
+              @click="selectPostType('photo')">
               <svg fill="#41B35D" viewBox="0 0 24 24" width="24px" height="24px">
                 <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
               </svg>
               <span>Photo/Video</span>
             </button>
-            
             <button 
               class="post-type-btn" 
               :class="{ active: selectedPostType === 'feeling' }"
-              @click="selectPostType('feeling')"
-            >
+              @click="selectPostType('feeling')">
               <svg fill="#EAB026" viewBox="0 0 24 24" width="24px" height="24px">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
               </svg>
               <span>Feeling/Activity</span>
             </button>
-            
             <button class="post-type-btn">
               <svg fill="#F02849" viewBox="0 0 24 24" width="24px" height="24px">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
               </svg>
               <span>Tag Friends</span>
             </button>
-            
             <button class="post-type-btn">
               <svg fill="#41B35D" viewBox="0 0 24 24" width="24px" height="24px">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
               </svg>
               <span>Check in</span>
             </button>
-            
             <button class="post-type-btn">
               <svg fill="#F02849" viewBox="0 0 24 24" width="24px" height="24px">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
@@ -119,7 +108,6 @@
             </button>
           </div>
         </div>
-
         <!-- File Upload Section (shown when photo/video is selected) -->
         <div v-if="selectedPostType === 'photo' && showFileInput" class="file-upload-section" @dragover.prevent @drop.prevent="handleDrop">
           <input 
@@ -128,9 +116,7 @@
             multiple 
             accept="image/*,video/*" 
             style="display: none;"
-            @change="handleFileSelect"
-          />
-          
+            @change="handleFileSelect"/>         
           <div class="upload-area" :class="{ 'drag-over': isDragOver }" @click="$refs.fileInput.click()">
             <div class="upload-content">
               <div class="upload-icon">
@@ -150,15 +136,13 @@
                 <span class="file-type">MOV</span>
               </div>
             </div>
-          </div>
-          
+          </div>         
           <!-- File Preview Grid -->
           <div v-if="selectedFiles.length > 0" class="media-preview-grid">
             <div class="preview-header">
               <h4>Selected Media ({{ selectedFiles.length }})</h4>
               <button class="clear-all-btn" @click="clearAllFiles">Clear All</button>
-            </div>
-            
+            </div>           
             <div class="preview-grid" :class="gridClass">
               <div v-for="(file, index) in selectedFiles" :key="index" class="preview-item">
                 <div class="preview-container">
@@ -173,8 +157,7 @@
                       </button>
                       <div class="file-type-badge">IMAGE</div>
                     </div>
-                  </div>
-                  
+                  </div>                
                   <!-- Video Preview -->
                   <div v-else-if="file.type.startsWith('video/')" class="video-preview">
                     <video :src="file.url" preload="metadata" @loadedmetadata="onVideoLoad"></video>
@@ -192,8 +175,7 @@
                       <div class="file-type-badge">VIDEO</div>
                     </div>
                   </div>
-                </div>
-                
+                </div>               
                 <div class="file-details">
                   <span class="file-name" :title="file.name">{{ truncateFileName(file.name) }}</span>
                   <div class="file-info-row">
@@ -206,7 +188,6 @@
             </div>
           </div>
         </div>
-
         <!-- Feeling/Activity Selection (shown when feeling is selected) -->
         <div v-if="selectedPostType === 'feeling' && showFeelingOptions" class="feeling-activity">
           <h3>How are you feeling?</h3>
@@ -216,7 +197,6 @@
             </button>
           </div>
         </div>
-
         <!-- Modal Footer -->
         <div class="modal-footer">
           <button class="post-btn" :disabled="!canPost" @click="addItem">
@@ -230,7 +210,6 @@
         </div>
       </div>
     </div>
-
     <!-- Original Create Post (Hidden) -->
     <div class="create-post" style="display: none;">
       <div class="flex">
@@ -242,10 +221,9 @@
           style="resize: none; overflow: hidden;"
           @keydown.enter.prevent="addItem"
           @input="autoResize"
-          @focus="showPostOptions = true"
-        ></textarea>
-      </div>
-      
+          @focus="showPostOptions = true">
+        </textarea>
+      </div> 
       <!-- Enhanced File Upload Section -->
       <div v-if="showFileInput" class="file-upload-section" @dragover.prevent @drop.prevent="handleDrop">
         <input 
@@ -255,8 +233,7 @@
           accept="image/*,video/*" 
           style="display: none;"
           @change="handleFileSelect"
-        />
-        
+        />       
         <div class="upload-area" :class="{ 'drag-over': isDragOver }" @click="$refs.fileInput.click()">
           <div class="upload-content">
             <div class="upload-icon">
@@ -276,15 +253,13 @@
               <span class="file-type">MOV</span>
             </div>
           </div>
-        </div>
-        
+        </div>       
         <!-- Enhanced File Preview Grid -->
         <div v-if="selectedFiles.length > 0" class="media-preview-grid">
           <div class="preview-header">
             <h4>Selected Media ({{ selectedFiles.length }})</h4>
             <button class="clear-all-btn" @click="clearAllFiles">Clear All</button>
-          </div>
-          
+          </div>         
           <div class="preview-grid" :class="gridClass">
             <div v-for="(file, index) in selectedFiles" :key="index" class="preview-item">
               <div class="preview-container">
@@ -299,8 +274,7 @@
                     </button>
                     <div class="file-type-badge">IMAGE</div>
                   </div>
-                </div>
-                
+                </div>                
                 <!-- Video Preview -->
                 <div v-else-if="file.type.startsWith('video/')" class="video-preview">
                   <video :src="file.url" preload="metadata" @loadedmetadata="onVideoLoad"></video>
@@ -318,8 +292,7 @@
                     <div class="file-type-badge">VIDEO</div>
                   </div>
                 </div>
-              </div>
-              
+              </div>           
               <div class="file-details">
                 <span class="file-name" :title="file.name">{{ truncateFileName(file.name) }}</span>
                 <div class="file-info-row">
@@ -331,8 +304,7 @@
             </div>
           </div>
         </div>
-      </div>
-      
+      </div>      
       <!-- Always visible post buttons -->
       <div class="post-btn">
         <button class="btn live-video-btn" @click="startLiveVideo">
@@ -340,15 +312,13 @@
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
           </svg>
           <span>Live video</span>
-        </button>
-        
+        </button>       
         <button class="btn media-btn" :class="{ active: showFileInput }" @click="toggleFileInput">
           <svg fill="#41B35D" viewBox="0 0 24 24" width="25px" height="25px">
             <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
           </svg>
           <span>Photos/Videos</span>
-        </button>
-        
+        </button>       
         <button class="btn feeling-btn" @click="toggleFeelingOptions">
           <svg fill="#EAB026" viewBox="0 0 24 24" width="25px" height="25px">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
@@ -356,7 +326,6 @@
           <span>Feeling/activity</span>
         </button>
       </div>
-
       <!-- Post Options (shown when textarea is focused or when posting) -->
       <div v-if="showPostOptions" class="post-options">
         <div class="privacy-setting">
@@ -365,16 +334,14 @@
             <option value="friends">👥 Friends</option>
             <option value="me">🔒 Only me</option>
           </select>
-        </div>
-        
+        </div>        
         <div v-if="showFeelingOptions" class="feeling-activity">
           <button class="feeling-btn" @click="toggleFeelingSelector">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#EAB026">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
             </svg>
             <span>{{ selectedFeeling || 'Feeling/activity' }}</span>
-          </button>
-          
+          </button>          
           <div v-if="showFeelingSelector" class="feeling-selector">
             <div class="feeling-grid">
               <button v-for="feeling in feelings" :key="feeling" class="feeling-option" @click="selectFeeling(feeling)">
@@ -401,8 +368,7 @@
             </svg>
             Cancel
           </button>
-        </div>
-        
+        </div>       
         <div v-if="canPost" class="post-stats">
           <span class="char-count" :class="{ 'warning': text.length > 4000 }">
             {{ text.length }}/5000
