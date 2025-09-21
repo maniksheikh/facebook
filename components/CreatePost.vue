@@ -676,13 +676,11 @@ export default {
           this.showError(`${file.name} is not a supported file type.`)
           return false
         }
-        
         // Check file size
         if (file.size > this.maxFileSize) {
           this.showError(`${file.name} is too large. Maximum size is 50MB.`)
           return false
-        }
-        
+        } 
         // Check total files limit
         if (this.selectedFiles.length >= this.maxFiles) {
           this.showError(`Maximum ${this.maxFiles} files allowed.`)
@@ -751,8 +749,7 @@ export default {
               compressed: true
             })
           }, 'image/jpeg', 0.8)
-        }
-        
+        }       
         img.src = URL.createObjectURL(file)
       })
     },
@@ -775,8 +772,7 @@ export default {
         
         video.onerror = () => {
           resolve(this.createFileObject(file))
-        }
-        
+        }       
         video.src = URL.createObjectURL(file)
       })
     },
@@ -853,7 +849,6 @@ export default {
     },
     
     startLiveVideo() {
-      // Implement live video functionality
       alert('Live video feature coming soon!')
     },
     
@@ -895,8 +890,7 @@ export default {
       localStorage.setItem('fbposts', JSON.stringify(this.posts))
 
       // Reset form and close modal
-      this.closeModal()
-      
+      this.closeModal() 
       // Show success message
       this.showSuccess('Post published successfully!')
     },
