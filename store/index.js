@@ -32,6 +32,15 @@ export const mutations = {
   addPost(state, post) {
     state.posts.unshift(post);
   },
+  updatePost(state, updatedPost) {
+    const index = state.posts.findIndex(post => post.id === updatedPost.id);
+    if (index > -1) {
+      state.posts.splice(index, 1, updatedPost);
+    }
+  },
+  removePost(state, postId) {
+    state.posts = state.posts.filter(post => post.id !== postId);
+  },
 };
 
 export const actions = {
