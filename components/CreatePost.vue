@@ -828,19 +828,16 @@ export default {
     if (storedPosts) {
       this.posts = JSON.parse(storedPosts)
     }
-    
-    // Add click outside listener to close options menu
+  
     document.addEventListener('click', this.handleClickOutside)
   },
   
   beforeDestroy() {
-    // Remove click outside listener
     document.removeEventListener('click', this.handleClickOutside)
   },
   methods: {
     // Handle click outside to close options menu
     handleClickOutside(event) {
-      // Close all post options menus when clicking outside
       this.posts.forEach(post => {
         if (post.showOptions) {
           this.$set(post, 'showOptions', false)
@@ -1089,7 +1086,6 @@ export default {
 
       // Reset form and close modal
       this.closeModal() 
-      // Show success message
       this.showSuccess('Post published successfully!')
     },
     
