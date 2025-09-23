@@ -310,7 +310,6 @@ export default {
       font-size: 20px;
       font-weight: 700;
       border-radius: 5px;
-      transition: 0.3s ease-in;
       font-family: inherit;
       &:hover:not(:disabled) {
         background: #005fdb;
@@ -335,7 +334,6 @@ export default {
       font-size: 17px;
       font-weight: 700;
       border-radius: 5px;
-      transition: 0.3s ease-in-out;
       &:hover {
         color: #1c1e21;
         background: #40bc27;

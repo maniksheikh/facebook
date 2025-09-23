@@ -191,7 +191,6 @@ export default {
     font-size: 1.2rem;
     font-weight: 700;
     border-radius: 5px;
-    transition: 0.3s ease-in;
     &:hover {
       background: #005fdb;
     }
@@ -205,7 +204,6 @@ export default {
     font-size: 1.2rem;
     font-weight: 700;
     border-radius: 5px;
-    transition: 0.3s ease-in-out;
     &:hover {
       background: #40bc27;
     }
