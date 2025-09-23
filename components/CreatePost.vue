@@ -339,11 +339,14 @@
         </div>
         
         <!-- Modal Footer -->
-        <div class="modal-footer">
-          <button class="cancel-btn" style="margin-right: 0.5rem;" @click="closeEditModal">
+        <div class="modal-footer edit-modal-footer">
+          <button class="cancel-btn" @click="closeEditModal">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
             Cancel
           </button>
-          <button class="post-btn" :disabled="!canUpdatePost" @click="updatePost">
+          <button class="post-btn update-btn" :disabled="!canUpdatePost" @click="updatePost">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -818,9 +821,11 @@ export default {
       return 'grid-many'
     },
     canUpdatePost() {
-      return this.editingPost.text && this.editingPost.text.trim() || 
-             (this.editingPost.media && this.editingPost.media.length > 0) || 
-             this.editSelectedFiles.length > 0
+      const hasText = this.editingPost.text && this.editingPost.text.trim()
+      const hasExistingMedia = this.editingPost.media && this.editingPost.media.length > 0
+      const hasNewMedia = this.editSelectedFiles.length > 0
+      
+      return hasText || hasExistingMedia || hasNewMedia
     }
   },
   mounted() {
@@ -1090,6 +1095,8 @@ export default {
     },
     
     showSuccess(message) {
+      // You can replace this with a proper toast notification system
+      alert(message)
     },
     
     onImageLoad(event) {
@@ -1147,7 +1154,13 @@ export default {
     
     editPost(post) {
       // Deep copy the post to avoid reactivity issues
-      this.editingPost = JSON.parse(JSON.stringify(post))
+      this.editingPost = {
+        ...JSON.parse(JSON.stringify(post)),
+        // Ensure we have the required properties for editing
+        text: post.text || '',
+        media: post.media || [],
+        privacy: post.privacy || 'public'
+      }
       this.editSelectedFiles = []
       this.isEditDragOver = false
       this.showEditModal = true
@@ -1240,7 +1253,7 @@ export default {
       
       try {
         // Combine existing media with new media
-        const allMedia = [...(this.editingPost.media || [])]
+        const existingMedia = this.editingPost.media || []
         const newMedia = this.editSelectedFiles.map(file => ({
           name: file.name,
           type: file.type,
@@ -1251,7 +1264,7 @@ export default {
         const updatedPost = {
           ...this.editingPost,
           text: this.editingPost.text ? this.editingPost.text.trim() : '',
-          media: [...allMedia, ...newMedia],
+          media: [...existingMedia, ...newMedia],
           updatedAt: new Date().toISOString(),
           showOptions: false // Reset the options menu
         }
@@ -1261,10 +1274,14 @@ export default {
         if (index > -1) {
           this.$set(this.posts, index, updatedPost)
           localStorage.setItem('fbposts', JSON.stringify(this.posts))
-          this.$store.commit('updatePost', updatedPost)
+          
+          // Update store if it has updatePost mutation
+          if (this.$store.state.posts) {
+            this.$store.commit('updatePost', updatedPost)
+          }
           
           this.closeEditModal()
-          alert('Post updated successfully!')
+          this.showSuccess('Post updated successfully!')
         } else {
           alert('Post not found!')
         }
@@ -1285,7 +1302,6 @@ export default {
   padding: 1rem;
   margin-bottom: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
   border: 1px solid #e4e6ea;
   position: relative;
 
@@ -1318,7 +1334,6 @@ export default {
       border: none;
       outline: none;
       cursor: pointer;
-      transition: all 0.2s ease;
       user-select: none;
       position: relative;
       z-index: 10;
@@ -1357,7 +1372,6 @@ export default {
       border-radius: 8px;
       padding: 0.75rem 1rem;
       cursor: pointer;
-      transition: all 0.2s ease;
       font-weight: 600;
       color: #65676b;
       flex: 1;
@@ -1368,9 +1382,6 @@ export default {
         transform: translateY(-1px);
       }
 
-      svg {
-        transition: transform 0.2s ease;
-      }
 
       &:hover svg {
         transform: scale(1.1);
@@ -1425,7 +1436,6 @@ export default {
         padding: 0.5rem;
         border-radius: 50%;
         color: #65676b;
-        transition: all 0.2s ease;
 
         &:hover {
           background: #f0f2f5;
@@ -1512,7 +1522,6 @@ export default {
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          transition: all 0.2s ease;
 
           &:hover {
             background: #e4e6ea;
@@ -1554,7 +1563,6 @@ export default {
           border-radius: 8px;
           padding: 1rem 0.5rem;
           cursor: pointer;
-          transition: all 0.2s ease;
           color: #65676b;
 
           &:hover {
@@ -1575,9 +1583,6 @@ export default {
             text-align: center;
           }
 
-          svg {
-            transition: transform 0.2s ease;
-          }
 
           &:hover svg {
             transform: scale(1.1);
@@ -1610,7 +1615,6 @@ export default {
           cursor: pointer;
           text-align: left;
           font-size: 0.9rem;
-          transition: all 0.2s ease;
 
           &:hover {
             background: #f0f2f5;
@@ -1637,7 +1641,6 @@ export default {
         padding: 0.75rem 1.5rem;
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.2s ease;
 
         &:hover:not(:disabled) {
           background: #166fe5;
@@ -1678,7 +1681,6 @@ export default {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: all 0.3s ease;
 
   .flex {
     display: flex;
@@ -1693,7 +1695,6 @@ export default {
       object-fit: cover;
       border: 2px solid #e4e6ea;
       cursor: pointer;
-      transition: all 0.2s ease;
 
       &:hover {
         border-color: #1877f2;
@@ -1713,7 +1714,6 @@ export default {
       min-height: 40px;
       max-height: 200px;
       resize: none;
-      transition: all 0.2s ease;
       
       &::placeholder {
         color: #8a8d91;
@@ -1767,7 +1767,6 @@ export default {
         cursor: pointer;
         color: #65676b;
         font-size: 0.9rem;
-        transition: all 0.2s ease;
         
         &:hover {
           background: #e4e6ea;
@@ -1801,7 +1800,6 @@ export default {
             cursor: pointer;
             text-align: left;
             font-size: 0.9rem;
-            transition: all 0.2s ease;
             
             &:hover {
               background: #f0f2f5;
@@ -1828,7 +1826,6 @@ export default {
       border-radius: 8px;
       padding: 0.75rem 1rem;
       cursor: pointer;
-      transition: all 0.2s ease;
       font-weight: 600;
       color: #65676b;
       flex: 1;
@@ -1844,9 +1841,6 @@ export default {
         color: #1877f2;
       }
       
-      svg {
-        transition: transform 0.2s ease;
-      }
       
       &:hover svg {
         transform: scale(1.1);
@@ -1865,7 +1859,6 @@ export default {
       padding: 2rem;
       text-align: center;
       cursor: pointer;
-      transition: all 0.3s ease;
       background: #f8f9fa;
       
       &.drag-over {
@@ -1941,7 +1934,6 @@ export default {
           padding: 0.25rem 0.75rem;
           font-size: 0.8rem;
           cursor: pointer;
-          transition: all 0.2s ease;
           
           &:hover {
             background: #c82333;
@@ -1973,7 +1965,6 @@ export default {
           border: 1px solid #e4e6ea;
           border-radius: 8px;
           overflow: hidden;
-          transition: all 0.2s ease;
           
           &:hover {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -2009,7 +2000,6 @@ export default {
                 align-items: center;
                 justify-content: center;
                 opacity: 0;
-                transition: all 0.2s ease;
               }
               
               &:hover .play-overlay {
@@ -2029,7 +2019,6 @@ export default {
               align-items: flex-start;
               padding: 0.5rem;
               opacity: 0;
-              transition: all 0.2s ease;
               
               &:hover {
                 opacity: 1;
@@ -2046,7 +2035,6 @@ export default {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                transition: all 0.2s ease;
                 
                 &:hover {
                   background: #dc3545;
@@ -2137,7 +2125,6 @@ export default {
         padding: 0.75rem 1.5rem;
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.2s ease;
         
         &:hover:not(:disabled) {
           background: #166fe5;
@@ -2164,7 +2151,6 @@ export default {
         padding: 0.75rem 1.5rem;
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.2s ease;
         
         &:hover {
           background: #d1d5db;
@@ -2207,7 +2193,6 @@ export default {
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      transition: all 0.3s ease;
 
       &:hover {
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
@@ -2231,7 +2216,6 @@ export default {
           border-radius: 50%;
           margin-right: 0.75rem;
           overflow: hidden;
-          transition: all 0.2s ease;
 
           &:hover {
             border-color: #1877f2;
@@ -2277,7 +2261,6 @@ export default {
             cursor: pointer;
             padding: 0.5rem;
             border-radius: 50%;
-            transition: all 0.2s ease;
 
             &:hover {
               background: #f0f2f5;
@@ -2309,7 +2292,6 @@ export default {
           max-height: 600px;
           object-fit: cover;
           cursor: pointer;
-          transition: all 0.3s ease;
           
           &:hover {
             opacity: 0.95;
@@ -2346,7 +2328,6 @@ export default {
         border-radius: 8px;
         padding: 0.75rem 1rem;
         cursor: pointer;
-        transition: all 0.2s ease;
         font-weight: 600;
         color: #65676b;
         flex: 1;
@@ -2357,9 +2338,6 @@ export default {
           transform: translateY(-1px);
         }
 
-        svg {
-          transition: transform 0.2s ease;
-        }
 
         &:hover svg {
           transform: scale(1.1);
@@ -2391,7 +2369,6 @@ export default {
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 50%;
-    transition: all 0.2s ease;
     color: #65676b;
     
     &:hover {
@@ -2400,9 +2377,6 @@ export default {
       transform: scale(1.1);
     }
     
-    svg {
-      transition: transform 0.2s ease;
-    }
   }
 }
 
@@ -2429,7 +2403,6 @@ export default {
     background: transparent;
     border: none;
     cursor: pointer;
-    transition: all 0.2s ease;
     font-size: 0.9rem;
     font-weight: 500;
     color: #1c1e21;
@@ -2441,7 +2414,6 @@ export default {
 
     svg {
       flex-shrink: 0;
-      transition: transform 0.2s ease;
     }
     
     &:hover svg {
@@ -2502,7 +2474,6 @@ export default {
       border: 1px solid #e4e6ea;
       border-radius: 8px;
       overflow: hidden;
-      transition: all 0.2s ease;
 
       &:hover {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -2538,7 +2509,6 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.2s ease;
         opacity: 0;
 
         &:hover {
@@ -2551,27 +2521,45 @@ export default {
 }
 
 // Edit Modal Specific Styles
-.modal-overlay {
-  .modal-content {
-    .modal-footer {
-      .cancel-btn {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: #e4e6ea;
-        color: #65676b;
-        border: none;
-        border-radius: 8px;
-        padding: 0.75rem 1.5rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
+.edit-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  
+  .cancel-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e4e6ea;
+    color: #65676b;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
 
-        &:hover {
-          background: #d1d5db;
-          transform: translateY(-1px);
-        }
-      }
+    &:hover {
+      background: #d1d5db;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .update-btn {
+    background: #28a745;
+    
+    &:hover:not(:disabled) {
+      background: #218838;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    }
+    
+    &:disabled {
+      background: #6c757d;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
     }
   }
 }

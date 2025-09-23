@@ -496,13 +496,11 @@ li {
         flex-direction: column;
         cursor: pointer;
         position: relative;
-        transition: all 0.3s ease;
         padding: 0.5rem 2rem;
         flex: 1;
 
         .set {
           border-radius: 8px;
-          transition: background-color 0.3s ease;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -542,7 +540,6 @@ li {
           font-weight: 500;
           white-space: nowrap;
           z-index: 1000;
-          transition: all 0.2s ease;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
           
           &::before {
@@ -597,7 +594,6 @@ li {
       font-weight: 500;
       white-space: nowrap;
       z-index: 1000;
-      transition: all 0.2s ease;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       
       &::before {
@@ -624,7 +620,6 @@ li {
         background: #d8dadf;
         border-radius: 50%;
         position: relative;
-        transition: background-color 0.3s ease;
         
         &:hover {
           background: #f5f5f5;
@@ -753,7 +748,6 @@ li {
       object-fit: cover;
       border: 2px solid #e4e6ea;
       cursor: pointer;
-      transition: all 0.2s ease;
       
       &:hover {
         border-color: #1877f2;
