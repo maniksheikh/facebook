@@ -586,7 +586,6 @@ export default {
           opacity: 0.5;
           &:hover {
             background: #e6dddd;
-            transition: 0.4s;
             border-radius: 50%;
           }
         }
@@ -627,7 +626,6 @@ export default {
 
         &:hover {
           background: #f2f2f2;
-          transition: 0.4s;
           border-radius: 10px;
         }
       }

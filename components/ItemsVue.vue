@@ -280,7 +280,6 @@ export default {
         background: #f7f4f4;
         border-radius: 5px;
         cursor: pointer;
-        transition: 0.4s;
       }
     }
   }

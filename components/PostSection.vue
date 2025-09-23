@@ -459,7 +459,6 @@ export default {
         font-size: 0.9rem;
         font-weight: 600;
         color: #65676b;
-        transition: background-color 0.2s;
 
         &:hover {
           background: #f5f5f5;
@@ -482,7 +481,6 @@ export default {
         padding: 2rem;
         text-align: center;
         cursor: pointer;
-        transition: border-color 0.2s;
 
         &:hover {
           border-color: #1877f2;
@@ -665,7 +663,6 @@ export default {
               &:hover {
                 background: #f5f5f5;
                 opacity: 1;
-                transition: 0.3s;
               }
             }
           }
@@ -724,7 +721,6 @@ export default {
         font-size: 0.9rem;
         font-weight: 600;
         color: #65676b;
-        transition: background-color 0.2s;
         flex: 1;
         min-width: 0;
 
