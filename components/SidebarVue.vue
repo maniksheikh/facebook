@@ -14,15 +14,8 @@
           <span>Friends</span>
         </li>
         <li>
-          <i data-visualcompletion="css-img" class="" style="
-              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/4GR4KRf3hN2.png');
-              background-position: 0 -407px;
-              background-size: auto;
-              width: 36px;
-              height: 36px;
-              background-repeat: no-repeat;
-              display: inline-block;
-            "></i>
+          <i data-visualcompletion="css-img" class=""
+            style="background-image:url('https://static.xx.fbcdn.net/rsrc.php/v4/yA/r/FVAeV5GPLIk.png');background-position:0 -444px;background-size:auto;width:36px;height:36px;background-repeat:no-repeat;display:inline-block"></i>
           <span>Marketplace</span>
         </li>
         <li>
@@ -31,52 +24,24 @@
           <span>Memories</span>
         </li>
         <li>
-          <i data-visualcompletion="css-img" class="" style="
-              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/4GR4KRf3hN2.png');
-              background-position: 0 -37px;
-              background-size: auto;
-              width: 36px;
-              height: 36px;
-              background-repeat: no-repeat;
-              display: inline-block;
-            "></i>
+          <i data-visualcompletion="css-img" class=""
+            style="background-image:url('https://static.xx.fbcdn.net/rsrc.php/v4/yA/r/FVAeV5GPLIk.png');background-position:0 -74px;background-size:auto;width:36px;height:36px;background-repeat:no-repeat;display:inline-block"></i>
           <span>Groups</span>
         </li>
         <li>
-          <i data-visualcompletion="css-img" class="" style="
-              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/4GR4KRf3hN2.png');
-              background-position: 0 -518px;
-              background-size: auto;
-              width: 36px;
-              height: 36px;
-              background-repeat: no-repeat;
-              display: inline-block;
-            "></i>
+          <i data-visualcompletion="css-img" class=""
+            style="background-image:url('https://static.xx.fbcdn.net/rsrc.php/v4/yA/r/FVAeV5GPLIk.png');background-position:0 -555px;background-size:auto;width:36px;height:36px;background-repeat:no-repeat;display:inline-block"></i>
           <span>Video</span>
         </li>
         <li>
-          <i data-visualcompletion="css-img" class="" style="
-              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yV/r/vTDQ3deAsEh.png');
-              background-position: 0 -37px;
-              background-size: auto;
-              width: 36px;
-              height: 36px;
-              background-repeat: no-repeat;
-              display: inline-block;
-            "></i>
+          <i data-visualcompletion="css-img" class=""
+            style="background-image:url('https://static.xx.fbcdn.net/rsrc.php/v4/yA/r/FVAeV5GPLIk.png');background-position:0 -555px;background-size:auto;width:36px;height:36px;background-repeat:no-repeat;display:inline-block"></i>
           <span>Events</span>
         </li>
         <li>
-          <i data-visualcompletion="css-img" class="" style="
-              background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/4GR4KRf3hN2.png');
-              background-position: 0 -333px;
-              background-size: auto;
-              width: 36px;
-              height: 36px;
-              background-repeat: no-repeat;
-              display: inline-block;
-            "></i>
-          <span>Fundraisers</span>
+          <img draggable="false" height="36" width="36" class="xz74otr" alt="" referrerpolicy="origin-when-cross-origin"
+            src="https://static.xx.fbcdn.net/rsrc.php/v4/yb/r/eECk3ceTaHJ.png">
+          <span>Feeds</span>
         </li>
         <li>
           <i data-visualcompletion="css-img" class=""
