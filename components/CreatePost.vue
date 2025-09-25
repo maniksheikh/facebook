@@ -210,7 +210,6 @@
         </div>
       </div>
     </div>
-    
     <!-- Edit Post Modal -->
     <div v-if="showEditModal" class="modal-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; display: flex; align-items: center; justify-content: center;" @click="closeEditModal">
       <div class="modal-content" style="background: white; border-radius: 12px; padding: 20px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;" @click.stop>
@@ -244,8 +243,7 @@
             class="post-textarea"
             @input="autoResize"
           ></textarea>
-        </div>
-        
+        </div>   
         <!-- Current Media Display -->
         <div v-if="editingPost.media && editingPost.media.length > 0" class="current-media-section">
           <h3>Current Media</h3>
@@ -262,8 +260,7 @@
               </button>
             </div>
           </div>
-        </div>
-        
+        </div>     
         <!-- File Upload Section -->
         <div class="file-upload-section" @dragover.prevent @drop.prevent="handleEditDrop">
           <input 
@@ -336,8 +333,7 @@
               </div>
             </div>
           </div>
-        </div>
-        
+        </div>      
         <!-- Modal Footer -->
         <div class="modal-footer edit-modal-footer">
           <button class="cancel-btn" @click="closeEditModal">
@@ -354,8 +350,7 @@
           </button>
         </div>
       </div>
-    </div>
-    
+    </div>    
     <!-- Original Create Post (Hidden) -->
     <div class="create-post" style="display: none;">
       <div class="flex">
@@ -792,7 +787,6 @@ export default {
       ],
       maxFileSize: 50 * 1024 * 1024,
       maxFiles: 10,
-      // Edit functionality
       showEditModal: false,
       editingPost: {},
       editSelectedFiles: [],
@@ -841,7 +835,6 @@ export default {
     document.removeEventListener('click', this.handleClickOutside)
   },
   methods: {
-    // Handle click outside to close options menu
     handleClickOutside(event) {
       this.posts.forEach(post => {
         if (post.showOptions) {
