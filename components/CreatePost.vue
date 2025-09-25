@@ -989,7 +989,9 @@ export default {
     },
     
     removeFile(index) {
-      URL.revokeObjectURL(this.selectedFiles[index].url)
+      if (this.selectedFiles[index] && this.selectedFiles[index].url) {
+        URL.revokeObjectURL(this.selectedFiles[index].url)
+      }
       this.selectedFiles.splice(index, 1)
     },
     
@@ -1230,7 +1232,9 @@ export default {
     },
     
     removeEditFile(index) {
-      URL.revokeObjectURL(this.editSelectedFiles[index].url)
+      if (this.editSelectedFiles[index] && this.editSelectedFiles[index].url) {
+        URL.revokeObjectURL(this.editSelectedFiles[index].url)
+      }
       this.editSelectedFiles.splice(index, 1)
     },
     
@@ -1242,7 +1246,9 @@ export default {
     },
     
     removeCurrentMedia(index) {
-      this.editingPost.media.splice(index, 1)
+      if (this.editingPost.media && this.editingPost.media.length > index) {
+        this.editingPost.media.splice(index, 1)
+      }
     },
     
     updatePost() {
