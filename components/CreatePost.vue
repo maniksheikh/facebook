@@ -530,7 +530,10 @@
               </div>
               <div class="content">
                 <span class="title">{{ post.username }}</span>
-                <span class="email">{{ post.email || 'user@example.com' }}</span>
+                <div class="meta-info">
+                  <span class="email">{{ post.email || 'user@example.com' }}</span>
+                  <span v-if="post.isEdited" class="edited-indicator">• Edited</span>
+                </div>
               </div>
               <div class="multi-icon">
                 <button class="options-btn" @click.stop="togglePostOptions(post)">
@@ -815,6 +818,10 @@ export default {
       return 'grid-many'
     },
     canUpdatePost() {
+      if (!this.editingPost || !this.editingPost.id) {
+        return false
+      }
+      
       const hasText = this.editingPost.text && this.editingPost.text.trim()
       const hasExistingMedia = this.editingPost.media && this.editingPost.media.length > 0
       const hasNewMedia = this.editSelectedFiles.length > 0
@@ -1061,32 +1068,48 @@ export default {
     addItem() {
       if (!this.canPost) return
       
-      const newPost = {
-        id: Date.now(),
-        username: this.username || 'Anonymous User',
-        email: this.$store.state.user ? this.$store.state.user.email : 'user@example.com',
-        text: this.text.trim(),
-        media: this.selectedFiles.map(file => ({
-          name: file.name,
-          type: file.type,
-          url: file.url,
-          size: file.size
-        })),
-        privacy: this.postPrivacy,
-        feeling: this.selectedFeeling,
-        timestamp: new Date().toISOString(),
-        likes: 0,
-        comments: [],
-        shares: 0
-      }
-      
-      this.posts.unshift(newPost)
-      this.$store.commit('addPost', newPost)
-      localStorage.setItem('fbposts', JSON.stringify(this.posts))
+      try {
+        const newPost = {
+          id: Date.now() + Math.floor(Math.random() * 1000), // Ensure unique ID
+          username: this.username || 'Anonymous User',
+          email: this.$store.state.user ? this.$store.state.user.email : 'user@example.com',
+          text: this.text.trim(),
+          media: this.selectedFiles.map(file => ({
+            name: file.name,
+            type: file.type,
+            url: file.url,
+            size: file.size
+          })),
+          privacy: this.postPrivacy,
+          feeling: this.selectedFeeling,
+          timestamp: new Date().toISOString(),
+          likes: 0,
+          comments: [],
+          shares: 0,
+          isEdited: false
+        }
+        
+        // Add to posts array
+        this.posts.unshift(newPost)
+        
+        // Update localStorage
+        localStorage.setItem('fbposts', JSON.stringify(this.posts))
+        
+        // Update Vuex store if available
+        try {
+          if (this.$store.state.posts !== undefined) {
+            this.$store.commit('addPost', newPost)
+          }
+        } catch (storeError) {
+          // Store update not available - continue without store update
+        }
 
-      // Reset form and close modal
-      this.closeModal() 
-      this.showSuccess('Post published successfully!')
+        // Reset form and close modal
+        this.closeModal() 
+        this.showSuccess('Post published successfully!')
+      } catch (error) {
+        alert('Error creating post. Please try again.')
+      }
     },
     
     showSuccess(message) {
@@ -1148,30 +1171,72 @@ export default {
     },
     
     editPost(post) {
-      // Deep copy the post to avoid reactivity issues
-      this.editingPost = {
-        ...JSON.parse(JSON.stringify(post)),
-        // Ensure we have the required properties for editing
-        text: post.text || '',
-        media: post.media || [],
-        privacy: post.privacy || 'public'
+      try {
+        // Validate post object
+        if (!post || !post.id) {
+          alert('Invalid post selected for editing')
+          return
+        }
+        
+        // Deep copy the post to avoid reactivity issues
+        this.editingPost = {
+          ...JSON.parse(JSON.stringify(post)),
+          // Ensure we have the required properties for editing
+          text: post.text || '',
+          media: post.media || [],
+          privacy: post.privacy || 'public'
+        }
+        
+        // Reset edit-specific data
+        this.editSelectedFiles = []
+        this.isEditDragOver = false
+        
+        // Open the edit modal
+        this.showEditModal = true
+        
+        // Close the options menu
+        this.$set(post, 'showOptions', false)
+      } catch (error) {
+        alert('Error opening post for editing. Please try again.')
       }
-      this.editSelectedFiles = []
-      this.isEditDragOver = false
-      this.showEditModal = true
-      this.$set(post, 'showOptions', false)
     },
     
     deletePost(post) {
+      if (!post || !post.id) {
+        alert('Invalid post selected for deletion')
+        return
+      }
+      
       if (confirm('Are you sure you want to delete this post?')) {
-        const index = this.posts.findIndex(p => p.id === post.id)
-        if (index > -1) {
-          this.posts.splice(index, 1)
-          localStorage.setItem('fbposts', JSON.stringify(this.posts))
-          this.$store.commit('removePost', post.id)
+        try {
+          const index = this.posts.findIndex(p => p.id === post.id)
+          if (index > -1) {
+            // Remove post from array
+            this.posts.splice(index, 1)
+            
+            // Update localStorage
+            localStorage.setItem('fbposts', JSON.stringify(this.posts))
+            
+            // Update Vuex store if available
+            try {
+              if (this.$store.state.posts) {
+                this.$store.commit('removePost', post.id)
+              }
+            } catch (storeError) {
+              // Store update not available - continue without store update
+            }
+            
+            this.showSuccess('Post deleted successfully!')
+          } else {
+            alert('Post not found!')
+          }
+        } catch (error) {
+          alert('Error deleting post. Please try again.')
         }
       }
-      post.showOptions = false
+      
+      // Close options menu
+      this.$set(post, 'showOptions', false)
     },
     
     closeEditModal() {
@@ -1265,22 +1330,33 @@ export default {
           text: this.editingPost.text ? this.editingPost.text.trim() : '',
           media: [...existingMedia, ...newMedia],
           updatedAt: new Date().toISOString(),
-          showOptions: false // Reset the options menu
+          showOptions: false, // Reset the options menu
+          isEdited: true // Mark as edited
         }
         
         // Update the post in the array
         const index = this.posts.findIndex(p => p.id === this.editingPost.id)
         if (index > -1) {
+          // Use Vue.set to ensure reactivity
           this.$set(this.posts, index, updatedPost)
+          
+          // Save to localStorage
           localStorage.setItem('fbposts', JSON.stringify(this.posts))
           
           // Update store if it has updatePost mutation
-          if (this.$store.state.posts) {
-            this.$store.commit('updatePost', updatedPost)
+          try {
+            if (this.$store.state.posts) {
+              this.$store.commit('updatePost', updatedPost)
+            }
+          } catch (storeError) {
+            // Store update not available - continue without store update
           }
           
           this.closeEditModal()
           this.showSuccess('Post updated successfully!')
+          
+          // Force reactivity update
+          this.$forceUpdate()
         } else {
           alert('Post not found!')
         }
@@ -2241,10 +2317,23 @@ export default {
             margin-bottom: 0.2rem;
           }
 
-          .email {
-            font-size: 0.875rem;
-            color: #65676b;
-            font-weight: 400;
+          .meta-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            
+            .email {
+              font-size: 0.875rem;
+              color: #65676b;
+              font-weight: 400;
+            }
+            
+            .edited-indicator {
+              font-size: 0.75rem;
+              color: #8a8d91;
+              font-weight: 400;
+              font-style: italic;
+            }
           }
         }
 
