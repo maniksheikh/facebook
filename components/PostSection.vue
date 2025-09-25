@@ -191,7 +191,10 @@
               </div>
               <div class="content">
                 <span class="title">{{ post.username }}</span>
-                <span class="email">{{ post.email || 'user@example.com' }}</span>
+                <div class="meta-info">
+                  <span class="email">{{ post.email || 'user@example.com' }}</span>
+                  <span v-if="post.isEdited" class="edited-indicator">• Edited</span>
+                </div>
               </div>
               <div class="multi-icon">
                 <img src="../assets/image/icons8-more-24.png" />
@@ -372,7 +375,7 @@ export default {
       if (!this.canPost) return
       
       const newPost = {
-        id: Date.now(),
+        id: Date.now() + Math.floor(Math.random() * 1000),
         text: this.text,
         username: this.username,
         email: this.$store.state.user ? this.$store.state.user.email : 'user@example.com',
@@ -381,7 +384,8 @@ export default {
           name: file.name,
           type: file.type,
           url: file.url
-        }))
+        })),
+        isEdited: false
       }
       
       this.posts.unshift(newPost)
@@ -639,10 +643,23 @@ export default {
               margin-bottom: 0.2rem;
             }
 
-            .email {
-              font-size: 0.875rem;
-              color: #65676b;
-              font-weight: 400;
+            .meta-info {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              
+              .email {
+                font-size: 0.875rem;
+                color: #65676b;
+                font-weight: 400;
+              }
+              
+              .edited-indicator {
+                font-size: 0.75rem;
+                color: #8a8d91;
+                font-weight: 400;
+                font-style: italic;
+              }
             }
           }
 
