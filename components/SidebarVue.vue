@@ -163,7 +163,6 @@ export default {
 
 .footer {
   margin-top: 13rem;
-
   p {
     opacity: 0.7;
     font-weight: 400;
