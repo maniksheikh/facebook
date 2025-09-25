@@ -325,7 +325,7 @@ export default {
     
     handleFileSelect(event) {
       const files = Array.from(event.target.files)
-      const maxSize = 50 * 1024 * 1024 // 50MB limit
+      const maxSize = 50 * 1024 * 1024
       
       files.forEach(file => {
         if (file.size > maxSize) {
@@ -404,7 +404,6 @@ export default {
 .post-page {
   margin-top: 10px;
 
-  // Create Post Styles
   .create-post {
     background: white;
     border-radius: 10px;
