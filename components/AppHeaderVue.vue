@@ -751,7 +751,6 @@ li {
       
       &:hover {
         border-color: #1877f2;
-        transform: scale(1.05);
       }
     }
   }

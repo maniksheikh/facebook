@@ -1379,11 +1379,7 @@ export default {
   cursor: pointer;
   border: 1px solid #e4e6ea;
   position: relative;
-
-  &:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    transform: translateY(-1px);
-  }
+}
 
   .btn-content {
     display: flex;
@@ -1419,11 +1415,6 @@ export default {
 
       &:hover {
         background: #e4e6ea;
-        transform: scale(1.02);
-      }
-      
-      &:active {
-        transform: scale(0.98);
       }
 
       &:focus {
@@ -1453,7 +1444,6 @@ export default {
       justify-content: center;
     }
   }
-}
 
 // Modal Styles
 .modal-overlay {
@@ -1590,7 +1580,6 @@ export default {
 
           &:hover {
             background: #e4e6ea;
-            transform: scale(1.1);
           }
 
           .format-icon {
@@ -1752,7 +1741,6 @@ export default {
 
       &:hover {
         border-color: #1877f2;
-        transform: scale(1.05);
       }
     }
 
@@ -1908,7 +1896,6 @@ export default {
       &.drag-over {
         border-color: #1877f2;
         background: #e3f2fd;
-        transform: scale(1.02);
       }
       
       &:hover {
@@ -2012,7 +1999,6 @@ export default {
           
           &:hover {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
           }
           
           .preview-container {
@@ -2082,7 +2068,6 @@ export default {
                 
                 &:hover {
                   background: #dc3545;
-                  transform: scale(1.1);
                 }
               }
               
@@ -2172,15 +2157,11 @@ export default {
         
         &:hover:not(:disabled) {
           background: #166fe5;
-          transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
         }
         
         &:disabled {
           background: #cbd5e0;
           cursor: not-allowed;
-          transform: none;
-          box-shadow: none;
         }
       }
       
@@ -2198,7 +2179,6 @@ export default {
         
         &:hover {
           background: #d1d5db;
-          transform: translateY(-1px);
         }
       }
     }
@@ -2240,7 +2220,6 @@ export default {
 
       &:hover {
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-        transform: translateY(-2px);
       }
     }
     
@@ -2322,7 +2301,6 @@ export default {
             &:hover {
               background: #f0f2f5;
               opacity: 1;
-              transform: scale(1.1);
             }
           }
         }
@@ -2352,7 +2330,6 @@ export default {
           
           &:hover {
             opacity: 0.95;
-            transform: scale(1.02);
           }
         }
         
@@ -2361,9 +2338,6 @@ export default {
           max-height: 600px;
           border-radius: 0;
           
-          &:hover {
-            transform: scale(1.01);
-          }
         }
       }
     }
@@ -2409,7 +2383,6 @@ export default {
     &:hover {
       background: #f0f2f5;
       color: #1c1e21;
-      transform: scale(1.1);
     }
     
   }
@@ -2444,16 +2417,12 @@ export default {
 
     &:hover {
       background: #f0f2f5;
-      transform: translateX(2px);
     }
 
     svg {
       flex-shrink: 0;
     }
     
-    &:hover svg {
-      transform: scale(1.1);
-    }
   }
 
   .edit-btn {
@@ -2512,7 +2481,6 @@ export default {
 
       &:hover {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transform: translateY(-2px);
 
         .remove-media-btn {
           opacity: 1;
@@ -2548,7 +2516,6 @@ export default {
 
         &:hover {
           background: #dc3545;
-          transform: scale(1.1);
         }
       }
     }
@@ -2572,12 +2539,8 @@ export default {
     padding: 0.75rem 1.5rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
-
     &:hover {
       background: #d1d5db;
-      transform: translateY(-1px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
   }
   
@@ -2586,15 +2549,11 @@ export default {
     
     &:hover:not(:disabled) {
       background: #218838;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
     }
     
     &:disabled {
       background: #6c757d;
       cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
     }
   }
 }

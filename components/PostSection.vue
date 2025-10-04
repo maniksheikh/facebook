@@ -741,8 +741,7 @@ export default {
         min-width: 0;
 
         &:hover {
-          background: #f5f5f5;
-          width: 100%;
+          background: #4a4a4a;
         }
 
         span {
@@ -752,19 +751,19 @@ export default {
 
       .btn-react {
         &:hover {
-          background: #f5f5f5;
+          background: #a39191;
         }
       }
 
       .btn-comment {
         &:hover {
-          background: #f5f5f5;
+          background: #9b8b8b;
         }
       }
 
       .btn-share {
         &:hover {
-          background: #f5f5f5;
+          background: #a39696;
         }
       }
     }
@@ -782,9 +781,6 @@ export default {
       border: 1px solid rgba(196, 196, 196, 0.3);
       cursor: pointer;
       position: relative;
-      &:hover {
-        transform: scale(1.01);
-      }
 
       span {
         position: absolute;
