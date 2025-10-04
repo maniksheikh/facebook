@@ -1451,16 +1451,6 @@ export default {
       color: #65676b;
       flex: 1;
       justify-content: center;
-
-      &:hover {
-        background: #f0f2f5;
-        transform: translateY(-1px);
-      }
-
-
-      &:hover svg {
-        transform: scale(1.1);
-      }
     }
   }
 }
@@ -1640,12 +1630,6 @@ export default {
           cursor: pointer;
           color: #65676b;
 
-          &:hover {
-            background: #f0f2f5;
-            border-color: #1877f2;
-            transform: translateY(-1px);
-          }
-
           &.active {
             background: #e3f2fd;
             border-color: #1877f2;
@@ -1656,11 +1640,6 @@ export default {
             font-size: 0.8rem;
             font-weight: 600;
             text-align: center;
-          }
-
-
-          &:hover svg {
-            transform: scale(1.1);
           }
         }
       }
@@ -1906,19 +1885,9 @@ export default {
       flex: 1;
       justify-content: center;
       
-      &:hover {
-        background: #f0f2f5;
-        transform: translateY(-1px);
-      }
-      
       &.active {
         background: #e3f2fd;
         color: #1877f2;
-      }
-      
-      
-      &:hover svg {
-        transform: scale(1.1);
       }
     }
   }
@@ -2420,28 +2389,6 @@ export default {
         color: #65676b;
         flex: 1;
         justify-content: center;
-
-        &:hover {
-          background: #e4e6ea;
-          transform: translateY(-1px);
-        }
-
-
-        &:hover svg {
-          transform: scale(1.1);
-        }
-
-        &.btn-react:hover {
-          color: #1877f2;
-        }
-
-        &.btn-comment:hover {
-          color: #42b883;
-        }
-
-        &.btn-share:hover {
-          color: #ff6b6b;
-        }
       }
     }
   }
