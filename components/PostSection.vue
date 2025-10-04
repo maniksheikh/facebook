@@ -197,8 +197,28 @@
                 </div>
               </div>
               <div class="multi-icon">
-                <img src="../assets/image/icons8-more-24.png" />
-                <img src="../assets/image/icons-multiply-img.png" />
+                <button class="options-btn" @click.stop="togglePostOptions(post)">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                    <circle cx="12" cy="5" r="1" fill="currentColor"/>
+                    <circle cx="12" cy="19" r="1" fill="currentColor"/>
+                  </svg>
+                </button>
+                <div v-if="post.showOptions" class="post-options-menu" @click.stop>
+                  <button class="edit-btn" @click="editPost(post)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="m18.5 2.5 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Edit Post
+                  </button>
+                  <button class="delete-btn" @click="deletePost(post)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <path d="M3 6h18M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Delete Post
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -287,6 +307,148 @@
         </div>
       </div>
     </div>
+    
+    <!-- Edit Post Modal -->
+    <div v-if="showEditModal" class="modal-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; display: flex; align-items: center; justify-content: center;" @click="closeEditModal">
+      <div class="modal-content" style="background: white; border-radius: 12px; padding: 20px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;" @click.stop>
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h2>Edit post</h2>
+          <button class="close-btn" @click="closeEditModal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <!-- User Info -->
+        <div class="user-info">
+          <img class="profile" src="../assets/image/male-face-avatar-logo.jpg" alt="" />
+          <div class="user-details">
+            <span class="username">{{ username || 'User' }}</span>
+            <select v-model="editingPost.privacy" class="privacy-select">
+              <option value="public">🌍 Public</option>
+              <option value="friends">👥 Friends</option>
+              <option value="me">🔒 Only me</option>
+            </select>
+          </div>
+        </div>
+        <!-- Post Content Area -->
+        <div class="post-content-area">
+          <textarea 
+            v-model="editingPost.text" 
+            :placeholder="`What's on your mind, ${username || 'User'}?`" 
+            rows="4"
+            class="post-textarea"
+            @input="autoResize"
+          ></textarea>
+        </div>   
+        <!-- Current Media Display -->
+        <div v-if="editingPost.media && editingPost.media.length > 0" class="current-media-section">
+          <h3>Current Media</h3>
+          <div class="current-media-grid">
+            <div v-for="(media, index) in editingPost.media" :key="index" class="current-media-item">
+              <div class="media-preview">
+                <img v-if="media.type.startsWith('image/')" :src="media.url" :alt="media.name" />
+                <video v-else-if="media.type.startsWith('video/')" :src="media.url" controls></video>
+              </div>
+              <button class="remove-media-btn" @click="removeCurrentMedia(index)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>     
+        <!-- File Upload Section -->
+        <div class="file-upload-section" @dragover.prevent @drop.prevent="handleEditDrop">
+          <input 
+            ref="editFileInput"
+            type="file" 
+            multiple 
+            accept="image/*,video/*" 
+            style="display: none;"
+            @change="handleEditFileSelect"/>         
+          <div class="upload-area" :class="{ 'drag-over': isEditDragOver }" @click="$refs.editFileInput.click()">
+            <div class="upload-content">
+              <div class="upload-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#1877f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17 8L12 3L7 8" stroke="#1877f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 3V15" stroke="#1877f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Add more photos and videos</h3>
+              <p>Drag and drop files here, or click to browse</p>
+            </div>
+          </div>         
+          <!-- New File Preview Grid -->
+          <div v-if="editSelectedFiles.length > 0" class="media-preview-grid">
+            <div class="preview-header">
+              <h4>New Media ({{ editSelectedFiles.length }})</h4>
+              <button class="clear-all-btn" @click="clearEditFiles">Clear All</button>
+            </div>           
+            <div class="preview-grid" :class="editGridClass">
+              <div v-for="(file, index) in editSelectedFiles" :key="index" class="preview-item">
+                <div class="preview-container">
+                  <!-- Image Preview -->
+                  <div v-if="file.type.startsWith('image/')" class="image-preview">
+                    <img :src="file.url" :alt="file.name" />
+                    <div class="file-overlay">
+                      <button class="remove-btn" @click="removeEditFile(index)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </button>
+                      <div class="file-type-badge">IMAGE</div>
+                    </div>
+                  </div>                
+                  <!-- Video Preview -->
+                  <div v-else-if="file.type.startsWith('video/')" class="video-preview">
+                    <video :src="file.url" preload="metadata"></video>
+                    <div class="play-overlay">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                      </svg>
+                    </div>
+                    <div class="file-overlay">
+                      <button class="remove-btn" @click="removeEditFile(index)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </button>
+                      <div class="file-type-badge">VIDEO</div>
+                    </div>
+                  </div>
+                </div>               
+                <div class="file-details">
+                  <span class="file-name" :title="file.name">{{ truncateFileName(file.name) }}</span>
+                  <div class="file-info-row">
+                    <span class="file-size">{{ formatFileSize(file.size) }}</span>
+                    <span v-if="file.compressed" class="compression-badge">Compressed</span>
+                    <span v-if="file.duration" class="duration-badge">{{ formatDuration(file.duration) }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>      
+        <!-- Modal Footer -->
+        <div class="modal-footer edit-modal-footer">
+          <button class="cancel-btn" @click="closeEditModal">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Cancel
+          </button>
+          <button class="post-btn update-btn" :disabled="!canUpdatePost" @click="updatePost">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Update Post
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -299,6 +461,12 @@ export default {
       selectedFiles: [],
       postType: 'text',
       showFileInput: false,
+      showEditModal: false,
+      editingPost: {},
+      editSelectedFiles: [],
+      isEditDragOver: false,
+      maxFileSize: 50 * 1024 * 1024,
+      maxFiles: 10,
     }
   },
   computed: {
@@ -308,12 +476,36 @@ export default {
     canPost() {
       return this.text.trim() || this.selectedFiles.length > 0
     },
+    editGridClass() {
+      const count = this.editSelectedFiles.length
+      if (count === 1) return 'grid-1'
+      if (count === 2) return 'grid-2'
+      if (count <= 4) return 'grid-4'
+      return 'grid-many'
+    },
+    canUpdatePost() {
+      if (!this.editingPost || !this.editingPost.id) {
+        return false
+      }
+      
+      const hasText = this.editingPost.text && this.editingPost.text.trim()
+      const hasExistingMedia = this.editingPost.media && this.editingPost.media.length > 0
+      const hasNewMedia = this.editSelectedFiles.length > 0
+      
+      return hasText || hasExistingMedia || hasNewMedia
+    }
   },
   mounted() {
     const storedPosts = localStorage.getItem('fbposts')
     if (storedPosts) {
       this.posts = JSON.parse(storedPosts)
     }
+    
+    document.addEventListener('click', this.handleClickOutside)
+  },
+  
+  beforeDestroy() {
+    document.removeEventListener('click', this.handleClickOutside)
   },
   methods: {
     toggleFileInput() {
@@ -395,6 +587,244 @@ export default {
       this.text = ''
       this.showFileInput = false
       this.selectedFiles = []
+    },
+    
+    // Click outside handler
+    handleClickOutside(event) {
+      this.posts.forEach(post => {
+        if (post.showOptions) {
+          this.$set(post, 'showOptions', false)
+        }
+      })
+    },
+    
+    // Post options methods
+    togglePostOptions(post) {
+      // Close other post options first
+      this.posts.forEach(p => {
+        if (p.id !== post.id) {
+          this.$set(p, 'showOptions', false)
+        }
+      })
+      this.$set(post, 'showOptions', !post.showOptions)
+    },
+    
+    // Edit functionality methods
+    editPost(post) {
+      try {
+        // Validate post object
+        if (!post || !post.id) {
+          alert('Invalid post selected for editing')
+          return
+        }
+        
+        // Deep copy the post to avoid reactivity issues
+        this.editingPost = {
+          ...JSON.parse(JSON.stringify(post)),
+          // Ensure we have the required properties for editing
+          text: post.text || '',
+          media: post.media || [],
+          privacy: post.privacy || 'public'
+        }
+        
+        // Reset edit-specific data
+        this.editSelectedFiles = []
+        this.isEditDragOver = false
+        
+        // Open the edit modal
+        this.showEditModal = true
+        
+        // Close the options menu
+        this.$set(post, 'showOptions', false)
+      } catch (error) {
+        alert('Error opening post for editing. Please try again.')
+      }
+    },
+    
+    deletePost(post) {
+      if (!post || !post.id) {
+        alert('Invalid post selected for deletion')
+        return
+      }
+      
+      if (confirm('Are you sure you want to delete this post?')) {
+        try {
+          const index = this.posts.findIndex(p => p.id === post.id)
+          if (index > -1) {
+            // Remove post from array
+            this.posts.splice(index, 1)
+            
+            // Update localStorage
+            localStorage.setItem('fbposts', JSON.stringify(this.posts))
+            
+            // Update Vuex store if available
+            try {
+              if (this.$store.state.posts) {
+                this.$store.commit('removePost', post.id)
+              }
+            } catch (storeError) {
+              // Store update not available - continue without store update
+            }
+            
+            alert('Post deleted successfully!')
+          } else {
+            alert('Post not found!')
+          }
+        } catch (error) {
+          alert('Error deleting post. Please try again.')
+        }
+      }
+      
+      // Close options menu
+      this.$set(post, 'showOptions', false)
+    },
+    
+    closeEditModal() {
+      this.showEditModal = false
+      this.editingPost = {}
+      this.clearEditFiles()
+    },
+    
+    // Edit file handling methods
+    handleEditFileSelect(event) {
+      const files = Array.from(event.target.files)
+      this.processEditFiles(files)
+    },
+    
+    handleEditDrop(event) {
+      this.isEditDragOver = false
+      const files = Array.from(event.dataTransfer.files)
+      this.processEditFiles(files)
+    },
+    
+    processEditFiles(files) {
+      const validFiles = files.filter(file => {
+        if (!file.type.startsWith('image/') && !file.type.startsWith('video/')) {
+          alert(`${file.name} is not a supported file type.`)
+          return false
+        }
+        if (file.size > this.maxFileSize) {
+          alert(`${file.name} is too large. Maximum size is 50MB.`)
+          return false
+        }
+        const totalFiles = this.editSelectedFiles.length + (this.editingPost.media ? this.editingPost.media.length : 0)
+        if (totalFiles >= this.maxFiles) {
+          alert(`Maximum ${this.maxFiles} files allowed.`)
+          return false
+        }
+        return true
+      })
+      
+      for (const file of validFiles) {
+        try {
+          const processedFile = this.processFile(file)
+          this.editSelectedFiles.push(processedFile)
+        } catch (error) {
+          alert(`Failed to process ${file.name}: ${error.message}`)
+        }
+      }
+      
+      if (this.$refs.editFileInput) {
+        this.$refs.editFileInput.value = ''
+      }
+    },
+    
+    processFile(file) {
+      return {
+        file,
+        name: file.name,
+        size: file.size,
+        type: file.type,
+        url: URL.createObjectURL(file),
+        id: Date.now() + Math.random()
+      }
+    },
+    
+    removeEditFile(index) {
+      if (this.editSelectedFiles[index] && this.editSelectedFiles[index].url) {
+        URL.revokeObjectURL(this.editSelectedFiles[index].url)
+      }
+      this.editSelectedFiles.splice(index, 1)
+    },
+    
+    clearEditFiles() {
+      this.editSelectedFiles.forEach(file => {
+        URL.revokeObjectURL(file.url)
+      })
+      this.editSelectedFiles = []
+    },
+    
+    removeCurrentMedia(index) {
+      if (this.editingPost.media && this.editingPost.media.length > index) {
+        this.editingPost.media.splice(index, 1)
+      }
+    },
+    
+    updatePost() {
+      if (!this.canUpdatePost) {
+        alert('Please add some content to update the post!')
+        return
+      }
+      
+      try {
+        // Combine existing media with new media
+        const existingMedia = this.editingPost.media || []
+        const newMedia = this.editSelectedFiles.map(file => ({
+          name: file.name,
+          type: file.type,
+          url: file.url,
+          size: file.size
+        }))
+        
+        const updatedPost = {
+          ...this.editingPost,
+          text: this.editingPost.text ? this.editingPost.text.trim() : '',
+          media: [...existingMedia, ...newMedia],
+          updatedAt: new Date().toISOString(),
+          showOptions: false, // Reset the options menu
+          isEdited: true // Mark as edited
+        }
+        
+        // Update the post in the array
+        const index = this.posts.findIndex(p => p.id === this.editingPost.id)
+        if (index > -1) {
+          // Use Vue.set to ensure reactivity
+          this.$set(this.posts, index, updatedPost)
+          
+          // Save to localStorage
+          localStorage.setItem('fbposts', JSON.stringify(this.posts))
+          
+          // Update store if it has updatePost mutation
+          try {
+            if (this.$store.state.posts) {
+              this.$store.commit('updatePost', updatedPost)
+            }
+          } catch (storeError) {
+            // Store update not available - continue without store update
+          }
+          
+          this.closeEditModal()
+          alert('Post updated successfully!')
+          
+          // Force reactivity update
+          this.$forceUpdate()
+        } else {
+          alert('Post not found!')
+        }
+      } catch (error) {
+        alert('Error updating post. Please try again.')
+      }
+    },
+    
+    // Utility methods
+    truncateFileName(name) {
+      return name.length > 20 ? name.substring(0, 20) + '...' : name
+    },
+    
+    formatDuration(seconds) {
+      const mins = Math.floor(seconds / 60)
+      const secs = Math.floor(seconds % 60)
+      return `${mins}:${secs.toString().padStart(2, '0')}`
     }
   }
 }
@@ -874,6 +1304,567 @@ export default {
         padding: 4px;
       }
     }
+  }
+}
+
+// Post Options Menu Styles
+.multi-icon {
+  position: relative;
+  
+  .options-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: #65676b;
+    
+    &:hover {
+      background: #f0f2f5;
+      color: #1c1e21;
+    }
+  }
+}
+
+.post-options-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #e4e6ea;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 150px;
+  overflow: hidden;
+  animation: slideDown 0.3s ease;
+  margin-top: 0.5rem;
+
+  .edit-btn, .delete-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1c1e21;
+
+    &:hover {
+      background: #f0f2f5;
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+
+  .edit-btn {
+    color: #1877f2;
+
+    &:hover {
+      background: #e3f2fd;
+      color: #166fe5;
+    }
+  }
+
+  .delete-btn {
+    color: #dc3545;
+    border-top: 1px solid #e4e6ea;
+
+    &:hover {
+      background: #f8d7da;
+      color: #721c24;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Modal Styles
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+
+  .modal-content {
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #e4e6ea;
+
+      h2 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1c1e21;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 50%;
+        color: #65676b;
+
+        &:hover {
+          background: #f0f2f5;
+          color: #1c1e21;
+        }
+      }
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #e4e6ea;
+
+      .profile {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #e4e6ea;
+      }
+
+      .user-details {
+        flex: 1;
+
+        .username {
+          display: block;
+          font-weight: 600;
+          font-size: 1rem;
+          color: #1c1e21;
+          margin-bottom: 0.25rem;
+        }
+
+        .privacy-select {
+          border: none;
+          background: transparent;
+          font-size: 0.9rem;
+          color: #1877f2;
+          font-weight: 600;
+          cursor: pointer;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .post-content-area {
+      padding: 1rem 1.5rem;
+
+      .post-textarea {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        font-family: inherit;
+        resize: none;
+        min-height: 100px;
+        max-height: 200px;
+        line-height: 1.5;
+
+        &::placeholder {
+          color: #8a8d91;
+        }
+      }
+    }
+
+    .modal-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #e4e6ea;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+
+      .post-btn, .cancel-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: none;
+        border-radius: 8px;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .post-btn {
+        background: #28a745;
+        color: white;
+
+        &:hover:not(:disabled) {
+          background: #218838;
+        }
+
+        &:disabled {
+          background: #6c757d;
+          cursor: not-allowed;
+        }
+      }
+
+      .cancel-btn {
+        background: #e4e6ea;
+        color: #65676b;
+
+        &:hover {
+          background: #d1d5db;
+        }
+      }
+    }
+  }
+}
+
+// Current Media Section Styles
+.current-media-section {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e4e6ea;
+
+  h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1c1e21;
+  }
+
+  .current-media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+
+    .current-media-item {
+      position: relative;
+      border: 1px solid #e4e6ea;
+      border-radius: 8px;
+      overflow: hidden;
+
+      &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+        .remove-media-btn {
+          opacity: 1;
+        }
+      }
+
+      .media-preview {
+        aspect-ratio: 1;
+        overflow: hidden;
+
+        img, video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .remove-media-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: rgba(220, 53, 69, 0.9);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+
+        &:hover {
+          background: #dc3545;
+        }
+      }
+    }
+  }
+}
+
+// File Upload Section
+.file-upload-section {
+  border-top: 1px solid #e4e6ea;
+  padding: 1rem 1.5rem;
+  
+  .upload-area {
+    border: 2px dashed #cbd5e0;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    background: #f8f9fa;
+    
+    &.drag-over {
+      border-color: #1877f2;
+      background: #e3f2fd;
+    }
+    
+    &:hover {
+      border-color: #1877f2;
+      background: #f0f8ff;
+    }
+    
+    .upload-content {
+      .upload-icon {
+        margin-bottom: 1rem;
+        opacity: 0.7;
+      }
+      
+      h3 {
+        margin: 0.5rem 0;
+        color: #1c1e21;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      
+      p {
+        margin: 0.5rem 0;
+        color: #65676b;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  
+  .media-preview-grid {
+    margin-top: 1rem;
+    
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      
+      h4 {
+        margin: 0;
+        color: #1c1e21;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      
+      .clear-all-btn {
+        background: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.8rem;
+        cursor: pointer;
+        
+        &:hover {
+          background: #c82333;
+        }
+      }
+    }
+    
+    .preview-grid {
+      display: grid;
+      gap: 0.75rem;
+      
+      &.grid-1 {
+        grid-template-columns: 1fr;
+      }
+      
+      &.grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      &.grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      &.grid-many {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+      
+      .preview-item {
+        border: 1px solid #e4e6ea;
+        border-radius: 8px;
+        overflow: hidden;
+        
+        &:hover {
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .preview-container {
+          position: relative;
+          aspect-ratio: 1;
+          overflow: hidden;
+          
+          .image-preview, .video-preview {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            
+            img, video {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            
+            .play-overlay {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background: rgba(0, 0, 0, 0.7);
+              border-radius: 50%;
+              width: 48px;
+              height: 48px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              opacity: 0;
+            }
+            
+            &:hover .play-overlay {
+              opacity: 1;
+            }
+          }
+          
+          .file-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), transparent);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0.5rem;
+            opacity: 0;
+            
+            &:hover {
+              opacity: 1;
+            }
+            
+            .remove-btn {
+              background: rgba(220, 53, 69, 0.9);
+              color: white;
+              border: none;
+              border-radius: 50%;
+              width: 24px;
+              height: 24px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              
+              &:hover {
+                background: #dc3545;
+              }
+            }
+            
+            .file-type-badge {
+              background: rgba(24, 119, 242, 0.9);
+              color: white;
+              padding: 0.25rem 0.5rem;
+              border-radius: 4px;
+              font-size: 0.7rem;
+              font-weight: 600;
+              text-transform: uppercase;
+            }
+          }
+        }
+        
+        .file-details {
+          padding: 0.5rem;
+          background: white;
+          
+          .file-name {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1c1e21;
+            margin-bottom: 0.25rem;
+          }
+          
+          .file-info-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            
+            .file-size {
+              font-size: 0.7rem;
+              color: #65676b;
+            }
+            
+            .compression-badge {
+              background: #28a745;
+              color: white;
+              padding: 0.125rem 0.375rem;
+              border-radius: 4px;
+              font-size: 0.6rem;
+              font-weight: 600;
+              text-transform: uppercase;
+            }
+            
+            .duration-badge {
+              background: #6c757d;
+              color: white;
+              padding: 0.125rem 0.375rem;
+              border-radius: 4px;
+              font-size: 0.6rem;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
