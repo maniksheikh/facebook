@@ -59,8 +59,7 @@
             viewBox="0 0 24 24"
             width="25px"
             height="25px"
-            class="b6ax4al1 m4pnbp5e somyomsx ahndzqod ruv4vjns mwtcrujb mx6bq00g"
-          >
+            class="b6ax4al1 m4pnbp5e somyomsx ahndzqod ruv4vjns mwtcrujb mx6bq00g">
             <g fill-rule="evenodd" transform="translate(-444 -156)">
               <g>
                 <path
@@ -75,7 +74,6 @@
           <span>Feeling/activity</span>
         </button>
       </div>
-      
       <!-- File Upload Section -->
       <div v-if="showFileInput" class="file-upload-section">
         <input 
@@ -90,8 +88,7 @@
           <div class="upload-icon">📁</div>
           <p>Click to select photos or videos</p>
           <p class="file-hint">Supports: JPG, PNG, GIF, MP4, MOV</p>
-        </div>
-        
+        </div>    
         <!-- Selected Files Preview -->
         <div v-if="selectedFiles.length > 0" class="selected-files">
           <div v-for="(file, index) in selectedFiles" :key="index" class="file-preview">
@@ -108,16 +105,14 @@
               <span class="file-size">{{ formatFileSize(file.size) }}</span>
             </div>
           </div>
-        </div>
-        
+        </div>    
         <!-- Post Button -->
         <div class="post-actions">
           <button class="post-submit-btn" :disabled="!canPost" @click="addItem">Post</button>
           <button class="cancel-btn" @click="cancelPost">Cancel</button>
         </div>
       </div>
-    </div>
-    
+    </div>  
     <!-- Story Section -->
     <div class="story">
       <div class="box">
@@ -128,8 +123,7 @@
             viewBox="0 0 20 20" 
             width="30px" 
             height="30px"
-            class="b6ax4al1 btn-add m4pnbp5e somyomsx ahndzqod qsbzbi57 dmdr2h6l kgzac55p"
-          >
+            class="b6ax4al1 btn-add m4pnbp5e somyomsx ahndzqod qsbzbi57 dmdr2h6l kgzac55p">
             <g fill-rule="evenodd" transform="translate(-446 -350)">
               <g fill-rule="nonzero">
                 <path d="M95 201.5h13a1 1 0 1 0 0-2H95a1 1 0 1 0 0 2z" transform="translate(354.5 159.5)"></path>
@@ -178,8 +172,7 @@
         </button>
         <span class="title">Elon Musk</span>
       </div>
-    </div>
-    
+    </div>  
     <!-- Posts Display Section -->
     <div class="post">
       <div v-if="posts && posts.length > 0" class="items">
@@ -206,8 +199,7 @@
               </div>
             </div>
           </div>
-          <p v-if="post.text">{{ post.text }}</p>
-          
+          <p v-if="post.text">{{ post.text }}</p>   
           <!-- Media Content -->
           <div v-if="post.media && post.media.length > 0" class="post-media">
             <div v-for="(media, index) in post.media" :key="index" class="media-item">
@@ -291,7 +283,6 @@
         </div>
       </div>
     </div>
-    
     <!-- Simple Edit Modal -->
     <div v-if="showEditModal" class="simple-modal-overlay" @click="closeEditModal">
       <div class="simple-modal-content" @click.stop>
