@@ -348,8 +348,7 @@ export default {
     const storedPosts = localStorage.getItem('fbposts')
     if (storedPosts) {
       this.posts = JSON.parse(storedPosts)
-    }
-    
+    } 
     document.addEventListener('click', this.handleClickOutside)
   },
   
@@ -380,8 +379,7 @@ export default {
           size: file.size,
           type: file.type,
           url: URL.createObjectURL(file)
-        }
-        
+        } 
         this.selectedFiles.push(fileObj)
       })
     },
@@ -485,8 +483,7 @@ export default {
           const index = this.posts.findIndex(p => p.id === post.id)
           if (index > -1) {
             // Remove post from array
-            this.posts.splice(index, 1)
-            
+            this.posts.splice(index, 1)     
             // Update localStorage
             localStorage.setItem('fbposts', JSON.stringify(this.posts))
             
@@ -496,7 +493,6 @@ export default {
                 this.$store.commit('removePost', post.id)
               }
             } catch (storeError) {
-              // Store update not available - continue without store update
             }
             
             alert('Post deleted successfully!')
@@ -506,8 +502,7 @@ export default {
         } catch (error) {
           alert('Error deleting post. Please try again.')
         }
-      }
-      
+      }    
       // Close options menu
       this.$set(post, 'showOptions', false)
     },
