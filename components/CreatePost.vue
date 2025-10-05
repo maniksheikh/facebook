@@ -373,8 +373,7 @@
           multiple 
           accept="image/*,video/*" 
           style="display: none;"
-          @change="handleFileSelect"
-        />       
+          @change="handleFileSelect"/>       
         <div class="upload-area" :class="{ 'drag-over': isDragOver }" @click="$refs.fileInput.click()">
           <div class="upload-content">
             <div class="upload-icon">
@@ -833,8 +832,7 @@ export default {
     const storedPosts = localStorage.getItem('fbposts')
     if (storedPosts) {
       this.posts = JSON.parse(storedPosts)
-    }
-  
+    } 
     document.addEventListener('click', this.handleClickOutside)
   },
   
@@ -1070,7 +1068,7 @@ export default {
       
       try {
         const newPost = {
-          id: Date.now() + Math.floor(Math.random() * 1000), // Ensure unique ID
+          id: Date.now() + Math.floor(Math.random() * 1000),
           username: this.username || 'Anonymous User',
           email: this.$store.state.user ? this.$store.state.user.email : 'user@example.com',
           text: this.text.trim(),
@@ -1101,7 +1099,6 @@ export default {
             this.$store.commit('addPost', newPost)
           }
         } catch (storeError) {
-          // Store update not available - continue without store update
         }
 
         // Reset form and close modal
@@ -1113,7 +1110,6 @@ export default {
     },
     
     showSuccess(message) {
-      // You can replace this with a proper toast notification system
       alert(message)
     },
     
@@ -1223,7 +1219,6 @@ export default {
                 this.$store.commit('removePost', post.id)
               }
             } catch (storeError) {
-              // Store update not available - continue without store update
             }
             
             this.showSuccess('Post deleted successfully!')
