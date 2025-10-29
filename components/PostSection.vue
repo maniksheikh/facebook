@@ -411,8 +411,7 @@ export default {
     },
     
     addItem() {
-      if (!this.canPost) return
-      
+      if (!this.canPost) return 
       const newPost = {
         id: Date.now() + Math.floor(Math.random() * 1000),
         text: this.text,
@@ -429,7 +428,6 @@ export default {
       
       this.posts.unshift(newPost)
       localStorage.setItem('fbposts', JSON.stringify(this.posts))
-      
       // Reset form
       this.text = ''
       this.showFileInput = false
@@ -447,7 +445,6 @@ export default {
     
     // Post options methods
     togglePostOptions(post) {
-      // Close other post options first
       this.posts.forEach(p => {
         if (p.id !== post.id) {
           this.$set(p, 'showOptions', false)
