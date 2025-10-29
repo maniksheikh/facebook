@@ -527,8 +527,7 @@ export default {
         const index = this.posts.findIndex(p => p.id === this.editingPost.id)
         if (index > -1) {
           this.$set(this.posts, index, updatedPost)
-          localStorage.setItem('fbposts', JSON.stringify(this.posts))
-          
+          localStorage.setItem('fbposts', JSON.stringify(this.posts)) 
           this.closeEditModal()
         } else {
           alert('Post not found!')
@@ -575,8 +574,7 @@ export default {
         font-family: inherit;
         font-size: 1rem;
         min-height: 40px;
-        resize: none;
-        
+        resize: none;  
         &::placeholder {
           color: #65676b;
         }
@@ -603,8 +601,6 @@ export default {
         font-size: 0.9rem;
         font-weight: 600;
         color: #65676b;
-
-
         span {
           font-family: inherit;
         }
