@@ -479,19 +479,14 @@ export default {
         try {
           const index = this.posts.findIndex(p => p.id === post.id)
           if (index > -1) {
-            // Remove post from array
             this.posts.splice(index, 1)     
-            // Update localStorage
             localStorage.setItem('fbposts', JSON.stringify(this.posts))
-            
-            // Update Vuex store if available
             try {
               if (this.$store.state.posts) {
                 this.$store.commit('removePost', post.id)
               }
             } catch (storeError) {
-            }
-            
+            }  
             alert('Post deleted successfully!')
           } else {
             alert('Post not found!')
@@ -500,7 +495,6 @@ export default {
           alert('Error deleting post. Please try again.')
         }
       }    
-      // Close options menu
       this.$set(post, 'showOptions', false)
     },
     
