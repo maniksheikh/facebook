@@ -778,7 +778,6 @@ export default {
             display: flex;
             justify-content: space-between;
             gap: 0.5rem;
-
             img {
               height: 25px;
               width: 25px;
@@ -815,8 +814,7 @@ export default {
           &:hover {
             opacity: 0.95;
           }
-        }
-        
+        } 
         .post-video {
           width: 100%;
           max-height: 500px;
@@ -851,7 +849,6 @@ export default {
         &:hover {
           background: #4a4a4a;
         }
-
         span {
           font-family: inherit;
         }
@@ -862,13 +859,11 @@ export default {
           background: #a39191;
         }
       }
-
       .btn-comment {
         &:hover {
           background: #9b8b8b;
         }
       }
-
       .btn-share {
         &:hover {
           background: #a39696;
