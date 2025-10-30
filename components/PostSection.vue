@@ -699,7 +699,6 @@ export default {
           font-weight: 600;
           cursor: pointer;
         }
-
         .cancel-btn {
           background: #e4e6ea;
           color: #65676b;
@@ -736,7 +735,6 @@ export default {
             height: 50px;
             border-radius: 50%;
             margin-right: 0.75rem;
-
             img {
               width: 100%;
               height: 100%;
@@ -762,13 +760,11 @@ export default {
               display: flex;
               align-items: center;
               gap: 0.5rem;
-              
               .email {
                 font-size: 0.875rem;
                 color: #65676b;
                 font-weight: 400;
               }
-              
               .edited-indicator {
                 font-size: 0.75rem;
                 color: #8a8d91;
