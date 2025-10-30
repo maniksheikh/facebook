@@ -893,7 +893,6 @@ export default {
         padding-bottom: 3px;
       }
 
-
       img {
         width: 100%;
         height: 100%;
@@ -1004,7 +1003,6 @@ export default {
   }
 }
 
-// Simple Modal Styles
 .simple-modal-overlay {
   position: fixed;
   top: 0;
@@ -1024,8 +1022,7 @@ export default {
   padding: 20px;
   width: 90%;
   max-width: 400px;
-  position: relative;
-  
+  position: relative; 
   h3 {
     margin: 0 0 15px 0;
     font-size: 18px;
@@ -1084,8 +1081,7 @@ export default {
   
   .simple-update-btn {
     background: #1877f2;
-    color: white;
-    
+    color: white; 
     &:hover {
       background: #1877f2 !important;
       color: white !important;
@@ -1098,8 +1094,7 @@ export default {
 
 // Keep existing media display simple
 .current-media-section {
-  margin: 10px 0;
-  
+  margin: 10px 0; 
   h3 {
     font-size: 14px;
     margin-bottom: 10px;
