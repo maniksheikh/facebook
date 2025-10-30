@@ -619,17 +619,14 @@ export default {
         text-align: center;
         cursor: pointer;
 
-
         .upload-icon {
           font-size: 2rem;
           margin-bottom: 0.5rem;
         }
-
         p {
           margin: 0.25rem 0;
           color: #65676b;
         }
-
         .file-hint {
           font-size: 0.8rem;
           color: #8a8d91;
@@ -650,7 +647,6 @@ export default {
           .image-preview,
           .video-preview {
             position: relative;
-
             img,
             video {
               width: 100%;
@@ -681,7 +677,6 @@ export default {
             justify-content: space-between;
             font-size: 0.8rem;
             color: #65676b;
-
             .file-name {
               font-weight: 600;
             }
