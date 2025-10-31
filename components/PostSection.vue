@@ -1064,8 +1064,7 @@ export default {
   display: flex;
   gap: 10px;
   justify-content: flex-end;
-  margin-top: 20px;
-  
+  margin-top: 20px; 
   button {
     padding: 8px 16px;
     border: none;
@@ -1073,12 +1072,10 @@ export default {
     cursor: pointer;
     font-size: 14px;
   }
-  
   .simple-cancel-btn {
     background: #f5f5f5;
     color: #333;
-  }
-  
+  } 
   .simple-update-btn {
     background: #1877f2;
     color: white; 
@@ -1111,14 +1108,12 @@ export default {
       height: 80px;
       border: 1px solid #ddd;
       border-radius: 5px;
-      overflow: hidden;
-      
+      overflow: hidden;   
       img, video {
         width: 100%;
         height: 100%;
         object-fit: cover;
-      }
-      
+      }  
       .remove-media-btn {
         position: absolute;
         top: 2px;
