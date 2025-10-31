@@ -953,14 +953,12 @@ export default {
         padding: 3px;
         border-radius: 100%;
       }
-
       .btn-add {
         border-radius: 50%;
         padding: 0.3rem;
         background: #166ada !important;
         display: inline-block;
       }
-
       .profile-pic {
         width: 30px;
         height: 30px;
@@ -989,8 +987,7 @@ export default {
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   z-index: 1000;
-  min-width: 100px;
-  
+  min-width: 100px; 
   button {
     display: block;
     width: 100%;
@@ -1015,7 +1012,6 @@ export default {
   justify-content: center;
   z-index: 1000;
 }
-
 .simple-modal-content {
   background: white;
   border-radius: 10px;
@@ -1028,7 +1024,6 @@ export default {
     font-size: 18px;
     color: #333;
   }
-  
   .simple-close-btn {
     position: absolute;
     top: 10px;
@@ -1042,8 +1037,7 @@ export default {
 }
 
 .simple-edit-area {
-  margin: 15px 0;
-  
+  margin: 15px 0; 
   .simple-textarea {
     width: 100%;
     padding: 10px;
@@ -1051,8 +1045,7 @@ export default {
     border-radius: 5px;
     font-family: inherit;
     font-size: 14px;
-    resize: vertical;
-    
+    resize: vertical; 
     &:focus {
       outline: none;
       border-color: #1877f2;
