@@ -845,7 +845,6 @@ export default {
         color: #65676b;
         flex: 1;
         min-width: 0;
-
         &:hover {
           background: #4a4a4a;
         }
@@ -875,7 +874,6 @@ export default {
   .story {
     display: flex;
     gap: 0.3rem;
-
     .box {
       width: 140px;
       height: 215px;
@@ -884,7 +882,6 @@ export default {
       border: 1px solid rgba(196, 196, 196, 0.3);
       cursor: pointer;
       position: relative;
-
       span {
         position: absolute;
         left: 20px;
@@ -892,7 +889,6 @@ export default {
         text-align: center;
         padding-bottom: 3px;
       }
-
       img {
         width: 100%;
         height: 100%;
@@ -906,7 +902,6 @@ export default {
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
       }
-
       .btnDiv {
         position: absolute;
         left: 35%;
@@ -915,14 +910,12 @@ export default {
         background: white;
         border-radius: 50%;
       }
-
       .btn {
         cursor: pointer;
         border: none;
         outline: none;
         text-align: center;
       }
-
       .title {
         text-align: center !important;
         position: absolute !important;
@@ -934,7 +927,6 @@ export default {
         font-weight: 400;
         font-family: inherit;
       }
-
       .text-center {
         text-align: center;
         justify-content: center;
