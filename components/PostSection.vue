@@ -458,13 +458,11 @@ export default {
       if (!post || !post.id) {
         alert('Invalid post selected for editing')
         return
-      }
-      
+      }   
       this.editingPost = {
         ...post,
         text: post.text || ''
-      }
-      
+      } 
       this.showEditModal = true
       this.$set(post, 'showOptions', false)
     },
@@ -501,8 +499,7 @@ export default {
     closeEditModal() {
       this.showEditModal = false
       this.editingPost = {}
-    },
-    
+    }, 
     removeCurrentMedia(index) {
       if (this.editingPost.media && this.editingPost.media.length > index) {
         this.editingPost.media.splice(index, 1)
@@ -522,7 +519,6 @@ export default {
           isEdited: true,
           showOptions: false
         }
-        
         // Update the post in the array
         const index = this.posts.findIndex(p => p.id === this.editingPost.id)
         if (index > -1) {
@@ -550,20 +546,17 @@ export default {
     padding: 1rem;
     margin-bottom: 1rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-
     .flex {
       display: flex;
       align-items: flex-start;
       gap: 0.75rem;
       margin-bottom: 1rem;
-
       .profile {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
       }
-
       textarea {
         flex: 1;
         border: none;
