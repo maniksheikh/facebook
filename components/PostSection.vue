@@ -742,20 +742,18 @@ export default {
               object-fit: cover;
             }
           }
-
+          
           .content {
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-
             .title {
               font-weight: 600;
               font-size: 1rem;
               color: #1c1e21;
               margin-bottom: 0.2rem;
             }
-
             .meta-info {
               display: flex;
               align-items: center;
@@ -800,17 +798,14 @@ export default {
 
     .post-media {
       margin: 1rem 0;
-      
       .media-item {
-        margin-bottom: 0.5rem;
-        
+        margin-bottom: 0.5rem;    
         .post-image {
           width: 100%;
           max-height: 500px;
           object-fit: cover;
           border-radius: 8px;
-          cursor: pointer;
-          
+          cursor: pointer;  
           &:hover {
             opacity: 0.95;
           }
