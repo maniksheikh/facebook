@@ -689,7 +689,6 @@ export default {
         gap: 0.5rem;
         margin-top: 1rem;
         justify-content: flex-end;
-
         .post-submit-btn {
           background: #1877f2;
           color: white;
@@ -711,7 +710,6 @@ export default {
       }
     }
   }
-
   // Posts Display Styles
   .post {
     .items {
@@ -728,7 +726,6 @@ export default {
           align-items: center;
           justify-content: space-between;
           padding: 1rem;
-
           .profile-img {
             border: 1px solid #ccc;
             width: 50px;
@@ -742,7 +739,7 @@ export default {
               object-fit: cover;
             }
           }
-          
+
           .content {
             flex: 1;
             display: flex;
