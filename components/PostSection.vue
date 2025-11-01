@@ -586,7 +586,6 @@ export default {
       gap: 0.5rem;
       padding-top: 0.75rem;
       border-top: 1px solid #e4e6ea;
-
       .btn {
         flex: 1;
         display: flex;
@@ -618,8 +617,7 @@ export default {
         padding: 2rem;
         text-align: center;
         cursor: pointer;
-
-        .upload-icon {
+       .upload-icon {
           font-size: 2rem;
           margin-bottom: 0.5rem;
         }
@@ -654,7 +652,6 @@ export default {
               object-fit: cover;
             }
           }
-
           .remove-file {
             position: absolute;
             top: 0.5rem;
@@ -670,7 +667,6 @@ export default {
             align-items: center;
             justify-content: center;
           }
-
           .file-info {
             padding: 0.5rem;
             display: flex;
