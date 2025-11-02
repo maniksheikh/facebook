@@ -189,7 +189,6 @@ export default {
 
   .sponsored {
     padding: 10px;
-
     .title {
       font-size: 1.1rem;
       font-family: inherit;
@@ -211,12 +210,10 @@ export default {
           opacity: 1;
         }
       }
-
       img {
         width: 130px;
         border-radius: 5px;
       }
-
       .content {
         span {
           font-weight: 400;
@@ -229,7 +226,6 @@ export default {
           display: block;
         }
       }
-
       .dots-icon {
         position: absolute;
         top: 0.5rem;
@@ -250,7 +246,6 @@ export default {
     padding: 0.7rem 0;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-
     p {
       font-size: 1rem;
       font-family: inherit;
