@@ -259,17 +259,14 @@ export default {
 
   .contact {
     margin: 0 7px;
-
     .items {
       display: flex;
       justify-content: space-between;
-
       .btn-container {
         display: flex;
         align-items: center;
         gap: 1rem;
       }
-
       span {
         font-family: inherit;
         font-size: 1.1rem;
@@ -291,7 +288,6 @@ export default {
         &:hover {
           background: #e4e6e9;
         }
-
         img {
           width: 35px;
           height: 35px;
@@ -303,7 +299,6 @@ export default {
 
         .user {
           position: relative;
-
           .active {
             position: absolute;
             bottom: 3px;
