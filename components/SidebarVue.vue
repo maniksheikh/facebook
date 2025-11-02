@@ -140,19 +140,15 @@ export default {
     cursor: pointer;
     border-radius: 50%;
   }
-
   cursor: pointer;
-
   &:hover {
     background: #e4e6e9;
   }
-
   span {
     font-size: 1.1rem;
     font-weight: 500;
     font-family: inherit;
   }
-
   .box {
     background: #356d24;
     width: 50px;
