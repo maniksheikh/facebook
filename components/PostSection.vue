@@ -428,12 +428,10 @@ export default {
       
       this.posts.unshift(newPost)
       localStorage.setItem('fbposts', JSON.stringify(this.posts))
-      // Reset form
       this.text = ''
       this.showFileInput = false
       this.selectedFiles = []
-    },
-    
+    }, 
     // Click outside handler
     handleClickOutside(event) {
       this.posts.forEach(post => {
@@ -442,7 +440,6 @@ export default {
         }
       })
     },
-    
     // Post options methods
     togglePostOptions(post) {
       this.posts.forEach(p => {
@@ -452,7 +449,6 @@ export default {
       })
       this.$set(post, 'showOptions', !post.showOptions)
     },
-    
     // Edit functionality methods
     editPost(post) {
       if (!post || !post.id) {
