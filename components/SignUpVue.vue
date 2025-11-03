@@ -192,12 +192,10 @@ export default {
   .content {
     padding: 1rem;
     border: 1px solid rgba(99, 96, 96, 0.3);
-
     h1 {
       text-align: center;
       font-family: inherit;
     }
-
     span {
       font-family: inherit;
       color: SFProText-Regular, Helvetica, Arial, sans-serif;
@@ -209,7 +207,6 @@ export default {
 
   .signup-group {
     padding: 1rem;
-
     .input {
       width: 100%;
       display: block;
@@ -247,7 +244,6 @@ export default {
           border: 1px solid rgba(0, 0, 0, 0.3);
           border-radius: 5px;
           font-family: inherit;
-
           option {
             padding: 10px;
           }
@@ -263,7 +259,6 @@ export default {
         font-weight: 400;
         text-decoration: none;
         font-family: inherit;
-
         .question-png {
           width: 10px;
           height: 10px;
@@ -281,9 +276,7 @@ export default {
         color: #606770;
         font-weight: 400;
         text-decoration: none;
-
         font-family: inherit;
-
         .question-png {
           width: 10px;
           height: 10px;
