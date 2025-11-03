@@ -300,7 +300,6 @@ export default {
           cursor: pointer;
           font-family: inherit;
           gap: 1.9rem;
-
           label {
             cursor: pointer;
             font-size: 1rem;
@@ -318,17 +317,14 @@ export default {
         font-size: 11px;
         font-weight: 400;
         font-family: inherit;
-
         span {
           color: #92d2ff;
-
           &:hover {
             text-decoration: underline;
           }
         }
       }
     }
-
     .btn-primary {
       display: block;
       margin: 1rem auto;
