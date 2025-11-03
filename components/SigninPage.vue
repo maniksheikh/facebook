@@ -112,7 +112,6 @@ export default {
     .check {
       margin-top: 4px;
     }
-
     input {
       width: 15px;
       height: 15px;
@@ -195,7 +194,6 @@ export default {
       background: #005fdb;
     }
   }
-
   .btn-primary {
     padding: 0.9rem;
     background: #42b72a;
