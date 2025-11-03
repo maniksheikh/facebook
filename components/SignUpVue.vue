@@ -347,7 +347,6 @@ export default {
   font-family: inherit;
   border-radius: 10px;
 }
-
 .backdrop {
   position: fixed;
   width: 100%;
