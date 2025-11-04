@@ -209,7 +209,6 @@ export default {
           box-sizing: border-box;
           border-bottom-right-radius: 5px;
           border-bottom-left-radius: 5px;
-
           .add-account {
             font-family: inherit;
             color: #1877f2;
@@ -226,7 +225,6 @@ export default {
           border-top-right-radius: 5px;
           border-top-left-radius: 5px;
           position: relative;
-
           .add-btn {
             position: absolute;
             top: 50%;
@@ -250,7 +248,6 @@ export default {
     background: white;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(130, 117, 117, 0.2);
-
     ul li {
       margin-bottom: 1.5rem;
       margin-top: 2rem;
