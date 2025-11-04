@@ -345,7 +345,6 @@ export default {
 @media screen and (max-width: 900px) {
   .signin {
     height: 80vh !important;
-
     .flex {
       flex-direction: column !important;
       align-items: center;
@@ -354,7 +353,6 @@ export default {
 
     .accounts {
       margin-right: 0rem !important;
-
       .center-text {
         text-align: center;
         line-height: 0;
@@ -372,7 +370,6 @@ export default {
 @media screen and (max-width: 500px) {
   .signin {
     height: 100vh !important;
-
     .signin-group {
       width: 350px;
     }
