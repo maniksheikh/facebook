@@ -140,21 +140,18 @@ export default {
     a {
       text-decoration: none;
     }
-
     .title {
       color: #1877f2;
       font-size: 3rem;
       font-weight: 600;
       font-family: inherit;
     }
-
     span {
       font-size: 28px;
       font-weight: 400;
       color: #1c1e21;
       font-family: inherit;
     }
-
     p {
       font-size: 1rem;
       font-weight: 600;
