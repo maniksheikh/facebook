@@ -12,7 +12,6 @@ export const getters = {
   items(state) {
     return state.items;
   },
-
   isUserAuth(state) {
     return !!state.user;
   },
@@ -52,7 +51,6 @@ export const actions = {
       await user.updateProfile({
         displayName: userName,
       });
-
       commit("setUser", user);
       return { user, hasAccount: true };
     } catch (error) {

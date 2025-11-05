@@ -165,7 +165,6 @@ export default {
       align-items: center;
       gap: 0.8rem;
       cursor: pointer;
-
       .content-box {
         p {
           padding-top: 1rem;
