@@ -233,7 +233,6 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         select {
           width: 200px;
           padding: 0.6rem;
@@ -288,7 +287,6 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         .form-control {
           border: 1px solid #ccc;
           padding: 0.6rem;
