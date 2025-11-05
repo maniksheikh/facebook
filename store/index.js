@@ -76,7 +76,6 @@ export const actions = {
     await firebase.auth().signOut();
     commit("setUser", null);
   },
-
   initItems({ commit }) {
     commit("setItems", items);
   },
