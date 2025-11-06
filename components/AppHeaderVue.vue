@@ -599,7 +599,6 @@ li {
       align-items: center;
       gap: 0.7rem;
       margin-right: 1rem;
-
       .item {
         width: 35px;
         height: 35px;
@@ -610,14 +609,12 @@ li {
           background: #f5f5f5;
         }
       }
-
       .m4pnbp5e {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
-
       .dropdown {
         position: relative;
         display: inline-block;    
@@ -673,7 +670,6 @@ li {
             .pro-title {
               text-align: left;
               padding-top: 0.5rem;
-
               a {
                 text-decoration: none;
                 color: #3783e7;
