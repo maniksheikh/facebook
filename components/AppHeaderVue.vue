@@ -719,8 +719,7 @@ li {
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #e4e6ea;
-      cursor: pointer;
-      
+      cursor: pointer; 
       &:hover {
         border-color: #1877f2;
       }
