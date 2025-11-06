@@ -686,7 +686,6 @@ li {
               width: 100%;
               box-sizing: border-box;
               padding: 0.5rem;
-
               .item-box {
                 width: 35px;
                 height: 35px;
@@ -694,18 +693,15 @@ li {
                 border-radius: 50%;
                 position: relative;
               }
-
               &:hover {
                 background: #f5f5f5;
               }
-
               svg {
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
               }
-
               span {
                 font-size: 1rem;
                 font-family: inherit;
