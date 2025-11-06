@@ -581,8 +581,7 @@ li {
       font-weight: 500;
       white-space: nowrap;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);  
       &::before {
         content: '';
         position: absolute;
@@ -606,8 +605,7 @@ li {
         height: 35px;
         background: #d8dadf;
         border-radius: 50%;
-        position: relative;
-        
+        position: relative;  
         &:hover {
           background: #f5f5f5;
         }
@@ -622,8 +620,7 @@ li {
 
       .dropdown {
         position: relative;
-        display: inline-block;
-        
+        display: inline-block;    
         &:hover {
           background-color: #f5f5f5;
           border-radius: 50%;
