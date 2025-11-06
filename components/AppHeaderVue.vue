@@ -497,11 +497,9 @@ li {
           align-items: center;
           justify-content: center;
         }
-
         &:hover .set {
           background-color: #f5f5f5;
         }
-
         &:hover span {
           opacity: 1;
           visibility: visible;
@@ -544,7 +542,6 @@ li {
             border-bottom: 4px solid rgba(0, 0, 0, 0.8);
           }
         }
-
         .main-link-icon {
           padding: 0 1rem;
         }
@@ -561,7 +558,6 @@ li {
       flex-direction: column;
       gap: 3.4rem;
       position: relative;
-
       &:hover .visible {
         opacity: 1;
         visibility: visible;
