@@ -645,21 +645,17 @@ li {
 
             .items {
               padding: 0.5rem;
-
               .box {
                 display: flex;
                 align-items: center;
                 gap: 0.5rem;
                 padding-bottom: 0.5rem;
-
                 border-bottom: 1px solid rgba(89, 89, 90, 0.3);
-
                 img {
                   width: 40px;
                   height: 40px;
                   border-radius: 50%;
                 }
-
                 span {
                   font-family: inherit;
                   font-size: 1.2rem;
