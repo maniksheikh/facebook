@@ -401,7 +401,6 @@ export default {
 li {
   list-style: none;
 }
-
 .btn {
   cursor: pointer;
   border: none;
@@ -426,7 +425,6 @@ li {
   .mr-t {
     margin-top: 1.2rem !important;
   }
-
   .logo {
     display: flex;
     align-items: center;
@@ -440,7 +438,6 @@ li {
     background: #f0f2f5;
     position: relative;
     border-radius: 35px;
-
     input {
       width: 100%;
       height: 100%;
@@ -462,7 +459,6 @@ li {
     padding: 0.7rem;
     border-radius: 50%;
   }
-
   .btn-search-block {
     display: none;
     background: #f0f2f5;
@@ -513,8 +509,7 @@ li {
         }
 
         &.active {
-          border-bottom: 3px solid #1877f2;
-          
+          border-bottom: 3px solid #1877f2; 
           svg {
             color: #1877f2 !important;
           }
