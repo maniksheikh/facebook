@@ -737,12 +737,10 @@ li {
   .header {
     .search-box {
       display: none;
-
       input {
         font-size: 0.7rem;
       }
     }
-
     .btn-search-block {
       display: block !important;
     }
