@@ -622,7 +622,6 @@ li {
           background-color: #f5f5f5;
           border-radius: 50%;
         }
-
         .dropdown-menu {
           display: block;
           position: absolute;
@@ -637,7 +636,6 @@ li {
           z-index: 9999;
           box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
           border-radius: 8px;
-
           .profile-details {
             margin: 0.5rem;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;
@@ -661,7 +659,6 @@ li {
                 }
               }
             }
-
             .pro-title {
               text-align: left;
               padding-top: 0.5rem;
