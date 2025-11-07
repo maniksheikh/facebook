@@ -642,7 +642,6 @@ li {
             margin: 0.5rem;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;
             border-radius: 5px;
-
             .items {
               padding: 0.5rem;
               .box {
@@ -678,7 +677,6 @@ li {
           .btn-logout {
             text-align: left;
             margin-top: 5px;
-
             .btn-flex {
               display: flex;
               align-items: center;
