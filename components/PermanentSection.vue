@@ -543,9 +543,14 @@ export default {
   background: #ffffff;
   border: 1px rgb(233, 225, 225) solid;
   border-radius: 10px;
+  transition: none !important;
+  transform: none !important;
 
   .items {
     font-family: inherit;
+    transition: none !important;
+    transform: none !important;
+    
     .post-content {
       width: 100%;
       display: flex;
@@ -570,7 +575,6 @@ export default {
           font-weight: 600;
           padding-left: 12px;
           cursor: pointer;
-
         }
       }
 
@@ -584,10 +588,6 @@ export default {
           width: 26px;
           color: #f2f2f2 !important;
           opacity: 0.5;
-          &:hover {
-            background: #e6dddd;
-            border-radius: 50%;
-          }
         }
       }
     }
@@ -638,7 +638,8 @@ export default {
         border: none;
         box-shadow: none;
         cursor: pointer;
-        transition: background-color 0.2s ease;
+        transition: none !important;
+        transform: none !important;
         flex: 1;
         max-width: 200px;
 
@@ -648,19 +649,23 @@ export default {
           fill: #65676b;
           stroke: none;
         }
-
-        &:hover {
-          background-color: #f2f3f5 !important;
-          border-radius: 8px;
-        }
-
-        &:active {
-          background-color: #e4e6ea !important;
-          transform: scale(0.98);
-        }
       }
     }
   }
+}
+
+// Override global CSS hover effects for permanent-section buttons
+.permanent-section button:hover,
+.permanent-section button:active,
+.permanent-section button:focus,
+.permanent-section .btn:hover,
+.permanent-section .btn:active,
+.permanent-section .btn:focus {
+  background: transparent !important;
+  background-color: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+  transition: none !important;
 }
 
 @media screen and (max-width: 800px) {
