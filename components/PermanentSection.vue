@@ -610,23 +610,53 @@ export default {
 
     .react-btn {
       display: flex;
-      justify-content: space-between;
-      padding: 0.3rem;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0.5rem 0;
+      margin-top: 0.5rem;
+      background: transparent !important;
+      background-color: transparent !important;
+      border-top: 1px solid #e4e6ea;
+      
       span {
-        font-size: 1.2rem;
-        opacity: 0.8;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: #65676b;
+        opacity: 1;
       }
 
       button {
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 0.5rem;
-        border-radius: 5px;
-        padding: 0.5rem 1.7rem;
+        border-radius: 8px;
+        padding: 0.5rem 1.5rem;
         text-align: center;
+        background: transparent !important;
+        background-color: transparent !important;
+        border: none;
+        box-shadow: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        flex: 1;
+        max-width: 200px;
+
+        svg {
+          width: 20px;
+          height: 20px;
+          fill: #65676b;
+          stroke: none;
+        }
 
         &:hover {
-          background: #f2f2f2;
-          border-radius: 10px;
+          background-color: #f2f3f5 !important;
+          border-radius: 8px;
+        }
+
+        &:active {
+          background-color: #e4e6ea !important;
+          transform: scale(0.98);
         }
       }
     }

@@ -806,14 +806,15 @@ export default {
       padding: 0.5rem 1rem;
       border-top: 1px solid #e4e6ea;
       gap: 0.25rem;
+      background: transparent;
 
       .btn {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        padding: 0.5rem;
-        background: none;
+        padding: 0.6rem 0rem;
+        background: transparent;
         border: none;
         border-radius: 6px;
         cursor: pointer;
@@ -822,8 +823,9 @@ export default {
         color: #65676b;
         flex: 1;
         min-width: 0;
+        transition: background-color 0.2s ease;
         &:hover {
-          background: #4a4a4a;
+          background: #f0f2f5;
         }
         span {
           font-family: inherit;
@@ -831,18 +833,21 @@ export default {
       }
 
       .btn-react {
+        background: transparent;
         &:hover {
-          background: #a39191;
+          background: #f0f2f5;
         }
       }
       .btn-comment {
+        background: transparent;
         &:hover {
-          background: #9b8b8b;
+          background: #f0f2f5;
         }
       }
       .btn-share {
+        background: transparent;
         &:hover {
-          background: #a39696;
+          background: #f0f2f5;
         }
       }
     }

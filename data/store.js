@@ -17,7 +17,7 @@ export default [
   },
   {
     id: 2,
-    title: 'Q&A with Mark',
+    title: 'Mark Zuckerberg',
     profileUrl: jukerberg,
     postUrl: jukerberg,
     postTitle: 'Mark is live with developers and entrepreneurs in Lagos!',
