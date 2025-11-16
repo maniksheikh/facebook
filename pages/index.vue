@@ -285,7 +285,6 @@ export default {
     }
 
     .error {
-      background: #ffebee;
       color: #c62828;
       padding: 0.8rem;
       border-radius: 5px;

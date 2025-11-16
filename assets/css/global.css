@@ -41,8 +41,9 @@ button:hover:disabled, .btn:hover:disabled {
 }
 
 .btn-secondery:hover:not(:disabled) {
-  background-color: #f5f5f5 !important;
-  opacity: 0.9 !important;
+  background-color: #005fdb !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
 }
 
 .post-submit-btn:hover:not(:disabled) {

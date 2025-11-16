@@ -182,6 +182,20 @@ export default {
     }
   }
 
+  .error {
+    background: #ffebee !important;
+    color: #c62828 !important;
+    padding: 0.8rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: 1px solid #ef5350;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    font-family: inherit;
+  }
+
   .btn-secondery {
     width: 100%;
     padding: 0.7rem 0;
@@ -190,8 +204,16 @@ export default {
     font-size: 1.2rem;
     font-weight: 700;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
     &:hover {
       background: #005fdb;
+      color: white;
+    }
+    &:active {
+      background: #004bb5;
+      color: white;
     }
   }
   .btn-primary {
