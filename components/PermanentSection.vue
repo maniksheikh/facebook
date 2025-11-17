@@ -582,6 +582,7 @@ export default {
         display: flex;
         justify-content: space-between;
         cursor: pointer;
+
         img {
           height: 26px;
           width: 26px;
@@ -641,6 +642,7 @@ export default {
         transform: none !important;
         flex: 1;
         max-width: 200px;
+
         svg {
           width: 20px;
           height: 20px;
