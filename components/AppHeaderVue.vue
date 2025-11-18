@@ -421,7 +421,6 @@ li {
   background: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   padding: 0;
-
   .mr-t {
     margin-top: 1.2rem !important;
   }
@@ -505,7 +504,6 @@ li {
           visibility: visible;
           transform: translateY(0);
         }
-
         &.active {
           border-bottom: 3px solid #1877f2; 
           svg {
