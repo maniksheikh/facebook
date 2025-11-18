@@ -893,7 +893,6 @@ export default {
           this.showError(`Failed to process ${file.name}: ${error.message}`)
         }
       }
-      
       // Reset file input
       if (this.$refs.fileInput) {
         this.$refs.fileInput.value = ''
@@ -925,10 +924,9 @@ export default {
             width *= ratio
             height *= ratio
           }
-          
+        
           canvas.width = width
           canvas.height = height
-          
           ctx.drawImage(img, 0, 0, width, height)
           
           // Convert to blob with compression
@@ -937,7 +935,6 @@ export default {
               type: 'image/jpeg',
               lastModified: Date.now()
             })
-            
             resolve({
               ...this.createFileObject(compressedFile),
               originalSize: file.size,
