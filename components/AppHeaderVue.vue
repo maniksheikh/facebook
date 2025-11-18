@@ -527,8 +527,7 @@ li {
           font-weight: 500;
           white-space: nowrap;
           z-index: 1000;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-          
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);   
           &::before {
             content: '';
             position: absolute;

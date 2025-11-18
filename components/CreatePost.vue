@@ -820,11 +820,9 @@ export default {
       if (!this.editingPost || !this.editingPost.id) {
         return false
       }
-      
       const hasText = this.editingPost.text && this.editingPost.text.trim()
       const hasExistingMedia = this.editingPost.media && this.editingPost.media.length > 0
       const hasNewMedia = this.editSelectedFiles.length > 0
-      
       return hasText || hasExistingMedia || hasNewMedia
     }
   },
@@ -886,7 +884,6 @@ export default {
         } 
         return true
       })
-      
       // Process each file with compression/optimization
       for (const file of validFiles) {
         try {
