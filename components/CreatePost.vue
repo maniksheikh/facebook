@@ -981,14 +981,13 @@ export default {
       }
       this.selectedFiles.splice(index, 1)
     },
-    
     clearAllFiles() {
       this.selectedFiles.forEach(file => {
         URL.revokeObjectURL(file.url)
       })
       this.selectedFiles = []
-    },
-    
+    },  
+
     // Utility methods
     formatFileSize(bytes) {
       if (bytes === 0) return '0 Bytes'
@@ -997,23 +996,19 @@ export default {
       const i = Math.floor(Math.log(bytes) / Math.log(k))
       return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
     },
-    
     truncateFileName(name) {
       return name.length > 20 ? name.substring(0, 20) + '...' : name
-    },
-    
+    },    
     formatDuration(seconds) {
       const mins = Math.floor(seconds / 60)
       const secs = Math.floor(seconds % 60)
       return `${mins}:${secs.toString().padStart(2, '0')}`
-    },
-    
+    },  
     autoResize(event) {
       const textarea = event.target
       textarea.style.height = 'auto'
       textarea.style.height = Math.min(textarea.scrollHeight, 200) + 'px'
-    },
-    
+    },  
     showError(message) {
       alert(message)
     },
@@ -1026,7 +1021,6 @@ export default {
         this.showFeelingSelector = false
       }
     },
-    
     toggleFeelingSelector() {
       this.showFeelingSelector = !this.showFeelingSelector
     },
