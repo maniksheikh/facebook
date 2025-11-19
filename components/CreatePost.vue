@@ -859,7 +859,6 @@ export default {
       const files = Array.from(event.target.files)
       this.processFiles(files)
     },
-    
     handleDrop(event) {
       this.isDragOver = false
       const files = Array.from(event.dataTransfer.files)
@@ -917,8 +916,7 @@ export default {
         img.onload = () => {
           let { width, height } = img
           const maxWidth = 1920
-          const maxHeight = 1080
-          
+          const maxHeight = 1080 
           if (width > maxWidth || height > maxHeight) {
             const ratio = Math.min(maxWidth / width, maxHeight / height)
             width *= ratio
