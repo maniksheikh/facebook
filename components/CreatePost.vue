@@ -926,7 +926,6 @@ export default {
           canvas.width = width
           canvas.height = height
           ctx.drawImage(img, 0, 0, width, height)
-          
           // Convert to blob with compression
           canvas.toBlob((blob) => {
             const compressedFile = new File([blob], file.name, {
@@ -947,8 +946,7 @@ export default {
     optimizeVideo(file) {
       return new Promise((resolve) => {
         const video = document.createElement('video')
-        video.preload = 'metadata'
-        
+        video.preload = 'metadata'    
         video.onloadedmetadata = () => {
           resolve({
             ...this.createFileObject(file),
@@ -958,8 +956,7 @@ export default {
               height: video.videoHeight
             }
           })
-        }
-        
+        }     
         video.onerror = () => {
           resolve(this.createFileObject(file))
         }       
