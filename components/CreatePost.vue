@@ -926,7 +926,6 @@ export default {
           canvas.width = width
           canvas.height = height
           ctx.drawImage(img, 0, 0, width, height)
-          // Convert to blob with compression
           canvas.toBlob((blob) => {
             const compressedFile = new File([blob], file.name, {
               type: 'image/jpeg',
@@ -1034,7 +1033,6 @@ export default {
     startLiveVideo() {
       alert('Live video feature coming soon!')
     },
-    
     // Post management
     cancelPost() {
       this.showFileInput = false
@@ -1047,8 +1045,7 @@ export default {
     },
     
     addItem() {
-      if (!this.canPost) return
-      
+      if (!this.canPost) return 
       try {
         const newPost = {
           id: Date.now() + Math.floor(Math.random() * 1000),
