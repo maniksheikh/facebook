@@ -1069,19 +1069,14 @@ export default {
         
         // Add to posts array
         this.posts.unshift(newPost)
-        
-        // Update localStorage
         localStorage.setItem('fbposts', JSON.stringify(this.posts))
         
-        // Update Vuex store if available
         try {
           if (this.$store.state.posts !== undefined) {
             this.$store.commit('addPost', newPost)
           }
         } catch (storeError) {
         }
-
-        // Reset form and close modal
         this.closeModal() 
         this.showSuccess('Post published successfully!')
       } catch (error) {
@@ -1092,10 +1087,8 @@ export default {
     showSuccess(message) {
       alert(message)
     },
-    
     onImageLoad(event) {
     },
-    
     onVideoLoad(event) {
     },
     
