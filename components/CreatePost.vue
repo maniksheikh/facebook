@@ -1265,7 +1265,6 @@ export default {
       }
       
       try {
-        // Combine existing media with new media
         const existingMedia = this.editingPost.media || []
         const newMedia = this.editSelectedFiles.map(file => ({
           name: file.name,
@@ -1279,26 +1278,20 @@ export default {
           text: this.editingPost.text ? this.editingPost.text.trim() : '',
           media: [...existingMedia, ...newMedia],
           updatedAt: new Date().toISOString(),
-          showOptions: false, // Reset the options menu
-          isEdited: true // Mark as edited
+          showOptions: false,
+          isEdited: true
         }
         
         // Update the post in the array
         const index = this.posts.findIndex(p => p.id === this.editingPost.id)
         if (index > -1) {
-          // Use Vue.set to ensure reactivity
           this.$set(this.posts, index, updatedPost)
-          
-          // Save to localStorage
           localStorage.setItem('fbposts', JSON.stringify(this.posts))
-          
-          // Update store if it has updatePost mutation
           try {
             if (this.$store.state.posts) {
               this.$store.commit('updatePost', updatedPost)
             }
           } catch (storeError) {
-            // Store update not available - continue without store update
           }
           
           this.closeEditModal()
