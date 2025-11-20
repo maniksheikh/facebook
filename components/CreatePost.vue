@@ -1130,7 +1130,6 @@ export default {
     
     // Edit functionality methods
     togglePostOptions(post) {
-      // Close other post options first
       this.posts.forEach(p => {
         if (p.id !== post.id) {
           this.$set(p, 'showOptions', false)
@@ -1141,29 +1140,20 @@ export default {
     
     editPost(post) {
       try {
-        // Validate post object
         if (!post || !post.id) {
           alert('Invalid post selected for editing')
           return
         }
-        
-        // Deep copy the post to avoid reactivity issues
-        this.editingPost = {
+          this.editingPost = {
           ...JSON.parse(JSON.stringify(post)),
-          // Ensure we have the required properties for editing
           text: post.text || '',
           media: post.media || [],
           privacy: post.privacy || 'public'
         }
-        
         // Reset edit-specific data
         this.editSelectedFiles = []
         this.isEditDragOver = false
-        
-        // Open the edit modal
         this.showEditModal = true
-        
-        // Close the options menu
         this.$set(post, 'showOptions', false)
       } catch (error) {
         alert('Error opening post for editing. Please try again.')
