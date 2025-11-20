@@ -1296,8 +1296,6 @@ export default {
           
           this.closeEditModal()
           this.showSuccess('Post updated successfully!')
-          
-          // Force reactivity update
           this.$forceUpdate()
         } else {
           alert('Post not found!')
@@ -1311,7 +1309,7 @@ export default {
 </script>
 
 <style lang="scss">
-// Main Post Creation Button
+
 .main-create-post-btn {
   background: white;
   border-radius: 12px;
