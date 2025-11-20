@@ -1186,8 +1186,6 @@ export default {
           alert('Error deleting post. Please try again.')
         }
       }
-      
-      // Close options menu
       this.$set(post, 'showOptions', false)
     },
     
@@ -1234,8 +1232,7 @@ export default {
         } catch (error) {
           this.showError(`Failed to process ${file.name}: ${error.message}`)
         }
-      }
-      
+      }  
       if (this.$refs.editFileInput) {
         this.$refs.editFileInput.value = ''
       }
