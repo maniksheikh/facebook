@@ -1352,11 +1352,9 @@ export default {
       width: 100%;
       text-align: left;
       font-family: inherit;
-
       &:hover {
         background: #e4e6ea;
       }
-
       &:focus {
         outline: none;
         box-shadow: 0 0 0 2px #1877f2;
@@ -1431,7 +1429,6 @@ export default {
         padding: 0.5rem;
         border-radius: 50%;
         color: #65676b;
-
         &:hover {
           background: #f0f2f5;
           color: #1c1e21;
