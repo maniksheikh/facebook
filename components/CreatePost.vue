@@ -1551,13 +1551,11 @@ export default {
           padding: 1rem 0.5rem;
           cursor: pointer;
           color: #65676b;
-
           &.active {
             background: #e3f2fd;
             border-color: #1877f2;
             color: #1877f2;
           }
-
           span {
             font-size: 0.8rem;
             font-weight: 600;
@@ -1591,7 +1589,6 @@ export default {
           cursor: pointer;
           text-align: left;
           font-size: 0.9rem;
-
           &:hover {
             background: #f0f2f5;
             border-color: #1877f2;
