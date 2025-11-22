@@ -1469,7 +1469,6 @@ export default {
           color: #1877f2;
           font-weight: 600;
           cursor: pointer;
-
           &:focus {
             outline: none;
           }
@@ -1491,7 +1490,6 @@ export default {
         min-height: 100px;
         max-height: 200px;
         line-height: 1.5;
-
         &::placeholder {
           color: #8a8d91;
         }
@@ -1514,11 +1512,9 @@ export default {
           align-items: center;
           justify-content: center;
           cursor: pointer;
-
           &:hover {
             background: #e4e6ea;
           }
-
           .format-icon {
             font-weight: bold;
             color: #65676b;
