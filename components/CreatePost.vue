@@ -1614,13 +1614,11 @@ export default {
         padding: 0.75rem 1.5rem;
         font-weight: 600;
         cursor: pointer;
-
         &:hover:not(:disabled) {
           background: #166fe5;
           transform: translateY(-1px);
           box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
         }
-
         &:disabled {
           background: #cbd5e0;
           cursor: not-allowed;
@@ -1636,7 +1634,6 @@ export default {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
 @keyframes slideUp {
   from { 
     opacity: 0;
