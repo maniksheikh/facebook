@@ -1665,7 +1665,6 @@ export default {
       object-fit: cover;
       border: 2px solid #e4e6ea;
       cursor: pointer;
-
       &:hover {
         border-color: #1877f2;
       }
@@ -1682,16 +1681,13 @@ export default {
       font-family: inherit;
       min-height: 40px;
       max-height: 200px;
-      resize: none;
-      
+      resize: none;  
       &::placeholder {
         color: #8a8d91;
-      }
-      
+      }  
       &:hover {
         background: #e4e6ea;
-      }
-      
+      } 
       &:focus {
         background: #fff;
         box-shadow: 0 0 0 2px #1877f2;
