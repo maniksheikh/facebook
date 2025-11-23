@@ -1728,8 +1728,7 @@ export default {
         border-radius: 8px;
         cursor: pointer;
         color: #65676b;
-        font-size: 0.9rem;
-        
+        font-size: 0.9rem;  
         &:hover {
           background: #e4e6ea;
         }
@@ -1761,8 +1760,7 @@ export default {
             border-radius: 6px;
             cursor: pointer;
             text-align: left;
-            font-size: 0.9rem;
-            
+            font-size: 0.9rem;      
             &:hover {
               background: #f0f2f5;
             }
@@ -1772,7 +1770,6 @@ export default {
     }
   }
 
-  // Enhanced Action Buttons
   .post-btn {
     display: flex;
     justify-content: space-around;
@@ -1791,8 +1788,7 @@ export default {
       font-weight: 600;
       color: #65676b;
       flex: 1;
-      justify-content: center;
-      
+      justify-content: center;   
       &.active {
         background: #e3f2fd;
         color: #1877f2;
