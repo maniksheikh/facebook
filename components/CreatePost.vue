@@ -1695,23 +1695,20 @@ export default {
     }
   }
 
-  // Enhanced Post Options
   .post-options {
     padding: 0.5rem 1rem;
     border-top: 1px solid #e4e6ea;
     background: #f8f9fa;
     
     .privacy-setting {
-      margin-bottom: 0.5rem;
-      
+      margin-bottom: 0.5rem;   
       select {
         border: none;
         background: transparent;
         font-size: 0.9rem;
         color: #1877f2;
         font-weight: 600;
-        cursor: pointer;
-        
+        cursor: pointer;  
         &:focus {
           outline: none;
         }
