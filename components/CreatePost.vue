@@ -1796,7 +1796,6 @@ export default {
     }
   }
 
-  // Enhanced File Upload Section
   .file-upload-section {
     border-top: 1px solid #e4e6ea;
     padding: 1rem;
@@ -1807,13 +1806,11 @@ export default {
       padding: 2rem;
       text-align: center;
       cursor: pointer;
-      background: #f8f9fa;
-      
+      background: #f8f9fa; 
       &.drag-over {
         border-color: #1877f2;
         background: #e3f2fd;
-      }
-      
+      }  
       &:hover {
         border-color: #1877f2;
         background: #f0f8ff;
@@ -1842,8 +1839,7 @@ export default {
           display: flex;
           justify-content: center;
           gap: 0.5rem;
-          margin-top: 1rem;
-          
+          margin-top: 1rem;    
           .file-type {
             background: #e4e6ea;
             color: #65676b;
