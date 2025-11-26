@@ -1886,16 +1886,13 @@ export default {
         
         &.grid-1 {
           grid-template-columns: 1fr;
-        }
-        
+        }   
         &.grid-2 {
           grid-template-columns: 1fr 1fr;
-        }
-        
+        }   
         &.grid-4 {
           grid-template-columns: repeat(2, 1fr);
-        }
-        
+        } 
         &.grid-many {
           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         }
@@ -1903,8 +1900,7 @@ export default {
         .preview-item {
           border: 1px solid #e4e6ea;
           border-radius: 8px;
-          overflow: hidden;
-          
+          overflow: hidden;  
           &:hover {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
           }
