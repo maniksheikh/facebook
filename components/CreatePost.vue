@@ -2000,13 +2000,11 @@ export default {
               display: flex;
               align-items: center;
               gap: 0.5rem;
-              flex-wrap: wrap;
-              
+              flex-wrap: wrap;           
               .file-size {
                 font-size: 0.7rem;
                 color: #65676b;
-              }
-              
+              }            
               .compression-badge {
                 background: #28a745;
                 color: white;
@@ -2015,8 +2013,7 @@ export default {
                 font-size: 0.6rem;
                 font-weight: 600;
                 text-transform: uppercase;
-              }
-              
+              }         
               .duration-badge {
                 background: #6c757d;
                 color: white;
