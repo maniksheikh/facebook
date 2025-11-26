@@ -1934,8 +1934,7 @@ export default {
                 align-items: center;
                 justify-content: center;
                 opacity: 0;
-              }
-              
+              }          
               &:hover .play-overlay {
                 opacity: 1;
               }
@@ -1952,8 +1951,7 @@ export default {
               justify-content: space-between;
               align-items: flex-start;
               padding: 0.5rem;
-              opacity: 0;
-              
+              opacity: 0;     
               &:hover {
                 opacity: 1;
               }
@@ -1968,8 +1966,7 @@ export default {
                 cursor: pointer;
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                
+                justify-content: center;            
                 &:hover {
                   background: #dc3545;
                 }
