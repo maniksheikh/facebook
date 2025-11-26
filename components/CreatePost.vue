@@ -1854,21 +1854,18 @@ export default {
     
     // Enhanced Media Preview Grid
     .media-preview-grid {
-      margin-top: 1rem;
-      
+      margin-top: 1rem;  
       .preview-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 1rem;
-        
+        margin-bottom: 1rem;      
         h4 {
           margin: 0;
           color: #1c1e21;
           font-size: 1rem;
           font-weight: 600;
-        }
-        
+        }       
         .clear-all-btn {
           background: #dc3545;
           color: white;
@@ -1876,8 +1873,7 @@ export default {
           border-radius: 6px;
           padding: 0.25rem 0.75rem;
           font-size: 0.8rem;
-          cursor: pointer;
-          
+          cursor: pointer; 
           &:hover {
             background: #c82333;
           }
