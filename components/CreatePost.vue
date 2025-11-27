@@ -2051,12 +2051,10 @@ export default {
         border-radius: 8px;
         padding: 0.75rem 1.5rem;
         font-weight: 600;
-        cursor: pointer;
-        
+        cursor: pointer;       
         &:hover:not(:disabled) {
           background: #166fe5;
-        }
-        
+        } 
         &:disabled {
           background: #cbd5e0;
           cursor: not-allowed;
