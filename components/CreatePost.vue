@@ -2111,7 +2111,6 @@ export default {
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-
       &:hover {
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
       }
@@ -2133,11 +2132,9 @@ export default {
           border-radius: 50%;
           margin-right: 0.75rem;
           overflow: hidden;
-
           &:hover {
             border-color: #1877f2;
           }
-
           img {
             width: 100%;
             height: 100%;
