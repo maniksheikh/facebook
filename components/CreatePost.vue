@@ -2148,25 +2148,21 @@ export default {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-
           .title {
             font-weight: 600;
             font-size: 1rem;
             color: #1c1e21;
             margin-bottom: 0.2rem;
           }
-
           .meta-info {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            
+            gap: 0.5rem;      
             .email {
               font-size: 0.875rem;
               color: #65676b;
               font-weight: 400;
-            }
-            
+            }    
             .edited-indicator {
               font-size: 0.75rem;
               color: #8a8d91;
