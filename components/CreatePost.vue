@@ -2072,7 +2072,6 @@ export default {
         padding: 0.75rem 1.5rem;
         font-weight: 600;
         cursor: pointer;
-        
         &:hover {
           background: #d1d5db;
         }
@@ -2084,8 +2083,7 @@ export default {
       justify-content: space-between;
       align-items: center;
       font-size: 0.8rem;
-      color: #65676b;
-      
+      color: #65676b;   
       .char-count {
         &.warning {
           color: #dc3545;
