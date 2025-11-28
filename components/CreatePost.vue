@@ -2184,7 +2184,6 @@ export default {
             cursor: pointer;
             padding: 0.5rem;
             border-radius: 50%;
-
             &:hover {
               background: #f0f2f5;
               opacity: 1;
@@ -2213,8 +2212,7 @@ export default {
           width: 100%;
           max-height: 600px;
           object-fit: cover;
-          cursor: pointer;
-          
+          cursor: pointer;   
           &:hover {
             opacity: 0.95;
           }
@@ -2223,8 +2221,7 @@ export default {
         .post-video {
           width: 100%;
           max-height: 600px;
-          border-radius: 0;
-          
+          border-radius: 0;   
         }
       }
     }
