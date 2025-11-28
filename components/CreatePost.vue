@@ -2203,11 +2203,9 @@ export default {
 
     // Enhanced Media Display
     .post-media {
-      margin: 0;
-      
+      margin: 0; 
       .media-item {
-        margin: 0;
-        
+        margin: 0;    
         .post-image {
           width: 100%;
           max-height: 600px;
@@ -2216,8 +2214,7 @@ export default {
           &:hover {
             opacity: 0.95;
           }
-        }
-        
+        }      
         .post-video {
           width: 100%;
           max-height: 600px;
