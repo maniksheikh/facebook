@@ -2293,11 +2293,9 @@ export default {
     font-size: 0.9rem;
     font-weight: 500;
     color: #1c1e21;
-
     &:hover {
       background: #f0f2f5;
     }
-
     svg {
       flex-shrink: 0;
     }
@@ -2306,7 +2304,6 @@ export default {
 
   .edit-btn {
     color: #1877f2;
-
     &:hover {
       background: #e3f2fd;
       color: #166fe5;
