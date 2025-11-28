@@ -2361,7 +2361,6 @@ export default {
       .media-preview {
         aspect-ratio: 1;
         overflow: hidden;
-
         img, video {
           width: 100%;
           height: 100%;
@@ -2384,7 +2383,6 @@ export default {
         align-items: center;
         justify-content: center;
         opacity: 0;
-
         &:hover {
           background: #dc3545;
         }
