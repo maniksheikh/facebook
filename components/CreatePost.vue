@@ -2309,11 +2309,9 @@ export default {
       color: #166fe5;
     }
   }
-
   .delete-btn {
     color: #dc3545;
     border-top: 1px solid #e4e6ea;
-
     &:hover {
       background: #f8d7da;
       color: #721c24;
@@ -2336,7 +2334,6 @@ export default {
 .current-media-section {
   padding: 1rem 1.5rem;
   border-top: 1px solid #e4e6ea;
-
   h3 {
     margin: 0 0 1rem 0;
     font-size: 1rem;
@@ -2354,10 +2351,8 @@ export default {
       border: 1px solid #e4e6ea;
       border-radius: 8px;
       overflow: hidden;
-
       &:hover {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
         .remove-media-btn {
           opacity: 1;
         }
