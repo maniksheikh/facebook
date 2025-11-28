@@ -2251,16 +2251,14 @@ export default {
 
 // Post Options Menu Styles
 .multi-icon {
-  position: relative;
-  
+  position: relative; 
   .options-btn {
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 50%;
-    color: #65676b;
-    
+    color: #65676b;  
     &:hover {
       background: #f0f2f5;
       color: #1c1e21;
