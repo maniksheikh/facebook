@@ -2444,8 +2444,7 @@ export default {
     .post-btn {
       .btn {
         padding: 0.5rem;
-        font-size: 0.9rem;
-        
+        font-size: 0.9rem; 
         span {
           display: none;
         }
@@ -2466,8 +2465,7 @@ export default {
           }
           
           .file-types {
-            flex-wrap: wrap;
-            
+            flex-wrap: wrap; 
             .file-type {
               font-size: 0.7rem;
             }
