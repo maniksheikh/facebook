@@ -2412,12 +2412,10 @@ export default {
   }
   
   .update-btn {
-    background: #28a745;
-    
+    background: #28a745;    
     &:hover:not(:disabled) {
       background: #218838;
-    }
-    
+    } 
     &:disabled {
       background: #6c757d;
       cursor: not-allowed;
@@ -2432,13 +2430,11 @@ export default {
     border-radius: 8px;
     
     .flex {
-      padding: 0.75rem;
-      
+      padding: 0.75rem;     
       .profile {
         width: 40px;
         height: 40px;
-      }
-      
+      } 
       textarea {
         font-size: 0.9rem;
         padding: 0.5rem 0.75rem;
