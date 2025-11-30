@@ -2357,7 +2357,6 @@ export default {
           opacity: 1;
         }
       }
-
       .media-preview {
         aspect-ratio: 1;
         overflow: hidden;
@@ -2367,7 +2366,6 @@ export default {
           object-fit: cover;
         }
       }
-
       .remove-media-btn {
         position: absolute;
         top: 0.5rem;
