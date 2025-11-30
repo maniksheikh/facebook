@@ -2453,17 +2453,14 @@ export default {
     
     .file-upload-section {
       .upload-area {
-        padding: 1rem;
-        
+        padding: 1rem;      
         .upload-content {
           h3 {
             font-size: 1rem;
-          }
-          
+          }    
           p {
             font-size: 0.8rem;
-          }
-          
+          } 
           .file-types {
             flex-wrap: wrap; 
             .file-type {
