@@ -2515,15 +2515,12 @@ export default {
       p {
         padding: 0.75rem;
         font-size: 0.9rem;
-      }
-      
+      }    
       .react-btn {
-        padding: 0.5rem;
-        
+        padding: 0.5rem;        
         .btn {
           padding: 0.5rem;
-          font-size: 0.8rem;
-          
+          font-size: 0.8rem;        
           span {
             display: none;
           }
