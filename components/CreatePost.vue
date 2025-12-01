@@ -2495,27 +2495,23 @@ export default {
       .item {
         margin-bottom: 0.75rem;
         border-radius: 8px;
-      }
-      
+      }   
       .bio .bio-content {
-        padding: 0.75rem;
-        
+        padding: 0.75rem;     
         .profile-img {
           width: 40px;
           height: 40px;
-        }
-        
+        }     
         .content {
           .title {
             font-size: 0.9rem;
-          }
-          
+          }  
           .email {
             font-size: 0.8rem;
           }
         }
       }
-      
+  
       p {
         padding: 0.75rem;
         font-size: 0.9rem;
