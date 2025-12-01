@@ -2230,8 +2230,7 @@ export default {
       padding: 0.5rem 1rem;
       border-top: 1px solid #e4e6ea;
       background: #f8f9fa;
-
-      .btn {
+    .btn {
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -2394,7 +2393,6 @@ export default {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
-  
   .cancel-btn {
     display: flex;
     align-items: center;
@@ -2427,8 +2425,7 @@ export default {
 @media screen and (max-width: 768px) {
   .create-post {
     margin-top: 1rem;
-    border-radius: 8px;
-    
+    border-radius: 8px;  
     .flex {
       padding: 0.75rem;     
       .profile {
