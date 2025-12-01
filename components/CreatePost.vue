@@ -2477,13 +2477,11 @@ export default {
           }
         }
       }
-    }
-    
+    }   
     .post-actions {
       .action-buttons {
         flex-direction: column;
-        gap: 0.5rem;
-        
+        gap: 0.5rem;    
         .post-submit-btn, .cancel-btn {
           width: 100%;
           justify-content: center;
