@@ -1475,7 +1475,6 @@ export default {
     .post-content-area {
       padding: 1rem 1.5rem;
       position: relative;
-
       .post-textarea {
         width: 100%;
         border: none;
@@ -1497,7 +1496,6 @@ export default {
         right: 0.5rem;
         display: flex;
         gap: 0.5rem;
-
         .format-btn, .emoji-btn {
           background: #f0f2f5;
           border: none;
