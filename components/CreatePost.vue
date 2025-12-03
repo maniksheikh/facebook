@@ -1451,7 +1451,6 @@ export default {
 
       .user-details {
         flex: 1;
-
         .username {
           display: block;
           font-weight: 600;
@@ -1459,7 +1458,6 @@ export default {
           color: #1c1e21;
           margin-bottom: 0.25rem;
         }
-
         .privacy-select {
           border: none;
           background: transparent;
