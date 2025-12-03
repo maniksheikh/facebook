@@ -1523,7 +1523,6 @@ export default {
     .post-type-selection {
       padding: 1rem 1.5rem;
       border-top: 1px solid #e4e6ea;
-
       h3 {
         margin: 0 0 1rem 0;
         font-size: 1rem;
@@ -1535,7 +1534,6 @@ export default {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 0.5rem;
-
         .post-type-btn {
           display: flex;
           flex-direction: column;
