@@ -1309,7 +1309,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .main-create-post-btn {
   background: white;
   border-radius: 12px;
@@ -1421,7 +1420,6 @@ export default {
         font-weight: 600;
         color: #1c1e21;
       }
-
       .close-btn {
         background: none;
         border: none;
