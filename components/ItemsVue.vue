@@ -175,31 +175,26 @@ export default {
       font-weight: 500;
       font-family: inherit;
     }
-
     .dots-icon {
       position: absolute;
       top: 0.5rem;
       right: 0.5rem;
     }
-
     .show-react {
       display: flex;
       gap: 7px;
       padding: 0.4rem 1rem;
       cursor: pointer;
-
       .box {
         display: flex;
         align-items: center;
       }
-
       a {
         text-decoration: none;
         font-family: inherit;
         color: #333;
       }
-
-      .comments {
+     .comments {
         margin-left: auto;
         font-family: inherit;
         font-size: 1rem;
