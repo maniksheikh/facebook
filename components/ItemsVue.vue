@@ -206,7 +206,6 @@ export default {
     display: flex;
     padding: 12px;
     gap: 0.5rem;
-
     img {
       width: 50px;
       height: 50px;
@@ -217,7 +216,6 @@ export default {
       object-fit: cover;
       cursor: pointer;
     }
-
     .content {
       margin-top: 3px;
       .title {
