@@ -220,7 +220,6 @@ export default {
 
     .content {
       margin-top: 3px;
-
       .title {
         font-size: 1rem;
         font-weight: 700;
@@ -228,7 +227,6 @@ export default {
         color: #333333;
         font-family: inherit;
       }
-
       .date {
         font-size: 0.7rem;
         font-family: inherit;
