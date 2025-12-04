@@ -258,13 +258,11 @@ export default {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-
       span {
         font-family: inherit;
         font-size: 1rem;
       }
     }
-
     .btn-react,
     .btn-comment,
     .btn-share {
