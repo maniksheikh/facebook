@@ -596,8 +596,7 @@ export default {
       opacity: 0.7;
       margin-top: -6px;
     }
-
-    .post-img {
+   .post-img {
       height: 650px;
       width: 100%;
       background-position: initial;
@@ -605,7 +604,6 @@ export default {
       background-size: cover;
       object-fit: cover;
     }
-
     .react-btn {
       display: flex;
       justify-content: space-around;
@@ -650,7 +648,6 @@ export default {
   }
 }
 
-// Override global CSS hover effects for permanent-section buttons
 .permanent-section button:hover,
 .permanent-section button:active,
 .permanent-section button:focus,
