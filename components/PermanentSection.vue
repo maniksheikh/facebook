@@ -567,7 +567,6 @@ export default {
           border-radius: 50%;
           cursor: pointer;
         }
-
         p {
           align-items: start;
           margin: auto;
@@ -582,7 +581,6 @@ export default {
         display: flex;
         justify-content: space-between;
         cursor: pointer;
-
         img {
           height: 26px;
           width: 26px;
