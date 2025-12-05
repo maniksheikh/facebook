@@ -614,8 +614,7 @@ export default {
       margin-top: 0.5rem;
       background: transparent !important;
       background-color: transparent !important;
-      border-top: 1px solid #e4e6ea;
-      
+      border-top: 1px solid #e4e6ea; 
       span {
         font-size: 0.9375rem;
         font-weight: 600;
@@ -640,7 +639,6 @@ export default {
         transform: none !important;
         flex: 1;
         max-width: 200px;
-
         svg {
           width: 20px;
           height: 20px;
