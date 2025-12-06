@@ -323,6 +323,7 @@ export default {
         }
       }
     }
+    
     .btn-primary {
       display: block;
       margin: 1rem auto;
