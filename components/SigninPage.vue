@@ -216,6 +216,7 @@ export default {
       color: white;
     }
   }
+  
   .btn-primary {
     padding: 0.9rem;
     background: #42b72a;
