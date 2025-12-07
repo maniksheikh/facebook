@@ -149,7 +149,7 @@ export default {
   border-radius: 10px;
   transition: none !important;
   transform: none !important;
-  margin-bottom: 1.5rem; /* Replaces the <br> tags */
+  margin-bottom: 1.5rem; 
 
   .items {
     font-family: inherit;
@@ -233,8 +233,8 @@ export default {
         border-radius: 8px;
         padding: 0.5rem 1.5rem;
         text-align: center;
-        background: transparent; /* Removed !important */
-        background-color: transparent; /* Removed !important */
+        background: transparent; 
+        background-color: transparent;
         border: none;
         box-shadow: none;
         cursor: pointer;
@@ -260,7 +260,7 @@ export default {
 .permanent-section .btn:hover,
 .permanent-section .btn:active,
 .permanent-section .btn:focus {
-  background-color: #f0f2f5 !important; /* Added hover color */
+  background-color: #f0f2f5 !important;
   transform: none !important;
   box-shadow: none !important;
   transition: none !important;
