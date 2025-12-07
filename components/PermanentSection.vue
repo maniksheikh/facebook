@@ -209,6 +209,7 @@ export default {
       background-size: cover;
       object-fit: cover;
     }
+    
     .react-btn {
       display: flex;
       justify-content: space-around;
