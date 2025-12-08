@@ -194,7 +194,7 @@ export default {
 }
 
 .user-details {
-  margin-left: 190px; /* Space for profile pic */
+  margin-left: 190px;
   margin-bottom: 10px;
   .username {
     font-size: 2rem;
@@ -267,14 +267,14 @@ export default {
 }
 
 .left-column {
-  flex: 2; /* 40% width approx */
+  flex: 2;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
 .right-column {
-  flex: 3; /* 60% width approx */
+  flex: 3;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -380,7 +380,7 @@ export default {
         text-align: center;
         .user-details {
             margin-left: 0;
-            margin-top: 140px; /* Space for profile pic */
+            margin-top: 140px;
         }
         .profile-pic-container {
              left: 50%;
