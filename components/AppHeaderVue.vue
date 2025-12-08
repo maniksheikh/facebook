@@ -213,7 +213,7 @@
                       <span class="title">{{ userName }}</span>
                     </div>
                     <div class="pro-title">
-                      <a href="#">See all profiles</a>
+                      <nuxt-link to="/profile">See all profiles</nuxt-link>
                     </div>
                   </div>
                 </div>
