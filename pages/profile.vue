@@ -141,11 +141,11 @@ export default {
 .profile-page {
   background-color: #f0f2f5;
   min-height: 100vh;
-  padding-top: 60px; /* Header height */
+  padding-top: 60px;
 }
 
 .container {
-  max-width: 940px; /* Typical Facebook container width */
+  max-width: 940px;
   margin: 0 auto;
 }
 
@@ -153,7 +153,7 @@ export default {
   background: white;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
-  background: linear-gradient(to bottom, #ffffff, #ffffff); /* Placeholder for white bg */
+  background: linear-gradient(to bottom, #ffffff, #ffffff);
 }
 
 .cover-photo {
@@ -182,7 +182,7 @@ export default {
 
 .profile-pic-container {
   position: absolute;
-  top: -30px; /* Overlap cover photo */
+  top: -30px;
   left: 2rem;
   .profile-pic {
     width: 168px;
