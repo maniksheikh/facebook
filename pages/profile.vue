@@ -173,15 +173,14 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 2rem 1rem;
+  padding: 2.5rem 3rem;
   position: relative;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 1rem;
 }
 
 .profile-pic-container {
   position: absolute;
-  top: -30px;
+  top: -80px;
   left: 2rem;
   .profile-pic {
     width: 168px;
@@ -194,10 +193,10 @@ export default {
 
 .user-details {
   margin-left: 190px;
-  margin-bottom: 10px;
   .username {
     font-size: 2rem;
     font-weight: bold;
+    line-height: 70px;
     margin: 0;
   }
   .bio {
