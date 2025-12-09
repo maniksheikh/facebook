@@ -117,10 +117,10 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import AppHeaderVue from '../components/AppHeaderVue.vue'
 import CreatePost from '../components/CreatePost.vue'
 import PostSection from '../components/PostSection.vue'
-import { mapState } from 'vuex'
 
 export default {
   components: {
@@ -141,11 +141,10 @@ export default {
 .profile-page {
   background-color: #f0f2f5;
   min-height: 100vh;
-  padding-top: 60px;
 }
 
 .container {
-  max-width: 940px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
