@@ -35,23 +35,44 @@
         <div class="left-column">
           <div class="card intro-card">
             <h3>Intro</h3>
-            <p class="bio-text">Welcome to my profile! I love coding and coffee.</p>
+            <p class="bio-text">Frontend Developer at CONNEKT STUDIO</p>
+            <button class="btn btn-gray">Edit bio</button>
             <ul class="details-list">
               <li>
-                <svg viewBox="0 0 24 24" class="icon" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                <span>Savar, Dhaka, Bangladesh</span>
+                <svg viewBox="0 0 24 24" class="icon" fill="currentColor"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/></svg>
+                <span>Software Developer at <strong>Works at Web development</strong></span>
               </li>
               <li>
                 <svg viewBox="0 0 24 24" class="icon" fill="currentColor"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/></svg>
-                <span>Works at <strong>Tech Company</strong></span>
+                <span>Frontend developer at <strong>CONNEKT STUDIO</strong></span>
               </li>
               <li>
-                <svg viewBox="0 0 24 24" class="icon" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                 <span>Followed by <strong>1,234 people</strong></span>
+                <svg viewBox="0 0 24 24" class="icon" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                <span>Studies at <strong>Govt. Shah Sultan College, Bogura</strong></span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" class="icon" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                <span>Studies at <strong>Govt. Shah Sultan College, Bogura</strong></span>
+              </li>
+               <li>
+                <svg viewBox="0 0 24 24" class="icon" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                <span>Went to <strong>H.G.B.L Rouha High School</strong></span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" class="icon" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                <span>Lives in <strong>Bogra</strong></span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" class="icon" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>From <strong>Sirajganj</strong></span>
+              </li>
+               <li>
+                <svg viewBox="0 0 24 24" class="icon" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <span>Single</span>
               </li>
             </ul>
-            <button class="btn btn-block">Edit Details</button>
-            <button class="btn btn-block">Add Hobbies</button>
+            <button class="btn btn-gray">Edit details</button>
+            <button class="btn btn-gray">Add featured</button>
           </div>
 
           <div class="card photos-card">
@@ -290,35 +311,58 @@ export default {
 }
 
 .intro-card {
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
   .bio-text {
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
   }
   .details-list {
     list-style: none;
     padding: 0;
+    margin-top: 1rem;
     li {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      align-items: flex-start;
+      gap: 0.75rem;
       margin-bottom: 1rem;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      color: #050505;
       .icon {
         width: 20px;
         height: 20px;
-        color: #8a8d91;
+        color: #8c939d;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      strong {
+        font-weight: 600;
       }
     }
   }
-  .btn-block {
+  .btn-gray {
     width: 100%;
     background-color: #e4e6eb;
+    color: #050505;
     border: none;
     padding: 0.5rem;
     border-radius: 6px;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+    &:hover {
+        background-color: #d8dadf;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
   }
 }
 
