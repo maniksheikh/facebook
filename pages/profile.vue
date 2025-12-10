@@ -312,33 +312,34 @@ export default {
 
 .intro-card {
   h3 {
-    font-size: 1.25rem;
+    font-size: 22px;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
     margin-top: 0;
+    color: #050505;
   }
   .bio-text {
       text-align: center;
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #050505;
   }
   .details-list {
     list-style: none;
     padding: 0;
-    margin-top: 1rem;
+    margin-top: 15px;
     li {
       display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      font-size: 17px;
       color: #050505;
       .icon {
         width: 20px;
         height: 20px;
         color: #8c939d;
         flex-shrink: 0;
-        margin-top: 2px;
       }
       strong {
         font-weight: 600;
@@ -350,12 +351,12 @@ export default {
     background-color: #e4e6eb;
     color: #050505;
     border: none;
-    padding: 0.5rem;
+    height: 36px;
     border-radius: 6px;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: 10px;
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: 15px;
     transition: background-color 0.2s;
     &:hover {
         background-color: #d8dadf;
