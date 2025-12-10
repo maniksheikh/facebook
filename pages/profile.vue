@@ -78,24 +78,26 @@
           <div class="card photos-card">
             <div class="card-header">
               <h3>Photos</h3>
-              <a href="#">See All Photos</a>
+              <a href="#" v-if="items && items.length > 0">See All Photos</a>
             </div>
-            <div class="photo-grid">
-               <img v-for="item in items" :key="item.id" :src="item.postUrl" alt="Photo" />
+            <div v-if="items && items.length > 0" class="photo-grid">
+               <img v-for="item in items" :key="item.id" :src="item.postUrl" alt="Photo" loading="lazy" />
             </div>
+            <p v-else class="empty-state">No photos to display</p>
           </div>
            <div class="card friends-card">
             <div class="card-header">
               <h3>Friends</h3>
-              <a href="#">See All Friends</a>
+              <a href="#" v-if="friends && friends.length > 0">See All Friends</a>
             </div>
-            <p class="subtitle">{{ items ? items.length : 0 }} friends</p>
-             <div class="photo-grid friends-grid">
-               <div v-for="item in items" :key="item.id" class="friend-item">
-                  <img :src="item.profileUrl" alt="Friend" />
-                  <span>{{ item.title }}</span>
+            <p class="subtitle" v-if="friends && friends.length > 0">{{ friends.length }} friends</p>
+             <div v-if="friends && friends.length > 0" class="photo-grid friends-grid">
+               <div v-for="(friend, index) in friends" :key="index" class="friend-item">
+                  <img :src="friend.image" :alt="friend.name" loading="lazy" />
+                  <span>{{ friend.name }}</span>
                </div>
             </div>
+            <p v-else class="empty-state">No friends to display</p>
           </div>
         </div>
 
@@ -119,6 +121,32 @@ export default {
     AppHeaderVue,
     CreatePost,
     PostSection
+  },
+  data() {
+    return {
+      friends: [
+        {
+          name: 'Manik Sheikh',
+          image: require('../assets/image/profile-img.jpg'),
+        },
+        {
+          name: 'Nasim Uddin',
+          image: require('../assets/image/freelancing.jpg'),
+        },
+        {
+          name: 'Friends Group',
+          image: require('../assets/image/friends.jpg'),
+        },
+        {
+          name: 'Traveling Journey',
+          image: require('../assets/image/iceland.jpg'),
+        },
+        {
+          name: 'Travelling Journey',
+          image: require('../assets/image/profile-img.jpg'),
+        },
+      ],
+    }
   },
   computed: {
     ...mapState(['user']),
@@ -276,9 +304,13 @@ export default {
   border-radius: 8px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   padding: 1rem;
+  transition: box-shadow 0.3s ease;
   h3 {
     margin-top: 0;
     font-size: 1.25rem;
+  }
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -349,8 +381,21 @@ export default {
         a {
             text-decoration: none;
             color: #1877f2;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            &:hover {
+                color: #145dbf;
+                text-decoration: underline;
+            }
         }
     }
+}
+
+.empty-state {
+    text-align: center;
+    color: #65676b;
+    padding: 2rem 1rem;
+    font-size: 0.95rem;
 }
 .friends-card .subtitle {
     color: #65676b;
@@ -369,6 +414,12 @@ export default {
         width: 100%;
         aspect-ratio: 1;
         object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+        &:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
     }
 }
 
@@ -376,13 +427,23 @@ export default {
     .friend-item {
         display: flex;
         flex-direction: column;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        &:hover {
+            transform: translateY(-2px);
+            img {
+                opacity: 0.9;
+            }
+        }
         img {
              border-radius: 8px;
              margin-bottom: 5px;
+             transition: opacity 0.2s ease;
         }
         span {
             font-size: 0.8rem;
             font-weight: 600;
+            color: #050505;
         }
     }
 }
