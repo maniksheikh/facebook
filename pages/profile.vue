@@ -81,15 +81,7 @@
               <a href="#">See All Photos</a>
             </div>
             <div class="photo-grid">
-               <img src="https://via.placeholder.com/150" alt="Photo" />
-               <img src="https://via.placeholder.com/150" alt="Photo" />
-               <img src="https://via.placeholder.com/150" alt="Photo" />
-               <img src="https://via.placeholder.com/150" alt="Photo" />
-               <img src="https://via.placeholder.com/150" alt="Photo" />
-               <img src="https://via.placeholder.com/150" alt="Photo" />
-               <img src="https://via.placeholder.com/150" alt="Photo" />
-               <img src="https://via.placeholder.com/150" alt="Photo" />
-               <img src="https://via.placeholder.com/150" alt="Photo" />
+               <img v-for="item in items" :key="item.id" :src="item.postUrl" alt="Photo" />
             </div>
           </div>
            <div class="card friends-card">
@@ -97,32 +89,11 @@
               <h3>Friends</h3>
               <a href="#">See All Friends</a>
             </div>
-            <p class="subtitle">1,234 friends</p>
+            <p class="subtitle">{{ items ? items.length : 0 }} friends</p>
              <div class="photo-grid friends-grid">
-               <div class="friend-item">
-                  <img src="https://via.placeholder.com/150" alt="Friend" />
-                  <span>Friend Name</span>
-               </div>
-               <!-- Repeat for more friends -->
-                 <div class="friend-item">
-                  <img src="https://via.placeholder.com/150" alt="Friend" />
-                  <span>Friend Name</span>
-               </div>
-               <div class="friend-item">
-                  <img src="https://via.placeholder.com/150" alt="Friend" />
-                  <span>Friend Name</span>
-               </div>
-                 <div class="friend-item">
-                  <img src="https://via.placeholder.com/150" alt="Friend" />
-                  <span>Friend Name</span>
-               </div>
-               <div class="friend-item">
-                  <img src="https://via.placeholder.com/150" alt="Friend" />
-                  <span>Friend Name</span>
-               </div>
-                 <div class="friend-item">
-                  <img src="https://via.placeholder.com/150" alt="Friend" />
-                  <span>Friend Name</span>
+               <div v-for="item in items" :key="item.id" class="friend-item">
+                  <img :src="item.profileUrl" alt="Friend" />
+                  <span>{{ item.title }}</span>
                </div>
             </div>
           </div>
@@ -138,7 +109,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import AppHeaderVue from '../components/AppHeaderVue.vue'
 import CreatePost from '../components/CreatePost.vue'
 import PostSection from '../components/PostSection.vue'
@@ -151,6 +122,7 @@ export default {
   },
   computed: {
     ...mapState(['user']),
+    ...mapGetters(['items']),
     userName() {
       return this.user ? this.user.displayName : 'Guest User'
     }
@@ -346,6 +318,7 @@ export default {
       }
     }
   }
+
   .btn-gray {
     width: 100%;
     background-color: #e4e6eb;
@@ -398,6 +371,7 @@ export default {
         object-fit: cover;
     }
 }
+
 .friends-grid {
     .friend-item {
         display: flex;
