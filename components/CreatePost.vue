@@ -590,15 +590,15 @@
             </button>
           </div>
         </div>
-        <div class="item">
+        <div v-for="samplePost in samplePosts" :key="samplePost.id" class="item">
           <div class="bio">
             <div class="bio-content">
               <div class="profile-img">
-                <img src="../assets/image/male-face-avatar-logo.jpg" alt="" />
+                <img :src="samplePost.profileImage" alt="" />
               </div>
               <div class="content">
-                <span class="title">Md Manik Sheikh</span>
-                <span class="email">manik.sheikh@example.com</span>
+                <span class="title">{{ samplePost.username }}</span>
+                <span class="email">{{ samplePost.email }}</span>
               </div>
               <div class="multi-icon">
                 <img src="../assets/image/icons8-more-24.png" />
@@ -606,7 +606,7 @@
               </div>
             </div>
           </div>
-          <p>I am a frontend developer</p>
+          <p>{{ samplePost.text }}</p>
           <div class="react-btn">
             <button 
               v-for="button in reactionButtons" 
@@ -693,6 +693,15 @@ export default {
           viewBox: '0 0 1000 1000',
           width: '20px',
           height: '20px'
+        }
+      ],
+      samplePosts: [
+        {
+          id: 'sample-1',
+          username: 'Md Manik Sheikh',
+          email: 'manik.sheikh@example.com',
+          text: 'I am a frontend developer',
+          profileImage: '../assets/image/male-face-avatar-logo.jpg'
         }
       ]
     }
@@ -935,7 +944,7 @@ export default {
     startLiveVideo() {
       alert('Live video feature coming soon!')
     },
-    // Post management
+
     cancelPost() {
       this.showFileInput = false
       this.showPostOptions = false
@@ -2104,7 +2113,8 @@ export default {
           width: 100%;
           max-height: 600px;
           object-fit: cover;
-          cursor: pointer;   
+          cursor: pointer;
+          border-radius: 0;
           &:hover {
             opacity: 0.95;
           }
@@ -2123,8 +2133,8 @@ export default {
       justify-content: space-around;
       padding: 0.5rem 1rem;
       border-top: 1px solid #e4e6ea;
-      background: #f8f9fa;
-    .btn {
+      
+      .btn {
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -2137,6 +2147,25 @@ export default {
         color: #65676b;
         flex: 1;
         justify-content: center;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background: #f0f2f5;
+          color: #1877f2;
+          transform: scale(1.05);
+        }
+        
+        &:active {
+          transform: scale(0.98);
+        }
+        
+        svg {
+          transition: all 0.2s ease;
+        }
+        
+        &:hover svg {
+          fill: #1877f2;
+        }
       }
     }
   }
