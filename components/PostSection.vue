@@ -432,6 +432,7 @@ export default {
       this.showFileInput = false
       this.selectedFiles = []
     }, 
+
     // Click outside handler
     handleClickOutside(event) {
       this.posts.forEach(post => {
@@ -440,6 +441,7 @@ export default {
         }
       })
     },
+
     // Post options methods
     togglePostOptions(post) {
       this.posts.forEach(p => {
@@ -449,6 +451,7 @@ export default {
       })
       this.$set(post, 'showOptions', !post.showOptions)
     },
+
     // Edit functionality methods
     editPost(post) {
       if (!post || !post.id) {
@@ -515,7 +518,7 @@ export default {
           isEdited: true,
           showOptions: false
         }
-        // Update the post in the array
+
         const index = this.posts.findIndex(p => p.id === this.editingPost.id)
         if (index > -1) {
           this.$set(this.posts, index, updatedPost)
