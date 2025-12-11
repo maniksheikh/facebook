@@ -2147,22 +2147,18 @@ export default {
         color: #65676b;
         flex: 1;
         justify-content: center;
-        transition: all 0.2s ease;
-        
+        transition: all 0.2s ease;      
         &:hover {
           background: #f0f2f5;
           color: #1877f2;
           transform: scale(1.05);
-        }
-        
+        }      
         &:active {
           transform: scale(0.98);
-        }
-        
+        }    
         svg {
           transition: all 0.2s ease;
-        }
-        
+        }    
         &:hover svg {
           fill: #1877f2;
         }
