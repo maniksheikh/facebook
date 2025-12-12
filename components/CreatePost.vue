@@ -1105,8 +1105,6 @@ export default {
       this.editingPost = {}
       this.clearEditFiles()
     },
-    
-    // Edit file handling methods
     handleEditFileSelect(event) {
       const files = Array.from(event.target.files)
       this.processEditFiles(files)
@@ -1154,15 +1152,13 @@ export default {
         URL.revokeObjectURL(this.editSelectedFiles[index].url)
       }
       this.editSelectedFiles.splice(index, 1)
-    },
-    
+    }, 
     clearEditFiles() {
       this.editSelectedFiles.forEach(file => {
         URL.revokeObjectURL(file.url)
       })
       this.editSelectedFiles = []
-    },
-    
+    }, 
     removeCurrentMedia(index) {
       if (this.editingPost.media && this.editingPost.media.length > index) {
         this.editingPost.media.splice(index, 1)
@@ -1204,7 +1200,6 @@ export default {
             }
           } catch (storeError) {
           }
-          
           this.closeEditModal()
           this.showSuccess('Post updated successfully!')
           this.$forceUpdate()
