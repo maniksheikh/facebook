@@ -2104,7 +2104,6 @@ export default {
       font-size: 1rem;
     }
 
-    // Enhanced Media Display
     .post-media {
       margin: 0; 
       .media-item {
@@ -2127,7 +2126,6 @@ export default {
       }
     }
 
-    // Enhanced Reaction Buttons
     .react-btn {
       display: flex;
       justify-content: space-around;
