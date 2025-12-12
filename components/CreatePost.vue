@@ -1992,8 +1992,7 @@ export default {
           color: #dc3545;
           font-weight: 600;
         }
-      }
-      
+      }  
       .media-count {
         background: #e3f2fd;
         color: #1877f2;
@@ -2005,7 +2004,6 @@ export default {
   }
 }
 
-// Enhanced Post Display Styles
 .post {
   .items {
     .item {
