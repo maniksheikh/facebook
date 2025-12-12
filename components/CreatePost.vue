@@ -1730,8 +1730,7 @@ export default {
           color: #1c1e21;
           font-size: 1.1rem;
           font-weight: 600;
-        }
-        
+        } 
         p {
           margin: 0.5rem 0;
           color: #65676b;
@@ -1755,7 +1754,6 @@ export default {
       }
     }
     
-    // Enhanced Media Preview Grid
     .media-preview-grid {
       margin-top: 1rem;  
       .preview-header {
@@ -1931,8 +1929,7 @@ export default {
       }
     }
   }
-  
-  // Enhanced Post Actions
+
   .post-actions {
     border-top: 1px solid #e4e6ea;
     padding: 1rem;
