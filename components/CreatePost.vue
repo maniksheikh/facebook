@@ -1003,7 +1003,6 @@ export default {
     onVideoLoad(event) {
     },
     
-    // Modal methods
     openPostModal(type = 'text') {
       this.showModal = true
       this.selectedPostType = type
@@ -1039,7 +1038,6 @@ export default {
       }
     },
     
-    // Edit functionality methods
     togglePostOptions(post) {
       this.posts.forEach(p => {
         if (p.id !== post.id) {
@@ -1061,7 +1059,6 @@ export default {
           media: post.media || [],
           privacy: post.privacy || 'public'
         }
-        // Reset edit-specific data
         this.editSelectedFiles = []
         this.isEditDragOver = false
         this.showEditModal = true
