@@ -923,7 +923,6 @@ export default {
       alert(message)
     },
     
-    // Post options methods
     toggleFeelingOptions() {
       this.showFeelingOptions = !this.showFeelingOptions
       this.showPostOptions = true
@@ -977,8 +976,7 @@ export default {
           shares: 0,
           isEdited: false
         }
-        
-        // Add to posts array
+
         this.posts.unshift(newPost)
         localStorage.setItem('fbposts', JSON.stringify(this.posts))
         
