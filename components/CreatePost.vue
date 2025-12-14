@@ -782,12 +782,10 @@ export default {
           this.showError(`${file.name} is not a supported file type.`)
           return false
         }
-
         if (file.size > this.maxFileSize) {
           this.showError(`${file.name} is too large. Maximum size is 50MB.`)
           return false
         } 
- 
         if (this.selectedFiles.length >= this.maxFiles) {
           this.showError(`Maximum ${this.maxFiles} files allowed.`)
           return false
@@ -803,7 +801,6 @@ export default {
           this.showError(`Failed to process ${file.name}: ${error.message}`)
         }
       }
-
       if (this.$refs.fileInput) {
         this.$refs.fileInput.value = ''
       }
@@ -898,7 +895,6 @@ export default {
       this.selectedFiles = []
     },  
 
-    // Utility methods
     formatFileSize(bytes) {
       if (bytes === 0) return '0 Bytes'
       const k = 1024
