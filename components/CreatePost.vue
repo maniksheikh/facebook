@@ -1175,8 +1175,7 @@ export default {
           type: file.type,
           url: file.url,
           size: file.size
-        }))
-        
+        })) 
         const updatedPost = {
           ...this.editingPost,
           text: this.editingPost.text ? this.editingPost.text.trim() : '',
@@ -1186,7 +1185,6 @@ export default {
           isEdited: true
         }
         
-        // Update the post in the array
         const index = this.posts.findIndex(p => p.id === this.editingPost.id)
         if (index > -1) {
           this.$set(this.posts, index, updatedPost)
