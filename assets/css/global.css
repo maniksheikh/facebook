@@ -10,25 +10,38 @@ body {
 }
 
 /* Override any specific font declarations */
-input, textarea, button, select {
+input,
+textarea,
+button,
+select {
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
-p, span, div, a {
+p,
+span,
+div,
+a {
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
 /* Global Button Hover Styles */
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
   background-color: #f5f5f5 !important;
 }
 
 /* Specific button type hover overrides */
-button:hover:disabled, .btn:hover:disabled {
+button:hover:disabled,
+.btn:hover:disabled {
   background-color: #e4e6ea !important;
   cursor: not-allowed !important;
 }
@@ -48,4 +61,53 @@ button:hover:disabled, .btn:hover:disabled {
 .post-submit-btn:hover:not(:disabled) {
   background-color: #f5f5f5 !important;
   opacity: 0.9 !important;
+}
+
+/* Global React Button Styles */
+.react-btn {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid #e4e6ea;
+  gap: 0.25rem;
+  background: white;
+}
+
+.react-btn .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0rem;
+  background: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #65676b;
+  flex: 1;
+  min-width: 0;
+  transition: background-color 0.2s ease;
+  opacity: 1;
+  transform: none;
+}
+
+.react-btn .btn:hover {
+  background: #f0f2f5 !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.react-btn .btn span {
+  font-family: inherit;
+}
+
+/* Specific button hover states */
+.react-btn .btn-react:hover,
+.react-btn .btn-comment:hover,
+.react-btn .btn-share:hover {
+  background: #f0f2f5 !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
