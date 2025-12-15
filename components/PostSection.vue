@@ -836,19 +836,16 @@ export default {
       }
 
       .btn-react {
-        background: transparent;
         &:hover {
           background: #f0f2f5;
         }
       }
       .btn-comment {
-        background: transparent;
         &:hover {
           background: #f0f2f5;
         }
       }
       .btn-share {
-        background: transparent;
         &:hover {
           background: #f0f2f5;
         }
