@@ -242,54 +242,5 @@ export default {
     background-repeat: no-repeat;
     object-fit: cover;
   }
-
-  .react-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 0;
-    margin: 0.5rem !important;
-    border-top: 1px solid rgba(171, 167, 167, 0.4);
-    border-bottom: 1px solid rgba(171, 167, 167, 0.4);
-
-    button {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      span {
-        font-family: inherit;
-        font-size: 1rem;
-      }
-    }
-    .btn-react,
-    .btn-comment,
-    .btn-share {
-      padding: 0.5rem 1.7rem;
-      &:hover {
-        background: #f7f4f4;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .post {
-    .items {
-      .react-btn {
-        padding: 0.5rem 0;
-        margin: 0.5rem 1rem;
-        .btn-react,
-        .btn-comment,
-        .btn-share {
-          padding: 0.4rem 0.3rem;
-          &:hover {
-            background: #e7e3e1;
-          }
-        }
-      }
-    }
-  }
 }
 </style>
