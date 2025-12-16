@@ -209,48 +209,6 @@ export default {
       background-size: cover;
       object-fit: cover;
     }
-    
-    .react-btn {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 0.5rem 0;
-      margin-top: 0.5rem;
-      background: transparent !important;
-      background-color: transparent !important;
-      border-top: 1px solid #e4e6ea;
-      span {
-        font-size: 0.9375rem;
-        font-weight: 600;
-        color: #65676b;
-        opacity: 1;
-      }
-
-      button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        border-radius: 8px;
-        padding: 0.5rem 1.5rem;
-        text-align: center;
-        background: transparent; 
-        background-color: transparent;
-        border: none;
-        box-shadow: none;
-        cursor: pointer;
-        transition: none !important;
-        transform: none !important;
-        flex: 1;
-        max-width: 200px;
-        svg {
-          width: 20px;
-          height: 20px;
-          fill: #65676b;
-          stroke: none;
-        }
-      }
-    }
   }
 }
 
