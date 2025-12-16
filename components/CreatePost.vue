@@ -2104,43 +2104,6 @@ export default {
         }
       }
     }
-
-    .react-btn {
-      display: flex;
-      justify-content: space-around;
-      padding: 0.5rem 1rem;
-      border-top: 1px solid #e4e6ea;
-      
-      .btn {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: transparent;
-        border: none;
-        border-radius: 8px;
-        padding: 0.75rem 1rem;
-        cursor: pointer;
-        font-weight: 600;
-        color: #65676b;
-        flex: 1;
-        justify-content: center;
-        transition: all 0.2s ease;      
-        &:hover {
-          background: #f0f2f5;
-          color: #1877f2;
-          transform: scale(1.05);
-        }      
-        &:active {
-          transform: scale(0.98);
-        }    
-        svg {
-          transition: all 0.2s ease;
-        }    
-        &:hover svg {
-          fill: #1877f2;
-        }
-      }
-    }
   }
 }
 
