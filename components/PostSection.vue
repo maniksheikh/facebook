@@ -802,65 +802,6 @@ export default {
         }
       }
     }
-
-    .react-btn {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.5rem 1rem;
-      border-top: 1px solid #e4e6ea;
-      gap: 0.25rem;
-      background: white;
-
-      .btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        padding: 0.6rem 0rem;
-        background: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: #65676b;
-        flex: 1;
-        min-width: 0;
-        transition: background-color 0.2s ease;
-        opacity: 1;
-        transform: none;
-        &:hover {
-          background: #f0f2f5;
-          opacity: 1;
-          transform: none;
-        }
-        span {
-          font-family: inherit;
-        }
-      }
-
-      .btn-react {
-        &:hover {
-          background: #f0f2f5;
-          opacity: 1;
-          transform: none;
-        }
-      }
-      .btn-comment {
-        &:hover {
-          background: #f0f2f5;
-          opacity: 1;
-          transform: none;
-        }
-      }
-      .btn-share {
-        &:hover {
-          background: #f0f2f5;
-          opacity: 1;
-          transform: none;
-        }
-      }
-    }
   }
 
   .story {
