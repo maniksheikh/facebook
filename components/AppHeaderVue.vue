@@ -759,6 +759,19 @@ li {
 
 @media screen and (max-width: 900px) {
   .header {
+    .logo {
+      width: 100%;
+      flex: 1;
+      justify-content: space-between;
+      padding-right: 1rem;
+    }
+
+    .search-box {
+      width: auto;
+      flex: 1;
+      margin: 0 1rem;
+    }
+
     .btn-mobile-menu {
       display: block !important;
     }
@@ -843,13 +856,14 @@ li {
 @media screen and (max-width: 500px) {
   .header {
     .search-box {
-      display: none;
+      display: block !important;
+      
       input {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
       }
     }
     .btn-search-block {
-      display: block !important;
+      display: none !important;
     }
     .btn-mobile-menu {
       display: block !important;
