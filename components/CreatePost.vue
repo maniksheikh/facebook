@@ -1940,7 +1940,7 @@ export default {
           background: #166fe5;
         } 
         &:disabled {
-          background: #cbd5e0;
+          background: rgb(33, 223, 160);
           cursor: not-allowed;
         }
       }
@@ -1957,8 +1957,8 @@ export default {
         font-weight: 600;
         cursor: pointer;
         &:hover {
-          background: #d1d5db;
-        }
+          background: #6ce0b0;
+         }
       }
     }
     
