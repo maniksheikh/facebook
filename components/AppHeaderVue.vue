@@ -769,7 +769,7 @@ li {
   }
 
   .main-link {
-    display: none;
+    display: none !important;
     position: fixed;
     top: 60px;
     left: 0;
