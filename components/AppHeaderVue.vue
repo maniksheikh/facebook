@@ -497,7 +497,6 @@ li {
     border-radius: 50%;
     margin-left: 0.5rem;
     transition: background 0.2s ease;
-
     &:hover {
       background: #e4e6ea;
     }
@@ -694,6 +693,7 @@ li {
                 }
               }
             }
+
             .pro-title {
               text-align: left;
               padding-top: 0.5rem;
