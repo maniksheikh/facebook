@@ -775,7 +775,6 @@ li {
     .btn-mobile-menu {
       display: block !important;
     }
-
     .right-link {
       display: none !important;
     }
@@ -819,7 +818,6 @@ li {
           border-left: 4px solid #1877f2;
           background: #f0f2f5;
         }
-
         .set {
           padding: 0.5rem;
         }
