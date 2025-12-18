@@ -835,7 +835,6 @@ li {
           box-shadow: none !important;
           font-size: 1rem !important;
           font-weight: 600 !important;
-
           &::before {
             display: none !important;
           }
@@ -843,7 +842,6 @@ li {
 
         &:hover {
           background: #f0f2f5;
-
           span {
             color: #1877f2 !important;
           }
